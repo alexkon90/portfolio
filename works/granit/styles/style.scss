@@ -1,0 +1,21 @@
+@import "base/variables.scss";
+@import "base/fonts.scss";
+@import "base/reset.scss";
+@import "base/plugins.scss";
+@import "base/general.scss";
+@import "base/forms.scss";
+@import "base/modals.scss";
+
+@import "partials/index.scss";
+@import "partials/articles.scss";
+@import "partials/catalog.scss";
+@import "partials/product.scss";
+@import "partials/materials.scss";
+@import "partials/works.scss";
+@import "partials/cart.scss";
+@import "partials/districts.scss";
+@import "partials/regions.scss";
+@import "partials/reviews.scss";
+@import "partials/contacts.scss";
+
+@import "partials/adaptive.scss";

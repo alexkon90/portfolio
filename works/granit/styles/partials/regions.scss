@@ -1,0 +1,222 @@
+/*==============================CEMETERIES==============================*/
+.cemeteries__subtitle{
+	margin-bottom: 20px;
+	padding: 15px;
+	font-size: 16px;
+	line-height: 26px;
+	background: #F9F9F9;
+}
+.cemeteries-map{
+	margin-bottom: 65px;
+	height: 400px;
+}
+.cemeteries-section{
+	padding-bottom: 20px;
+	&:last-child{
+		padding-bottom: 0;
+	}
+}
+.cemeteries-row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.cemeteries-item{
+	flex: 0 0 25%;
+	max-width: 25%;	
+	padding: 45px 30px 30px 0;
+	border-top: 1px solid #E5E5E5;
+}
+.cemeteries-item__letter{
+	margin-bottom: 20px;
+	font-size: 36px;
+	font-weight: 600;
+	color: $base-color-dark
+}
+.cemeteries-item-list{
+	ul{
+		li{
+			margin-bottom: 10px;
+			a{
+				display: inline-block;
+				font-size: 16px;
+				line-height: 26px;
+				color: #444;
+				&:hover{
+					color: $base-color;
+				}
+			}
+		}
+	}
+}
+/*--------------------cemetery-about--------------------*/
+.cemetery-about{
+	padding-bottom: 60px;
+	border-bottom: 1px solid #E5E5E5;
+	ul{
+		padding: 10px 0;
+		li{
+			margin-bottom: 5px;
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+}
+.cemetery-about__subtitle{
+	margin-bottom: 20px;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 26px;
+    background: #F9F9F9;
+}
+.cemetery-about__note{
+	margin-bottom: 20px;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 26px;
+    background: #F9F9F9;
+}
+.cemetery-about-bottom{
+	display: flex;
+	padding-top: 40px;
+}
+.cemetery-about-contacts{
+	flex-grow: 1;
+	padding-right: 50px;
+}
+.cemetery-about-contacts-list{
+	display: table;
+	width: 100%;
+}
+.cemetery-about-contacts-item{
+	display: table-row;
+	font-size: 16px;
+	line-height: 26px;
+}
+.cemetery-about-contacts-item__title{
+	display: table-cell;
+	padding-right: 90px;
+	padding-bottom: 10px;
+}
+.cemetery-about-contacts-item__value{
+	display: table-cell;
+	padding-bottom: 10px;
+	span{
+		display: block;
+		margin-bottom: 10px;
+	}
+}
+.cemetery-about-map{
+	flex: 0 0 400px;
+	max-width: 400px;
+	height: 240px;
+}
+/*--------------------cemetery-products--------------------*/
+.cemetery-products{
+	padding: 60px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+.cemetery-products-carousel{
+	margin: 0 -20px;
+	.slick-prev{
+		left: 0;
+	}
+	.slick-next{
+		right: 0;
+	}
+	.slick-list .slick-track{
+		display: flex !important;
+	}
+	.slick-list .slick-track .slick-slide{
+	    height: inherit !important;
+	}
+	.cemetery-products-col{
+		padding: 0 20px;
+	}
+}
+.cemetery-products-item{
+	display: flex;
+	flex-direction: column;
+	padding: 10px 10px 15px;
+	height: 100%;
+	border: 1px solid #E5E5E5;
+	&:hover{
+		border-color: $base-color;
+		img{
+			transform: scale(1.1);
+		}
+	}
+}
+.cemetery-products-item__image{
+	margin-bottom: 10px;
+	height: 180px;
+	overflow: hidden;
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: all 0.3s ease;
+	}
+}
+.cemetery-products-item__title{
+	margin-bottom: 5px;
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 600;
+	color: #444;
+}
+.cemetery-products-item__price{
+	margin-top: auto;
+	font-size: 18px;
+	color: #808080;
+	strong{
+		color: $base-color;
+		font-weight: 600;
+	}
+}
+/*--------------------cemetery-services--------------------*/
+.cemetery-services-section{
+	padding: 60px 0 20px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+.cemetery-services-row{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -20px;
+}
+.cemetery-services-col{
+	flex: 0 0 33.333%;
+	max-width: 33.333%;
+	padding: 0 20px 40px;
+}
+.cemetery-services-item{
+	display: flex;
+	align-items: center;
+	height: 80px;
+	border: 1px solid #E5E5E5;
+	&:hover{
+		border-color: $base-color;
+	}
+}
+.cemetery-services-item__icon{
+	flex: 0 0 80px;
+	max-width: 80px;
+	text-align: center;
+	svg{
+		fill: $base-color;
+	}
+}
+.cemetery-services-item__title{
+	flex-grow: 1;
+	padding-right: 20px;
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 600;
+	color: #444;
+}
+.cemetery-review{
+	padding-top: 60px;
+}
+.cemetery-materials{
+	padding: 60px 0;
+	border-bottom: 1px solid #E5E5E5;
+}

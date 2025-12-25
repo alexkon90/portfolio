@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+	<meta charset="UTF-8">
+	<title>Главная</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div class="wrapper">
+	<div class="center-wrapper">
+		<h1 class="text-center">Кнопки</h1>
+		<a href="#" class="btn">Кнопка</a><br>
+		<button class="btn btn_fill">Кнопка</button><br>
+		<button class="btn btn_full">Кнопка на всю ширину</button>
+		<button class="btn btn_big">Кнопка большая</button><br>
+		<button class="btn btn_small">Кнопка маленькая</button><br>
+		<button class="btn"><i class="fas fa-sync-alt"></i> Кнопка с иконкой</button><br>
+		<button class="btn btn_fill"><i class="fas fa-sync-alt"></i> Кнопка с иконкой</button><br>
+		<a href="#" class="more"><span>Подробнее</span> <i class="fas fa-arrow-right"></i></a>
+
+		<h1 class="text-center">Элементы формы</h1>
+		<input type="text" class="input input_required" placeholder="Имя">
+		<input type="text" class="input input_error" placeholder="Имя">
+		<input type="text" class="input input_disabled" placeholder="Имя">
+		<textarea class="textarea" placeholder="Тект"></textarea>
+		<div class="checkbox">
+			<input type="checkbox" id="checkbox-option-10">
+			<label for="checkbox-option-10">Inactive</label>
+		</div>
+		<div class="checkbox">
+			<input type="checkbox" id="checkbox-option-11" checked>
+			<label for="checkbox-option-11">Active</label>
+		</div>
+		<div class="radio">
+			<input type="radio" name="radio-option" id="radio-option-1">
+			<label for="radio-option-1">Inactive</label>
+		</div>
+		<div class="radio">
+			<input type="radio" name="radio-option" id="radio-option-2" checked>
+			<label for="radio-option-2">Active</label>
+		</div>
+		<div class="select">
+			<div class="select-title">
+				<div class="select-title__value"><span>Выберите город</span></div>
+			</div>
+			<div class="select-options">
+				<div class="select-options-inside">
+					<div class="select-options__value">Волгоград</div>
+					<div class="select-options__value">Казань</div>
+					<div class="select-options__value">Москва</div>
+					<div class="select-options__value">Псков</div>
+					<div class="select-options__value">Рязань</div>
+					<div class="select-options__value">Рязань 2</div>
+					<div class="select-options__value">Рязань 3</div>
+					<div class="select-options__value">Рязань 4</div>
+					<div class="select-options__value">Рязань 5</div>
+					<input type="hidden">
+				</div>
+			</div>
+		</div>
+		<div class="select2">
+			<div class="select2-title">
+				<div class="select2-title__value"><span>Выберите город</span></div>
+			</div>
+			<div class="select2-options">
+				<form action="#">
+					<div class="select2-options-inside">
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox-option-1">
+							<label for="checkbox-option-1">Волгоград</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox-option-2">
+							<label for="checkbox-option-2">Казань</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox-option-3">
+							<label for="checkbox-option-3">Москва</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox-option-4">
+							<label for="checkbox-option-4">Псков</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox-option-5">
+							<label for="checkbox-option-5">Рязань</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox-option-5">
+							<label for="checkbox-option-5">Рязань</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox-option-5">
+							<label for="checkbox-option-5">Рязань</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox-option-5">
+							<label for="checkbox-option-5">Рязань</label>
+						</div>
+					</div>
+					<div class="select2-options-button">
+						<button type="submit" class="btn btn_full btn_fill">Показать</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="cart-table-quantity">
+			<button class="cart-table-quantity__btn btn-minus" tabindex="-1"></button>
+			<div class="cart-table-quantity__value">
+				<input value="1" tabindex="-1" type="text">
+			</div>
+			<button class="cart-table-quantity__btn btn-plus" tabindex="-1"></button>
+		</div>
+
+		<h1 class="text-center">Другие элементы</h1>
+		<nav class="paginator">
+			<ul class="paginator-list">
+				<li><a href="#"></a></li>
+				<li><a href="#" class="active">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</nav>
+		<div id="datepicker"></div>
+		<div id="datepicker_mounth"></div>
+		<div id="datepicker_year"></div>
+	</div><!-- end center-wrapper -->
+</div><!-- end wrapper -->
+
+
+	<div id="popup-callback" class="popup">
+		<div class="popup-body">
+			<div class="popup-content">
+				<div class="popup__close close-popup">x</div>
+				<div class="popup-form">
+					<form action="#">
+						<div class="popup-form__title">Обратный звонок</div>
+						<div class="popup-form-input">
+							<input type="text" class="input" placeholder="Ваше имя">
+						</div>
+						<div class="popup-form-input">
+							<input type="text" class="input input_mask" placeholder="Телефон">
+						</div>
+						<div class="popup-form-button">
+							<button type="submit" class="popup__btn btn">Отправить</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div><!-- end popup-callback -->
+
+
+	<script src="scripts/libs/jquery-3.3.1.min.js"></script>
+	<script src="scripts/libs/flipclock.min.js"></script>
+	<script src="scripts/libs/jquery.nicescroll.min.js"></script>
+	<script src="scripts/libs/jquery.sticky-kit.js"></script>
+	<script src="scripts/libs/slick.min.js"></script>
+	<script src="scripts/libs/jquery-ui.min.js"></script>
+	<script src="scripts/libs/jquery.fancybox.min.js"></script>
+	<script src="scripts/libs/jquery.inputmask.min.js"></script>
+	<script src="scripts/main.js"></script>
+</body>
+</html>

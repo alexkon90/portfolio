@@ -1,0 +1,233 @@
+/*==============================MODALS==============================*/
+.modal{
+	width: 400px;
+	margin: 25px;
+	padding: 40px;
+	background-color: #fff;
+}
+.modal__title{
+	margin-bottom: 25px;
+	font-size: 24px;
+	font-weight: 600;
+}
+.modal-form-item{
+	margin-bottom: 20px;
+}
+.modal-form-button_center{
+	text-align: center;
+}
+/*--------------------modal-product--------------------*/
+.modal_big{
+	width: 1000px;
+	padding: 30px;
+}
+.modal-product-body{
+	display: flex;
+}
+.modal-product-rightside{
+	flex-grow: 1;
+	padding-left: 30px;
+}
+.modal-product__title{
+	margin-bottom: 15px;
+	font-size: 36px;
+	line-height: 45px;
+	font-weight: 600;
+	color: #444;
+}
+.modal-product__articlul{
+	margin-bottom: 15px;
+	font-size: 14px;
+	color: #808080;
+}
+.modal-product-stats{
+	padding-bottom: 25px;
+	border-bottom: 1px solid #E5E5E5;
+	&.show-all{
+		.modal-product-stats-item.hidden{
+			display: table-row;
+		}
+	}
+}
+.modal-product-stats__title{
+	margin-bottom: 15px;
+	font-size: 18px;
+	font-weight: 600;
+}
+.modal-product-stats-list{
+	display: table;
+	margin-bottom: 5px;
+}
+.modal-product-stats-item{
+	display: table-row;
+	font-size: 16px;
+	line-height: 26px;
+	&.hidden{
+		display: none;
+	}
+}
+.modal-product-stats-item__title{
+	display: table-cell;
+	width: 180px;
+	padding-bottom: 5px;
+	line-height: 26px;
+	color: #808080;
+	white-space: nowrap;
+}
+.modal-product-stats-item__value{
+	display: table-cell;
+	padding-bottom: 5px;
+	line-height: 26px;
+}
+.modal-product-stats__all{
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	color: $base-color;
+	&.active{
+		&:after{
+			transform: rotate(-180deg);
+		}
+	}
+	&:after{
+		content: '';
+		display: inline-block;
+		margin-left: 8px;
+		margin-top: 2px;
+		width: 14px;
+		height: 8px;
+		background-image: url(../images/icons/icon-arrow-down.svg);
+	}
+}
+.modal-product-parameters{
+	padding: 20px 0;
+}
+.modal-product-parameters__title{
+	margin-bottom: 15px;
+	font-size: 18px;
+	font-weight: 600;
+}
+.modal-product-parameters-list{
+	display: table;
+	margin-bottom: 5px;
+	width: 100%;
+}
+.modal-product-parameters-item{
+	display: table-row;
+}
+.modal-product-parameters-item__title{
+	display: table-cell;
+	padding-bottom: 10px;
+	width: 180px;
+	line-height: 26px;
+}
+.modal-product-parameters-item__value{
+	display: table-cell;
+	padding-bottom: 10px;
+	font-size: 14px;
+	line-height: 26px;
+	.select{
+		width: 100%;
+	}
+}
+.modal-product-parameters__note{
+	position: relative;
+	padding: 10px 10px 10px 35px;
+	font-size: 12px;
+	line-height: 16px;
+	background: #F9F9F9;
+	svg{
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 16px;
+		height: 16px;
+		fill: $base-color;
+	}
+}
+.modal-product-total{
+	margin-bottom: 20px;
+	padding: 25px;
+	background: #F9F9F9;
+}
+.modal-product-total__price{
+	margin-bottom: 15px;
+	font-size: 30px;
+	font-weight: 600;
+	color: $base-color;
+	span{
+		font-size: 18px;
+		font-weight: normal;
+		color: #808080;
+	}
+}
+.modal-product-total-buttons{
+	display: flex;
+	align-items: center;
+}
+.modal-product-total__addcart{
+	margin-right: 15px;
+	width: 180px;
+	height: 48px;
+	font-weight: normal;
+}
+.modal-product__more{
+	width: 100%;
+}
+.modal-product-nav{
+	display: flex;
+	justify-content: space-between;
+	padding-top: 25px;
+}
+
+
+
+
+
+
+
+
+
+.modal-product-leftside{
+	flex: 0 0 505px;
+	max-width: 505px;
+}
+.modal-product-matarial{
+	margin-bottom: 15px;
+}
+.modal-product-matarial__note{
+	max-width: 400px;
+}
+.modal-product-option{
+	padding-bottom: 20px;
+	.checkbox{
+		span{
+			display: block;
+			font-size: 12px;
+			color: 808080;
+		}
+	}
+}
+.modal-product-features{
+	display: flex;
+	padding-top: 20px;
+	border-top: 1px solid #E5E5E5;
+}
+.modal-product-features-item{
+	flex: 0 0 33.333%;
+	max-width: 33.333%;
+	padding: 0 10px;
+	text-align: center;	
+}
+.modal-product-features-item__icon{
+	height: 40px;
+	svg{
+		fill: $base-color;
+	}
+}
+.modal-product-features-item__title{
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 600;
+	color: #444;
+}

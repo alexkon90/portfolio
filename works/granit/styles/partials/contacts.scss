@@ -1,0 +1,255 @@
+/*==============================CONTACTS==============================*/
+/*--------------------contacts-info--------------------*/
+.contacts-info{
+	padding-bottom: 60px;
+	border-bottom: 1px solid #E5E5E5;
+}
+.contacts-info-body{
+	display: flex;
+	margin: 0 -20px;
+}
+.contacts-info-col{
+	flex: 0 0 50%;
+	max-width: 50%;
+	padding: 0 20px;
+}
+.contacts-info-content{
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+.contacts-info__photo{
+	flex: 0 0 220px;
+	max-width: 220px;
+	height: 340px;
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.contacts-info-data{
+	padding-left: 40px;
+	flex-grow: 1;
+}
+.contacts-info__name{
+	margin-bottom: 20px;
+	line-height: 26px;
+}
+.contacts-info-phones{
+	display: flex;
+	padding-bottom: 15px;
+}
+.contacts-info-phones__icon{
+	flex: 0 0 35px;
+	max-width: 35px;
+	padding-left: 5px;
+	svg{
+		fill: $base-color;
+	}
+}
+.contacts-info-phones__item{
+	margin-bottom: 10px;
+	a{
+		&:hover{
+			color: $base-color;
+		}
+	}
+}
+.contacts-info-phones__item_main{
+	margin-bottom: 15px;
+	font-size: 20px;
+	font-weight: 600;
+}
+.contacts-info__address{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	line-height: 20px;
+	span{
+		flex: 0 0 35px;
+		max-width: 35px;
+		text-align: center;
+	}
+	svg{
+		fill: $base-color;
+	}
+}
+.contacts-info__mail{
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 20px;
+	white-space: nowrap;
+	span{
+		flex: 0 0 35px;
+		max-width: 35px;
+		text-align: center;
+	}
+	svg{
+		fill: $base-color;
+	}
+}
+.contacts-info__timetable{
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	span{
+		flex: 0 0 35px;
+		max-width: 35px;
+		text-align: center;
+	}
+	svg{
+		fill: $base-color;
+	}
+}
+.contacts-info-apps{
+	display: flex;
+	align-items: center;
+}
+.contacts-info-apps__item{
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+	i{
+		margin-right: 10px;
+	}
+}
+.contacts-info-form{
+	padding: 30px;
+	background: #F9F9F9;
+}
+.contacts-info-form-phone{
+	margin-bottom: 20px;
+}
+.contacts-info-form-agreement{
+	margin-bottom: 20px;
+}
+.contacts-info-map{
+	height: 100%;
+}
+/*--------------------contacts-gallery--------------------*/
+.contacts-gallery{
+	padding: 60px 0 20px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+.contacts-gallery-row{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -20px;
+	padding-top: 10px;
+}
+.contacts-gallery-col{
+	flex: 0 0 33.333%;
+	max-width: 33.333%;
+	margin-bottom: 40px;
+	padding: 0 20px;
+}
+.contacts-gallery__image{
+	height: 100%;
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+/*--------------------contacts-address--------------------*/
+.contacts-address{
+	padding: 60px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+.contacts-address-body{
+	display: flex;
+}
+.contacts-address-content{
+	flex-grow: 1;
+	padding-right: 40px;
+}
+.contacts-address-item{
+	margin-bottom: 20px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+.contacts-address-item__title{
+	margin-bottom: 5px;
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 600;
+}
+.contacts-address-item__text{
+	font-size: 16px;
+	line-height: 26px;
+}
+.contacts-address-map{
+	flex: 0 0 510px;
+	max-width: 510px;
+}
+/*--------------------contacts-guide--------------------*/
+.contacts-guide{
+	padding: 60px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+.contacts-guide__video{
+	position: relative;
+	display: block;
+	margin-bottom: 40px;
+	&:hover{
+		&:after{
+			transform: translate(-50%, -50%) scale(1.1);
+		}
+	}
+	&:after{
+		content: '';
+	    display: block;
+	    position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 160px;
+	    height: 160px;
+	    background-image: url(../images/icon-play.svg);
+	    background-size: cover;
+	    transition: all 0.3s ease;
+	    z-index: 5;
+	}
+	img{
+		width: 100%;
+	}
+}
+.contacts-guide-route{
+	display: flex;
+	align-items: center;
+}
+.contacts-guide-route-col{
+	margin-right: 40px;
+	&:last-child{
+		margin-right: 0;
+	}
+}
+.contacts-guide-route__coordinates{
+	span{
+		padding-left: 10px;
+		font-weight: 600;
+		color: $base-color;
+	}
+}
+/*--------------------contacts-requisites--------------------*/
+.contacts-requisites{
+	padding-top: 60px;
+}
+.contacts-requisites-list{
+	display: table;
+}
+.contacts-requisites-item{
+	display: table-row;
+	line-height: 26px;
+}
+.contacts-requisites-item__title{
+	display: table-cell;
+	padding-right: 70px;
+	padding-bottom: 5px;
+}
+.contacts-requisites-item__value{
+	display: table-cell;
+	padding-bottom: 5px;
+}

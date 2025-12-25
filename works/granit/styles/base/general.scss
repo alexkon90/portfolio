@@ -1,0 +1,251 @@
+/*==============================GENERAL==============================*/
+html, body{
+    position: relative;
+    min-width: 320px;
+}
+body{
+    font-family: 'OpenSans';
+    line-height: 1;
+    color: #444;
+} 
+.wrapper{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.center-wrapper{
+	position: relative;
+	margin: 0 auto;
+	max-width: 1280px;
+}
+h1, h2, h3, h4, h5, h6, .title_1, .title_2, .title_3, .title_4, .title_5, .title_6{
+	margin-bottom: 30px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+h1, .title_1{
+	margin-bottom: 35px;
+	font-size: 36px;
+}
+h2, .title_2{
+	margin-bottom: 35px;
+	font-size: 30px;
+	font-weight: 600;
+}
+h3, .title_3{
+	font-size: 24px;
+}
+h4, .title_4{
+	font-size: 20px;
+}
+.title_center{
+	text-align: center;
+}
+.title_white{
+	color: #fff;
+}
+p{
+	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 26px;
+}
+a{
+	outline: none;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	color: $base-color;
+	&:hover{
+		color: $base-color-dark;
+	}
+}
+blockquote{
+	margin-bottom: 20px;
+	padding: 15px;
+	background: #F9F9F9;
+	p{
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+ul, ol{
+	list-style: none;
+}
+strong{
+    font-weight: 700;
+}
+em{
+    font-style: italic;
+}
+img{
+	vertical-align: top;
+}
+svg{
+	transition: all 0.3s ease;
+}
+table{
+	width: 100%;
+}
+.xxxxx{
+	ul{
+		padding-bottom: 15px;
+		li{
+			position: relative;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	ol{
+		padding-bottom: 15px;
+		counter-reset: myCounter;
+		li{
+			position: relative;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				counter-increment: myCounter;
+				content: counters(myCounter, ".") ". ";			
+			}
+		}
+		ol li{
+		    content: counters(item, ".") " ";
+		}
+	}
+}
+.text-center{
+	text-align: center;
+}
+.color-base{
+	color: $base-color;
+}
+.table{
+	display: table;
+	width: 100%;
+}
+.trow{
+	display: table-row;
+}
+.cell{
+	display: table-cell;
+}
+.cell_title{
+	display: table-cell;
+}
+.bg-filter{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 0.3s ease;
+	background: rgba(68,68,68, 0.4);
+	z-index: -10;
+	opacity: 0;
+	&.active{
+		opacity: 1;
+		z-index: 80;
+	}
+}
+.nicescroll-cursors{
+	background: $base-color !important;
+}
+/*--------------------icons--------------------*/
+.ic{
+	flex-shrink: 0;
+	display: inline-block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+.ic-whatsup{
+	width: 30px;
+	height: 30px;
+	background-image: url(../images/icon-app-whatsup.svg);
+}
+.ic-telegram{
+	width: 30px;
+	height: 30px;
+	background-image: url(../images/icon-app-telegram.svg);
+}
+.ic-mail{
+	width: 30px;
+	height: 30px;
+	background-image: url(../images/icon-mail.svg);
+}
+.ic-phone{
+	width: 30px;
+	height: 30px;
+	background-image: url(../images/icon-phone.svg);
+}
+.ic-construtor{
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/icons/icon-constructor.svg);
+}
+.ic-menu{
+	width: 22px;
+	height: 18px;
+	background-image: url(../images/icons/icon-menu.svg);
+}
+.ic-menu-arrow{
+	width: 13px;
+	height: 8px;
+	background-image: url(../images/icons/icon-menu-arrow.svg);
+}
+.ic-search{
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/icons/icon-search.svg);
+}
+.ic-more{
+	width: 14px;
+	height: 12px;
+	background-image: url(../images/icons/icon-more-white.svg);
+}
+.ic-plus{
+	width: 13px;
+	height: 13px;
+	background-image: url(../images/icons/icon-plus.svg);
+}
+.ic-wish{
+	width: 18px;
+	height: 16px;
+	background-image: url(../images/icons/icon-wish-white.svg);
+}
+.ic-wish_dark{
+	background-image: url(../images/icons/icon-wish-dark.svg);
+}
+.ic-cart{
+	width: 17px;
+	height: 16px;
+	background-image: url(../images/icons/icon-cart.svg);
+}
+.ic-cart_dark{
+	background-image: url(../images/icons/icon-cart-dark.svg);
+}
+.ic-prev{
+	width: 14px;
+	height: 12px;
+	background-image: url(../images/icons/icon-prev.svg);
+}
+.ic-close{
+	width: 17px;
+	height: 16px;
+	background-image: url(../images/icons/icon-close.svg);
+}
+.ic-call{
+	width: 16px;
+	height: 16px;
+	background-image: url(../images/icons/icon-call.svg);
+}
+.ic-search_dark{
+	background-image: url(../images/icons/icon-search-dark.svg);
+}

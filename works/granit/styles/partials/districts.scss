@@ -1,0 +1,109 @@
+/*==============================DISCTRICTS==============================*/
+.districts-map{
+	margin-bottom: 30px;
+	height: 400px;
+}
+.districts-row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.districts-col{
+	flex: 0 0 25%;
+	max-width: 25%;
+	padding: 40px 30px 40px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+.districts-col_nbd{
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+.districts-block__letter{
+	margin-bottom: 20px;
+	font-size: 36px;
+	font-weight: 600;
+	color: $base-color-dark;
+}
+.districts-item{
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	height: 100px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+.districts-item-body{
+	width: auto;
+	display: flex;
+	align-items: center;
+	&:hover{
+		.districts-item__title{
+			color: $base-color;
+		}
+	}
+}
+.districts-item__logo{
+	flex: 0 0 60px;
+	max-width: 60px;
+	margin-right: 20px;
+	img{
+		max-width: 100%;
+	}
+}
+.districts-item__title{
+	white-space: nowrap;
+	color: #444;
+	transition: all 0.3s ease;
+}
+.district-info{
+	padding-bottom: 40px;
+	border-bottom: 1px solid #E5E5E5;
+}
+.cemetery-products__note{
+	margin-top: 40px;
+	font-weight: 600;
+	line-height: 26px;
+}
+/*--------------------district-cemeteries--------------------*/
+.district-cemeteries{
+	padding: 60px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+.district-cemeteries-item{
+	margin-bottom: 40px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+.district-cemeteries-item__title{
+	margin-bottom: 20px;
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: 600;
+}
+.district-cemeteries-item-info{
+	display: table;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.district-cemeteries-item-info-item{
+	display: table-row;
+	line-height: 26px;
+}
+.district-cemeteries-item-info-item__title{
+	display: table-cell;
+	padding-bottom: 10px;
+	padding-right: 30px;
+	width: 280px;
+}
+.district-cemeteries-item-info-item__value{
+	display: table-cell;
+	padding-bottom: 10px;
+}
+.district-materials{
+	padding: 60px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+.features_npb{
+	padding-bottom: 0 !important;
+}
