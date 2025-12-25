@@ -78,7 +78,7 @@ $(document).ready(function(){
 		language:'ru-ru', 
 	});
 	let now = new Date();
-	let test = new Date('2021/08/23 00:00:00');
+	let test = new Date('2026/03/20 00:00:00');
 	clock.setTime((test.getTime() - now.getTime()) / 1000); 
 	clock.start();
 
