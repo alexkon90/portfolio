@@ -1,0 +1,315 @@
+/*==============================ADAPTIVE==============================*/
+@media only screen and (max-width: 1699px) {
+    .center-wrapper_big{
+        max-width: 1300px;
+    }
+    .service-promo__content{
+        flex: 0 0 60%;
+        max-width: 60%;
+        padding-right: 60px;
+    }
+    .service-info__body{
+        padding: 50px 50px 0;
+    }
+    .service-info__desc p{
+        font-size: 22px;
+    }
+    .mainform_reverse .mainform__content{
+        margin-right: 120px;
+    }
+    .service-process__row{
+        margin: 0 -10px;
+    }
+    .service-process__col{
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    .service-process-item{
+        padding-bottom: 35px;
+    }
+    .service-process-item__title{
+        font-size: 24px;
+    }
+    .service-process-item__desc{
+        font-size: 18px;
+    }
+    .service-process-item__num{
+        width: 75px;
+        height: 180px;
+        font-size: 32px;
+    }
+    .service-benefits-item{
+        padding: 20px;
+    }
+    .service-benefits-item__title{
+        font-size: 24px;
+    }
+    .service-benefits-item__desc{
+        font-size: 20px;
+    }
+    .service-benefits-item__icon{
+        flex: 0 0 70px;
+        width: 70px;
+        margin-right: 15px;
+        img{
+            width: 55px;
+        }
+    }
+    .service-steps-item__title{
+        font-size: 24px;
+    }
+    .service-steps-item__desc{
+        font-size: 18px;
+    }
+    .photo-features-item__icon{
+        flex: 0 0 140px;
+        max-width: 140px;
+        height: 140px;
+    }
+    .photo-features-item__title{
+        font-size: 26px;
+        padding-right: 15px;
+    }
+    .photo-include-item:after{
+        width: 40px;
+        height: 40px;
+    }
+    .concentration-item__title{
+        font-size: 28px;
+    }
+    .concentration-item__desc{
+        font-size: 20px;
+    }
+    .services-item__img{
+        flex: 0 0 380px;
+        max-width: 380px;
+    }
+    .services__row:before{
+        width: 550px;
+        height: 420px;
+    }
+    .services__row:after{
+        width: 350px;
+        height: 250px;
+    }
+    .steps-item__desc{
+        font-size: 22px;
+    }
+    blockquote{
+        max-width: 100%;
+    }
+    .article__section table{
+        max-width: 100%;
+    }
+    .article-note{
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 1399px) { 
+	.center-wrapper{
+		max-width: 1140px;
+	}
+    h1, .title_1{
+        font-size: 55px;
+    }
+    h2, .title_2{
+        font-size: 45px;
+    }
+    .contacts__row{
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-bottom: 80px;
+    }
+    .contacts-item{
+        padding: 0 15px;
+    }
+    .contacts-form__desc{
+        margin-bottom: 40px;
+    }
+    .service-promo__features li{
+        font-size: 24px;
+        padding-left: 40px;
+        &:before{
+            top: 3px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+    .service-info__desc p{
+        font-size: 20px;
+    }
+    .service-info__image{
+        flex: 0 0 350px;
+        max-width: 350px;
+    }
+    .service-info__content{
+        padding-bottom: 30px;
+    }
+    .mainform_reverse .mainform__content{
+        margin-right: 0;
+    }
+    .service-benefits-item__desc{
+        font-size: 18px;
+    }
+    p{
+        font-size: 20px;
+    }
+    .text ul li,
+    .text ol li{
+        font-size: 20px;
+    }
+    .text ul li{
+        padding-left: 25px;
+    }
+    .text ul li:before{
+        top: 8px;
+        width: 12px;
+        height: 12px;
+    }
+    .service-promo{
+        margin-bottom: 20px;
+    }
+    .service-info{
+        margin-bottom: 60px;
+    }
+    .service-benefits{
+        padding-bottom: 20px;
+    }
+    .service-promo__content{
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding-right: 40px;
+    }
+    .service-info__body{
+        background-position: 0 0;
+    }
+    .service-types__row{
+        margin: 0 -15px;
+    }
+    .service-types__col{
+        padding: 0 15px;
+    }
+    .service-types-item{
+        padding: 30px;
+    }
+    .service-types-item__title{
+        font-size: 28px;
+    }
+    .service-trust__item{
+        padding: 30px;
+        font-size: 22px;
+        font-weight: 500;
+    }
+    .service-steps__col{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .service-types,
+    .service-trust,
+    .gallery,
+    .useful,
+    .service-steps,
+    .photo-features,
+    .service-tariffs,
+    .deliveries,
+    .services,
+    .photo-tariffs,
+    .concentration{
+        padding: 50px 0;
+    }
+    .steps{
+        padding-top: 40px;
+    }
+    .service-tariffs-item-services{
+        font-size: 20px;
+    }
+    .photo-features-item__title{
+        font-size: 24px;
+    }
+    .photo-tariffs-item{
+        padding: 30px;
+    }
+    .photo-tariffs-item__row .photo-tariffs-item__img{
+        margin-right: 25px;
+    }
+    .photo-tariffs-item__leftside{
+        flex: 0 0 300px;
+        max-width: 300px;
+    }
+    .photo-tariffs-item .photo-tariffs-item__table{
+        font-size: 22px;
+    }
+    .photo-tariffs-item__desc{
+        font-size: 22px;
+    }
+    .photo-tariffs-item__price{
+        font-size: 26px;
+    }
+    .photo-include-item__title{
+        font-size: 28px;
+    }
+    .photo-include-item{
+        padding: 20px;
+    }
+    .features-item__title{
+        font-size: 28px;
+    }
+    .features-item__desc{
+        font-size: 22px;
+    }
+    .useful-item__title{
+        font-size: 24px;
+    }
+    .steps__col{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .steps-item__desc{
+        padding: 20px 30px;
+    }
+    .steps__col{
+        &:nth-child(3n) .steps-item{
+            &:after{
+                display: block;
+            }
+        }
+        &:nth-child(2n) .steps-item{
+            &:after{
+                display: none;
+            }
+        }
+    }
+    .useful-item__desc{
+        font-size: 22px;
+    }
+    .services-item__title{
+        font-size: 24px;
+    }
+    .services-item__desc{
+        font-size: 18px;
+    }
+    .services-item__content {
+        padding: 20px 0 0 20px;
+    }
+    .services__col:nth-child(1) .services-item__content, .services__col:nth-child(3) .services-item__content{
+        padding: 20px 20px 0 0;
+    }
+    .service-promo__buttons{
+        padding-bottom: 0;
+    }
+    blockquote footer{
+        font-size: 20px;
+    }
+    .article-steps-item__desc{
+        font-size: 20px;
+    }
+    .article-note__text{
+        font-size: 20px;
+    }
+    .article-nav__list a{
+        font-size: 22px;
+    }
+    .article-nav__list a:before{
+        top: 12px;
+    }
+}

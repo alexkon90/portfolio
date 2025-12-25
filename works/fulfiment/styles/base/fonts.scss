@@ -1,0 +1,33 @@
+/*==============================FONTS==============================*/
+@font-face {
+    font-family: 'TildaSans';
+    src: url('../fonts/TildaSans-Regular.woff2') format('woff2'),
+         url('../fonts/TildaSans-Regular.woff') format('woff'),
+         url('../fonts/TildaSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TildaSans';
+    src: url('../fonts/TildaSans-Light.woff2') format('woff2'),
+         url('../fonts/TildaSans-Light.woff') format('woff'),
+         url('../fonts/TildaSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TildaSans';
+    src: url('../fonts/TildaSans-Medium.woff2') format('woff2'),
+         url('../fonts/TildaSans-Medium.woff') format('woff'),
+         url('../fonts/TildaSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TildaSans';
+    src: url('../fonts/TildaSans-Bold.woff2') format('woff2'),
+         url('../fonts/TildaSans-Bold.woff') format('woff'),
+         url('../fonts/TildaSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

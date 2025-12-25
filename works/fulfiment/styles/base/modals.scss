@@ -1,0 +1,60 @@
+/*==============================MODALS==============================*/
+.fancybox-close-small{
+    display: none;
+}
+.fancybox-slide--html{
+    padding: 15px;
+}
+.fancybox-bg {
+    background: #1e1e1e;
+    opacity: 0;
+}
+.fancybox-is-open .fancybox-bg {
+    opacity: .8;
+}
+.modal{
+    width: 560px;
+    padding: 40px;
+    background: #FFFBF8;
+    &__close{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 28px;
+        height: 28px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.8;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    &__title{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    &__desc{
+        margin-bottom: 20px;
+        line-height: 1.2;
+        text-align: center;
+    }
+}
+.modal-form{
+    &__input{
+        margin-bottom: 25px;
+        .input{
+            height: 65px;
+        }
+    }
+    &__btn{
+        margin-bottom: 20px;
+    }
+    &__policy{
+        text-align: center;
+        a{
+            color: #4c6fbf;
+        }
+    }
+}

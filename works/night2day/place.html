@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+	<meta charset="UTF-8">
+	<title>Заведение</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/jquery-ui.min.css">
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div class="wrapper">
+	<div class="main">
+		<header class="header">
+			<div class="header-table table">
+				<div class="cell">
+					<a href="#" class="header-logo"><img src="images/logo.svg" width="158px" height="45px" alt="image"></a>
+				</div>
+				<div class="cell">
+					<div class="header-city">
+						<div class="header-city-select select">
+							<div class="select-title">
+								<div class="select-title__arrow"></div>
+								<div class="select-title__value">Москва</div>
+							</div>
+							<div class="select-options">
+								<div class="select-options-inside">
+									<div class="select-options__value">Москва</div>
+									<div class="select-options__value">Санкт-Петербург</div>
+									<div class="select-options__value">Казань</div>
+									<div class="select-options__value">Нижний-Новгород</div>
+									<div class="select-options__value">Сочи</div>
+									<div class="select-options__value">Киев</div>
+									<div class="select-options__value">Роство-на-Дону</div>
+									<div class="select-options__value">Другой город</div>
+									<div class="select-options__value">Другой город</div>
+									<div class="select-options__value">Другой город</div>
+									<div class="select-options__value">Другой город</div>
+									<div class="select-options__value">Другой город</div>
+								</div>
+								<input type="hidden" value="Москва" name="form[]">
+							</div>
+						</div>
+						<div class="header-phone">
+							<div class="header-phone-table table">
+								<div class="cell">RU</div>
+								<div class="cell"><i class="flag flag-ru"></i></div>
+								<div class="cell"><a href="tel:+74956466266" class="header-phone__number">+7 495 646 62 66</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cell">
+					<div class="header-search">
+						<div class="header-search__switcher"></div>
+						<form action="#" class="header-search-form">
+							<input type="text" class="header-search__field" placeholder="Что ищем?">
+							<div class="header-search-dropown">
+								<div class="header-search-dropown-scroll">
+									<div class="header-search-list">
+										<div class="header-search__item">Воленок</div>
+										<div class="header-search__item">Siberia</div>
+										<div class="header-search__item">Пряности и радости</div>
+										<div class="header-search__item">Поиск 5</div>
+										<div class="header-search__item">Поиск 6</div>
+										<div class="header-search__item">Пряности и радости</div>
+										<div class="header-search__item">Воленок</div>
+										<div class="header-search__item">Siberia</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="cell cell_full">
+					<nav class="header-menu clr">
+						<div class="header-menu__switcher"><span></span></div>
+						<ul>
+							<li class="current-menu-item"><a href="#">Главная</a></li>
+							<li><a href="#">Анонсы</a></li>
+							<li><a href="#">Фото</a></li>
+							<li><a href="#">Видео</a></li>
+							<li><a href="#">Заведения</a></li>
+							<li><a href="#">Чтиво</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header><!-- end header -->
+
+		<div class="top-inner-banner banner">
+			<a href="#" class="banner-body">
+				<img src="images/content/banner-top.jpg" alt="image">
+			</a>
+		</div><!-- end top-inner-banner -->
+
+		<div class="content">
+			<div class="content-top">
+				<div class="content__title">Duran Bar</div>
+			</div>
+			<div class="content-section clr">
+				<div class="content-leftside">
+					<div class="place-slider-section">
+						<div class="place-slider">
+							<div class="place-slider-slide">
+								<div class="place-slider__image img-container"><img src="images/content/places/place-slider-image1.jpg" alt="image"></div>
+							</div>
+							<div class="place-slider-slide">
+								<div class="place-slider__image img-container"><img src="images/content/places/place-slider-image2.jpg" alt="image"></div>
+							</div>
+							<div class="place-slider-slide">
+								<div class="place-slider__image img-container"><img src="images/content/places/place-slider-image1.jpg" alt="image"></div>
+							</div>
+							<div class="place-slider-slide">
+								<div class="place-slider__image img-container"><img src="images/content/places/place-slider-image2.jpg" alt="image"></div>
+							</div>
+							<div class="place-slider-slide">
+								<div class="place-slider__image img-container"><img src="images/content/places/place-slider-image1.jpg" alt="image"></div>
+							</div>
+							<div class="place-slider-slide">
+								<div class="place-slider__image img-container"><img src="images/content/places/place-slider-image2.jpg" alt="image"></div>
+							</div>
+						</div>
+						<div class="place-pager">
+							<a href="" data-slide-index="0" class="place-pager__item">
+								<span class="img-container"><img src="images/content/places/place-pager-image1.jpg" alt="image"></span>
+							</a>
+							<a href="" data-slide-index="1" class="place-pager__item">
+								<span class="img-container"><img src="images/content/places/place-pager-image2.jpg" alt="image"></span>
+							</a>
+							<a href="" data-slide-index="2" class="place-pager__item">
+								<span class="img-container"><img src="images/content/places/place-pager-image1.jpg" alt="image"></span>
+							</a>
+							<a href="" data-slide-index="3" class="place-pager__item">
+								<span class="img-container"><img src="images/content/places/place-pager-image2.jpg" alt="image"></span>
+							</a>
+							<a href="" data-slide-index="4" class="place-pager__item">
+								<span class="img-container"><img src="images/content/places/place-pager-image1.jpg" alt="image"></span>
+							</a>
+							<a href="" data-slide-index="5" class="place-pager__item">
+								<span class="img-container"><img src="images/content/places/place-pager-image2.jpg" alt="image"></span>
+							</a>
+						</div>
+					</div>
+				</div><!-- end content-leftside -->
+				<div class="content-rightside">
+					<div class="place-logo">
+						<div class="place-logo__image"><img src="images/content/places/place-logo.png" alt="image"></div>
+					</div>
+					<div class="place-info">
+						<a href="tel:+79651392929" class="place-phone">+7 (965) 139-29-29</a>
+						<div class="place-stats-list">
+							<div class="place-stat place-stat_metro">Краснопресненская</div>
+							<div class="place-stat place-stat_address">Рочдельская, 15, стр. 19-20</div>
+							<div class="place-stat place-stat_timetable">Вт-cр 16.00 – 0.00, Чт-сб 17.00 – 6.00,<br> Вс 17.00 – 0.00</div>
+							<div class="place-stat place-stat_food">Завтраки 7.00 – 11.00, Ланчи 7.00 – 11.00</div>
+							<div class="place-stat place-stat_price">Средний чек: 2500 руб.</div>
+							<div class="place-stat place-stat_card">Банковские карты: да</div>
+							<div class="place-stat place-stat_wifi">Wi-Fi: есть</div>
+							<div class="place-stat place-stat_parking">Парковка: есть</div>
+							<div class="place-stat place-stat_delivery">Доставка: нет</div>
+							<div class="place-stat place-stat_catering">Кейтеринг: нет</div>
+						</div>
+					</div>
+				</div><!-- end content-rightside -->
+			</div><!-- end content-section -->
+
+			<div class="content-section clr">
+				<div class="content-leftside">
+					<div class="place-description">
+						<p>С четверга по субботу по вечерам здесь полным ходом идут вечеринки и концерты. Выступают весьма именитые звезды и ди-джеи. Поэтому афиша Duran bar всегда полна интересных новостей. Наряду с музыкальными и танцевальными мероприятиями в ней заявлены также тематические ужины от шеф-повара Кирилла Еселева. Стейки, бургеры, морепродукты и сезонные блюда – к каждому такому ужину разрабатывается специальное меню.  </p>
+						<p>Кухня Duran bar – одна из самых сильных сторон заведения. В меню - европейские блюда в авторском исполнении. Отдельный раздел посвящен японским роллам – также авторским, а потому необычным. В числе хитов меню: паштет из куриной печени с грушевым мастардом, сеном из порея и бриошью, по-домашнему вкусные котлеты из щуки – с пюре из цуккини, соусом голландез и свежим огурцом, зеленое перлотто с томленым говяжьим ребром, ассорти брускетт – с лососем, с ростбифом, брынзой и томатами, креветкой и авокадо, глубцы с уткой, ризотто из рубинового риса с соусом из портвейна.. Необычайно популярна мясная тарелка с ассорти деликатесов собственного приготовления – окорок, брезаола, а также куриные чипсы, которые стали настоящим лакомством для любителей мяса.</p>
+						<p>Бартендеры Duran bar видят свою задачу не только в обеспечении работы бара, но и в продвижении барной культуры. Не просто смешать коктейль или поддержать разговор с гостем, но также предоставить новую информацию. Бармены здесь в курсе всех мировых трендов и новинок, поэтому с удовольствием проконсультируют, расскажут об интересных сортах, скажем, виски или джина. Коктейли здесь готовят как по карте (классические и авторские), так и на заказ. Это касается также лимонадов. В Duran bar приходят не только за любимыми вкусами, но и за новыми впечатлениями и знаниями. Шеф-бармен Duran Bar и один из основателей команды Артур Шустериовас говорит: «Настоящий бартендер как хороший друг, знает правильный рецепт вашего вечера и сможет подобрать напиток и по случаю».</p>
+						<p>Поводов провести время в Duran bar и оценить кухню и барную карту – множество. Это не только мероприятия, заявленные в афише. Несколько залов – включая караоке-зал, концертный зал и летнюю веранду с видом на Москву-реку – предоставляют возможность провести мероприятие – праздничное, корпоративное или деловое – которое. Несомненно, запомнится всем участникам.</p>
+					</div>
+					<div class="place-menu">
+						<div class="place-menu-top clr">
+							<div class="place-menu__title">Меню</div>
+							<a href="#" class="place-menu__show">посмотреть полностью</a>
+						</div>
+						<div class="place-menu-row clr">
+							<div class="place-menu-column">
+								<div class="place-menu-item">
+									<div class="place-menu-item__image img-container"><img src="images/content/places/place-menu-image1.jpg" alt="image"></div>
+									<div class="place-menu-item__description">
+										<div class="cell">Бургер от шеф-повара из премиум говядиной и итальянским сыром</div>
+									</div>
+								</div>
+							</div>
+							<div class="place-menu-column">
+								<div class="place-menu-item">
+									<div class="place-menu-item__image img-container"><img src="images/content/places/place-menu-image2.jpg" alt="image"></div>
+									<div class="place-menu-item__description">
+										<div class="cell">Бургер от шеф-повара из премиум</div>
+									</div>
+								</div>
+							</div>
+							<div class="place-menu-column">
+								<div class="place-menu-item">
+									<div class="place-menu-item__image img-container"><img src="images/content/places/place-menu-image3.jpg" alt="image"></div>
+									<div class="place-menu-item__description">
+										<div class="cell">Бургер от шеф-повара из премиум говядиной и итальянским сыром</div>
+									</div>
+								</div>
+							</div>
+							<div class="place-menu-column">
+								<div class="place-menu-item">
+									<div class="place-menu-item__image img-container"><img src="images/content/places/place-menu-image4.jpg" alt="image"></div>
+									<div class="place-menu-item__description">
+										<div class="cell">Бургер от шеф-повара из премиум говядиной и итальянским сыром</div>
+									</div>
+								</div>
+							</div>
+							<div class="place-menu-column">
+								<div class="place-menu-item">
+									<div class="place-menu-item__image img-container"><img src="images/content/places/place-menu-image5.jpg" alt="image"></div>
+									<div class="place-menu-item__description">
+										<div class="cell">Бургер от шеф-повара из премиум говядиной</div>
+									</div>
+								</div>
+							</div>
+							<div class="place-menu-column">
+								<div class="place-menu-item">
+									<div class="place-menu-item__image img-container"><img src="images/content/places/place-menu-image6.jpg" alt="image"></div>
+									<div class="place-menu-item__description">
+										<div class="cell">Бургер от шеф-повара из премиум говядиной и итальянским сыром</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="content-banner banner">
+						<a href="#" class="banner-body">
+							<img src="images/content/banner4.jpg" alt="image">
+						</a>
+					</div>
+					<div class="place-reviews">
+						<div class="content-top">
+							<div class="content__title">Отзывы</div>
+						</div>
+						<div class="place-reviews-list">
+							<div class="place-review-item">
+								<div class="place-review-item-top">
+									<div class="place-review-item__name">Олег Семенов</div>
+									<div class="place-review-item__date">21 сентября 2016 г.</div>
+									<a href="#" class="place-review-item__thumb"></a>
+								</div>
+								<div class="place-review-item__text">
+									<p>Очень понравился ресторан. Блюда вкусные, порции немаленькие, официантка Катя очень милая и приветливая!</p>
+									<p>Единственное, что не понравилось - сидели около окна и было довольно холодно.</p>
+								</div>
+							</div>
+							<div class="place-review-item">
+								<div class="place-review-item-top">
+									<div class="place-review-item__name">Олег Семенов</div>
+									<div class="place-review-item__date">21 сентября 2016 г.</div>
+									<a href="#" class="place-review-item__thumb"></a>
+								</div>
+								<div class="place-review-item__text">
+									<p>Очень понравился ресторан. Блюда вкусные, порции немаленькие, официантка Катя очень милая и приветливая!</p>
+									<p>Единственное, что не понравилось - сидели около окна и было довольно холодно.</p>
+								</div>
+							</div>
+							<div class="place-review-item">
+								<div class="place-review-item-top">
+									<div class="place-review-item__name">Олег Семенов</div>
+									<div class="place-review-item__date">21 сентября 2016 г.</div>
+									<a href="#" class="place-review-item__thumb"></a>
+								</div>
+								<div class="place-review-item__text">
+									<p>Очень понравился ресторан. Блюда вкусные, порции немаленькие, официантка Катя очень милая и приветливая!</p>
+									<p>Единственное, что не понравилось - сидели около окна и было довольно холодно.</p>
+								</div>
+							</div>
+						</div>
+						<div class="place-review-form-wrap">
+							<form action="#" class="place-review-form">
+								<div class="form-row clr">
+									<textarea class="form-area" placeholder="Расскажите Ваше мнение..."></textarea>
+								</div>
+								<div class="form-row clr">
+									<div class="form-column pull-left">
+										<div class="form-item">
+											<div class="form-item__label">Ваше имя:</div>
+											<input type="text" class="form-item__field" placeholder="Иван">
+										</div>
+									</div>
+									<div class="form-column pull-right">
+										<div class="form-rate">
+											<a href="#" class="form-rate__btn rate-up"></a>
+											<a href="#" class="form-rate__btn rate-down"></a>
+										</div>
+										<button type="submit" class="place-review__btn">Оставить отзыв</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div><!-- end content-leftside -->
+				<div class="content-rightside">
+					<div class="place-map">
+						<div class="place-map__frame">
+							<iframe src="https://yandex.ua/map-widget/v1/-/CButBVGbkC" width="100%" height="210px" frameborder="1" allowfullscreen="true"></iframe>
+						</div>
+					</div>
+					<div class="rightsite-row clr">
+						<div class="rightsite-column">
+							<div class="event-specialitem">
+								<div class="event-specialitem__date">18 <span>Фев</span></div>
+								<a href="#" class="event-specialitem__image img-container"><img src="images/content/events/event-special-image1.jpg" alt="image"></a>
+								<div class="event-specialitem-content">
+									<div class="event-specialitem__category">Grand opening weekend. Day 1</div>
+									<div class="event-specialitem__title"><a href="#">На волне на волне by soho rooms</a></div>
+									<div class="event-specialitem-tags">
+										<a href="#" class="event-specialitem__tag">Ресторан</a>
+										<a href="#" class="event-specialitem__tag">Бар</a>
+										<a href="#" class="event-specialitem__tag">Клуб</a>
+									</div>
+									<div class="event-specialitem-stats">
+										<div class="event-specialitem__views">52131</div>
+										<div class="event-specialitem__favorite">2</div>
+										<div class="event-specialitem__photos">64</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="rightsite-column">
+							<div class="content-bigbanner banner">
+								<a href="#" class="banner-body"><img src="images/content/banner1.jpg" alt="image"></a>
+							</div>
+						</div>
+					</div>
+				</div><!-- end content-rightside -->
+			</div><!-- end content-section -->
+		</div><!-- end content -->
+
+		<div class="banner">
+			<a href="#" class="banner-body">
+				<img src="images/content/banner-top.jpg" alt="image">
+			</a>
+		</div><!-- end banner -->
+
+		<footer class="footer">
+			<div class="footer-table table">
+				<div class="cell">
+					<a href="#" class="footer-logo"><img src="images/logo.svg" width="158px" height="45px" alt="image"></a>
+				</div>
+				<div class="cell cell_full">
+					<nav class="footer-menu">
+						<ul>
+							<li><a href="#">Главная</a></li>
+							<li><a href="#">Фото</a></li>
+							<li><a href="#">Видео</a></li>
+							<li><a href="#">Анонсы</a></li>
+							<li><a href="#">Заведения</a></li>
+							<li><a href="#">Чтиво</a></li>
+							<li><a href="#">О портале</a></li>
+							<li><a href="#">Вакансии</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="cell">
+					<div class="footer-user">
+						<a href="#" class="footer-enter">Вход</a>
+						<div class="footer-social">
+							<a href="#" class="social-btn vk"></a>
+							<a href="#" class="social-btn fb"></a>
+							<a href="#" class="social-btn inst"></a>
+							<a href="#" class="social-btn ytube"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer><!-- end footer -->
+	</div><!-- end main -->
+</div><!-- end wrapper -->
+
+	<script src="scripts/libs/jquery-2.1.1.min.js"></script>
+	<script src="scripts/libs/jquery.bxslider.min.js"></script>
+	<script src="scripts/libs/slick.min.js"></script>
+	<script src="scripts/libs/jquery.jscrollpane.min.js"></script>
+	<script src="scripts/libs/jquery.mousewheel.js"></script>
+	<script src="scripts/libs/jquery.arcticmodal-0.3.min.js"></script>
+	<script src="scripts/libs/jquery.maskedinput.min.js"></script>
+	<script src="scripts/libs/jquery.placeholder.min.js"></script>
+	<script src="scripts/main.js"></script>
+</body>
+</html>
