@@ -1660,6 +1660,9 @@ table {
 .header-social__btn:hover {
   opacity: 0.8;
 }
+.header-social__btn_mobile {
+  display: none;
+}
 
 /*----------------------promo----------------------*/
 .promo {
@@ -2786,17 +2789,34 @@ table {
   .header {
     padding: 12px 0;
   }
+  .header-logo {
+    height: 32px;
+  }
   .header-logo__img {
     width: 126px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
   }
   .header-logo__img img {
     width: 100%;
+  }
+  .header-social {
+    padding: 0;
   }
   .header-social__btn {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 32px;
             flex: 0 0 32px;
     height: 32px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .header-social__btn_mobile {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
   }
   .header-menu__toggle {
     -webkit-box-flex: 0;
@@ -3013,5 +3033,17 @@ table {
 @media only screen and (max-width: 359px) {
   .tariffs-item__title {
     font-size: 16px;
+  }
+  .header-logo__img {
+    width: 115px;
+  }
+  .header-menu__toggle {
+    margin-left: 12px;
+  }
+  .header-social__btn {
+    margin-left: 12px;
+  }
+  .header-social__btn:first-child {
+    margin-left: 0;
   }
 }
