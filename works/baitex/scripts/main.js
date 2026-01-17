@@ -1,11 +1,46 @@
 $(document).ready(function(){
     // Menu
-	$(".header-menu__switcher").click(function(){
+	$(".header-menu__toggle").click(function(){
+		$("body").addClass("lock");
 		$(".header-menu").addClass("open");
 	});
     $(".header-menu__close").click(function(){
+		$("body").removeClass("lock");
 		$(".header-menu").removeClass("open");
 	});
+    $(function () {
+        const bp = 768;
+
+        const isMobile = () => window.innerWidth <= bp;
+
+        // клик только по спану в .has-submenu
+        $('.header-menu__list').on('click', '.has-submenu > span', function () {
+            if (!isMobile()) return;
+
+            const $li = $(this).closest('.has-submenu');
+            const $drop = $li.children('.header-menu__dropdown');
+
+            // аккордеон: закрыть остальные (если не надо — убери этот блок)
+            $li.siblings('.has-submenu')
+            .removeClass('is-open')
+            .children('.header-menu__dropdown')
+            .stop(true, true)
+            .slideUp(200);
+
+            $li.toggleClass('is-open');
+            $drop.stop(true, true).slideToggle(200);
+        });
+
+        // при возврате на десктоп: убрать inline-стили и классы
+        $(window).on('resize', function () {
+            if (!isMobile()) {
+            $('.has-submenu')
+                .removeClass('is-open')
+                .children('.header-menu__dropdown')
+                .removeAttr('style');
+            }
+        });
+    });
 
     // Phone mask
 	$(".phone_mask").inputmask("+7 (999) 999 99 99");
@@ -43,9 +78,9 @@ $(document).ready(function(){
 			autoplaySpeed: 3000,
 			responsive: [
 			{
-				breakpoint: 222,
+				breakpoint: 1299,
 				settings: {
-					slidesToShow:2,
+					slidesToShow: 2,
 				}
 			},
 			{
@@ -69,9 +104,15 @@ $(document).ready(function(){
 			autoplaySpeed: 3000,
 			responsive: [
 			{
-				breakpoint: 222,
+				breakpoint: 1299,
 				settings: {
-					slidesToShow:2,
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 991,
+				settings: {
+					slidesToShow: 2,
 				}
 			},
 			{

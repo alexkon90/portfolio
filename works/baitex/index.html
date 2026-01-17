@@ -19,13 +19,16 @@
                     <a href="#" class="header-logo__img"><img src='img/logo.png' alt='img'></a>
                 </div>
                 <nav class="header-menu">
+                    <div class="header-menu__close"><img src='img/Icon-menu-close.svg' alt='img'></div>      
                     <ul class="header-menu__list">
                         <li><a href="#">Компания</a></li>
-                        <li class="open">
-                                <span>Услуги</span>
+                        <li class="has-submenu">
+                            <span>
+                                Услуги
                                 <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.75 0.75L5.75 5.75L10.75 0.75" stroke="#232323" stroke-width="1.5" stroke-linecap="round" />
                                 </svg>
+                            </span>
                             <div class="header-menu__dropdown">
                                 <ul class="header-menu__submenu">
                                     <li><a href="#">Создание сайтов</a></li>
@@ -50,6 +53,9 @@
                         <a href="#" class="header-social__btn"><img src='img/social-whatsapp.svg' alt='img'></a>
                         <a href="#" class="header-social__btn"><img src='img/social-telegram.svg' alt='img'></a>
                     </div>
+                    <div class="header-menu__toggle">
+                        <img src='img/icon-menu.svg' alt='img'>
+                    </div>
                 </div>
             </div>
         </div><!-- end center-wrapper center-wrapper_wide -->
@@ -65,6 +71,9 @@
                         <li>Услуги</li>
                     </ul>
                     <h1 class="promo__title">Техническая поддержка<br> сайтов на 1C-Битрикс</h1>
+                    <div class="promo__mobile">
+                        <div class="promo__img promo__img_shadow"><img src='./img/content/promo-image.png' alt='img'></div>
+                    </div>
                     <ul class="promo-features">
                         <li class="promo-features__item">Обеспечим <span>стабильную</span> и <span>бесперебойную</span> работу проекта 24/7</li>
                         <li class="promo-features__item">Поддержим антивирусную защиту <span>в актуальном</span> состоянии</li>
@@ -553,54 +562,56 @@
 
     <footer class="footer">
         <div class='center-wrapper'>
-            <div class="footer__top">
-                <div class="footer-logo">
-                    <a href="#" class="footer-logo__img"><img src='img/logo.png' alt='img'></a>
+            <div class="footer__body">
+                <div class="footer__top">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo__img"><img src='img/logo.png' alt='img'></a>
+                    </div>
+                    <nav class="footer-menu">
+                        <ul class="footer-menu__list">
+                            <li><a href="#">Компания</a></li>
+                            <li><a href="#">Услуги</a></li>
+                            <li><a href="#">Портфолио</a></li>
+                            <li><a href="#">Карьера</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <nav class="footer-menu">
-                    <ul class="footer-menu__list">
-                        <li><a href="#">Компания</a></li>
-                        <li><a href="#">Услуги</a></li>
-                        <li><a href="#">Портфолио</a></li>
-                        <li><a href="#">Карьера</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer__center">
-                <div class="footer__row">
-                    <div class="footer__col footer__col_adress">
-                        <div class="footer-address">
-                            <div class="footer-address__caption">Москва</div>
-                            <div class="footer-address__text">Рязанский проспект, 97к2</div>
+                <div class="footer__center">
+                    <div class="footer__row">
+                        <div class="footer__col footer__col_adress">
+                            <div class="footer-address">
+                                <div class="footer-address__caption">Москва</div>
+                                <div class="footer-address__text">Рязанский проспект, 97к2</div>
+                            </div>
+                        </div>
+                        <div class="footer__col footer__col_adress">
+                            <div class="footer-address">
+                                <div class="footer-address__caption">Нижний Новгород</div>
+                                <div class="footer-address__text">ул. Московское шоссе, 12</div>
+                            </div>
+                        </div>
+                        <div class="footer__col footer__col_phone">
+                            <a href="tel:+74954143525" class="footer-phone">+7 (495) 414-35-25</a>
+                        </div>
+                        <div class="footer__col footer__col_mail">
+                            <a href="mailto:mail@baitex.ru" class="footer-mail">mail@baitex.ru</a>
+                        </div>
+                        <div class="footer__col footer__col_social">
+                            <div class="footer-social">
+                                <a href="#" class="footer-social__btn"><img src='img/social-whatsapp.svg' alt='img'></a>
+                                <a href="#" class="footer-social__btn"><img src='img/social-telegram.svg' alt='img'></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer__col footer__col_adress">
-                        <div class="footer-address">
-                            <div class="footer-address__caption">Нижний Новгород</div>
-                            <div class="footer-address__text">ул. Московское шоссе, 12</div>
-                        </div>
-                    </div>
-                    <div class="footer__col footer__col_phone">
-                        <a href="tel:+74954143525" class="footer-phone">+7 (495) 414-35-25</a>
-                    </div>
-                    <div class="footer__col footer__col_mail">
-                        <a href="mailto:mail@baitex.ru" class="footer-mail">mail@baitex.ru</a>
-                    </div>
-                    <div class="footer__col footer__col_social">
-                        <div class="footer-social">
-                            <a href="#" class="footer-social__btn"><img src='img/social-whatsapp.svg' alt='img'></a>
-                            <a href="#" class="footer-social__btn"><img src='img/social-telegram.svg' alt='img'></a>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <div class="footer__bottom">
-                <div class="footer-links">
-                    <a href="#" class="footer-links__item">Политика конфиденциальности</a>
-                    <a href="#" class="footer-links__item">Пользовательское соглашение</a>
+                <div class="footer__bottom">
+                    <div class="footer-links">
+                        <a href="#" class="footer-links__item">Политика конфиденциальности</a>
+                        <a href="#" class="footer-links__item">Пользовательское соглашение</a>
+                    </div>
+                    <div class="footer-copyright">&copy; 2011–2024 Baitex</div>
                 </div>
-                <div class="footer-copyright">&copy; 2011–2024 Baitex</div>
             </div>
         </div><!-- end center-wrapper -->
     </footer><!-- end footer -->
