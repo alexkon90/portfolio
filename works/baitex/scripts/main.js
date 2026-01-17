@@ -9,18 +9,16 @@ $(document).ready(function(){
 		$(".header-menu").removeClass("open");
 	});
     $(function () {
-        const bp = 768;
-
+        const bp = 1299;
         const isMobile = () => window.innerWidth <= bp;
 
-        // клик только по спану в .has-submenu
         $('.header-menu__list').on('click', '.has-submenu > span', function () {
             if (!isMobile()) return;
 
             const $li = $(this).closest('.has-submenu');
             const $drop = $li.children('.header-menu__dropdown');
 
-            // аккордеон: закрыть остальные (если не надо — убери этот блок)
+            // close other submenus
             $li.siblings('.has-submenu')
             .removeClass('is-open')
             .children('.header-menu__dropdown')
@@ -31,7 +29,6 @@ $(document).ready(function(){
             $drop.stop(true, true).slideToggle(200);
         });
 
-        // при возврате на десктоп: убрать inline-стили и классы
         $(window).on('resize', function () {
             if (!isMobile()) {
             $('.has-submenu')
@@ -68,29 +65,34 @@ $(document).ready(function(){
 
     // Tariffs carousel
 	if($('.tariffs-carousel').length > 0){
-		$('.tariffs-carousel').slick({
-			//autoplay: true,
-			infinite: false,
-			arrows: true,
-			dots: false,
-			slidesToShow: 3,
-			accessibility: false,
-			autoplaySpeed: 3000,
-			responsive: [
-			{
-				breakpoint: 1299,
-				settings: {
-					slidesToShow: 2,
-				}
-			},
-			{
-				breakpoint: 111,
-				settings: {
-					slidesToShow:1,
-				}
-			}]
-		});
+        function initSlick() {
+            $('.tariffs-carousel').slick({
+                //autoplay: true,
+                infinite: false,
+                arrows: true,
+                dots: false,
+                slidesToShow: 3,
+                accessibility: false,
+                autoplaySpeed: 3000,
+                responsive: [
+                {
+                    breakpoint: 1299,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: "unslick"
+                }]
+            });
+        }
 	}
+    $(window).on('load resize', function() {
+        if ($(window).width() > 767 && !$('.tariffs-carousel').hasClass('slick-initialized')) {
+            initSlick();
+        }
+    });
 
     // Reviews carousel
 	if($('.reviews-carousel').length > 0){
@@ -116,9 +118,11 @@ $(document).ready(function(){
 				}
 			},
 			{
-				breakpoint: 111,
+				breakpoint: 576,
 				settings: {
-					slidesToShow:1,
+					slidesToShow: 1,
+                    variableWidth: true,
+                    arrows: false
 				}
 			}]
 		});
