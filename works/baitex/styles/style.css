@@ -1488,14 +1488,12 @@ table {
 }
 
 .header-menu__close {
+  display: none;
   position: absolute;
   top: 25px;
   right: 40px;
   width: 40px;
   height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2570,6 +2568,11 @@ table {
   }
   .header-menu__list .header-menu__submenu li a {
     font-size: 18px;
+  }
+  .header-menu__close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .header-contacts {
     margin-left: auto;
