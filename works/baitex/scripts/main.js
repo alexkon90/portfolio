@@ -53,14 +53,23 @@ $(document).ready(function(){
 
             if (!$content.length) return;
 
-            const $root = $caption.closest('.accordeon-list'); 
-            const $opened = $root.find('.accordeon-list__content:visible').not($content);
-
-            $opened.stop(true, true).slideUp(300).parent().removeClass('active');
-
             $content.stop(true, true).slideToggle(300);
             $item.toggleClass('active');
         });
+    });
+
+    // Tabs
+    $(document).on('click', '.capabilities-tabs__btn', function() {
+        const $btn = $(this);
+        const $tabs = $btn.closest('.capabilities-tabs');
+        const index = $btn.index();
+
+        $btn.addClass('active')
+            .siblings().removeClass('active');
+
+        $tabs.find('.capabilities-tabs__section')
+            .removeClass('active')
+            .eq(index).addClass('active');
     });
 
     // Tariffs carousel
@@ -87,12 +96,13 @@ $(document).ready(function(){
                 }]
             });
         }
-	}
+
     $(window).on('load resize', function() {
         if ($(window).width() > 767 && !$('.tariffs-carousel').hasClass('slick-initialized')) {
             initSlick();
         }
     });
+	}
 
     // Reviews carousel
 	if($('.reviews-carousel').length > 0){
@@ -113,6 +123,34 @@ $(document).ready(function(){
 			},
 			{
 				breakpoint: 991,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1,
+                    variableWidth: true,
+                    arrows: false
+				}
+			}]
+		});
+	}
+
+    // Projects carousel
+	if($('.projects-carousel').length > 0){
+		$('.projects-carousel').slick({
+			//autoplay: true,
+			infinite: false,
+			arrows: true,
+			dots: false,
+			slidesToShow: 3,
+			accessibility: false,
+			autoplaySpeed: 3000,
+			responsive: [
+			{
+				breakpoint: 1299,
 				settings: {
 					slidesToShow: 2,
 				}

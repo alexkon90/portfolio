@@ -16,7 +16,9 @@
         <div class='center-wrapper center-wrapper_wide'>
             <div class="header__body">
                 <div class="header-logo">
-                    <a href="#" class="header-logo__img"><img src='img/logo.png' alt='img'></a>
+                    <a href="#" class="header-logo__img">
+                        <img src="img/logo.png" srcset="img/logo.png 1x, img/logo2х.png 2x">
+                    </a>
                 </div>
                 <nav class="header-menu">
                     <div class="header-menu__close"><img src='img/Icon-menu-close.svg' alt='img'></div>      
@@ -73,7 +75,9 @@
                     </ul>
                     <h1 class="promo__title">Техническая поддержка<br> сайтов на 1C-Битрикс</h1>
                     <div class="promo__mobile">
-                        <div class="promo__img promo__img_shadow"><img src='./img/content/promo-image.png' alt='img'></div>
+                        <div class="promo__img promo__img_shadow">
+                            <img src="./img/content/promo-image.png" srcset="./img/content/promo-image.png 1x, ./img/content/promo-image-2x.png 2x">
+                        </div>
                     </div>
                     <ul class="promo-features">
                         <li class="promo-features__item">Обеспечим <span>стабильную</span> и <span>бесперебойную</span> работу проекта 24/7</li>
@@ -82,7 +86,9 @@
                     </ul>
                     <a href="#" class="promo__callback btn js-btn-callback">Оставить заявку</a>
                 </div>
-                <div class="promo__img promo__img_pt promo__img_shadow"><img src='./img/content/promo-image.png' alt='img'></div>
+                <div class="promo__img promo__img_tech promo__img_shadow">
+                    <img src="./img/content/promo-image.png" srcset="./img/content/promo-image.png 1x, ./img/content/promo-image-2x.png 2x">
+                </div>
             </div>
         </div><!-- end center-wrapper -->
     </section><!-- end promo -->
@@ -222,7 +228,7 @@
         <div class='center-wrapper'>
             <h2 class="section__title">Какие задачи мы решаем</h2>
             <div class="accordeon-list">
-                <div class="accordeon-list__item active">
+                <div class="accordeon-list__item">
                     <div class="accordeon-list__caption">Мониторинг доступности сервера и сайта</div>
                     <div class="accordeon-list__content">
                         <div class="accordeon-list__content-body">
@@ -376,7 +382,7 @@
                 </div>
             </div>
         </div><!-- end center-wrapper -->
-    </section><!-- end promo -->
+    </section><!-- end benefits -->
 
     <section class="section reviews">
         <div class='center-wrapper'>
@@ -388,7 +394,9 @@
                             <div class="reviews-item__author">Тараканов М. Е.</div>
                             <div class="reviews-item__post">Директор компании «ТехДеталь»</div>
                         </div>
-                        <a href="img/content/review-image1.jpg" data-fancybox="reviews" class="reviews-item__img fancybox"><img src='img/content/review-image1.jpg' alt='img'></a>
+                        <a href="img/content/review-image1.jpg" data-fancybox="reviews" class="reviews-item__img fancybox">
+                            <img src="img/content/review-image1.jpg" srcset="img/content/review-image1.jpg 1x, img/content/review-image1-2х.jpg 2x">
+                        </a>
                     </div>
                 </div>
                 <div class="reviews-carousel__slide">
@@ -537,23 +545,23 @@
                         <div class="mainform__col">
                             <div class="mainform-item">
                                 <div class="mainform-item__label">Имя *</div>
-                                <input type="text" class="mainform-item__input" placeholder="Введите имя">
+                                <input type="text" class="mainform-item__input" placeholder="Введите имя" required>
                             </div>
                         </div>
                         <div class="mainform__col">
                             <div class="mainform-item">
                                 <div class="mainform-item__label">Телефон *</div>
-                                <input type="text" class="mainform-item__input phone_mask" placeholder="Введите телефон">
+                                <input type="text" class="mainform-item__input phone_mask" placeholder="Введите телефон" required>
                             </div>
                         </div>
                         <div class="mainform__col">
                             <div class="mainform-item">
                                 <div class="mainform-item__label">Email *</div>
-                                <input type="text" class="mainform-item__input" placeholder="Введите email">
+                                <input type="text" class="mainform-item__input" placeholder="Введите email" required>
                             </div>
                         </div>
                         <div class="mainform__col">
-                            <button type="button" class="mainform__btn btn btn_white">Получить</button>
+                            <button type="submit" class="mainform__btn btn btn_white">Получить</button>
                         </div>
                         <div class="mainform__col mainform__col_big">
                             <label class='mainform__policy checkbox checkbox_white'>
@@ -572,7 +580,9 @@
             <div class="footer__body">
                 <div class="footer__top">
                     <div class="footer-logo">
-                        <a href="#" class="footer-logo__img"><img src='img/logo.png' alt='img'></a>
+                        <a href="#" class="footer-logo__img">
+                            <img src="img/logo.png" srcset="img/logo.png 1x, img/logo2х.png 2x">
+                        </a>
                     </div>
                     <nav class="footer-menu">
                         <ul class="footer-menu__list">
@@ -631,13 +641,13 @@
 	        <div class="modal__title">Обратный звонок</div>
 	        <form action="#" class="modal-form">
 	            <div class="modal-form__item">
-	                <input type="text" class="input" placeholder="Имя *">
+	                <input type="text" class="input" placeholder="Имя *" required>
 	            </div>
 	            <div class="modal-form__item">
-	                <input type="text" class="input phone_mask" placeholder="Телефон *">
+	                <input type="text" class="input phone_mask" placeholder="Телефон *" required>
 	            </div>
 	            <div class="modal-form__item">
-	                <input type="text" class="input phone_mask" placeholder="Email *">
+	                <input type="text" class="input" placeholder="Email *" required>
 	            </div>
 	            <div class="modal-form__btn">
 	                <button type="submit" class="modal-form__btn btn">Отправить</button>
