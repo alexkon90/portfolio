@@ -4,7 +4,7 @@ $(document).ready(function(){
 		$("body").addClass("lock");
 		$(".header-menu").addClass("open");
 	});
-    $(".header-menu__close").click(function(){
+    $(".header-menu__close, .bg-menu").click(function(){
 		$("body").removeClass("lock");
 		$(".header-menu").removeClass("open");
 	});
@@ -97,12 +97,27 @@ $(document).ready(function(){
             });
         }
 
-    $(window).on('load resize', function() {
-        if ($(window).width() > 767 && !$('.tariffs-carousel').hasClass('slick-initialized')) {
-            initSlick();
+        $(window).on('load resize', function() {
+            if ($(window).width() > 767 && !$('.tariffs-carousel').hasClass('slick-initialized')) {
+                initSlick();
+            }
+        });
+	}
+
+    // Form validation
+    $(document).on('click', '.btn', function() {
+        const $form = $(this).closest('.form');
+        $form.find('input:not([type="hidden"]):not([disabled]), textarea').removeClass('error').each(function() {
+            if ($.trim($(this).val()) === '') {
+                $(this).addClass('error');
+            }
+        });
+    });
+    $(document).on('input', '.form input, .form textarea', function() {
+        if ($.trim($(this).val()) !== '') {
+            $(this).removeClass('error');
         }
     });
-	}
 
     // Reviews carousel
 	if($('.reviews-carousel').length > 0){
@@ -189,4 +204,4 @@ $(document).ready(function(){
 	    transitionEffect: "circular",
 	  });
 	});
-}); 
+});

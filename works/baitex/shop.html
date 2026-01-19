@@ -21,30 +21,38 @@
                     </a>
                 </div>
                 <nav class="header-menu">
-                    <div class="header-menu__close"><img src='img/Icon-menu-close.svg' alt='img'></div>      
-                    <ul class="header-menu__list">
-                        <li><a href="#">Компания</a></li>
-                        <li class="has-submenu">
-                            <span>
-                                Услуги
-                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.75 0.75L5.75 5.75L10.75 0.75" stroke="#232323" stroke-width="1.5" stroke-linecap="round" />
-                                </svg>
-                            </span>
-                            <div class="header-menu__dropdown">
-                                <ul class="header-menu__submenu">
-                                    <li><a href="#">Создание сайтов</a></li>
-                                    <li><a href="#">Интернет-магазины</a></li>
-                                    <li><a href="#">Поддержка и доработка</a></li>
-                                    <li><a href="#">Внедрение Битрикс24</a></li>
-                                    <li><a href="#">Продвижение сайтов</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a href="#">Портфолио</a></li>
-                        <li><a href="#">Карьера</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
+                    <div class="bg-menu"></div>
+                    <div class="header-menu__body">
+                        <div class="header-menu__close"><img src='img/Icon-menu-close.svg' alt='img'></div>      
+                        <ul class="header-menu__list">
+                            <li><a href="#">Компания</a></li>
+                            <li class="has-submenu">
+                                <span>
+                                    Услуги
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.75 0.75L5.75 5.75L10.75 0.75" stroke="#232323" stroke-width="1.5" stroke-linecap="round" />
+                                    </svg>
+                                </span>
+                                <div class="header-menu__dropdown">
+                                    <ul class="header-menu__submenu">
+                                        <li><a href="#">Создание сайтов</a></li>
+                                        <li><a href="#">Интернет-магазины</a></li>
+                                        <li><a href="#">Поддержка и доработка</a></li>
+                                        <li><a href="#">Внедрение Битрикс24</a></li>
+                                        <li><a href="#">Продвижение сайтов</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">Портфолио</a></li>
+                            <li><a href="#">Карьера</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                        <div class="mobile-contacts">
+                            <a href="#" class="mobile-contacts__callback btn js-btn-callback">Оставить заявку</a>
+                            <a href="tel:+74954143525" class="mobile-contacts__phone">+7 (495) 414-35-25</a>
+                            <a href="mailto:mail@baitex.ru" class="mobile-contacts__mail">mail@baitex.ru</a>
+                        </div>
+                    </div>
                 </nav>
                 <div class="header-contacts">
                     <div class="header-phone">
@@ -471,7 +479,7 @@
         <div class='center-wrapper'>
             <div class="mainform__body">
                 <h2 class="mainform__title section__title">Получить предварительный расчет стоимости<br> и сроков по вашему проекту</h2>
-                <form action="#">
+                <form action="#" class="form">
                     <div class="mainform__row">
                         <div class="mainform__col">
                             <div class="mainform-item">
@@ -570,18 +578,18 @@
 	    <div class="modal__close" data-fancybox-close><img src="img/icon-close.svg" width="20" height="20" alt="img"></div>
 	    <div class="modal__body">
 	        <div class="modal__title">Обратный звонок</div>
-	        <form action="#" class="modal-form">
+	        <form action="#" class="modal-form form">
 	            <div class="modal-form__item">
-	                <input type="text" class="input" placeholder="Имя *" required>
+	                <input type="text" class="input" placeholder="Имя *">
 	            </div>
 	            <div class="modal-form__item">
-	                <input type="text" class="input phone_mask" placeholder="Телефон *" required>
+	                <input type="text" class="input phone_mask" placeholder="Телефон *">
 	            </div>
 	            <div class="modal-form__item">
-	                <input type="text" class="input" placeholder="Email *" required>
+	                <input type="text" class="input" placeholder="Email *">
 	            </div>
 	            <div class="modal-form__btn">
-	                <button type="submit" class="modal-form__btn btn">Отправить</button>
+	                <button type="button" class="modal-form__btn btn">Отправить</button>
 	            </div>
 	        </form>
 	    </div>
