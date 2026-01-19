@@ -39,6 +39,23 @@ $(document).ready(function(){
         });
     });
 
+    // Gift
+    $(function() {
+        function toggleGiftState() {
+            if ($('.gift.active').length) {
+                $('body').addClass('gift_open');
+            } else {
+                $('body').removeClass('gift_open');
+            }
+        }
+        toggleGiftState();
+
+        $(document).on('click', '.gift__close', function() {
+            $('.gift').removeClass('active');
+            $('body').removeClass('gift_open');
+        });
+    });
+
     // Phone mask
 	$(".phone_mask").inputmask("+7 (999) 999 99 99");
 
