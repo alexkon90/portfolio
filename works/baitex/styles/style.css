@@ -1360,7 +1360,6 @@ table {
 .gift__text{
     font-size: 16px;
     line-height: 1.4;
-    font-weight: 600;
     color: #fff;
     margin-right: auto;
 }
@@ -2127,6 +2126,9 @@ body ::-moz-selection {
 }
 .tariffs-item_one .tariffs-item__label {
   background: #868686;
+}
+.tariffs-item_one .tariffs-item__text{
+    color: #232323;
 }
 .tariffs-item_basic:before {
   background: #FFCD4A;
@@ -3270,10 +3272,16 @@ body ::-moz-selection {
   .gift{
     margin-top: -10px;
   }
+  .promo__mobile{
+    justify-content: flex-start;
+  }
 }
 @media only screen and (max-width: 991px) {
   .center-wrapper {
     max-width: 720px;
+  }
+  .promo__mobile{
+    justify-content: center;
   }
   body.gift_open{
     padding-top: 194px;
@@ -3521,11 +3529,10 @@ body ::-moz-selection {
   .center-wrapper {
     max-width: 100%;
   }
-      .gift__img_mobile {
-        right: -10px;
-        top: 50px;
-    }
-    
+    .gift__img_mobile {
+    right: -10px;
+    top: 50px;
+}
   body {
     padding-top: 48px;
   }
@@ -3692,7 +3699,13 @@ body ::-moz-selection {
     padding: 20px;
   }
   .benefits-item__caption {
-    font-size: 14px;
+    font-size: 16px;
+  }
+  .header-logo{
+    margin-right: auto;
+  }
+  .benefits-item__top{
+    align-items: flex-start;
   }
   .benefits-item__desc {
     font-size: 14px;
@@ -3905,6 +3918,12 @@ body ::-moz-selection {
     margin-bottom: 20px;
     font-size: 16px;
   }
+    .services-item__title {
+        font-size: 20px;
+    }
+    .tariffs__row .tariffs-item__title{
+        font-size: 20px;
+    }
 }
 @media only screen and (max-width: 359px) {
   .tariffs-item__title {
