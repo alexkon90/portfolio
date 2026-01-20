@@ -3698,6 +3698,9 @@ body ::-moz-selection {
   .header-social{
       justify-content: flex-end;
   }
+  .header__body{
+    justify-content: start;
+  }
   .header-contacts{
     justify-content: flex-end;
   }
