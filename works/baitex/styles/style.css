@@ -3695,6 +3695,12 @@ body ::-moz-selection {
         -ms-flex: 0 0 32px;
             flex: 0 0 32px;
   }
+  .header-social{
+      justify-content: flex-end;
+  }
+  .header-contacts{
+    justify-content: flex-end;
+  }
   .benefits-item {
     padding: 20px;
   }
