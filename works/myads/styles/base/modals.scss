@@ -1,0 +1,35 @@
+/*==============================MODALS==============================*/
+.fancybox-close-small{
+    display: none;
+}
+.fancybox-slide--html{
+    padding: 15px;
+}
+.fancybox-bg {
+    background: #1e1e1e;
+    opacity: 0;
+}
+.fancybox-is-open .fancybox-bg {
+    opacity: .9;
+}
+.modal{
+    width: 500px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    &__close{
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        img{
+            width: 100%;
+        }
+    }
+    &__title{
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}

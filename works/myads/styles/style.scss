@@ -1,0 +1,13 @@
+@import "base/reset.scss";
+@import "base/plugins.scss";
+@import "base/general.scss";
+@import "base/forms.scss";
+@import "base/modals.scss";
+
+@import "partials/index.scss";
+
+@import "partials/adaptive-1399.scss";
+@import "partials/adaptive-1199.scss";
+@import "partials/adaptive-991.scss";
+@import "partials/adaptive-767.scss";
+@import "partials/adaptive-575.scss";

@@ -1,0 +1,121 @@
+/*==============================GENERAL==============================*/
+:root {
+  --font-main: "Google Sans", sans-serif;
+  --font-main2: "MyriadPro", sans-serif;
+  --font-accent: "Open Sans", sans-serif;
+  --font-system: Verdana, sans-serif;
+  --color-accent: #FFA420;
+}
+html, body{
+    position: relative;
+    font-family: var(--font-main);
+    background: #4c386d;
+    color: #fff;
+    min-width: 320px;
+}
+body{ 
+    line-height: 1;
+} 
+.wrapper{
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1647px;
+        height: 857px;
+        background-image: url(../img/bg-top.png);
+        z-index: -1;
+    }
+}
+.center-wrapper{
+	position: relative;
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1030px;
+}
+.center-wrapper_full{
+    max-width: 1900px;
+}
+h1, h2, h3, h4, h5, h6, .title_1, .title_2, .title_3, .title_4, .title_5, .title_6{
+	margin-bottom: 20px;
+	line-height: 1.2;
+    font-weight: 700;
+}
+h1, .title_1{
+    font-size: 30px;
+}
+h2, .title_2{
+    margin-bottom: 45px;
+    font-size: 35px;
+}
+p{
+	margin-bottom: 15px;
+}
+a{
+	outline: none;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+ul, ol{
+	list-style: none;
+}
+strong{
+    font-weight: 700;
+}
+em{
+    font-style: italic;
+}
+img{
+	height: auto;
+	vertical-align: top;
+}
+table{
+	width: 100%;
+}
+.text_center{
+    text-align: center;
+}
+.accent_color{
+    color: var(--color-accent);
+}
+.content{
+	ul{
+		padding-bottom: 15px;
+		li{
+			position: relative;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	ol{
+		padding-bottom: 15px;
+		counter-reset: myCounter;
+		li{
+			position: relative;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				counter-increment: myCounter;
+				content: counters(myCounter, ".") ". ";			
+			}
+		}
+		ol li{
+		    content: counters(item, ".") " ";
+		}
+	}
+}

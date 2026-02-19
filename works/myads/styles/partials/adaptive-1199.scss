@@ -1,0 +1,31 @@
+@media only screen and (max-width: 1279px) {
+    .center-wrapper{
+        max-width: 960px;
+    }
+	.features__row{
+        flex-wrap: wrap;
+    }
+	.features__col{
+        flex: 0 0 33.333%;
+        min-width: 0;
+    }
+    .fim_digit{
+        font-size: 60px;
+    }
+    .features-item__text{
+        font-size: 16px;
+    }
+    .fim_plus{
+        font-size: 35px;
+    }
+    .promo__title{
+        font-size: 40px;
+        line-height: 1.4;
+    }
+    .possibilities-slider .slick-prev{
+        left: -40px;
+    }
+    .about-types{
+        margin: 0;
+    }
+}

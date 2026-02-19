@@ -1,0 +1,46 @@
+/*==============================ADAPTIVE==============================*/
+@media only screen and (max-width: 1899px) { 
+	.fim_digit{
+        font-size: 65px;
+    }
+    .fim_plus{
+        font-size: 40px;
+    }
+    .fim_percent{
+        font-size: 37px;
+    }
+    .features-item__text{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 1599px) {
+	.fim_digit{
+        font-size: 50px;
+    }
+    .fim_plus{
+        font-size: 32px;
+    }
+    .fim_percent{
+        font-size: 30px;
+    }
+    .features-item__text{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 1399px) {
+    .features__col{
+        padding: 0 7px;
+    }
+    .fim_digit{
+        font-size: 45px;
+    }
+    .fim_plus{
+        font-size: 30px;
+    }
+    .fim_percent{
+        font-size: 28px;
+    }
+    .features-item__number{
+        margin-right: 12px;
+    }
+}
