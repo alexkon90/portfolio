@@ -274,7 +274,16 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-window.addEventListener('resize', init);
+let lastWidth = window.innerWidth;
+
+window.addEventListener('resize', () => {
+    // Перезапускаем анимацию только если изменилась ширина экрана (например, перевернули телефон)
+    if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        init();
+    }
+});
+
 init();
 animate();
 
