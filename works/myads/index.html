@@ -10,7 +10,7 @@
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:opsz,wght@17..18,400..700&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:opsz,wght@17..18,400..700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -18,140 +18,150 @@
     <header class="header">
         <div class='center-wrapper'>
             <div class="header__body">
-                <div class="header__logo"><img src='./img/logo.png' alt='img'></div>
+                <div class="header__logo"><a href="#"><img src='./img/logo.png' alt='img'></a></div>
                 <nav class="header-menu">
                     <ul class="header-menu__list">
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#" class="current">Клиенты</a></li>
-                        <li><a href="#">Партнеры</a></li>
-                        <li><a href="#">Форматы</a></li>
-                        <li><a href="#">Возможности</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#main" class="header-menu__link">Главная</a></li>
+                        <li><a href="#clients" class="header-menu__link">Клиенты</a></li>
+                        <li><a href="#partners" class="header-menu__link">Партнеры</a></li>
+                        <li><a href="#about" class="header-menu__link">Форматы</a></li>
+                        <li><a href="#possibilities" class="header-menu__link">Возможности</a></li>
+                        <li><a href="#faq" class="header-menu__link">FAQ</a></li>
+                        <li><a href="#contacts" class="header-menu__link">Контакты</a></li>
                     </ul>
+                    <div class="header-menu__close"><img src='./img/icon-close.svg' alt='img'></div>
                 </nav>
+                <div class="header-menu__btn"><img src='./img/icon-menu.svg' alt='img'></div>
             </div>
         </div><!-- end center-wrapper -->
     </header><!-- end header -->
 
-    <div class="features">
-        <div class='center-wrapper center-wrapper_full'>
-         <div class="features__row">
-            <div class="features__col">
-                <div class="features-item">
-                    <div class="features-item__number">
-                        <div class="fim_digit">10</div>
-                        <div class="fim_right">
-                            <div class="fim_plus">+</div>
+    <div id="main" class="section">
+        <div class="features">
+            <div class='center-wrapper center-wrapper_full'>
+            <div class="features__row">
+                <div class="features__col">
+                    <div class="features-item">
+                        <div class="features-item__number">
+                            <div class="fim_digit">10</div>
+                            <div class="fim_right">
+                                <div class="fim_plus">+</div>
+                            </div>
                         </div>
+                        <div class="features-item__text">лет на рынке<br> <span>digital-рекламы</span></div>
                     </div>
-                    <div class="features-item__text">лет на рынке<br> <span>digital-рекламы</span></div>
+                </div>
+                <div class="features__col">
+                    <div class="features-item">
+                        <div class="features-item__number">
+                            <div class="fim_digit">25</div>
+                            <div class="fim_right">
+                                <div class="fim_percent">%</div>
+                            </div>
+                        </div>
+                        <div class="features-item__text">рост LTV</div>
+                    </div>
+                </div>
+                <div class="features__col">
+                    <div class="features-item">
+                        <div class="features-item__number">
+                            <div class="fim_digit">200</div>
+                            <div class="fim_right fim_right_2">
+                                <div class="fim_plus">+</div>
+                                <div class="fim_plus">млн</div>
+                            </div>
+                        </div>
+                        <div class="features-item__text">взаимодействий<br> с потребителем</div>
+                    </div>
+                </div>
+                <div class="features__col">
+                    <div class="features-item">
+                        <div class="features-item__number">
+                            <div class="fim_left">до</div>
+                            <div class="fim_digit">35</div>
+                            <div class="fim_right">
+                                <div class="fim_percent">%</div>
+                            </div>
+                        </div>
+                        <div class="features-item__text">увеличения<br> эффективности<br> рекламных<br> кампаний</div>
+                    </div>
+                </div>
+                <div class="features__col">
+                    <div class="features-item">
+                        <div class="features-item__number">
+                            <div class="fim_digit">100</div>
+                            <div class="fim_right">
+                                <div class="fim_plus">+</div>
+                            </div>
+                        </div>
+                        <div class="features-item__text">брендов,<br> работающих<br> с нами</div>
+                    </div>
+                </div>
+                <div class="features__col">
+                    <div class="features-item">
+                        <div class="features-item__number">
+                            <div class="fim_digit">10</div>
+                            <div class="fim_right fim_right_2">
+                                <div class="fim_plus">+</div>
+                                <div class="fim_plus">тыс</div>
+                            </div>
+                        </div>
+                        <div class="features-item__text">реализованных<br> кампаний</div>
+                    </div>
                 </div>
             </div>
-            <div class="features__col">
-                <div class="features-item">
-                    <div class="features-item__number">
-                        <div class="fim_digit">25</div>
-                        <div class="fim_right">
-                            <div class="fim_percent">%</div>
-                        </div>
-                    </div>
-                    <div class="features-item__text">рост LTV</div>
-                </div>
-            </div>
-            <div class="features__col">
-                <div class="features-item">
-                    <div class="features-item__number">
-                        <div class="fim_digit">200</div>
-                        <div class="fim_right fim_right_2">
-                            <div class="fim_plus">+</div>
-                            <div class="fim_plus">млн</div>
-                        </div>
-                    </div>
-                    <div class="features-item__text">взаимодействий<br> с потребителем</div>
-                </div>
-            </div>
-            <div class="features__col">
-                <div class="features-item">
-                    <div class="features-item__number">
-                        <div class="fim_left">до</div>
-                        <div class="fim_digit">35</div>
-                        <div class="fim_right">
-                            <div class="fim_percent">%</div>
-                        </div>
-                    </div>
-                    <div class="features-item__text">увеличения<br> эффективности<br> рекламных<br> кампаний</div>
-                </div>
-            </div>
-            <div class="features__col">
-                <div class="features-item">
-                    <div class="features-item__number">
-                        <div class="fim_digit">100</div>
-                        <div class="fim_right">
-                            <div class="fim_plus">+</div>
-                        </div>
-                    </div>
-                    <div class="features-item__text">брендов,<br> работающих<br> с нами</div>
-                </div>
-            </div>
-            <div class="features__col">
-                <div class="features-item">
-                    <div class="features-item__number">
-                        <div class="fim_digit">10</div>
-                        <div class="fim_right fim_right_2">
-                            <div class="fim_plus">+</div>
-                            <div class="fim_plus">тыс</div>
-                        </div>
-                    </div>
-                    <div class="features-item__text">реализованных<br> кампаний</div>
-                </div>
-            </div>
-         </div>
-        </div><!-- end center-wrapper -->
-    </div><!-- end features -->
+            </div><!-- end center-wrapper -->
+        </div><!-- end features -->
 
-    <div class="promo">
-        <div class="promo__video">
-           
-        </div>
-        <div class='center-wrapper'>
-            <div class="promo__body">
-                <div class="promo__leftside">
-                    <h1 class="promo__title">MyAdsPro - программатик, обеспечивающий рост бизнес-показателей</h1>
-                    <a href="#" class="promo__btn btn btn_main">Узнать больше</a>
-                </div>
-                <div class="promo__rightside">
-                    <div class="promo-slider">
-                        <div class="promo-slider__slide">
-                            <div class="ps-item">
-                                <div class="ps-item__caption">Технологии</div>
-                                <div class="ps-item__block">
-                                    <div class="ps-item__logo"><img src='./img/promo/promo-logo1.png' alt='img'></div>
-                                    <div class="ps-item__text">Система позволяющая автоматизировать, распределить ресурсы и повысить эффективность рекламных<br> кампаний</div>
-                                    <div class="ps-item__img"><img src='./img/promo/promo-img1.png' alt='img'></div>
+        <div class="promo">
+            <div class="promo__video"></div>
+            <div class='center-wrapper'>
+                <div class="promo__body">
+                    <div class="promo__leftside">
+                        <h1 class="promo__title">MyAdsPro - программатик, обеспечивающий рост бизнес-показателей</h1>
+                        <a href="#mainform" class="promo__btn btn btn_main scrollto">Узнать больше</a>
+                    </div>
+                    <div class="promo__rightside">
+                        <div class="promo__tech">Технологии</div>
+                        <div class="promo-slider">
+                            <div class="promo-slider__slide">
+                                <div class="ps-item">
+                                    <div class="ps-item__block">
+                                        <div class="ps-item__logo"><img src='./img/promo/promo-logo1.png' alt='img'></div>
+                                        <div class="ps-item__text">Система позволяющая автоматизировать, распределить ресурсы и повысить эффективность рекламных<br> кампаний</div>
+                                        <div class="ps-item__img"><img src='./img/promo/promo-img1.png' alt='img'></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="promo-slider__slide">
-                            <div class="ps-item">
-                                <div class="ps-item__caption">Технологии</div>
-                                <div class="ps-item__block">
-                                    <div class="ps-item__logo"><img src='./img/promo/promo-logo1.png' alt='img'></div>
-                                    <div class="ps-item__text">Система позволяющая автоматизировать, распределить ресурсы и повысить эффективность рекламных<br> кампаний</div>
-                                    <div class="ps-item__img"><img src='./img/promo/promo-img1.png' alt='img'></div>
+                            <div class="promo-slider__slide">
+                                <div class="ps-item">
+                                    <div class="ps-item__block">
+                                        <div class="ps-item__logo"><img src='./img/promo/promo-logo2.png' alt='img'></div>
+                                        <div class="ps-item__text">Система аудита, подсчета и верификации рекламных компаний</div>
+                                        <div class="ps-item__img"><img src='./img/promo/promo-img2.png' alt='img'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="promo-slider__slide">
+                                <div class="ps-item">
+                                    <div class="ps-item__block">
+                                        <div class="ps-item__logo"><img src='./img/promo/promo-logo3.png' alt='img'></div>
+                                        <div class="ps-item__text">Система, позволяющая измерить эффективность цифровой рекламы, анализировать охват аудитории и оптимизировать рекламные<br> компании</div>
+                                        <div class="ps-item__img"><img src='./img/promo/promo-img3.png' alt='img'></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div><!-- end center-wrapper -->
-    </div><!-- end promo -->
+            </div><!-- end center-wrapper -->
+        </div><!-- end promo -->
+    </div><!-- end section -->
 
     <div class="clients">
         <div class='center-wrapper'>
             <div class="clients__body">
-                <div class="clients__section">
+                <div id="clients" class="clients__section section">
                     <h2 class="clients__title title_2 text_center">Клиенты</h2>
                     <div class="clients__row">
                         <div class="clients__item"><img src='./img/clients/clients1.jpg' alt='img'></div>
@@ -165,7 +175,7 @@
                         <div class="clients__item"><img src='./img/clients/clients9.jpg' alt='img'></div>
                     </div>
                 </div>
-                <div class="clients__section">
+                <div id="partners" class="clients__section section">
                     <h2 class="clients__title title_2 text_center">Партнеры</h2>
                     <div class="clients__row">
                         <div class="clients__item"><img src='./img/clients/clients10.jpg' alt='img'></div>
@@ -183,7 +193,7 @@
         </div><!-- end center-wrapper -->
     </div><!-- end clients -->
 
-    <div class="about">
+    <div id="about" class="about section">
         <div class='center-wrapper'>
             <h2 class="about__title title_2 text_center">MyAdsPro эффективна для:</h2>
             <div class="about__row">
@@ -258,38 +268,45 @@
         </div><!-- end center-wrapper -->
     </div><!-- end about -->
 
-    <div class="possibilities">
+    <div id="possibilities" class="possibilities section">
         <div class='center-wrapper'>
             <h2 class="possibilities__title title_2 text_center">Возможности MyAdsPro</h2>
-            <div class="possibilities__desc">Программатик учитывает каждый запрос и интересы пользователя на сайтах и формирует «контентные якоря» по всему пути пользователя в интернете.<br> Цель — изучение интересов пользователя на всех этапах покупательской активности.</div>
             <div class="possibilities-sliderwrap">
-                <div class="possibilities-slider__img"><img src='./img/possibilities-slider-img.png' alt='img'></div>
+                <div class="possibilities__desc">Программатик учитывает каждый запрос и интересы пользователя на сайтах и формирует «контентные якоря» по всему пути пользователя в интернете.<br> Цель — изучение интересов пользователя на всех этапах покупательской активности.</div>
                 <div class="possibilities-slider">
                     <div class="possibilities-slider__slide">
                         <div class="possibilities-item">
-                            <p><strong>Programmatic buying</strong> дает доступ к обширной базе партнерских сайтов MyAdsPro и закупке нужных площадок, выбранных под настройки рекламодателя.</p>
-                            <p><strong>MyAdsPro</strong> - это персонализированные эффективные рекламные кампании</p>
-                            <ul>
-                                <li>Широкий охват</li>
-                                <li>Высокий ROI</li>
-                                <li>Автоматизированный подход к рекламе</li>
-                                <li>Выполнение KPI</li>
-                                <li>Кроссплатформенные и кросс-девайс форматы</li>
-                                <li>Безопасность Вашего бренда и конфиденциальность данных клиентов</li>
-                            </ul>
+                            <div class="possibilities-item__img"><img src='./img/possibilities-slider-img1.png' alt='img'></div>
+                            <div class="possibilities-item__content">
+                                <p><strong>MyAdsPro</strong> анализирует не только ключевые запросы, но и всю информацию, на которой останавливается пользователь</p>
+                                <p><strong>Real-Time Bidding (RTB)</strong> - рекламодатели соревнуются за право показать баннер конкретному пользователю во время загрузки страницы по его запросу	</p>
+                                <p><strong>SuperGeo</strong> находит потенциальных клиентов по местонахождению, а технология Look-alike направляет рекламные сообщения на пользователей, похожих по интересам на целевую аудиторию</p>
+                            </div>
                         </div>
                     </div>
                     <div class="possibilities-slider__slide">
                         <div class="possibilities-item">
-                            <p><strong>Programmatic buying</strong> дает доступ к обширной базе партнерских сайтов MyAdsPro и закупке нужных площадок, выбранных под настройки рекламодателя.</p>
-                            <p><strong>MyAdsPro</strong> - это персонализированные эффективные рекламные кампании</p>
-                            <ul>
-                                <li>Широкий охват</li>
-                                <li>Высокий ROI</li>
-                                <li>Выполнение KPI</li>
-                                <li>Безопасность Вашего бренда и конфиденциальность данных клиентов</li>
-                                <li>Кроссплатформенные и кросс-девайс форматы</li>
-                            </ul>
+                            <div class="possibilities-item__img"><img src='./img/possibilities-slider-img2.png' alt='img'></div>
+                            <div class="possibilities-item__content">
+                                <p><strong>Таргетинг онлайн-рекламы</strong> на показателях, основанных и на оффлайн-покупках. Сегментирование трафика, чтобы добиться максимальной персонификации и показывать только релевантную рекламу, используя все необходимые виды таргетингов MyAdsPro.</p>
+                                <p><strong>Ретаргетинг</strong> - возвращаем 'спящую' аудиторию с помощью динамического и статического ремаркетинга, и получаем высокие показатели по лидогенерации.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="possibilities-slider__slide">
+                        <div class="possibilities-item">
+                            <div class="possibilities-item__img"><img src='./img/possibilities-slider-img3.png' alt='img'></div>
+                            <div class="possibilities-item__content">
+                                <p><strong>Programmatic buying</strong> дает доступ к обширной базе партнерских сайтов MyAdsPro и закупке нужных площадок, выбранных под настройки рекламодателя.</p>
+                                <p><strong>MyAdsPro</strong> - это персонализированные эффективные рекламные кампании</p>
+                                <ul>
+                                    <li>Широкий охват</li>
+                                    <li>Высокий ROI</li>
+                                    <li>Выполнение KPI</li>
+                                    <li>Безопасность Вашего бренда и конфиденциальность данных клиентов</li>
+                                    <li>Кроссплатформенные и кросс-девайс форматы</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -297,7 +314,7 @@
         </div><!-- end center-wrapper -->
     </div><!-- end possibilities -->
 
-    <div class="faq">
+    <div id="faq" class="faq section">
         <div class='center-wrapper'>
             <h2 class="faq__title title_2 text_center">FAQ</h2>
             <div class="faq__list">
@@ -330,7 +347,7 @@
         </div><!-- end center-wrapper -->
     </div><!-- end faq -->
 
-    <div class="contacts">
+    <div id="contacts" class="contacts section">
         <h2 class="contacts__title title_2 text_center">Контакты</h2>
         <div class="contacts__body">
             <div class='center-wrapper'>
@@ -341,14 +358,14 @@
                         <div class="contacts__time">*Звонки принимаем в будние дни с 10:00 до 20:00 по Москве</div>
                     </div>
                     <div class="contacts__rightside">
-                        <a href="#" class="contacts__btn btn btn_main btn_2"><span>Связаться с нами</span></a>
+                        <a href="#mainform" class="contacts__btn btn btn_main btn_2 scrollto"><span>Связаться с нами</span></a>
                     </div>
                 </div>
             </div><!-- end center-wrapper -->
         </div><!-- end contacts_body -->
     </div><!-- end contacts -->
 
-    <div class="mainform">
+    <div class="mainform" id="mainform">
         <div class='center-wrapper'>
             <div class="mainform__body">
                 <form action="#">
@@ -395,7 +412,7 @@
         <div class='center-wrapper'>
             <div class="footer__row">
                 <div class="footer__left">
-                    <div class="footer__logo"><img src='./img/logo.png' alt='img'></div>
+                    <div class="footer__logo"><a href="#"><img src='./img/logo.png' alt='img'></a></div>
                 </div>
                 <div class="footer__center">
                     <div class="footer__caption">Клиентский сервис</div>

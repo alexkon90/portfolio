@@ -1,10 +1,10 @@
 /*==============================GENERAL==============================*/
 :root {
   --font-main: "Google Sans", sans-serif;
-  --font-main2: "MyriadPro", sans-serif;
-  --font-accent: "Open Sans", sans-serif;
-  --font-system: Verdana, sans-serif;
   --color-accent: #FFA420;
+}
+html{
+    scroll-behavior: smooth;
 }
 html, body{
     position: relative;
@@ -15,9 +15,13 @@ html, body{
 }
 body{ 
     line-height: 1;
+    &.lock{
+        overflow: hidden;
+    }
 } 
 .wrapper{
     position: relative;
+    padding-top: 100px;
     width: 100%;
     min-height: 100%;
     overflow: hidden;
@@ -84,38 +88,4 @@ table{
 }
 .accent_color{
     color: var(--color-accent);
-}
-.content{
-	ul{
-		padding-bottom: 15px;
-		li{
-			position: relative;
-			&:before{
-				content: '';
-				display: block;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-		}
-	}
-	ol{
-		padding-bottom: 15px;
-		counter-reset: myCounter;
-		li{
-			position: relative;
-			&:before{
-				content: '';
-				display: block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				counter-increment: myCounter;
-				content: counters(myCounter, ".") ". ";			
-			}
-		}
-		ol li{
-		    content: counters(item, ".") " ";
-		}
-	}
 }

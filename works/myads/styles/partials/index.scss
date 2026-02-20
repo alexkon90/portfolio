@@ -1,8 +1,17 @@
 /*==============================INDEX==============================*/
 /*-------------------------header-------------------------*/
 .header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
     padding: 20px 0;
     border-bottom: 1px solid #9175C9;
+    transition: all 0.3s ease;
+    z-index: 100;
+    &_scroll{
+        background: #4c386d;
+    }
     &__body{
         display: flex;
         justify-content: space-between;
@@ -10,6 +19,22 @@
     }
 }
 .header-menu{
+    &__btn{
+        display: none;
+        width: 50px;
+        height: 50px;
+    }
+    &__close{
+        display: none;
+        position: absolute;
+        right: 40px;
+        top: 25px;
+        cursor: pointer;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
     &__list{
         display: flex;
         li{
@@ -17,7 +42,7 @@
             a{
                 font-size: 18px;
                 color: #fff;
-                &:hover{
+                &.active{
                     color: #ffa420;
                 }
                 &.current{
@@ -92,21 +117,27 @@
     }
     &__leftside{
         padding-top: 40px;
-        padding-right: 40px;
+        padding-right: 10px;
     }
     &__rightside{
-        width: 316px;
+        flex: 0 0 360px;
+    }
+    &__tech{
+        margin-bottom: 30px;
+        font-size: 30px;
+        text-align: center;
+        font-weight: 700;
     }
 }
 .promo-slider{
-    margin: 0 -20px;
-    &__slide{
-        padding: 60px 20px 45px 20px;
-    }
+    position: relative;
+    right: -20px;
+    width: 360px;
     .slick-arrow{
+        top: 130px;
+        margin-top: 0;
         width: 12px;
         height: 27px;
-        margin-top: -5px;
         transition: all 0.3s ease;
         &:hover{
             opacity: 0.7;
@@ -123,24 +154,18 @@
 }
 .ps-item{
     position: relative;
-    &__caption{
-        position: absolute;
-        left: 0;
-        top: -60px;
-        width: 100%;
-        font-size: 30px;
-        text-align: center;
-        font-weight: 700;
-    }
+    padding: 0 15px 45px 20px;
     &__block{
-        padding: 20px 30px 35px;
+        height: 290px;
+        padding: 20px 30px 10px;
         background-color: rgb(235, 218, 250);
         border: 2px solid #D6BFF4;
         border-radius: 14px;
     }
     &__logo{
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         img{
+            max-height: 30px;
             max-width: 100%;
         }
     }
@@ -152,8 +177,8 @@
     }
     &__img{
         position: absolute;
-        right: -30px;
-        bottom: -45px;
+        right: 0;
+        bottom: 0;
     }
 }
 /*-------------------------clients-------------------------*/
@@ -329,13 +354,19 @@
 }
 /*-------------------------possibilities-------------------------*/
 .possibilities{
-    padding: 40px 0 50px 0;
+    padding: 40px 0 0 0;
     &__title{
-        margin-bottom: 60px;
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 100%;
     }
     &__desc{
-        padding: 0 350px 0 60px;
-        margin-bottom: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 100px 350px 0 60px;
         font-size: 21px;
         font-weight: 700;
         letter-spacing: 0.01em;
@@ -345,37 +376,53 @@
 }
 .possibilities-sliderwrap{
     position: relative;
-    padding-right: 100px;
+    padding-top: 30px;
 }
 .possibilities-slider{
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(158, 141, 182, 0.5);
-    border-radius: 24px;
     .slick-arrow{
         opacity: 0.5;
-        top: 85px;
+        top: 45%;
         margin-top: 0;
         &:hover{
             opacity: 1;
         }
     }
+    .slick-disabled{
+        display: none !important;
+    }
     .slick-prev{
         left: -50px;
     }
-    &__img{
-        position: absolute;
-        right: 0;
-        bottom: -80px;
-        width: 345px;
-        height: 758px;
-        z-index: 30;
-    }
 }
 .possibilities-item{
-    padding: 45px 280px 40px 60px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    height: 758px;
+    padding-right: 100px;
     font-size: 21px;
     letter-spacing: 0.02em;
     line-height: 1.14;
+    &__img{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 345px;
+        height: 758px;
+        z-index: 30;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    &__content{
+        margin-bottom: 82px;
+        padding: 45px 280px 40px 60px;
+        height: 426px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(158, 141, 182, 0.5);
+        border-radius: 24px;
+    }
     p{
         margin-bottom: 25px;
     }
@@ -402,7 +449,7 @@
 }
 /*-------------------------faq-------------------------*/
 .faq{
-    padding: 45px 0 50px 0;
+    padding: 10px 0 50px 0;
     &__note{
         font-size: 20px;
         line-height: 1.2;
@@ -419,7 +466,7 @@
         position: absolute;
     }
     .faq__icon_1{
-        left: -85px;
+        left: -125px;
         top: 42px;
     }
     .faq__icon_2{
@@ -437,13 +484,22 @@
 }
 .faq-item{
     font-weight: 700;
+    margin-bottom: 40px;
     color: #000;
+    &.active{
+        .faq-item__q{
+            &:after{
+                display: block;
+            }
+        }
+    }
     &__q{
         position: relative;
         display: inline-block;
         padding: 25px 50px;
         font-size: 19px;
         line-height: 1.2;
+        cursor: pointer;
         letter-spacing: -0.001em;
         background-color: rgb(212, 150, 240);
         border-radius: 14px;
@@ -459,24 +515,21 @@
         }
         &:after{
             content: '';
-            display: block;
+            display: none;
             position: absolute;
             left: 211px;
             right: 0;
             bottom: 0;
             height: 19px;
-            background: #000;
             border-radius: 14px 0 14px 0;
         }
     }
     &__a{
         position: relative;
-        display: flex;
-        align-items: center;
+        display: none;
         top: -20px;
-        height: 120px;
         margin-left: 210px;
-        padding: 15px 40px;
+        padding: 25px 40px 20px;
         font-size: 19px;
         line-height: 1.3;
         letter-spacing: -0.001em;
