@@ -192,27 +192,12 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Canvas 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 let circuits = [];
-const circuitCount = 100;
+// Увеличена плотность элементов для заполнения пустот
+const circuitCount = 250;
 
 function init() {
     const dpr = window.devicePixelRatio || 1;
@@ -224,28 +209,40 @@ function init() {
 
     circuits = [];
     for (let i = 0; i < circuitCount; i++) {
-        // Приглушенные оттенки синего (Hue: 210-230, Saturation: 30-50%, Lightness: 40-60%)
-        const hue = 210 + Math.random() * 20;
-        const sat = 30 + Math.random() * 20;
-        const lit = 40 + Math.random() * 20;
+        // Приглушенные оттенки синего
+        const hue = 205 + Math.random() * 25;
+        const sat = 40 + Math.random() * 20;
+        const lit = 45 + Math.random() * 25;
+        // Немного больше прозрачности, чтобы наложения смотрелись лучше
+        const alpha = 0.3 + Math.random() * 0.5;
+
+        // Логика определения типа узла (чтобы не мигало, решаем заранее)
+        const getNodeStyle = (probability) => {
+             if (Math.random() > probability) return 'none';
+             // 40% шанс, что узел будет контурным, иначе сплошным
+             return Math.random() > 0.6 ? 'outline' : 'solid';
+        };
         
         circuits.push({
             baseX: Math.random() * window.innerWidth,
             baseY: Math.random() * window.innerHeight,
-            x: 0,
-            y: 0,
-            len1: 30 + Math.random() * 100,
-            len3: 40 + Math.random() * 120,
+            x: 0, y: 0,
+            // Размеры сегментов
+            len1: 20 + Math.random() * 120,
+            len3: 30 + Math.random() * 150,
             angleDir: Math.random() > 0.5 ? 1 : -1,
             bendType: Math.random() > 0.5 ? 0 : 1,
-            size: Math.random() * 1.5 + 1,
-            color: `hsla(${hue}, ${sat}%, ${lit}%, ${0.5 + Math.random() * 0.4})`,
+            // Базовый размер теперь варьируется сильнее
+            size: 0.8 + Math.random() * 3.5,
+            color: `hsla(${hue}, ${sat}%, ${lit}%, ${alpha})`,
             phase: Math.random() * Math.PI * 2,
             speedX: 0.2 + Math.random() * 0.4,
             speedY: 0.2 + Math.random() * 0.3,
-            // Заранее определяем узлы, чтобы избежать мигания при отрисовке
-            hasMidNode: Math.random() > 0.4,
-            hasEndNode: Math.random() > 0.3
+            
+            // Заранее определяем стили узлов
+            startType: Math.random() > 0.8 ? 'outline' : 'solid', // Начальный почти всегда есть
+            midType: getNodeStyle(0.5), // Средний с вероятностью 50%
+            endType: getNodeStyle(0.4)  // Конечный с вероятностью 60%
         });
     }
 }
@@ -254,11 +251,13 @@ function drawCircuit(c) {
     ctx.save();
     ctx.strokeStyle = c.color;
     ctx.fillStyle = c.color;
-    ctx.lineWidth = 1.2;
+    // Базовая толщина линий немного уменьшена из-за плотности
+    ctx.lineWidth = 1.0; 
 
     const x = c.baseX + c.x;
     const y = c.baseY + c.y;
 
+    // --- Рисуем линии ---
     ctx.beginPath();
     ctx.moveTo(x, y);
     
@@ -267,10 +266,10 @@ function drawCircuit(c) {
     ctx.lineTo(curX, curY);
 
     if (c.bendType === 0) { 
-        curX += 20;
-        curY += 20 * c.angleDir;
-    } else { 
+        curX += 25;
         curY += 25 * c.angleDir;
+    } else { 
+        curY += 30 * c.angleDir;
     }
     ctx.lineTo(curX, curY);
 
@@ -278,36 +277,52 @@ function drawCircuit(c) {
     ctx.lineTo(curX, curY);
     ctx.stroke();
 
-    // Отрисовка строго цельных кружков
-    const drawNode = (nx, ny, isLarge) => {
+    // --- Рисуем узлы ---
+    // Функция отрисовки узла с учетом его типа и множителя размера
+    const drawNode = (nx, ny, type, sizeMultiplier) => {
+        if (type === 'none') return;
+
+        const finalSize = c.size * sizeMultiplier;
+        
         ctx.beginPath();
-        ctx.arc(nx, ny, isLarge ? c.size * 3 : c.size * 1.8, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.arc(nx, ny, finalSize, 0, Math.PI * 2);
+
+        if (type === 'outline') {
+             // Для контурных кружков делаем линию чуть толще
+             const oldWidth = ctx.lineWidth;
+             ctx.lineWidth = oldWidth * 1.5;
+             ctx.stroke();
+             ctx.lineWidth = oldWidth; // Возвращаем толщину
+        } else {
+             ctx.fill();
+        }
     };
 
-    drawNode(x, y, true);
-    if (c.hasMidNode) drawNode(x + c.len1, y, false);
-    if (c.hasEndNode) drawNode(curX, curY, true);
+    // Рисуем узлы с разными множителями размера
+    drawNode(x, y, c.startType, 2.5); // Начальный побольше
+    drawNode(x + c.len1, y, c.midType, 1.5); // Средний поменьше
+    drawNode(curX, curY, c.endType, 2.0); // Конечный средний
 
     ctx.restore();
 }
 
 function animate() {
-    // Темно-сизый/фиолетовый фон, чтобы синие линии выделялись
-    ctx.fillStyle = '#4c386d'; 
+    // Фон чуть темнее для контраста
+    ctx.fillStyle = '#242638'; 
     ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
     const t = Date.now() * 0.001;
 
     circuits.forEach(c => {
-        // Увеличена амплитуда движения (было 15 и 10, стало 45 и 25)
-        c.x = Math.sin(t * c.speedX + c.phase) * 45;
-        c.y = Math.cos(t * c.speedY + c.phase) * 25;
+        // Значительная амплитуда движения
+        c.x = Math.sin(t * c.speedX + c.phase) * 50;
+        c.y = Math.cos(t * c.speedY + c.phase) * 30;
 
         drawCircuit(c);
         
-        if (c.baseX + c.x > window.innerWidth + 100) c.baseX = -200;
-        if (c.baseX + c.x < -200) c.baseX = window.innerWidth + 100;
+        // Зацикливание по горизонтали (на всякий случай, хотя они привязаны к базе)
+        if (c.baseX > window.innerWidth + 200) c.baseX = -200;
+        if (c.baseX < -200) c.baseX = window.innerWidth + 200;
     });
 
     requestAnimationFrame(animate);
@@ -316,3 +331,7 @@ function animate() {
 window.addEventListener('resize', init);
 init();
 animate();
+
+
+
+
