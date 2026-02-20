@@ -294,7 +294,7 @@ function drawCircuit(c) {
 
 function animate() {
     // Темно-сизый/фиолетовый фон, чтобы синие линии выделялись
-    ctx.fillStyle = '#2c2e43'; 
+    ctx.fillStyle = '#4c386d'; 
     ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
     const t = Date.now() * 0.001;
