@@ -180,7 +180,15 @@
         padding-right: 20px;
     }
     .promo__video{
-        right: 0;
-        width: 100%;
+        top: 0;
+        left: 50%;
+    }
+    .features{
+        background: transparent;
+    }
+    .faq-item__q:after{
+        font-size: 30px;
+        top: 28%;
+        right: 12px;
     }
 }

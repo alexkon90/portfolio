@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*==============================RESET==============================*/
 *,
 :before,
@@ -648,24 +649,51 @@ table {
 }
 
 /*-------------------------promo-------------------------*/
+.globe {
+  position: absolute;
+  top: -170px;
+  right: -170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 720px;
+  height: 720px;
+  z-index: -1;
+}
+
+.globe__img {
+  width: 85%;
+  height: 85%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.4;
+  display: block;
+}
+
+#globe__canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Держим поверх картинки */
+  pointer-events: none; /* Пропускаем клики мыши сквозь канвас */
+}
+
 .promo {
   padding: 25px 0 50px 0;
 }
 .promo__video {
-  position: absolute;
-  top: 70px;
-  right: 13%;
-  width: 670px;
-  height: 670px;
+  -webkit-animation: rotateMap 30s linear infinite, gentleMovement 20s ease-in-out infinite alternate;
+          animation: rotateMap 30s linear infinite, gentleMovement 20s ease-in-out infinite alternate;
+  overflow: hidden;
   z-index: -1;
-  opacity: 0.5;
-  -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
-          transform: rotate(-180deg);
-}
-.promo .globe-wrapper {
-  width: 100%;
-  height: 100%;
 }
 .promo__body {
   display: -webkit-box;
@@ -800,6 +828,10 @@ table {
 /*-------------------------about-------------------------*/
 .about {
   padding: 30px 0;
+}
+.about__btn {
+  padding-top: 30px;
+  text-align: center;
 }
 .about__row {
   margin-bottom: 40px;
@@ -1065,7 +1097,7 @@ table {
 
 /*-------------------------faq-------------------------*/
 .faq {
-  padding: 10px 0 50px 0;
+  padding: 10px 0 10px 0;
 }
 .faq__note {
   font-size: 20px;
@@ -1096,7 +1128,7 @@ table {
 }
 .faq .faq__icon_4 {
   right: -90px;
-  bottom: -140px;
+  bottom: -70px;
 }
 
 .faq-item {
@@ -1105,12 +1137,12 @@ table {
   color: #000;
 }
 .faq-item.active .faq-item__q:after {
-  display: block;
+  content: "-";
 }
 .faq-item__q {
   position: relative;
   display: inline-block;
-  padding: 25px 50px;
+  padding: 25px 70px 25px 50px;
   font-size: 19px;
   line-height: 1.2;
   cursor: pointer;
@@ -1129,14 +1161,15 @@ table {
   background-image: url(../img/q-icon.png);
 }
 .faq-item__q:after {
-  content: "";
-  display: none;
+  content: "+";
+  display: block;
   position: absolute;
-  left: 211px;
-  right: 0;
-  bottom: 0;
-  height: 19px;
-  border-radius: 14px 0 14px 0;
+  top: 30%;
+  right: 15px;
+  height: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  font-size: 35px;
 }
 .faq-item__a {
   position: relative;
@@ -1154,7 +1187,7 @@ table {
 
 /*-------------------------contacts-------------------------*/
 .contacts {
-  padding: 65px 0 0;
+  padding: 40px 0 0;
 }
 .contacts__body {
   padding: 40px 0 15px 0;
@@ -1201,13 +1234,25 @@ table {
 
 /*-------------------------mainform-------------------------*/
 .mainform {
+  overflow: hidden;
+  position: relative;
   padding: 48px 0;
   background-color: rgb(149, 128, 190);
 }
+.mainform #canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 .mainform__body {
+  position: relative;
   padding: 40px 55px;
   background: #fff;
   color: #000;
+  z-index: 10;
   border-radius: 14px;
 }
 .mainform__subtitle {
@@ -1355,11 +1400,6 @@ table {
   }
   .features-item__text {
     font-size: 15px;
-  }
-  .promo__video {
-    right: 3%;
-    width: 500px;
-    height: 500px;
   }
 }
 @media only screen and (max-width: 1599px) {
@@ -1620,8 +1660,16 @@ table {
     padding-right: 20px;
   }
   .promo__video {
-    right: 0;
-    width: 100%;
+    top: 0;
+    left: 50%;
+  }
+  .features {
+    background: transparent;
+  }
+  .faq-item__q:after {
+    font-size: 30px;
+    top: 28%;
+    right: 12px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -1834,5 +1882,24 @@ table {
   .clients__item {
     height: 60px;
     border: 2px solid #D5D6F6;
+  }
+  .promo__video {
+    top: 250px;
+  }
+  .promo__video img {
+    width: 1000px;
+    height: auto;
+  }
+  .promo .center-wrapper {
+    position: static;
+  }
+  #main {
+    position: relative;
+  }
+  .faq-item__q {
+    padding-right: 40px;
+  }
+  .faq-item__q::after {
+    top: 12px;
   }
 }

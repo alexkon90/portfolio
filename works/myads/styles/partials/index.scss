@@ -104,21 +104,54 @@
     font-size: 17px;
 }
 /*-------------------------promo-------------------------*/
+//@keyframes rotateMap {
+//    0% { transform: translateX(0); }
+//    100% { transform: translateX(-50%); }
+//}
+//@keyframes gentleMovement {
+//    0% { 
+//        transform: translate(-52%, -48%) scale(0.97); 
+//    }
+//    50% {
+//        transform: translate(-48%, -52%) scale(1.04);
+//    }
+//    100% { 
+//        transform: translate(-52%, -49%) scale(0.99); 
+//    }
+//}
+.globe {
+    position: absolute;
+    top: -170px;
+    right: -170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 720px;
+    height: 720px;
+    z-index: -1;
+}
+.globe__img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain; 
+    opacity: 0.4;
+    display: block;
+}
+#globe__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Держим поверх картинки */
+    pointer-events: none; /* Пропускаем клики мыши сквозь канвас */
+}
 .promo{
     padding: 25px 0 50px 0;
     &__video{
-        position: absolute;
-        top: 70px;
-        right: 13%;
-        width: 670px;
-        height: 670px;
+        animation: rotateMap 30s linear infinite, gentleMovement 20s ease-in-out infinite alternate;
+        overflow: hidden;
         z-index: -1;
-        opacity: 0.5;
-        transform: rotate(-180deg);
-    }
-    .globe-wrapper{
-        width: 100%;
-        height: 100%;
     }
     &__body{
         display: flex;
@@ -232,6 +265,10 @@
 /*-------------------------about-------------------------*/
 .about{
     padding: 30px 0;
+    &__btn{
+        padding-top: 30px;
+        text-align: center;
+    }
     &__row{
         margin-bottom: 40px;
         padding-top: 20px;
@@ -465,7 +502,7 @@
 }
 /*-------------------------faq-------------------------*/
 .faq{
-    padding: 10px 0 50px 0;
+    padding: 10px 0 10px 0;
     &__note{
         font-size: 20px;
         line-height: 1.2;
@@ -495,7 +532,7 @@
     }
     .faq__icon_4{
         right: -90px;
-        bottom: -140px;
+        bottom: -70px;
     }
 }
 .faq-item{
@@ -505,14 +542,14 @@
     &.active{
         .faq-item__q{
             &:after{
-                display: block;
+                content: '-';
             }
         }
     }
     &__q{
         position: relative;
         display: inline-block;
-        padding: 25px 50px;
+        padding: 25px 70px 25px 50px;
         font-size: 19px;
         line-height: 1.2;
         cursor: pointer;
@@ -530,14 +567,15 @@
             background-image: url(../img/q-icon.png);
         }
         &:after{
-            content: '';
-            display: none;
+            content: '+';
+            display: block;
             position: absolute;
-            left: 211px;
-            right: 0;
-            bottom: 0;
-            height: 19px;
-            border-radius: 14px 0 14px 0;
+            top: 30%;
+            right: 15px;
+            height: 20px;
+            line-height: 20px;
+            font-weight: normal;
+            font-size: 35px;
         }
     }
     &__a{
@@ -556,7 +594,7 @@
 }
 /*-------------------------contacts-------------------------*/
 .contacts{
-    padding: 65px 0 0;
+    padding: 40px 0 0;
     &__body{
         padding: 40px 0 15px 0;
         background: var(--color-accent);
@@ -596,12 +634,24 @@
 }
 /*-------------------------mainform-------------------------*/
 .mainform{
+    overflow: hidden;
+    position: relative;
     padding: 48px 0;
     background-color: rgb(149, 128, 190);
+    #canvas{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
     &__body{
+        position: relative;
         padding: 40px 55px;
         background: #fff;
         color: #000;
+        z-index: 10;
         border-radius: 14px;
     }
     &__subtitle{
@@ -710,3 +760,6 @@
         }
     }
 }
+
+
+

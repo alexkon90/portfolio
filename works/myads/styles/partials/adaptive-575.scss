@@ -87,4 +87,25 @@
         height: 60px;
         border: 2px solid #D5D6F6;
     }
+    .promo__video{
+        top: 250px;
+        img{
+            width: 1000px;
+            height: auto;
+        }   
+    }
+    .promo{
+        .center-wrapper{
+            position: static;
+        }
+    }
+    #main{
+        position: relative;
+    }
+    .faq-item__q{
+        padding-right: 40px;
+        &::after{
+            top: 12px;
+        }
+    }
 }
