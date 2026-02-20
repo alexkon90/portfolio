@@ -670,40 +670,40 @@ table {
 }
 @-webkit-keyframes gentleMovement {
   0% {
-    -webkit-transform: translate(-51%, -48%) scale(0.97);
-            transform: translate(-51%, -48%) scale(0.97);
+    -webkit-transform: translate(-52%, -48%) scale(0.97);
+            transform: translate(-52%, -48%) scale(0.97);
   }
   50% {
-    -webkit-transform: translate(-48%, -51%) scale(1.01);
-            transform: translate(-48%, -51%) scale(1.01);
+    -webkit-transform: translate(-48%, -52%) scale(1.04);
+            transform: translate(-48%, -52%) scale(1.04);
   }
   100% {
-    -webkit-transform: translate(-50%, -50%) scale(0.99);
-            transform: translate(-50%, -50%) scale(0.99);
+    -webkit-transform: translate(-52%, -49%) scale(0.99);
+            transform: translate(-52%, -49%) scale(0.99);
   }
 }
 @keyframes gentleMovement {
   0% {
-    -webkit-transform: translate(-51%, -48%) scale(0.97);
-            transform: translate(-51%, -48%) scale(0.97);
+    -webkit-transform: translate(-52%, -48%) scale(0.97);
+            transform: translate(-52%, -48%) scale(0.97);
   }
   50% {
-    -webkit-transform: translate(-48%, -51%) scale(1.01);
-            transform: translate(-48%, -51%) scale(1.01);
+    -webkit-transform: translate(-48%, -52%) scale(1.04);
+            transform: translate(-48%, -52%) scale(1.04);
   }
   100% {
-    -webkit-transform: translate(-50%, -50%) scale(0.99);
-            transform: translate(-50%, -50%) scale(0.99);
+    -webkit-transform: translate(-52%, -49%) scale(0.99);
+            transform: translate(-52%, -49%) scale(0.99);
   }
 }
 .promo {
   padding: 25px 0 50px 0;
 }
 .promo__video {
-  -webkit-animation: rotateMap 40s linear infinite, gentleMovement 25s ease-in-out infinite alternate;
-          animation: rotateMap 40s linear infinite, gentleMovement 25s ease-in-out infinite alternate;
+  -webkit-animation: rotateMap 30s linear infinite, gentleMovement 20s ease-in-out infinite alternate;
+          animation: rotateMap 30s linear infinite, gentleMovement 20s ease-in-out infinite alternate;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 75%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -844,6 +844,10 @@ table {
 /*-------------------------about-------------------------*/
 .about {
   padding: 30px 0;
+}
+.about__btn {
+  padding-top: 30px;
+  text-align: center;
 }
 .about__row {
   margin-bottom: 40px;
@@ -1149,12 +1153,12 @@ table {
   color: #000;
 }
 .faq-item.active .faq-item__q:after {
-  display: block;
+  content: "-";
 }
 .faq-item__q {
   position: relative;
   display: inline-block;
-  padding: 25px 50px;
+  padding: 25px 70px 25px 50px;
   font-size: 19px;
   line-height: 1.2;
   cursor: pointer;
@@ -1173,14 +1177,15 @@ table {
   background-image: url(../img/q-icon.png);
 }
 .faq-item__q:after {
-  content: "";
-  display: none;
+  content: "+";
+  display: block;
   position: absolute;
-  left: 211px;
-  right: 0;
-  bottom: 0;
-  height: 19px;
-  border-radius: 14px 0 14px 0;
+  top: 30%;
+  right: 15px;
+  height: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  font-size: 35px;
 }
 .faq-item__a {
   position: relative;
@@ -1250,12 +1255,12 @@ table {
   padding: 48px 0;
   background-color: rgb(149, 128, 190);
 }
-.mainform #techCanvas {
+.mainform #canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.8;
   height: 100%;
   z-index: 1;
 }
@@ -1678,6 +1683,11 @@ table {
   .features {
     background: transparent;
   }
+  .faq-item__q:after {
+    font-size: 30px;
+    top: 28%;
+    right: 12px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .center-wrapper {
@@ -1902,5 +1912,11 @@ table {
   }
   #main {
     position: relative;
+  }
+  .faq-item__q {
+    padding-right: 40px;
+  }
+  .faq-item__q::after {
+    top: 12px;
   }
 }

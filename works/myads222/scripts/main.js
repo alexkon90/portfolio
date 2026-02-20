@@ -150,132 +150,169 @@ $(document).ready(function(){
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Canvas 
-const canvas = document.getElementById('techCanvas');
+const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-let width, height, nodes = [];
-const colors = ['#fff', '#a69fd5', '#a69fd5', '#b3d4ff'];
+let circuits = [];
+const circuitCount = 100;
 
 function init() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-    nodes = [];
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.scale(dpr, dpr);
 
-    // Очень высокая плотность: 450 узлов
-    const nodeCount = 450; 
-    for (let i = 0; i < nodeCount; i++) {
-        nodes.push({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            type: Math.floor(Math.random() * 5), 
-            color: colors[Math.floor(Math.random() * colors.length)],
-            size: Math.random() * 2 + 1,
+    circuits = [];
+    for (let i = 0; i < circuitCount; i++) {
+        // Приглушенные оттенки синего (Hue: 210-230, Saturation: 30-50%, Lightness: 40-60%)
+        const hue = 210 + Math.random() * 20;
+        const sat = 30 + Math.random() * 20;
+        const lit = 40 + Math.random() * 20;
+        
+        circuits.push({
+            baseX: Math.random() * window.innerWidth,
+            baseY: Math.random() * window.innerHeight,
+            x: 0,
+            y: 0,
+            len1: 30 + Math.random() * 100,
+            len3: 40 + Math.random() * 120,
+            angleDir: Math.random() > 0.5 ? 1 : -1,
+            bendType: Math.random() > 0.5 ? 0 : 1,
+            size: Math.random() * 1.5 + 1,
+            color: `hsla(${hue}, ${sat}%, ${lit}%, ${0.5 + Math.random() * 0.4})`,
             phase: Math.random() * Math.PI * 2,
-            // Фиксируем логику изгиба, чтобы не было мигания (эпилепсии)
-            bendType: Math.random() > 0.5 ? 'ortho' : 'diag',
-            breakPointPct: 0.2 + Math.random() * 0.6
+            speedX: 0.2 + Math.random() * 0.4,
+            speedY: 0.2 + Math.random() * 0.3,
+            // Заранее определяем узлы, чтобы избежать мигания при отрисовке
+            hasMidNode: Math.random() > 0.4,
+            hasEndNode: Math.random() > 0.3
         });
     }
 }
 
-function draw() {
-    ctx.clearRect(0, 0, width, height);
+function drawCircuit(c) {
+    ctx.save();
+    ctx.strokeStyle = c.color;
+    ctx.fillStyle = c.color;
+    ctx.lineWidth = 1.2;
+
+    const x = c.baseX + c.x;
+    const y = c.baseY + c.y;
+
+    ctx.beginPath();
+    ctx.moveTo(x, y);
     
-    // Отрисовка линий
-    ctx.lineWidth = 1;
-    for (let i = 0; i < nodes.length; i++) {
-        // Проверяем только следующие 15 узлов в массиве для оптимизации и плотности
-        for (let j = i + 1; j < i + 15 && j < nodes.length; j++) {
-            const a = nodes[i];
-            const b = nodes[j];
-            
-            const dx = b.x - a.x;
-            const dy = b.y - a.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
+    let curX = x + c.len1;
+    let curY = y;
+    ctx.lineTo(curX, curY);
 
-            // Соединяем узлы, если они относительно близко
-            if (dist < 250) {
-                ctx.beginPath();
-                ctx.strokeStyle = a.color + '25'; // Прозрачность 15% (HEX 25)
-                ctx.moveTo(a.x, a.y);
-                
-                let breakX = a.x + dx * a.breakPointPct;
-                
-                if (a.bendType === 'ortho') {
-                    // Прямоугольный перелом
-                    ctx.lineTo(breakX, a.y);
-                    ctx.lineTo(breakX, b.y);
-                } else {
-                    // Косой перелом 45°
-                    let slope = Math.abs(dy);
-                    let dir = dx > 0 ? 1 : -1;
-                    ctx.lineTo(breakX, a.y);
-                    ctx.lineTo(breakX + (slope * dir), b.y);
-                }
-                
-                ctx.lineTo(b.x, b.y);
-                ctx.stroke();
-            }
-        }
+    if (c.bendType === 0) { 
+        curX += 20;
+        curY += 20 * c.angleDir;
+    } else { 
+        curY += 25 * c.angleDir;
     }
+    ctx.lineTo(curX, curY);
 
-    // Отрисовка узлов (Character со скриншота)
-    nodes.forEach(node => {
-        ctx.save();
-        ctx.translate(node.x, node.y);
-        ctx.fillStyle = node.color;
-        ctx.strokeStyle = node.color;
+    curX += c.len3;
+    ctx.lineTo(curX, curY);
+    ctx.stroke();
 
-        switch(node.type) {
-            case 0: // Точка
-                ctx.beginPath();
-                ctx.arc(0, 0, node.size * 1.5, 0, Math.PI * 2);
-                ctx.fill();
-                break;
-            case 1: // Кольцо
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.arc(0, 0, node.size * 2.5, 0, Math.PI * 2);
-                ctx.stroke();
-                break;
-            case 2: // Кольцо с точкой
-                ctx.beginPath();
-                ctx.arc(0, 0, node.size * 3, 0, Math.PI * 2);
-                ctx.stroke();
-                ctx.beginPath();
-                ctx.arc(0, 0, 1, 0, Math.PI * 2);
-                ctx.fill();
-                break;
-            case 3: // Сдвоенное кольцо
-                ctx.beginPath();
-                ctx.arc(0, 0, node.size * 2, 0, Math.PI * 2);
-                ctx.stroke();
-                ctx.beginPath();
-                ctx.arc(0, 0, node.size * 4, 0, Math.PI * 2);
-                ctx.stroke();
-                break;
-            case 4: // Прямоугольный чип
-                ctx.fillRect(-2, -1, 4, 2);
-                break;
-        }
-        ctx.restore();
-    });
+    // Отрисовка строго цельных кружков
+    const drawNode = (nx, ny, isLarge) => {
+        ctx.beginPath();
+        ctx.arc(nx, ny, isLarge ? c.size * 3 : c.size * 1.8, 0, Math.PI * 2);
+        ctx.fill();
+    };
+
+    drawNode(x, y, true);
+    if (c.hasMidNode) drawNode(x + c.len1, y, false);
+    if (c.hasEndNode) drawNode(curX, curY, true);
+
+    ctx.restore();
 }
 
 function animate() {
-    // Еле заметный дрейф
-    nodes.forEach(n => {
-        n.x += Math.sin(Date.now() / 10000 + n.phase) * 0.05;
+    // Темно-сизый/фиолетовый фон, чтобы синие линии выделялись
+    ctx.fillStyle = '#2c2e43'; 
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+
+    const t = Date.now() * 0.001;
+
+    circuits.forEach(c => {
+        // Увеличена амплитуда движения (было 15 и 10, стало 45 и 25)
+        c.x = Math.sin(t * c.speedX + c.phase) * 45;
+        c.y = Math.cos(t * c.speedY + c.phase) * 25;
+
+        drawCircuit(c);
+        
+        if (c.baseX + c.x > window.innerWidth + 100) c.baseX = -200;
+        if (c.baseX + c.x < -200) c.baseX = window.innerWidth + 100;
     });
-    draw();
+
     requestAnimationFrame(animate);
 }
 
 window.addEventListener('resize', init);
 init();
 animate();
-
-
-
-

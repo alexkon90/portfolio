@@ -102,4 +102,10 @@
     #main{
         position: relative;
     }
+    .faq-item__q{
+        padding-right: 40px;
+        &::after{
+            top: 12px;
+        }
+    }
 }
