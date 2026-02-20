@@ -106,6 +106,19 @@
 /*-------------------------promo-------------------------*/
 .promo{
     padding: 25px 0 50px 0;
+    &__video{
+        position: absolute;
+        top: 70px;
+        right: 13%;
+        width: 670px;
+        height: 670px;
+        z-index: -1;
+        transform: rotate(-180deg);
+        opacity: 0.5;
+    }
+    #globeCanvas{
+        width: 100%;
+    }
     &__body{
         display: flex;
     }
