@@ -88,11 +88,7 @@
         border: 2px solid #D5D6F6;
     }
     .promo__video{
-        top: 250px;
-        img{
-            width: 1000px;
-            height: auto;
-        }   
+        top: 0;
     }
     .promo{
         .center-wrapper{
@@ -107,5 +103,9 @@
         &::after{
             top: 12px;
         }
+    }
+    .globe{
+        top: -100px;
+        transform: scale(0.5) translateX(-100%);
     }
 }
