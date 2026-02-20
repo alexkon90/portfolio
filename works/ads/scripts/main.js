@@ -274,19 +274,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-let lastWidth = window.innerWidth;
-
-window.addEventListener('resize', () => {
-    // Перезапускаем анимацию только если изменилась ширина экрана (например, перевернули телефон)
-    if (window.innerWidth !== lastWidth) {
-        lastWidth = window.innerWidth;
-        init();
-    }
-});
-
-init();
-animate();
-
 
 // Canvas 2
 const wrapper2 = document.querySelector('.globe');
@@ -313,7 +300,6 @@ function initNet2() {
     ctx2.scale(dpr, dpr);
 
     createSphere2();
-    animateNet2();
 }
 
 function createSphere2() {
@@ -400,5 +386,22 @@ function animateNet2() {
     requestAnimationFrame(animateNet2);
 }
 
-window.addEventListener('resize', initNet2);
+
+// Запуск 2 канвасов
+let lastWidth = window.innerWidth;
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth !== lastWidth) {
+        lastWidth = window.innerWidth;
+        init();       // Перезапуск первого канваса
+        initNet2();   // Перезапуск второго канваса
+    }
+});
+
+init();
 initNet2();
+animate();
+animateNet2();
+
+
+
