@@ -158,6 +158,8 @@ $(document).ready(function(){
 
 // Используем переменные из твоего старого скрипта
 const mapUrl = 'https://unpkg.com/three-globe/example/img/earth-water.png';
+//const mapUrl = '../img/earth-water.png';
+
 const ROTATION_SPEED = 0.005; 
 
 const container = document.querySelector('.globe-wrapper');
