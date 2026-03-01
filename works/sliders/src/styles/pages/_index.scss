@@ -220,10 +220,7 @@
         margin-bottom: 5px;
         height: 340px;
         filter: grayscale(100%);
-transition: 0.3s ease;
-//will-change: transform;
-//backface-visibility: hidden;
-//transform: translateZ(0);
+        transition: height 0.3s ease;
         @media (max-width: 1279px) {
             height: 192px;
         }
@@ -362,10 +359,7 @@ transition: 0.3s ease;
 }
 .mainteam-item{
     width: 340px;
-transition: width 0.3s ease;
-will-change: transform;
-backface-visibility: hidden;
-transform: translateZ(0);
+    transition: width 0.3s ease;
     @media (max-width: 1279px) {
         width: 192px;
     }
@@ -375,9 +369,6 @@ transform: translateZ(0);
         height: 340px;
         filter: grayscale(100%);
         transition: height 0.3s ease;
-will-change: transform;
-backface-visibility: hidden;
-transform: translateZ(0);
         @media (max-width: 1279px) {
             height: 192px;
         }

@@ -530,8 +530,8 @@ select {
   height: 340px;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
 }
 @media (max-width: 1279px) {
   .mainprojects-item__img {
@@ -684,11 +684,6 @@ select {
   width: 340px;
   -webkit-transition: width 0.3s ease;
   transition: width 0.3s ease;
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }
 @media (max-width: 1279px) {
   .mainteam-item {
@@ -703,11 +698,6 @@ select {
           filter: grayscale(100%);
   -webkit-transition: height 0.3s ease;
   transition: height 0.3s ease;
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }
 @media (max-width: 1279px) {
   .mainteam-item__img {
