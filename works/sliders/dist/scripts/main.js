@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true,
         centeredSlides: true,
         slidesPerView: "auto",
+        initialSlide: 0,
         pagination: {
             el: '.mainprojects-carousel .swiper-pagination',
         },
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true,
         centeredSlides: true,
         slidesPerView: "auto",
+        initialSlide: 0,
         navigation: {
             nextEl: '.mainteam-carousel .swiper-button-next',
             prevEl: '.mainteam-carousel .swiper-button-prev',

@@ -21,6 +21,12 @@
     }
     &_more{
         min-width: 462px;
+        @media (max-width: 1799px) {
+            min-width: 382px;
+        }
+        @media (max-width: 1279px) {
+            min-width: 360px;
+        }
     }
 }
 .input,
