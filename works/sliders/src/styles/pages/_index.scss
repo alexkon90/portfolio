@@ -103,7 +103,7 @@
     .swiper-slide {
         margin: 0 14px;
         flex-shrink: 0;
-        width: 50%;
+        width: 940px;
         overflow: visible;
         display: flex;
         justify-content: flex-end;
@@ -114,6 +114,13 @@
         .mainprojects-item__img{
             height: 500px;
             filter: grayscale(0);
+            img{
+                width: 100%;
+                margin: 0;
+                &:nth-child(2){
+                    display: none;
+                }
+            }
         }
         .mainprojects-item__title{
             opacity: 1;
@@ -123,18 +130,28 @@
         }
     }
     .swiper-slide-next{
-        justify-content: flex-start;
+        .mainprojects-item__img{
+            justify-content: flex-start;
+            img{
+                margin-right: 26px;
+                margin-left: 0;
+            }
+        }
     }
 }
 .mainprojects-item{
     width: 100%;
     &__img{
+        display: flex;
+        justify-content: flex-end;
         margin-bottom: 5px;
         height: 340px;
         transition: 0.3s ease;
         filter: grayscale(100%);
         img{
-            width: 100%;
+            margin-left: 26px;
+            width: 48%;
+            width: 340px;
             height: 100%;
             object-fit: cover;
         }
