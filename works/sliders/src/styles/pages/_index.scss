@@ -128,11 +128,6 @@
         overflow: visible;
         display: flex;
         align-items: center;
-        transition: width 0.3s ease;
-
-    will-change: transform;
-    backface-visibility: hidden;
-    transform: translateZ(0);
     }
     .swiper-slide-active {
         padding-right: 0;
@@ -224,11 +219,11 @@
     &__img{
         margin-bottom: 5px;
         height: 340px;
-        transition: height 0.3s ease;
         filter: grayscale(100%);
-  will-change: transform;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+transition: height 0.3s ease;
+//will-change: transform;
+//backface-visibility: hidden;
+//transform: translateZ(0);
         @media (max-width: 1279px) {
             height: 192px;
         }
@@ -271,7 +266,6 @@
         width: 650px;
         margin: 0 8px;
         flex-shrink: 0;
-        transition: width 0.3s ease;
         display: flex;
         justify-content: center;
         align-items: center;
