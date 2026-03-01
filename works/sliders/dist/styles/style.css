@@ -530,8 +530,8 @@ select {
   height: 340px;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  -webkit-transition: height 0.3s ease;
-  transition: height 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 @media (max-width: 1279px) {
   .mainprojects-item__img {
