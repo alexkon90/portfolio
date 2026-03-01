@@ -1,0 +1,44 @@
+/*==============================GENERAL==============================*/
+html {
+    scroll-behavior: smooth;
+}
+body {
+    height: 5000px;
+    font-family: Arial, sans-serif;
+    min-width: 320px;
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.center-wrapper {
+    position: relative;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 20px;
+    line-height: 1.2;
+}
+p {
+    margin-bottom: 20px;
+}
+a{
+	outline: none;
+	text-decoration: none;
+	transition: 
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+}
+img {
+    height: auto;
+}
+:root {
+    --color-dark: #000;
+}
