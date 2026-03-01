@@ -696,6 +696,13 @@ select {
 
 .mainteam-item {
   width: 340px;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 @media (max-width: 1279px) {
   .mainteam-item {

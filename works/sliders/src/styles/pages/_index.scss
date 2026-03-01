@@ -368,6 +368,10 @@
 }
 .mainteam-item{
     width: 340px;
+transition: width 0.3s ease;
+will-change: transform;
+backface-visibility: hidden;
+transform: translateZ(0);
     @media (max-width: 1279px) {
         width: 192px;
     }
