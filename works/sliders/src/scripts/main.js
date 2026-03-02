@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainprojects_carousel = new Swiper('.mainprojects-carousel', {
         loop: true,
         centeredSlides: true,
-        slidesPerView: "auto",
         initialSlide: 0,
         speed: 500,
         pagination: {
@@ -13,17 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
             nextEl: '.mainprojects-carousel .swiper-button-next',
             prevEl: '.mainprojects-carousel .swiper-button-prev',
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            576: {
+                slidesPerView: "auto"
+            }
+        }
     });
 
     // Mainteam carousel
     const mainteam_carousel = new Swiper('.mainteam-carousel', {
         loop: true,
         centeredSlides: true,
-        slidesPerView: "auto",
         initialSlide: 0,
         navigation: {
             nextEl: '.mainteam-carousel .swiper-button-next',
             prevEl: '.mainteam-carousel .swiper-button-prev',
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            576: {
+                slidesPerView: "auto"
+            }
+        }
     });
 });
