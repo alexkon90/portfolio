@@ -633,6 +633,7 @@ img {
   font-size: 18px;
   -webkit-transition: width 0.3s ease;
   transition: width 0.3s ease;
+  will-change: transform;
 }
 @media (max-width: 1279px) {
   .mainteam-item {
@@ -657,6 +658,7 @@ img {
           filter: grayscale(100%);
   -webkit-transition: height 0.3s ease;
   transition: height 0.3s ease;
+  will-change: transform;
 }
 @media (max-width: 1279px) {
   .mainteam-item__img {
