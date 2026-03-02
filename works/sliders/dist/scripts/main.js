@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true,
         centeredSlides: true,
         initialSlide: 0,
-        speed: 500,
         pagination: {
             el: '.mainprojects-carousel .swiper-pagination',
         },
