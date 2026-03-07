@@ -1,0 +1,65 @@
+/*==============================FONTS==============================*/
+@font-face {
+	font-family: "Helvetica";
+	src: url("../fonts/helvetica.woff2") format("woff2"),
+	     url("../fonts/helvetica.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Helvetica";
+	src: url("../fonts/helvetica-bold.woff2") format("woff2"),
+	     url("../fonts/helvetica-bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Helvetica";
+	src: url("../fonts/helvetica-light.woff2") format("woff2"),
+	     url("../fonts/helvetica-light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Helvetica Oblique";
+	src: url("../fonts/helvetica-oblique.woff2") format("woff2"),
+	     url("../fonts/helvetica-oblique.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Helvetica Oblique";
+	src: url("../fonts/helvetica-lightoblique.woff2") format("woff2"),
+	     url("../fonts/helvetica-lightoblique.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "SONGER";
+	src: url("../fonts/SONGERSemiExpanded.woff2") format("woff2"),
+	     url("../fonts/SONGERSemiExpanded.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "SONGER";
+	src: url("../fonts/SONGERSemiExpanded-Bold.woff2") format("woff2"),
+	     url("../fonts/SONGERSemiExpanded-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "SONGER";
+	src: url("../fonts/SONGERSemiExpanded-ExtraBold.woff2") format("woff2"),
+	     url("../fonts/SONGERSemiExpanded-ExtraBold.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}

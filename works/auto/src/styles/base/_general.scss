@@ -1,0 +1,50 @@
+/*==============================GENERAL==============================*/
+:root {
+  --color-main: #fff;
+  --color-bg: #2D2D2D;
+  --color-accent: #C8DF30;
+  --font-main: "Helvetica", sans-serif;
+  --font-main2: "Helvetica Oblique", sans-serif;
+  --font-accent: "SONGER", sans-serif;
+  --main-border: rgba(201, 201, 201, .3);
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: var(--font-main);
+    background: var(--color-bg);
+    color: var(--color-main);
+    -webkit-font-smoothing: antialiased;
+}
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.main {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 20px;
+    line-height: 1.2;
+}
+p {
+    margin-bottom: 20px;
+}
+a{
+	outline: none;
+	text-decoration: none;
+	transition: 
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+}
+img {
+    height: auto;
+}

@@ -1,0 +1,181 @@
+/*==============================FORM ELEMENTS==============================*/
+.btn{
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    height: 20px;
+    text-transform: uppercase;
+    color: var(--color-bg);
+	cursor: pointer;
+    border-radius: 3px;
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: -3px;
+        background: var(--color-accent);
+        border-radius: 3px;
+        z-index: -1;
+    }
+    span{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 145px;
+        background: var(--color-main);
+        border: 1px solid var(--color-accent);
+        border-radius: 3px;
+        text-align: center;
+        height: 20px;
+        transition: 
+        background-color .3s ease,
+              color .3s ease,
+              border-color .3s ease;
+    }
+    &_2{
+        &:after{
+            background: var(--color-main);
+        }
+        span{
+            background: var(--color-accent);
+            border-color: var(--color-bg);
+        }
+    }
+}
+.form{
+    input,
+    textarea {
+        width: 100%;
+        background: #fff;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            opacity: .6;
+        }
+    }
+    input{
+        margin-bottom: 9px;
+        display: block;
+        height: 20px;
+        max-width: 165px;
+        padding: 0 10px;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+    &__btn{
+        margin-top: 10px;
+        width: 100%;
+        height: 20px;
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: var(--color-bg);
+    }
+    &__policy{
+        margin-top: 8px;
+        text-align: center;
+        font-size: 9px;
+        a{
+            border-bottom: 1px solid #fff;
+            &:hover{
+                border-color: transparent;
+            }
+        }
+    }
+}
+
+
+
+
+
+.checkbox{
+    input[type="checkbox"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+    }
+    input[type="checkbox"]:checked + .checkbox__title:before {
+    	background-image: url(../img/icons/icon-check.svg);
+    }
+    &__title{
+        position: relative;
+        display: block;
+        padding-left: 26px;
+        font-size: 14px;
+        line-height: 22px;
+        cursor: pointer;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border: 1px solid #C4C4C4;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            z-index: 1;
+        }
+    }
+}
+.radio{
+	input[type="radio"]{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+	}
+	input[type="radio"]:checked + .radio__title:after {
+    	display: block;
+    }
+    &__title{
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+        padding-left: 26px;
+        line-height: 22px;
+        cursor: pointer;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            border: 1px solid #C4C4C4;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        &:after{
+            content: '';
+            display: none;
+            position: absolute;
+            left: 5px;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 5;
+        }
+    }
+}
+select {
+    appearance: none;
+    background-color: #fff;
+}
