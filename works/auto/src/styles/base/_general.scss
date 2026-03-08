@@ -7,6 +7,7 @@
   --font-main2: "Helvetica Oblique", sans-serif;
   --font-accent: "SONGER", sans-serif;
   --main-border: rgba(201, 201, 201, .3);
+  --main-border2: rgba(255, 255, 255, .3);
 }
 html {
     scroll-behavior: smooth;
@@ -47,4 +48,7 @@ a{
 }
 img {
     height: auto;
+}
+.highlight{
+    color: var(--color-accent);
 }
