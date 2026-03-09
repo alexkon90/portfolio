@@ -1,10 +1,23 @@
 /*==============================INDEX==============================*/
+.main {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @media (max-width: 1199px) { 
+        max-width: 1170px;
+        padding: 0;
+    }
+}
 /*-------------------------header-------------------------*/
 .header{
     border-bottom: 1px solid var(--main-border);
     &__top{
         padding: 10px 20px;
         border-bottom: 1px solid var(--main-border);
+        @media (max-width: 1199px) { 
+            padding: 10px 20px;
+        }
     }
     &__bottom{
         padding: 9px 0;
@@ -46,10 +59,32 @@
 /*-------------------------promo-------------------------*/
 .content{
     padding: 0 65px;
+    @media (max-width: 1199px) { 
+        padding: 0;
+    }
+}
+.section__title{
+    margin: 0 -65px;
+    font-weight: normal;
+    padding: 23px 0;
+    font-size: 36px;
+    line-height: 1.2;
+    border-top: 1px solid var(--main-border);
+    border-bottom: 1px solid var(--main-border);
+    text-transform: uppercase;
+    text-align: center;
+    @media (max-width: 1199px) { 
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 .promo{ 
     margin-right: -65px;
     padding: 55px 0 55px 40px;
+    @media (max-width: 1199px) { 
+        margin-right: 0;
+        padding-left: 80px;
+    }
     &__body{
         display: flex;
     }
@@ -116,9 +151,12 @@
     &__img{
         position: absolute;
         top: 95px;
-        right: 15px;
+        right: 0;
         img{
             max-width: none;
+            @media (max-width: 1169px) { 
+                max-width: 540px;
+            }
         }
     }
     &__form{
@@ -169,17 +207,6 @@
     }
 }
 /*-------------------------benefits-------------------------*/
-.section__title{
-    margin: 0 -65px;
-    font-weight: normal;
-    padding: 23px 0;
-    font-size: 36px;
-    line-height: 1.2;
-    border-top: 1px solid var(--main-border);
-    border-bottom: 1px solid var(--main-border);
-    text-transform: uppercase;
-    text-align: center;
-}
 .benefits{
     &__inner{
         padding: 36px 0;
@@ -275,11 +302,16 @@
 /*-------------------------programms-------------------------*/
 .programms{
     &__inner{
-        margin: 0 -10px;
+        margin: 0 auto;
         padding: 90px 0 30px 10px;
+        max-width: 1050px;
+        @media (max-width: 1169px) { 
+            max-width: 970px;
+        }
     }
     &__row{
         display: flex;
+        margin: 0 -10px;
     }
     &__note{
         display: flex;
@@ -374,8 +406,6 @@
 }
 /*-------------------------tariffs-------------------------*/
 .tariffs{
-    margin: 0 -65px;
-    border-bottom: 1px solid var(--main-border);
     &__body{
         margin: 0 auto;
         max-width: 772px;
@@ -397,6 +427,9 @@
         position: absolute;
         bottom: 35px;
         right: -160px;
+        @media (max-width: 1169px) { 
+            right: -120px;
+        }
     }
 }
 .tariffs-cars-item{
@@ -569,7 +602,14 @@
 /*-------------------------gift-------------------------*/
 .gift{
     padding: 40px 20px 0 110px;
+    border-top: 1px solid var(--main-border);
     margin: 0 -65px;
+    @media (max-width: 1199px) { 
+        margin: 0;
+    }
+    @media (max-width: 1169px) {
+        padding-left: 50px;
+    }
     &__inner{
         display: flex;
     }
@@ -577,9 +617,16 @@
         position: absolute;
         right: -23px;
         bottom: 0;
+        img{
+            max-width: none;
+        }
+        @media (max-width: 1169px) {
+            right: -40px;
+        }
     }
     &__content{
         flex-grow: 1;
+        padding-bottom: 20px;
     }
     &__rightside{
         position: relative;
@@ -612,11 +659,6 @@
         position: absolute;
         left: 255px;
         top: -5px;
-    }
-    &__img{
-        img{
-            max-width: none;
-        }
     }
 }
 .gift-quote{
@@ -1046,6 +1088,9 @@
         margin: 0 -65px;
         padding: 0 65px;
         border-bottom: 1px solid var(--main-border);
+        @media (max-width: 1199px) { 
+            margin: 0;
+        }
     }
 }
 .address-acrd-item{
@@ -1109,6 +1154,10 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
+        @media (max-width: 1169px) { 
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     }
 }
 .team-item{
@@ -1158,6 +1207,10 @@
         margin: 0 auto;
         padding-top: 70px;
         max-width: 1032px;
+        @media (max-width: 1169px) { 
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     }
 }
 .social-top{
@@ -1381,7 +1434,11 @@
     border-top: 1px solid var(--main-border);
     &__inner{
         display: flex;
-        padding: 0 65px;
+        margin: 0 auto;
+        max-width: 1032px;
+        @media (max-width: 1169px) { 
+            padding: 0 15px;
+        }
     }
     &__leftside{
         flex: 0 0 260px;
@@ -1454,7 +1511,4 @@
             height: 10px;
         }
     }
-}
-@media only screen and (max-width: 767px) { 
-    
 }
