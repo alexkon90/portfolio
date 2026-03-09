@@ -119,10 +119,6 @@ table {
   --main-border2: rgba(255, 255, 255, .3);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   min-width: 320px;
   min-height: 100vh;
@@ -1542,6 +1538,8 @@ img {
   }
   .gift__btnwrap {
     display: block;
+    position: relative;
+    z-index: 10;
     padding-bottom: 30px;
   }
   .gift__btn_mob span {
@@ -1558,6 +1556,9 @@ img {
   }
   .gift__img {
     bottom: -50px;
+  }
+  .form__btn {
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
 @media (max-width: 469px) {
@@ -1629,9 +1630,39 @@ img {
   }
 }
 .achievements-stats-item__num {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: var(--font-accent);
   font-size: 41px;
   color: var(--color-accent);
+}
+.achievements-stats-item__num:before, .achievements-stats-item__num:after {
+  content: "";
+  display: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: auto;
+  background-repeat: no-repeat;
+  height: 5px;
+}
+.achievements-stats-item__num:before {
+  background-image: url(../img/bg-arrow1.svg);
+  background-position: 100% 0;
+}
+.achievements-stats-item__num:after {
+  background-image: url(../img/bg-arrow2.svg);
+  background-position: 0 0;
+}
+.achievements-stats-item__num span {
+  padding: 0 15px;
 }
 .achievements-stats-item__desc {
   font-size: 12px;
@@ -1741,6 +1772,9 @@ img {
 }
 
 @media (max-width: 767px) {
+  .achievements-stats-item__num:before, .achievements-stats-item__num:after {
+    display: block;
+  }
   .achievements-stats__row {
     display: block;
   }
@@ -2137,6 +2171,12 @@ img {
 .callback-social__item {
   margin-right: 40px;
   text-align: center;
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.callback-social__item:hover {
+  opacity: 0.8;
 }
 .callback-social__item:first-child img {
   -webkit-transform: scale(1.2);
@@ -2255,7 +2295,6 @@ img {
 
 .address-acrd-item {
   border-bottom: 1px solid var(--main-border);
-  cursor: pointer;
 }
 .address-acrd-item.open .address-acrd-item__content {
   height: auto;
@@ -2273,6 +2312,7 @@ img {
   padding: 11px 0;
   font-size: 15px;
   text-transform: uppercase;
+  cursor: pointer;
   line-height: 1.2;
 }
 .address-acrd-item__title span {
@@ -2290,13 +2330,20 @@ img {
 }
 .address-acrd-item__content-inner {
   padding-bottom: 20px;
+  text-align: center;
 }
 .address-acrd-item__phone {
   margin-bottom: 4px;
+  display: inline-block;
   text-align: center;
   color: var(--color-accent);
   letter-spacing: 0.03em;
   font-size: 14px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.address-acrd-item__phone:hover {
+  opacity: 0.8;
 }
 .address-acrd-item__timetable {
   text-align: center;
@@ -2388,8 +2435,8 @@ img {
   letter-spacing: -0.03em;
 }
 .team-item__photo_2 {
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: var(--color-accent) !important;
+  color: var(--color-bg) !important;
 }
 
 @media (max-width: 767px) {
@@ -2398,6 +2445,10 @@ img {
         -ms-flex: 0 0 calc((100% - 16px) / 3);
             flex: 0 0 calc((100% - 16px) / 3);
     min-width: 0;
+  }
+  .team-item__photo {
+    background: #fff;
+    color: var(--color-bg);
   }
 }
 @media (max-width: 574px) {
@@ -2616,6 +2667,10 @@ img {
   }
 }
 
+.social-gallery__mobileimage {
+  display: none;
+}
+
 @media (max-width: 767px) {
   .social__inner {
     padding-top: 25px;
@@ -2644,6 +2699,25 @@ img {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 60%;
             flex: 0 0 60%;
+  }
+  .social-gallery__mobileimage_2 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .social-gallery__mobileimage {
+    margin-bottom: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 149px;
+    overflow: hidden;
+  }
+  .social-gallery__mobileimage img {
+    margin-bottom: -1px;
+    max-width: none;
+    width: auto;
   }
 }
 @media (max-width: 574px) {

@@ -1,18 +1,18 @@
-//function initMobileMenu() {
-//    // Mobile menu
-//    const menu = document.querySelectorAll('[data-menu]')
-//    if (!menu.length) return
+// Smooth scroll
+document.querySelectorAll('.link_scroll').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
 
-//}
+        const id = this.getAttribute('href');
+        const target = document.querySelector(id);
 
-//function initModal() {
-//    // Modal
-//    const modal = document.querySelector('[data-modal]')
-//    if (!modal) return
+        target.scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
 
-//}
-
-
+// Accordeon
 function initAccordion(selector, allowMultiple = false){
 	const items = document.querySelectorAll(selector);
 
