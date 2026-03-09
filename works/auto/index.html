@@ -44,9 +44,15 @@
                         </ul>
                     </nav>
                     <a href="#" class="header__callback btn btn_2"><span>Оставить заявку</span></a>
+                    <div class="header-social">
+                        <a href="#" class="header-social__btn"><img src="./dist/img/icon-social-tel.svg" alt="img"></a>
+                        <a href="#" class="header-social__btn"><img src="./dist/img/icon-social-wtsp.svg" alt="img"></a>
+                        <a href="#" class="header-social__btn"><img src="./dist/img/icon-social-max.svg" alt="img"></a>
+                    </div>
                 </div>
             </div>
             <div class="header__bottom">
+                <div class="header__city">Красноярск</div>
                 <div class="header__phone"><a href="#">208-22-88</a></div>
             </div>
         </header><!-- end header -->
@@ -58,10 +64,13 @@
                         <h1 class="promo__title">Стань водителем<br> в этом году!</h1>
                         <div class="promo__subtitle">Оставь <span>заявку</span><br> и получи скидку</div>
                         <div class="promo__note">при записи на полный курс категории «В», если оставляете заявку на обучение на сайте</div>
-                        <a href="#" class="promo__btn btn"><span>записаться на обучение</span></a>
+                        <a href="#" class="promo__btn promo__btn_desk btn"><span>записаться на обучение</span></a>
                         <div class="promo-features">
-                            <div class="promo-features__item">Автошкола в Красноярске<br> на базе Центра повышения водительского мастерства</div>
+                            <div class="promo-features__item"><span>Автошкола в Красноярске</span><br> на базе Центра повышения водительского мастерства</div>
                             <div class="promo-features__item">Единственные в городе программы обучения<br> на основе Защитного вождения</div>
+                        </div>
+                        <div class="promo__mobwrap">
+                            <a href="#" class="promo__btn promo__btn_mob btn btn_big"><span>записаться на обучение</span></a>
                         </div>
                     </div>
                     <div class="promo__rightside">
@@ -72,12 +81,14 @@
                             </div>
                             <form action="#">
                                 <div class="mainform__title">Начните обучение<br> прямо сейчас!</div>
-                                <input type="text" placeholder="Имя">
-                                <input type="text" placeholder="Телефон">
-                                <input type="text" placeholder="Категория">
-                                <input type="text" placeholder="E-mail">
-                                <button type="button" class="form__btn">Оставить заявку</button>
-                                <div class="form__policy">Отправляя данную форму вы соглашаетесь с<br> <a href="#">политикой конфиденциальности</a></div>
+                                <div class="mainform__inner">
+                                    <input type="text" placeholder="Имя">
+                                    <input type="text" placeholder="Телефон">
+                                    <input type="text" placeholder="Категория">
+                                    <input type="text" placeholder="E-mail">
+                                    <button type="button" class="form__btn">Оставить заявку</button>
+                                    <div class="form__policy">Отправляя данную форму вы соглашаетесь с<br> <a href="#">политикой конфиденциальности</a></div>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -355,11 +366,14 @@
                             <div class="gift__stars"><img src='./dist/img/gift-stars.svg' alt='img'></div>
                             намекнем о твоем заветном желании<br> близкому человеку!
                         </div>
-                        <a href="#" class="gift__btn btn btn_2"><span>Намекнуть</span></a>
+                        <a href="#" class="gift__btn gift__btn_desk btn btn_2"><span>Намекнуть</span></a>
                         <div class="gift-quote">
                             <div class="gift-quote__desc">Верь в мечту.<br> У неё есть приятная особенность – сбываться.</div>
                             <div class="gift-quote__author">Николас Спаркс</div>
                         </div>
+                    </div>
+                    <div class="gift__btnwrap">
+                        <a href="#" class="gift__btn gift__btn_mob btn btn_big btn_2"><span>Намекнуть</span></a>
                     </div>
                     <div class="gift__rightside">
                         <div class="gift__img"><img src='./dist/img/gift-image.png' alt='img'></div>
@@ -369,13 +383,15 @@
                             </div>
                             <form action="#">
                                 <div class="mainform__title">Заполните форму</div>
-                                <input type="text" placeholder="Твое имя и фамилия">
-                                <input type="text" placeholder="Твой телефон">
-                                <input type="text" placeholder="Имя того, кому намекаем">
-                                <input type="text" placeholder="Телефон того, кому намекаем">
-                                <input type="text" placeholder="Желаемая категория">
-                                <button type="button" class="form__btn">Отправить</button>
-                                <div class="form__policy">Отправляя данную форму вы соглашаетесь с<br> <a href="#">политикой конфиденциальности</a></div>
+                                <div class="mainform__inner">
+                                    <input type="text" placeholder="Твое имя и фамилия">
+                                    <input type="text" placeholder="Твой телефон">
+                                    <input type="text" placeholder="Имя того, кому намекаем">
+                                    <input type="text" placeholder="Телефон того, кому намекаем">
+                                    <input type="text" placeholder="Желаемая категория">
+                                    <button type="button" class="form__btn">Отправить</button>
+                                    <div class="form__policy">Отправляя данную форму вы соглашаетесь с<br> <a href="#">политикой конфиденциальности</a></div>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -385,7 +401,10 @@
             <section class="achievements">
                 <h2 class="section__title">НашИ достижения</h2>
                 <div class="achievements__inner">
-                    <div class="achievements__desc">Наша автошкола не просто учит водить — мы формируем культуру безопасного движения<br> и даём уверенность за рулём<br> За 4 года работы мы помогли тысячам людей обрести свободу передвижения!</div>
+                    <div class="achievements__desc">
+                        <p>Наша автошкола не просто учит водить — мы формируем культуру безопасного движения<br> и даём уверенность за рулём</p>
+                        <p>За 4 года работы мы помогли <span>тысячам людей</span> обрести свободу передвижения!</p>
+                    </div>
 
                     <div class="achievements-stats">
                         <div class="achievements-stats__row">
