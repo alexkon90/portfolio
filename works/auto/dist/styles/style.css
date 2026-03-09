@@ -476,11 +476,16 @@ img {
   .header__callback {
     display: none;
   }
+  .section__title {
+    font-size: 30px;
+  }
 }
 @media (max-width: 574px) {
   .section__title {
     padding: 12px 0;
     font-size: 18px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 /*-------------------------promo-------------------------*/
@@ -753,6 +758,11 @@ img {
   }
   .promo {
     margin-bottom: 15px;
+  }
+}
+@media (max-width: 359px) {
+  .promo__leftside {
+    padding-left: 5px;
   }
 }
 /*-------------------------benefits-------------------------*/
@@ -1316,8 +1326,23 @@ img {
     margin: 0 auto 45px;
     max-width: 290px;
   }
+  .tariffs-cars-item:last-child {
+    margin-bottom: 0;
+  }
   .tariffs-cars-item__body {
     margin-bottom: 30px;
+  }
+  .tariffs-cars-item__btn {
+    height: auto;
+    font-size: 18px;
+  }
+  .tariffs-cars-item__btn:after {
+    bottom: -5px;
+  }
+  .tariffs-cars-item__btn span {
+    width: 215px;
+    height: 28px;
+    border: 1px solid var(--color-bg);
   }
 }
 @media (max-width: 574px) {
@@ -1471,6 +1496,16 @@ img {
   margin: 0;
 }
 
+.gift__img_2 {
+  position: absolute;
+  top: -120px;
+  z-index: -1;
+  right: -15px;
+  width: 720px;
+  right: -50px;
+  display: none;
+}
+
 @media (max-width: 1023px) {
   .gift__inner {
     -webkit-box-orient: vertical;
@@ -1502,15 +1537,15 @@ img {
   .gift__rightside {
     padding-bottom: 0;
   }
-  .gift__img {
-    display: none;
-  }
   .gift__btn_desk {
     display: none;
   }
   .gift__btnwrap {
     display: block;
     padding-bottom: 30px;
+  }
+  .gift__btn_mob span {
+    width: 215px;
   }
   .achievements__desc {
     margin-bottom: 30px !important;
@@ -1520,6 +1555,17 @@ img {
   }
   .achievements__desc span {
     color: var(--color-accent);
+  }
+  .gift__img {
+    bottom: -50px;
+  }
+}
+@media (max-width: 469px) {
+  .gift__img_2 {
+    display: block;
+  }
+  .gift__img {
+    display: none;
   }
 }
 /*-------------------------achievements-------------------------*/
@@ -1726,6 +1772,14 @@ img {
   }
   .achievements-events-item__img:after {
     display: none !important;
+  }
+  .achievements-note {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .achievements-events-item__img {
+    height: 275px;
   }
 }
 /*-------------------------education-------------------------*/
@@ -2159,6 +2213,27 @@ img {
     margin-bottom: 20px;
     text-transform: none;
     line-height: 1.4;
+  }
+}
+@media (max-width: 399px) {
+  .discounts:after {
+    display: none;
+  }
+  .discounts-item {
+    position: relative;
+  }
+  .discounts-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 574px;
+    height: 431px;
+    background-image: url(../img/discount-item-shape-mobile.svg);
   }
 }
 /*-------------------------address-------------------------*/
