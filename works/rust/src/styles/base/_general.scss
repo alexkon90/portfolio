@@ -23,6 +23,15 @@ body {
     @media (max-width: 1399px) { 
         padding: 0 70px;
     }
+    @media (max-width: 959px) {
+        padding: 0 40px;
+    }
+    @media (max-width: 797px) {
+        padding: 0 30px;
+    }
+    @media (max-width: 479px) {
+        padding: 0 20px;
+    }
 }
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 20px;
@@ -33,6 +42,15 @@ h1, .title_1{
     line-height: 1.1;
     @media (max-width: 1399px) { 
         font-size: 47px;
+    }
+    @media (max-width: 959px) {
+        font-size: 32px;
+    }
+    @media (max-width: 767px) {
+        font-size: 36px;
+    }
+    @media (max-width: 479px) {
+        font-size: 32px;
     }
 }
 h2, .title_2{

@@ -30,12 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Articles carousel
     const articles_carousel = new Swiper('.articles-carousel', {
         loop: true,
-        spaceBetween: 20,
+        spaceBetween: 10,
         slidesPerView: 'auto', 
         centeredSlides: false, 
         breakpoints: {
             768: {
                 slidesPerView: 2,
+                spaceBetween: 20,
             },
             1280: {
                 slidesPerView: 3,
@@ -43,3 +44,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// Promo carousel
+let swiper;
+
+function initSwiper() {
+    if (window.innerWidth <= 767 && !swiper) {
+        swiper = new Swiper('.promo-box', {
+            slidesPerView: 'auto', 
+            loop: true,
+            initialSlide: 1,
+            centeredSlides: true,
+            centeredSlidesBounds: true, 
+        });
+    } else if (window.innerWidth > 767 && swiper) {
+        swiper.destroy(true, true);
+        swiper = null;
+    }
+}
+
+initSwiper();
+window.addEventListener('resize', initSwiper);
+
+// Catalog carousel
+let swiper2;
+function initSwiper2() {
+    if (window.innerWidth <= 767 && !swiper2) {
+        swiper2 = new Swiper('.catalog-carousel', {
+            slidesPerView: 'auto', 
+            loop: true,
+            spaceBetween: 10,
+        });
+    } else if (window.innerWidth > 767 && swiper2) {
+        swiper2.destroy(true, true);
+        swiper2 = null;
+    }
+}
+
+initSwiper2();
+window.addEventListener('resize', initSwiper2);

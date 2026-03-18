@@ -39,6 +39,12 @@
         font-weight: 500;
         border-radius: 2px;
     }
+    @media (max-width: 767px) {
+        height: 40px;
+    }
+    @media (max-width: 479px) {
+        padding: 0 20px;
+    }
 }
 .input,
 .textarea {
