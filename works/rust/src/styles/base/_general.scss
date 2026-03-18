@@ -1,0 +1,54 @@
+/*==============================GENERAL==============================*/
+html {
+    scroll-behavior: smooth;
+}
+body {
+	font-family: "Inter";
+    min-width: 320px;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    background: #181818;
+    color: #e6e6e6;
+}
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+.center-wrapper {
+    position: relative;
+    max-width: 1330px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 20px;
+    line-height: 1.2;
+}
+h1, .title_1{
+    font-size: 52px;
+    line-height: 1.1;
+}
+h2, .title_2{
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+p {
+    margin-bottom: 20px;
+}
+a{
+	outline: none;
+	text-decoration: none;
+	transition: 
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+}
+img {
+    height: auto;
+}
+:root {
+    --color-accent: #943b27;
+}

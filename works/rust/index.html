@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+	<link rel="stylesheet" href="dist/styles/style.css">
+	<title>Rust Assist</title>
+</head>
+<body>
+<main class="wrapper">
+    <header class="header">
+        <div class='center-wrapper'>
+            <div class="header__body">
+                <a href="#" class="header-logo"><i></i> RUST ASSIST</a>
+                <nav class="header-menu">
+                    <ul class="header-menu__list">
+                        <li><a href="#">Главная</a></li>
+                        <li>
+                            <a href="#">
+                                Предметы
+                                <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0528 0C10.8102 0 10.5677 0.0796383 10.3826 0.23946L6 4.025L1.61736 0.23946C1.24724 -0.0796383 0.647228 -0.0796383 0.277113 0.23946C-0.0923709 0.559104 -0.0923709 1.0773 0.277113 1.39694L5.32988 5.76068C5.69999 6.07977 6.30001 6.07977 6.67012 5.76068L11.7229 1.39694C12.0924 1.0773 12.0924 0.559104 11.7229 0.23946C11.5378 0.0796383 11.2953 0 11.0528 0Z" fill="#E6E6E6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Мир
+                                <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0528 0C10.8102 0 10.5677 0.0796383 10.3826 0.23946L6 4.025L1.61736 0.23946C1.24724 -0.0796383 0.647228 -0.0796383 0.277113 0.23946C-0.0923709 0.559104 -0.0923709 1.0773 0.277113 1.39694L5.32988 5.76068C5.69999 6.07977 6.30001 6.07977 6.67012 5.76068L11.7229 1.39694C12.0924 1.0773 12.0924 0.559104 11.7229 0.23946C11.5378 0.0796383 11.2953 0 11.0528 0Z" fill="#E6E6E6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li><a href="#">Утилиты</a></li>
+                        <li><a href="#">О нас</a></li>
+                    </ul>
+                    <div class="header-menu__dropdown">
+                        
+                    </div>
+                </nav>
+                <div class="header__rightside">
+                    <div class="header-search">
+                        <form action="#">
+                            <input type="text" class="header-search__input" placeholder="Поиск">
+                            <div class="header-search__icon">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.54765 11.0953C3.99716 11.0953 2.68506 10.5582 1.61138 9.48393C0.537696 8.40967 0.000569442 7.09758 4.51579e-07 5.54765C-0.000568538 3.99772 0.536558 2.68563 1.61138 1.61138C2.6862 0.537127 3.99829 0 5.54765 0C7.09701 0 8.40939 0.537127 9.48478 1.61138C10.5602 2.68563 11.097 3.99772 11.0953 5.54765C11.0953 6.17354 10.9957 6.76387 10.7966 7.31863C10.5974 7.8734 10.3272 8.36415 9.98578 8.7909L14.7653 13.5704C14.9218 13.7269 15 13.926 15 14.1679C15 14.4097 14.9218 14.6088 14.7653 14.7653C14.6088 14.9218 14.4097 15 14.1679 15C13.926 15 13.7269 14.9218 13.5704 14.7653L8.7909 9.98577C8.36415 10.3272 7.8734 10.5974 7.31863 10.7966C6.76387 10.9957 6.17354 11.0953 5.54765 11.0953ZM5.54765 9.38834C6.61451 9.38834 7.52148 9.01508 8.26856 8.26856C9.01565 7.52205 9.38891 6.61508 9.38834 5.54765C9.38777 4.48023 9.01451 3.57354 8.26856 2.8276C7.52262 2.08165 6.61565 1.70811 5.54765 1.70697C4.47966 1.70583 3.57297 2.07937 2.8276 2.8276C2.08222 3.57582 1.70868 4.4825 1.70697 5.54765C1.70526 6.6128 2.07881 7.51977 2.8276 8.26856C3.57639 9.01735 4.48307 9.39061 5.54765 9.38834Z" fill="#fff" />
+                                </svg>
+                            </div>
+                            <div class="header-search__suggest">
+                                <div class="header-search__block">
+                                    <div class="header-search__caption">Оружие</div>
+                                    <div class="header-search__list">
+                                        <div class="hs-item">
+                                            <div class="hs-item__img"></div>
+                                            <div class="hs-item__content">
+                                                <div class="hs-item__category">Оружие</div>
+                                                <div class="hs-item__title"><a href="#">Пример оружия</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="header-search__block">
+                                    <div class="header-search__caption">Скины</div>
+                                    <div class="header-search__list">
+                                        <div class="hs-item">
+                                            <div class="hs-item__img"></div>
+                                            <div class="hs-item__content">
+                                                <div class="hs-item__category">Скин один</div>
+                                                <div class="hs-item__title"><a href="#">Скин пример</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-item">
+                                            <div class="hs-item__img"></div>
+                                            <div class="hs-item__content">
+                                                <div class="hs-item__category">Скин еще какой-то</div>
+                                                <div class="hs-item__title"><a href="#">Пример скина наименование</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-item">
+                                            <div class="hs-item__img"></div>
+                                            <div class="hs-item__content">
+                                                <div class="hs-item__category">Скин один</div>
+                                                <div class="hs-item__title"><a href="#">Скин пример</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="hs-item">
+                                            <div class="hs-item__img"></div>
+                                            <div class="hs-item__content">
+                                                <div class="hs-item__category">Оружие</div>
+                                                <div class="hs-item__title"><a href="#">Пример оружия</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="header-search__block">
+                                    <div class="header-search__caption">Разное</div>
+                                    <div class="header-search__list">
+                                        <div class="hs-item">
+                                            <div class="hs-item__img"></div>
+                                            <div class="hs-item__content">
+                                                <div class="hs-item__category">Оружие</div>
+                                                <div class="hs-item__title"><a href="#">Пример оружия</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end center-wrapper -->
+    </header><!-- end header -->
+
+    <main class="main">
+        <div class='center-wrapper'>
+            <section class="promo">
+                <div class="promo__leftside">
+                    <div class="promo__content">
+                        <h1 class="promo__title">Rust Assist — ваш ассистент<br> в мире Rust</h1>
+                        <div class="promo__text">Небольшой текст, бла бла бла, вставлю пример позже, вставлю пример позже, вставлю пример позже, вставлю пример позже</div>
+                        <div class="promo__buttons">
+                            <a href="#" class="promo__btn btn btn_accent">Скачать приложение</a>
+                            <a href="#" class="promo__btn btn">Таблица рейда</a>
+                        </div>
+                    </div>
+                    <div class="promo-box">
+                        <div class="promo-box__slider">
+                            <div class="promo-box__slide">
+                                <div class="promo-box-item">
+                                    <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image1.png' alt='img'></div>
+                                </div>
+                                <div class="promo-box-item">
+                                    <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image6.png' alt='img'></div>
+                                </div>
+                            </div>
+                            <div class="promo-box__slide">
+                                <div class="promo-box-item">
+                                    <div class="promo-box-item__grid">
+                                        <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image2.png' alt='img'></div>
+                                        <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image3.png' alt='img'></div>
+                                        <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image4.png' alt='img'></div>
+                                        <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image5.png' alt='img'></div>
+                                    </div>
+                                </div>
+                                <div class="promo-box-item">
+                                    <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image1.png' alt='img'></div>
+                                </div>
+                            </div>
+                            <div class="promo-box__slide">
+                                <div class="promo-box-item">
+                                    <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image7.png' alt='img'></div>
+                                </div>
+                                <div class="promo-box-item">
+                                    <div class="promo-box-item__grid">
+                                        <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image8.png' alt='img'></div>
+                                        <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image9.png' alt='img'></div>
+                                        <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image10.png' alt='img'></div>
+                                        <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image11.png' alt='img'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="promo-box__slide">
+                                <div class="promo-box-item">
+                                    <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image12.png' alt='img'></div>
+                                </div>
+                                <div class="promo-box-item">
+                                    <div class="promo-box-item__img"><img src='./dist/img/content/box/box-image13.png' alt='img'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="promo__rightside">
+                    <div class="promo-articles">
+                        <div class="promo-articles__list">
+                            <div class="articles-item">
+                                <div class="articles-item__img"><a href="#"><img src='./dist/img/content/articles-image1.jpg' alt='img'></a></div>
+                                <div class="articles-item__content">
+                                    <div class="articles-item__title"><a href="#">Как поменять язык в Раст: полная инструкция</a></div>
+                                    <div class="articles-item__bottom">
+                                        <div class="articles-item__info">
+                                            <div class="articles-item__info-item">15.06.2025</div>
+                                            <div class="articles-item__info-item">Обучение</div>
+                                            <div class="articles-item__info-item">Рейд</div>
+                                        </div>
+                                        <a href="#" class="articles-item__more btn btn_small">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="articles-item">
+                                <div class="articles-item__img"><a href="#"><img src='./dist/img/content/articles-image1.jpg' alt='img'></a></div>
+                                <div class="articles-item__content">
+                                    <div class="articles-item__title"><a href="#">Как поменять язык в Раст: полная</a></div>
+                                    <div class="articles-item__bottom">
+                                        <div class="articles-item__info">
+                                            <div class="articles-item__info-item">15.06.2025</div>
+                                            <div class="articles-item__info-item">Обучение</div>
+                                            <div class="articles-item__info-item">Рейд</div>
+                                        </div>
+                                        <a href="#" class="articles-item__more btn btn_small">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="promo-articles__btn btn btn_accent btn_full">Другие статьи</a>
+                    </div>
+                </div>
+            </section><!-- end promo -->
+            
+            <section class="users">
+                <div class="users__list">
+                    <div class="users-item">
+                        <div class="users-item__num">01</div>
+                        <div class="users-item__title">Для новичков</div>
+                        <div class="users-item__desc">Полная база знаний по Rust! Подробные карточки предметов, гайды и советы</div>
+                    </div>
+                    <div class="users-item">
+                        <div class="users-item__num">02</div>
+                        <div class="users-item__title">Для новичков</div>
+                        <div class="users-item__desc">Полная база знаний по Rust! Подробные карточки предметов, гайды и советы</div>
+                    </div>
+                    <div class="users-item">
+                        <div class="users-item__num">03</div>
+                        <div class="users-item__title">Для профи</div>
+                        <div class="users-item__desc">Глубокий разбор механик, мета-стратегии и лучшие тактики для победы</div>
+                    </div>
+                    <div class="users-item">
+                        <div class="users-item__num">04</div>
+                        <div class="users-item__title">Для профи</div>
+                        <div class="users-item__desc">Глубокий разбор механик, мета-стратегии и лучшие тактики для победы</div>
+                    </div>
+                    <div class="users-item">
+                        <div class="users-item__num">05</div>
+                        <div class="users-item__title">Для новичков</div>
+                        <div class="users-item__desc">RustAssist — проверенный источник знаний для выживания и победы</div>
+                    </div>
+                </div>
+            </section><!-- end users -->
+
+            <section class="calc">
+                <div class="calc__body">
+                    <div class="calc__img"><img src='./dist/img/calc-image.png' alt='img'></div>
+                    <div class="calc__content">
+                        <h2 class="calc__title">удобный калькулятор рейда прямо в твоём телефоне</h2>
+                        <div class="calc__desc">Считай ресурсы, планируй рейды и контролируй окупаемость за секунды.<br> Без лишних таблиц и сложных формул — всё уже рассчитано за тебя.<br> Быстро, удобно, прямо в телефоне.</div>
+                        <a href="#" class="calc__btn btn btn_full btn_accent">Скачать приложение на IOS</a>
+                    </div>
+                </div>
+            </section><!-- end calc -->
+
+            <section class="stats">
+                <div class="stats__row">
+                    <div class="stats-item">
+                        <div class="stats-item__num">TOP 1</div>
+                        <div class="stats-item__text">рейд калькулятор<br> в России и СНГ</div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="stats-item__num">+300</div>
+                        <div class="stats-item__text">скачиваний приложения по всему миру</div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="stats-item__num">+235</div>
+                        <div class="stats-item__text">пользователей пользуются ежедневно</div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="stats-item__num">+5k</div>
+                        <div class="stats-item__text">пользователей пользуются ежедневно</div>
+                    </div>
+                </div>
+            </section><!-- end stats -->
+
+            <section class="catalog">
+                <div class="catalog__section">
+                    <h2 class="catalog__title">Скины</h2>
+                    <div class="catalog__content">
+                        <div class="catalog-carousel">
+                            <div class="catalog-carousel__list">
+                                <div class="catalog-carousel-item">
+                                    <div class="catalog-carousel-item__img"><img src='./dist/img/content/catalog/catalog-image1.png' alt='img'></div>
+                                    <div class="catalog-carousel-item__type">Объект</div>
+                                    <div class="catalog-carousel-item__title">Название скина</div>
+                                    <div class="catalog-carousel-item__price">$12.54</div>
+                                </div>
+                                <div class="catalog-carousel-item">
+                                    <div class="catalog-carousel-item__img"><img src='./dist/img/content/catalog/catalog-image2.png' alt='img'></div>
+                                    <div class="catalog-carousel-item__type">Объект</div>
+                                    <div class="catalog-carousel-item__title">Название скина</div>
+                                    <div class="catalog-carousel-item__price">$12.54</div>
+                                </div>
+                                <div class="catalog-carousel-item">
+                                    <div class="catalog-carousel-item__img"><img src='./dist/img/content/catalog/catalog-image3.png' alt='img'></div>
+                                    <div class="catalog-carousel-item__type">Объект</div>
+                                    <div class="catalog-carousel-item__title">Название скина</div>
+                                    <div class="catalog-carousel-item__price">$12.54</div>
+                                </div>
+                                <div class="catalog-carousel-item">
+                                    <div class="catalog-carousel-item__img"><img src='./dist/img/content/catalog/catalog-image1.png' alt='img'></div>
+                                    <div class="catalog-carousel-item__type">Объект</div>
+                                    <div class="catalog-carousel-item__title">Название скина</div>
+                                    <div class="catalog-carousel-item__price">$12.54</div>
+                                </div>
+                                <div class="catalog-carousel-item">
+                                    <div class="catalog-carousel-item__img"><img src='./dist/img/content/catalog/catalog-image2.png' alt='img'></div>
+                                    <div class="catalog-carousel-item__type">Объект</div>
+                                    <div class="catalog-carousel-item__title">Название скина</div>
+                                    <div class="catalog-carousel-item__price">$12.54</div>
+                                </div>
+                                <div class="catalog-carousel-item">
+                                    <div class="catalog-carousel-item__img"><img src='./dist/img/content/catalog/catalog-image3.png' alt='img'></div>
+                                    <div class="catalog-carousel-item__type">Объект</div>
+                                    <div class="catalog-carousel-item__title">Название скина</div>
+                                    <div class="catalog-carousel-item__price">$12.54</div>
+                                </div>
+                                <div class="catalog-carousel-item">
+                                    <div class="catalog-carousel-item__img"><img src='./dist/img/content/catalog/catalog-image1.png' alt='img'></div>
+                                    <div class="catalog-carousel-item__type">Объект</div>
+                                    <div class="catalog-carousel-item__title">Название скина</div>
+                                    <div class="catalog-carousel-item__price">$12.54</div>
+                                </div>
+                                <div class="catalog-carousel-item">
+                                    <div class="catalog-carousel-item__img"><img src='./dist/img/content/catalog/catalog-image2.png' alt='img'></div>
+                                    <div class="catalog-carousel-item__type">Объект</div>
+                                    <div class="catalog-carousel-item__title">Название скина</div>
+                                    <div class="catalog-carousel-item__price">$12.54</div>
+                                </div>
+                                <div class="catalog-carousel-item">
+                                    <div class="catalog-carousel-item__img"><img src='./dist/img/content/catalog/catalog-image3.png' alt='img'></div>
+                                    <div class="catalog-carousel-item__type">Объект</div>
+                                    <div class="catalog-carousel-item__title">Название скина</div>
+                                    <div class="catalog-carousel-item__price">$12.54</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__section">
+                    <h2 class="catalog__title">Предметы</h2>
+                    <div class="catalog__content">
+                        <div class="catalog__row">
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image4.svg' alt='img'></div>
+                                <div class="catalog-item__title">Боеприпасы</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image5.svg' alt='img'></div>
+                                <div class="catalog-item__title">Конструкции</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image6.svg' alt='img'></div>
+                                <div class="catalog-item__title">Одежда</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image7.svg' alt='img'></div>
+                                <div class="catalog-item__title">Компоненты</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image8.svg' alt='img'></div>
+                                <div class="catalog-item__title">Электричество</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image4.svg' alt='img'></div>
+                                <div class="catalog-item__title">Боеприпасы</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image5.svg' alt='img'></div>
+                                <div class="catalog-item__title">Конструкции</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image6.svg' alt='img'></div>
+                                <div class="catalog-item__title">Одежда</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image7.svg' alt='img'></div>
+                                <div class="catalog-item__title">Компоненты</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image8.svg' alt='img'></div>
+                                <div class="catalog-item__title">Электричество</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image4.svg' alt='img'></div>
+                                <div class="catalog-item__title">Боеприпасы</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image5.svg' alt='img'></div>
+                                <div class="catalog-item__title">Конструкции</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image6.svg' alt='img'></div>
+                                <div class="catalog-item__title">Одежда</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image7.svg' alt='img'></div>
+                                <div class="catalog-item__title">Компоненты</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image8.svg' alt='img'></div>
+                                <div class="catalog-item__title">Электричество</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__section">
+                    <h2 class="catalog__title">Мир</h2>
+                    <div class="catalog__content">
+                        <div class="catalog__row">
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image4.svg' alt='img'></div>
+                                <div class="catalog-item__title">Боеприпасы</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image5.svg' alt='img'></div>
+                                <div class="catalog-item__title">Конструкции</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image6.svg' alt='img'></div>
+                                <div class="catalog-item__title">Одежда</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image7.svg' alt='img'></div>
+                                <div class="catalog-item__title">Компоненты</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image8.svg' alt='img'></div>
+                                <div class="catalog-item__title">Электричество</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image4.svg' alt='img'></div>
+                                <div class="catalog-item__title">Боеприпасы</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image5.svg' alt='img'></div>
+                                <div class="catalog-item__title">Конструкции</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image6.svg' alt='img'></div>
+                                <div class="catalog-item__title">Одежда</div>
+                            </div>
+                            <div class="catalog-item">
+                                <div class="catalog-item__icon"><img src='./dist/img/content/catalog/catalog-image7.svg' alt='img'></div>
+                                <div class="catalog-item__title">Компоненты</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- end catalog -->
+
+            <section class="servers">
+                <h2 class="section__title">Рекомендуемые сервера</h2>
+                <div class="servers__row">
+                    <div class="servers-item">
+                        <div class="servers-item__title">Сервер «Лучший»</div>
+                        <div class="servers-item__stats">
+                            <div class="servers-item__stat">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.44 0.8125C9.76343 1.00704 10.031 1.28194 10.2168 1.6105C10.4025 1.93905 10.5001 2.31008 10.5 2.6875C10.5001 3.06492 10.4025 3.43595 10.2168 3.7645C10.031 4.09306 9.76343 4.36796 9.44 4.5625M13 11.75V11.375C13 9.975 13 9.275 12.7275 8.74C12.4878 8.26962 12.1054 7.88718 11.635 7.6475M5.1875 4.875C5.47477 4.875 5.75922 4.81842 6.02462 4.70849C6.29002 4.59855 6.53117 4.43742 6.7343 4.2343C6.93742 4.03117 7.09855 3.79002 7.20849 3.52462C7.31842 3.25922 7.375 2.97477 7.375 2.6875C7.375 2.40023 7.31842 2.11578 7.20849 1.85038C7.09855 1.58498 6.93742 1.34383 6.7343 1.1407C6.53117 0.937576 6.29002 0.776446 6.02462 0.666513C5.75922 0.556581 5.47477 0.5 5.1875 0.5C4.60734 0.5 4.05094 0.730468 3.6407 1.1407C3.23047 1.55094 3 2.10734 3 2.6875C3 3.26766 3.23047 3.82406 3.6407 4.2343C4.05094 4.64453 4.60734 4.875 5.1875 4.875ZM0.5 11.375V11.75H9.875V11.375C9.875 9.975 9.875 9.275 9.6025 8.74C9.36282 8.26962 8.98038 7.88718 8.51 7.6475C7.975 7.375 7.275 7.375 5.875 7.375H4.5C3.1 7.375 2.4 7.375 1.865 7.6475C1.39462 7.88718 1.01218 8.26962 0.7725 8.74C0.5 9.275 0.5 9.975 0.5 11.375Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                5/200
+                            </div>
+                            <div class="servers-item__stat">
+                                <img src='./dist/img/flag-ru.png' alt='img'>
+                                <span>185.189.255.122:08658</span>
+                                <button>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.75 13.5H11.75V14.5H3.5V4.25H4.5V3.25H2.5V15.5H12.75V13.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                        <path d="M5.5 0.5V12.5H15.5V4.79291L11.2071 0.5H5.5ZM14.5 11.5H6.5V1.5H9.75V6.25H14.5V11.5ZM14.5 5.25H10.75V1.5H10.7929L14.5 5.20709V5.25Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7.5L2.96154 14.2846L2 15V0L12 7.5ZM10.1731 7.5L2.96154 2.07692V12.9231L10.1731 7.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.2668 3.0419C13.207 2.97336 13.1336 2.91796 13.0513 2.8792C12.969 2.84043 12.8796 2.81914 12.7886 2.81667C11.3763 2.77974 9.58926 1.26959 8.40772 0.676973C7.67787 0.31205 7.19603 0.0714348 6.83418 0.00805014C6.76073 -0.00288588 6.68604 -0.00267842 6.61264 0.00866553C6.2508 0.0720501 5.76895 0.312666 5.03972 0.677589C3.85818 1.26959 2.0711 2.77974 0.658797 2.81667C0.567824 2.81943 0.478389 2.84084 0.396033 2.87958C0.313677 2.91833 0.240156 2.97357 0.180027 3.0419C0.0555688 3.183 -0.0087095 3.36722 0.000950409 3.55513C0.304335 9.72313 2.51664 13.5404 6.39849 15.7588C6.49941 15.816 6.61141 15.8456 6.7228 15.8456C6.83418 15.8456 6.94618 15.816 7.04772 15.7588C10.9296 13.5404 13.1413 9.72313 13.4453 3.55513C13.4558 3.36721 13.3916 3.18276 13.2668 3.0419ZM10.18 5.46774L6.90434 10.3016C6.7868 10.4751 6.60218 10.5902 6.41941 10.5902C6.23664 10.5902 6.03234 10.4899 5.90372 10.3613L3.5948 8.05174C3.51941 7.97608 3.47709 7.87362 3.47709 7.76682C3.47709 7.66001 3.51941 7.55756 3.5948 7.4819L4.16526 6.9102C4.24123 6.83541 4.34357 6.7935 4.45018 6.7935C4.55679 6.7935 4.65913 6.83541 4.7351 6.9102L6.23664 8.41174L8.84526 4.56128C8.90561 4.47317 8.99838 4.41252 9.1033 4.39257C9.20823 4.37262 9.31678 4.395 9.40526 4.45482L10.073 4.90774C10.1612 4.968 10.2219 5.06073 10.242 5.16566C10.2621 5.27058 10.2398 5.37919 10.18 5.46774Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                VAC
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.25 12L3.75 10.4097L0.7815 11.5683C0.5895 11.6405 0.41125 11.6196 0.24675 11.5055C0.08225 11.3914 0 11.2308 0 11.0239V1.76221C0 1.62691 0.0325001 1.50347 0.0975001 1.3919C0.1625 1.28032 0.257 1.20283 0.381 1.15941L3.75 0L8.25 1.59031L11.2185 0.431654C11.4105 0.35946 11.5887 0.373091 11.7533 0.472548C11.9177 0.572006 12 0.720434 12 0.917834V10.2961C12 10.441 11.9602 10.5667 11.8807 10.6732C11.8017 10.7803 11.6953 10.8555 11.5613 10.8989L8.25 12ZM7.875 11.0761V2.21583L4.125 0.894358V9.75464L7.875 11.0761ZM8.625 11.0761L11.25 10.203V1.22908L8.625 2.21658V11.0761ZM0.75 10.7709L3.375 9.75464V0.894358L0.75 1.79705V10.7709Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                Procedural Map
+                            </div>
+                            <div class="servers-item__stat">PvE</div>
+                            <div class="servers-item__stat">
+                                <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1667 6.24707V6.75707C11.1667 7.07802 11.0509 7.38821 10.8407 7.63068C10.6304 7.87316 10.3397 8.03166 10.022 8.07707L7.64467 8.41707C7.32695 8.46248 7.03627 8.62098 6.826 8.86346C6.61573 9.10593 6.49998 9.41612 6.5 9.73707V10.9137" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.83337 7.58033V7.757C1.83335 8.07795 1.9491 8.38814 2.15937 8.63061C2.36964 8.87309 2.66032 9.03159 2.97804 9.077L5.35537 9.417C5.67309 9.46241 5.96377 9.62091 6.17404 9.86339C6.38431 10.1059 6.50006 10.4161 6.50004 10.737V10.9137M5.18371 3.54833C4.62204 3.51633 4.36571 3.00333 4.66104 2.52433C4.84257 2.23117 5.0313 1.94253 5.22704 1.65867C5.48537 1.28267 5.70437 1.005 5.88404 0.8C6.23537 0.4 6.76404 0.4 7.11571 0.8C7.29537 1.00467 7.51437 1.28267 7.77237 1.65867C7.96823 1.94242 8.15706 2.23095 8.33871 2.524C8.63404 3.00333 8.37771 3.51633 7.81571 3.54833C7.48571 3.567 7.05571 3.58033 6.50004 3.58033C5.94437 3.58033 5.51404 3.567 5.18371 3.54833Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5 10.9139C6.94203 10.9139 7.36595 11.0895 7.67851 11.4021C7.99107 11.7146 8.16667 12.1385 8.16667 12.5806C8.16667 13.0226 7.99107 13.4465 7.67851 13.7591C7.36595 14.0716 6.94203 14.2472 6.5 14.2472C6.05797 14.2472 5.63405 14.0716 5.32149 13.7591C5.00893 13.4465 4.83333 13.0226 4.83333 12.5806C4.83333 12.1385 5.00893 11.7146 5.32149 11.4021C5.63405 11.0895 6.05797 10.9139 6.5 10.9139ZM6.5 10.9139V3.58058M3.16667 6.24724C3.16667 6.60086 3.02619 6.94 2.77614 7.19005C2.52609 7.4401 2.18696 7.58058 1.83333 7.58058C1.47971 7.58058 1.14057 7.4401 0.890524 7.19005C0.640476 6.94 0.5 6.60086 0.5 6.24724C0.5 5.89362 0.640476 5.55448 0.890524 5.30443C1.14057 5.05439 1.47971 4.91391 1.83333 4.91391C2.18696 4.91391 2.52609 5.05439 2.77614 5.30443C3.02619 5.55448 3.16667 5.89362 3.16667 6.24724ZM12.4907 4.35558C12.4753 3.92891 12.152 3.60524 11.725 3.58991C11.539 3.58348 11.3528 3.58037 11.1667 3.58058C10.9518 3.5808 10.7657 3.58391 10.6083 3.58991C10.1817 3.60524 9.858 3.92858 9.84267 4.35558C9.83624 4.54162 9.83313 4.72776 9.83333 4.91391C9.83356 5.1288 9.83667 5.31491 9.84267 5.47224C9.858 5.89891 10.1813 6.22258 10.6083 6.23791C10.7659 6.24391 10.952 6.24702 11.1667 6.24724C11.3816 6.24702 11.5677 6.24391 11.725 6.23791C12.1517 6.22258 12.4753 5.89924 12.4907 5.47224C12.4967 5.31491 12.4998 5.1288 12.5 4.91391C12.4998 4.69902 12.4967 4.51291 12.4907 4.35558Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                2621
+                            </div>
+                            <div class="servers-item__stat">+1</div>
+                        </div>
+                    </div>
+                    <div class="servers-item">
+                        <div class="servers-item__title">Сервер «Лучший»</div>
+                        <div class="servers-item__stats">
+                            <div class="servers-item__stat">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.44 0.8125C9.76343 1.00704 10.031 1.28194 10.2168 1.6105C10.4025 1.93905 10.5001 2.31008 10.5 2.6875C10.5001 3.06492 10.4025 3.43595 10.2168 3.7645C10.031 4.09306 9.76343 4.36796 9.44 4.5625M13 11.75V11.375C13 9.975 13 9.275 12.7275 8.74C12.4878 8.26962 12.1054 7.88718 11.635 7.6475M5.1875 4.875C5.47477 4.875 5.75922 4.81842 6.02462 4.70849C6.29002 4.59855 6.53117 4.43742 6.7343 4.2343C6.93742 4.03117 7.09855 3.79002 7.20849 3.52462C7.31842 3.25922 7.375 2.97477 7.375 2.6875C7.375 2.40023 7.31842 2.11578 7.20849 1.85038C7.09855 1.58498 6.93742 1.34383 6.7343 1.1407C6.53117 0.937576 6.29002 0.776446 6.02462 0.666513C5.75922 0.556581 5.47477 0.5 5.1875 0.5C4.60734 0.5 4.05094 0.730468 3.6407 1.1407C3.23047 1.55094 3 2.10734 3 2.6875C3 3.26766 3.23047 3.82406 3.6407 4.2343C4.05094 4.64453 4.60734 4.875 5.1875 4.875ZM0.5 11.375V11.75H9.875V11.375C9.875 9.975 9.875 9.275 9.6025 8.74C9.36282 8.26962 8.98038 7.88718 8.51 7.6475C7.975 7.375 7.275 7.375 5.875 7.375H4.5C3.1 7.375 2.4 7.375 1.865 7.6475C1.39462 7.88718 1.01218 8.26962 0.7725 8.74C0.5 9.275 0.5 9.975 0.5 11.375Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                5/200
+                            </div>
+                            <div class="servers-item__stat">
+                                <img src='./dist/img/flag-ru.png' alt='img'>
+                                <span>185.189.255.122:08658</span>
+                                <button>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.75 13.5H11.75V14.5H3.5V4.25H4.5V3.25H2.5V15.5H12.75V13.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                        <path d="M5.5 0.5V12.5H15.5V4.79291L11.2071 0.5H5.5ZM14.5 11.5H6.5V1.5H9.75V6.25H14.5V11.5ZM14.5 5.25H10.75V1.5H10.7929L14.5 5.20709V5.25Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7.5L2.96154 14.2846L2 15V0L12 7.5ZM10.1731 7.5L2.96154 2.07692V12.9231L10.1731 7.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.2668 3.0419C13.207 2.97336 13.1336 2.91796 13.0513 2.8792C12.969 2.84043 12.8796 2.81914 12.7886 2.81667C11.3763 2.77974 9.58926 1.26959 8.40772 0.676973C7.67787 0.31205 7.19603 0.0714348 6.83418 0.00805014C6.76073 -0.00288588 6.68604 -0.00267842 6.61264 0.00866553C6.2508 0.0720501 5.76895 0.312666 5.03972 0.677589C3.85818 1.26959 2.0711 2.77974 0.658797 2.81667C0.567824 2.81943 0.478389 2.84084 0.396033 2.87958C0.313677 2.91833 0.240156 2.97357 0.180027 3.0419C0.0555688 3.183 -0.0087095 3.36722 0.000950409 3.55513C0.304335 9.72313 2.51664 13.5404 6.39849 15.7588C6.49941 15.816 6.61141 15.8456 6.7228 15.8456C6.83418 15.8456 6.94618 15.816 7.04772 15.7588C10.9296 13.5404 13.1413 9.72313 13.4453 3.55513C13.4558 3.36721 13.3916 3.18276 13.2668 3.0419ZM10.18 5.46774L6.90434 10.3016C6.7868 10.4751 6.60218 10.5902 6.41941 10.5902C6.23664 10.5902 6.03234 10.4899 5.90372 10.3613L3.5948 8.05174C3.51941 7.97608 3.47709 7.87362 3.47709 7.76682C3.47709 7.66001 3.51941 7.55756 3.5948 7.4819L4.16526 6.9102C4.24123 6.83541 4.34357 6.7935 4.45018 6.7935C4.55679 6.7935 4.65913 6.83541 4.7351 6.9102L6.23664 8.41174L8.84526 4.56128C8.90561 4.47317 8.99838 4.41252 9.1033 4.39257C9.20823 4.37262 9.31678 4.395 9.40526 4.45482L10.073 4.90774C10.1612 4.968 10.2219 5.06073 10.242 5.16566C10.2621 5.27058 10.2398 5.37919 10.18 5.46774Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                VAC
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.25 12L3.75 10.4097L0.7815 11.5683C0.5895 11.6405 0.41125 11.6196 0.24675 11.5055C0.08225 11.3914 0 11.2308 0 11.0239V1.76221C0 1.62691 0.0325001 1.50347 0.0975001 1.3919C0.1625 1.28032 0.257 1.20283 0.381 1.15941L3.75 0L8.25 1.59031L11.2185 0.431654C11.4105 0.35946 11.5887 0.373091 11.7533 0.472548C11.9177 0.572006 12 0.720434 12 0.917834V10.2961C12 10.441 11.9602 10.5667 11.8807 10.6732C11.8017 10.7803 11.6953 10.8555 11.5613 10.8989L8.25 12ZM7.875 11.0761V2.21583L4.125 0.894358V9.75464L7.875 11.0761ZM8.625 11.0761L11.25 10.203V1.22908L8.625 2.21658V11.0761ZM0.75 10.7709L3.375 9.75464V0.894358L0.75 1.79705V10.7709Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                Procedural Map
+                            </div>
+                            <div class="servers-item__stat">PvE</div>
+                            <div class="servers-item__stat">
+                                <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1667 6.24707V6.75707C11.1667 7.07802 11.0509 7.38821 10.8407 7.63068C10.6304 7.87316 10.3397 8.03166 10.022 8.07707L7.64467 8.41707C7.32695 8.46248 7.03627 8.62098 6.826 8.86346C6.61573 9.10593 6.49998 9.41612 6.5 9.73707V10.9137" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.83337 7.58033V7.757C1.83335 8.07795 1.9491 8.38814 2.15937 8.63061C2.36964 8.87309 2.66032 9.03159 2.97804 9.077L5.35537 9.417C5.67309 9.46241 5.96377 9.62091 6.17404 9.86339C6.38431 10.1059 6.50006 10.4161 6.50004 10.737V10.9137M5.18371 3.54833C4.62204 3.51633 4.36571 3.00333 4.66104 2.52433C4.84257 2.23117 5.0313 1.94253 5.22704 1.65867C5.48537 1.28267 5.70437 1.005 5.88404 0.8C6.23537 0.4 6.76404 0.4 7.11571 0.8C7.29537 1.00467 7.51437 1.28267 7.77237 1.65867C7.96823 1.94242 8.15706 2.23095 8.33871 2.524C8.63404 3.00333 8.37771 3.51633 7.81571 3.54833C7.48571 3.567 7.05571 3.58033 6.50004 3.58033C5.94437 3.58033 5.51404 3.567 5.18371 3.54833Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5 10.9139C6.94203 10.9139 7.36595 11.0895 7.67851 11.4021C7.99107 11.7146 8.16667 12.1385 8.16667 12.5806C8.16667 13.0226 7.99107 13.4465 7.67851 13.7591C7.36595 14.0716 6.94203 14.2472 6.5 14.2472C6.05797 14.2472 5.63405 14.0716 5.32149 13.7591C5.00893 13.4465 4.83333 13.0226 4.83333 12.5806C4.83333 12.1385 5.00893 11.7146 5.32149 11.4021C5.63405 11.0895 6.05797 10.9139 6.5 10.9139ZM6.5 10.9139V3.58058M3.16667 6.24724C3.16667 6.60086 3.02619 6.94 2.77614 7.19005C2.52609 7.4401 2.18696 7.58058 1.83333 7.58058C1.47971 7.58058 1.14057 7.4401 0.890524 7.19005C0.640476 6.94 0.5 6.60086 0.5 6.24724C0.5 5.89362 0.640476 5.55448 0.890524 5.30443C1.14057 5.05439 1.47971 4.91391 1.83333 4.91391C2.18696 4.91391 2.52609 5.05439 2.77614 5.30443C3.02619 5.55448 3.16667 5.89362 3.16667 6.24724ZM12.4907 4.35558C12.4753 3.92891 12.152 3.60524 11.725 3.58991C11.539 3.58348 11.3528 3.58037 11.1667 3.58058C10.9518 3.5808 10.7657 3.58391 10.6083 3.58991C10.1817 3.60524 9.858 3.92858 9.84267 4.35558C9.83624 4.54162 9.83313 4.72776 9.83333 4.91391C9.83356 5.1288 9.83667 5.31491 9.84267 5.47224C9.858 5.89891 10.1813 6.22258 10.6083 6.23791C10.7659 6.24391 10.952 6.24702 11.1667 6.24724C11.3816 6.24702 11.5677 6.24391 11.725 6.23791C12.1517 6.22258 12.4753 5.89924 12.4907 5.47224C12.4967 5.31491 12.4998 5.1288 12.5 4.91391C12.4998 4.69902 12.4967 4.51291 12.4907 4.35558Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                2621
+                            </div>
+                            <div class="servers-item__stat">+1</div>
+                        </div>
+                    </div>
+                    <div class="servers-item">
+                        <div class="servers-item__title">Сервер «Лучший»</div>
+                        <div class="servers-item__stats">
+                            <div class="servers-item__stat">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.44 0.8125C9.76343 1.00704 10.031 1.28194 10.2168 1.6105C10.4025 1.93905 10.5001 2.31008 10.5 2.6875C10.5001 3.06492 10.4025 3.43595 10.2168 3.7645C10.031 4.09306 9.76343 4.36796 9.44 4.5625M13 11.75V11.375C13 9.975 13 9.275 12.7275 8.74C12.4878 8.26962 12.1054 7.88718 11.635 7.6475M5.1875 4.875C5.47477 4.875 5.75922 4.81842 6.02462 4.70849C6.29002 4.59855 6.53117 4.43742 6.7343 4.2343C6.93742 4.03117 7.09855 3.79002 7.20849 3.52462C7.31842 3.25922 7.375 2.97477 7.375 2.6875C7.375 2.40023 7.31842 2.11578 7.20849 1.85038C7.09855 1.58498 6.93742 1.34383 6.7343 1.1407C6.53117 0.937576 6.29002 0.776446 6.02462 0.666513C5.75922 0.556581 5.47477 0.5 5.1875 0.5C4.60734 0.5 4.05094 0.730468 3.6407 1.1407C3.23047 1.55094 3 2.10734 3 2.6875C3 3.26766 3.23047 3.82406 3.6407 4.2343C4.05094 4.64453 4.60734 4.875 5.1875 4.875ZM0.5 11.375V11.75H9.875V11.375C9.875 9.975 9.875 9.275 9.6025 8.74C9.36282 8.26962 8.98038 7.88718 8.51 7.6475C7.975 7.375 7.275 7.375 5.875 7.375H4.5C3.1 7.375 2.4 7.375 1.865 7.6475C1.39462 7.88718 1.01218 8.26962 0.7725 8.74C0.5 9.275 0.5 9.975 0.5 11.375Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                5/200
+                            </div>
+                            <div class="servers-item__stat">
+                                <img src='./dist/img/flag-ru.png' alt='img'>
+                                <span>185.189.255.122:08658</span>
+                                <button>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.75 13.5H11.75V14.5H3.5V4.25H4.5V3.25H2.5V15.5H12.75V13.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                        <path d="M5.5 0.5V12.5H15.5V4.79291L11.2071 0.5H5.5ZM14.5 11.5H6.5V1.5H9.75V6.25H14.5V11.5ZM14.5 5.25H10.75V1.5H10.7929L14.5 5.20709V5.25Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7.5L2.96154 14.2846L2 15V0L12 7.5ZM10.1731 7.5L2.96154 2.07692V12.9231L10.1731 7.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.2668 3.0419C13.207 2.97336 13.1336 2.91796 13.0513 2.8792C12.969 2.84043 12.8796 2.81914 12.7886 2.81667C11.3763 2.77974 9.58926 1.26959 8.40772 0.676973C7.67787 0.31205 7.19603 0.0714348 6.83418 0.00805014C6.76073 -0.00288588 6.68604 -0.00267842 6.61264 0.00866553C6.2508 0.0720501 5.76895 0.312666 5.03972 0.677589C3.85818 1.26959 2.0711 2.77974 0.658797 2.81667C0.567824 2.81943 0.478389 2.84084 0.396033 2.87958C0.313677 2.91833 0.240156 2.97357 0.180027 3.0419C0.0555688 3.183 -0.0087095 3.36722 0.000950409 3.55513C0.304335 9.72313 2.51664 13.5404 6.39849 15.7588C6.49941 15.816 6.61141 15.8456 6.7228 15.8456C6.83418 15.8456 6.94618 15.816 7.04772 15.7588C10.9296 13.5404 13.1413 9.72313 13.4453 3.55513C13.4558 3.36721 13.3916 3.18276 13.2668 3.0419ZM10.18 5.46774L6.90434 10.3016C6.7868 10.4751 6.60218 10.5902 6.41941 10.5902C6.23664 10.5902 6.03234 10.4899 5.90372 10.3613L3.5948 8.05174C3.51941 7.97608 3.47709 7.87362 3.47709 7.76682C3.47709 7.66001 3.51941 7.55756 3.5948 7.4819L4.16526 6.9102C4.24123 6.83541 4.34357 6.7935 4.45018 6.7935C4.55679 6.7935 4.65913 6.83541 4.7351 6.9102L6.23664 8.41174L8.84526 4.56128C8.90561 4.47317 8.99838 4.41252 9.1033 4.39257C9.20823 4.37262 9.31678 4.395 9.40526 4.45482L10.073 4.90774C10.1612 4.968 10.2219 5.06073 10.242 5.16566C10.2621 5.27058 10.2398 5.37919 10.18 5.46774Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                VAC
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.25 12L3.75 10.4097L0.7815 11.5683C0.5895 11.6405 0.41125 11.6196 0.24675 11.5055C0.08225 11.3914 0 11.2308 0 11.0239V1.76221C0 1.62691 0.0325001 1.50347 0.0975001 1.3919C0.1625 1.28032 0.257 1.20283 0.381 1.15941L3.75 0L8.25 1.59031L11.2185 0.431654C11.4105 0.35946 11.5887 0.373091 11.7533 0.472548C11.9177 0.572006 12 0.720434 12 0.917834V10.2961C12 10.441 11.9602 10.5667 11.8807 10.6732C11.8017 10.7803 11.6953 10.8555 11.5613 10.8989L8.25 12ZM7.875 11.0761V2.21583L4.125 0.894358V9.75464L7.875 11.0761ZM8.625 11.0761L11.25 10.203V1.22908L8.625 2.21658V11.0761ZM0.75 10.7709L3.375 9.75464V0.894358L0.75 1.79705V10.7709Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                Procedural Map
+                            </div>
+                            <div class="servers-item__stat">PvE</div>
+                            <div class="servers-item__stat">
+                                <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1667 6.24707V6.75707C11.1667 7.07802 11.0509 7.38821 10.8407 7.63068C10.6304 7.87316 10.3397 8.03166 10.022 8.07707L7.64467 8.41707C7.32695 8.46248 7.03627 8.62098 6.826 8.86346C6.61573 9.10593 6.49998 9.41612 6.5 9.73707V10.9137" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.83337 7.58033V7.757C1.83335 8.07795 1.9491 8.38814 2.15937 8.63061C2.36964 8.87309 2.66032 9.03159 2.97804 9.077L5.35537 9.417C5.67309 9.46241 5.96377 9.62091 6.17404 9.86339C6.38431 10.1059 6.50006 10.4161 6.50004 10.737V10.9137M5.18371 3.54833C4.62204 3.51633 4.36571 3.00333 4.66104 2.52433C4.84257 2.23117 5.0313 1.94253 5.22704 1.65867C5.48537 1.28267 5.70437 1.005 5.88404 0.8C6.23537 0.4 6.76404 0.4 7.11571 0.8C7.29537 1.00467 7.51437 1.28267 7.77237 1.65867C7.96823 1.94242 8.15706 2.23095 8.33871 2.524C8.63404 3.00333 8.37771 3.51633 7.81571 3.54833C7.48571 3.567 7.05571 3.58033 6.50004 3.58033C5.94437 3.58033 5.51404 3.567 5.18371 3.54833Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5 10.9139C6.94203 10.9139 7.36595 11.0895 7.67851 11.4021C7.99107 11.7146 8.16667 12.1385 8.16667 12.5806C8.16667 13.0226 7.99107 13.4465 7.67851 13.7591C7.36595 14.0716 6.94203 14.2472 6.5 14.2472C6.05797 14.2472 5.63405 14.0716 5.32149 13.7591C5.00893 13.4465 4.83333 13.0226 4.83333 12.5806C4.83333 12.1385 5.00893 11.7146 5.32149 11.4021C5.63405 11.0895 6.05797 10.9139 6.5 10.9139ZM6.5 10.9139V3.58058M3.16667 6.24724C3.16667 6.60086 3.02619 6.94 2.77614 7.19005C2.52609 7.4401 2.18696 7.58058 1.83333 7.58058C1.47971 7.58058 1.14057 7.4401 0.890524 7.19005C0.640476 6.94 0.5 6.60086 0.5 6.24724C0.5 5.89362 0.640476 5.55448 0.890524 5.30443C1.14057 5.05439 1.47971 4.91391 1.83333 4.91391C2.18696 4.91391 2.52609 5.05439 2.77614 5.30443C3.02619 5.55448 3.16667 5.89362 3.16667 6.24724ZM12.4907 4.35558C12.4753 3.92891 12.152 3.60524 11.725 3.58991C11.539 3.58348 11.3528 3.58037 11.1667 3.58058C10.9518 3.5808 10.7657 3.58391 10.6083 3.58991C10.1817 3.60524 9.858 3.92858 9.84267 4.35558C9.83624 4.54162 9.83313 4.72776 9.83333 4.91391C9.83356 5.1288 9.83667 5.31491 9.84267 5.47224C9.858 5.89891 10.1813 6.22258 10.6083 6.23791C10.7659 6.24391 10.952 6.24702 11.1667 6.24724C11.3816 6.24702 11.5677 6.24391 11.725 6.23791C12.1517 6.22258 12.4753 5.89924 12.4907 5.47224C12.4967 5.31491 12.4998 5.1288 12.5 4.91391C12.4998 4.69902 12.4967 4.51291 12.4907 4.35558Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                2621
+                            </div>
+                            <div class="servers-item__stat">+1</div>
+                        </div>
+                    </div>
+                    <div class="servers-item">
+                        <div class="servers-item__title">Сервер «Лучший»</div>
+                        <div class="servers-item__stats">
+                            <div class="servers-item__stat">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.44 0.8125C9.76343 1.00704 10.031 1.28194 10.2168 1.6105C10.4025 1.93905 10.5001 2.31008 10.5 2.6875C10.5001 3.06492 10.4025 3.43595 10.2168 3.7645C10.031 4.09306 9.76343 4.36796 9.44 4.5625M13 11.75V11.375C13 9.975 13 9.275 12.7275 8.74C12.4878 8.26962 12.1054 7.88718 11.635 7.6475M5.1875 4.875C5.47477 4.875 5.75922 4.81842 6.02462 4.70849C6.29002 4.59855 6.53117 4.43742 6.7343 4.2343C6.93742 4.03117 7.09855 3.79002 7.20849 3.52462C7.31842 3.25922 7.375 2.97477 7.375 2.6875C7.375 2.40023 7.31842 2.11578 7.20849 1.85038C7.09855 1.58498 6.93742 1.34383 6.7343 1.1407C6.53117 0.937576 6.29002 0.776446 6.02462 0.666513C5.75922 0.556581 5.47477 0.5 5.1875 0.5C4.60734 0.5 4.05094 0.730468 3.6407 1.1407C3.23047 1.55094 3 2.10734 3 2.6875C3 3.26766 3.23047 3.82406 3.6407 4.2343C4.05094 4.64453 4.60734 4.875 5.1875 4.875ZM0.5 11.375V11.75H9.875V11.375C9.875 9.975 9.875 9.275 9.6025 8.74C9.36282 8.26962 8.98038 7.88718 8.51 7.6475C7.975 7.375 7.275 7.375 5.875 7.375H4.5C3.1 7.375 2.4 7.375 1.865 7.6475C1.39462 7.88718 1.01218 8.26962 0.7725 8.74C0.5 9.275 0.5 9.975 0.5 11.375Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                5/200
+                            </div>
+                            <div class="servers-item__stat">
+                                <img src='./dist/img/flag-ru.png' alt='img'>
+                                <span>185.189.255.122:08658</span>
+                                <button>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.75 13.5H11.75V14.5H3.5V4.25H4.5V3.25H2.5V15.5H12.75V13.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                        <path d="M5.5 0.5V12.5H15.5V4.79291L11.2071 0.5H5.5ZM14.5 11.5H6.5V1.5H9.75V6.25H14.5V11.5ZM14.5 5.25H10.75V1.5H10.7929L14.5 5.20709V5.25Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7.5L2.96154 14.2846L2 15V0L12 7.5ZM10.1731 7.5L2.96154 2.07692V12.9231L10.1731 7.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.2668 3.0419C13.207 2.97336 13.1336 2.91796 13.0513 2.8792C12.969 2.84043 12.8796 2.81914 12.7886 2.81667C11.3763 2.77974 9.58926 1.26959 8.40772 0.676973C7.67787 0.31205 7.19603 0.0714348 6.83418 0.00805014C6.76073 -0.00288588 6.68604 -0.00267842 6.61264 0.00866553C6.2508 0.0720501 5.76895 0.312666 5.03972 0.677589C3.85818 1.26959 2.0711 2.77974 0.658797 2.81667C0.567824 2.81943 0.478389 2.84084 0.396033 2.87958C0.313677 2.91833 0.240156 2.97357 0.180027 3.0419C0.0555688 3.183 -0.0087095 3.36722 0.000950409 3.55513C0.304335 9.72313 2.51664 13.5404 6.39849 15.7588C6.49941 15.816 6.61141 15.8456 6.7228 15.8456C6.83418 15.8456 6.94618 15.816 7.04772 15.7588C10.9296 13.5404 13.1413 9.72313 13.4453 3.55513C13.4558 3.36721 13.3916 3.18276 13.2668 3.0419ZM10.18 5.46774L6.90434 10.3016C6.7868 10.4751 6.60218 10.5902 6.41941 10.5902C6.23664 10.5902 6.03234 10.4899 5.90372 10.3613L3.5948 8.05174C3.51941 7.97608 3.47709 7.87362 3.47709 7.76682C3.47709 7.66001 3.51941 7.55756 3.5948 7.4819L4.16526 6.9102C4.24123 6.83541 4.34357 6.7935 4.45018 6.7935C4.55679 6.7935 4.65913 6.83541 4.7351 6.9102L6.23664 8.41174L8.84526 4.56128C8.90561 4.47317 8.99838 4.41252 9.1033 4.39257C9.20823 4.37262 9.31678 4.395 9.40526 4.45482L10.073 4.90774C10.1612 4.968 10.2219 5.06073 10.242 5.16566C10.2621 5.27058 10.2398 5.37919 10.18 5.46774Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                VAC
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.25 12L3.75 10.4097L0.7815 11.5683C0.5895 11.6405 0.41125 11.6196 0.24675 11.5055C0.08225 11.3914 0 11.2308 0 11.0239V1.76221C0 1.62691 0.0325001 1.50347 0.0975001 1.3919C0.1625 1.28032 0.257 1.20283 0.381 1.15941L3.75 0L8.25 1.59031L11.2185 0.431654C11.4105 0.35946 11.5887 0.373091 11.7533 0.472548C11.9177 0.572006 12 0.720434 12 0.917834V10.2961C12 10.441 11.9602 10.5667 11.8807 10.6732C11.8017 10.7803 11.6953 10.8555 11.5613 10.8989L8.25 12ZM7.875 11.0761V2.21583L4.125 0.894358V9.75464L7.875 11.0761ZM8.625 11.0761L11.25 10.203V1.22908L8.625 2.21658V11.0761ZM0.75 10.7709L3.375 9.75464V0.894358L0.75 1.79705V10.7709Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                Procedural Map
+                            </div>
+                            <div class="servers-item__stat">PvE</div>
+                            <div class="servers-item__stat">
+                                <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1667 6.24707V6.75707C11.1667 7.07802 11.0509 7.38821 10.8407 7.63068C10.6304 7.87316 10.3397 8.03166 10.022 8.07707L7.64467 8.41707C7.32695 8.46248 7.03627 8.62098 6.826 8.86346C6.61573 9.10593 6.49998 9.41612 6.5 9.73707V10.9137" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.83337 7.58033V7.757C1.83335 8.07795 1.9491 8.38814 2.15937 8.63061C2.36964 8.87309 2.66032 9.03159 2.97804 9.077L5.35537 9.417C5.67309 9.46241 5.96377 9.62091 6.17404 9.86339C6.38431 10.1059 6.50006 10.4161 6.50004 10.737V10.9137M5.18371 3.54833C4.62204 3.51633 4.36571 3.00333 4.66104 2.52433C4.84257 2.23117 5.0313 1.94253 5.22704 1.65867C5.48537 1.28267 5.70437 1.005 5.88404 0.8C6.23537 0.4 6.76404 0.4 7.11571 0.8C7.29537 1.00467 7.51437 1.28267 7.77237 1.65867C7.96823 1.94242 8.15706 2.23095 8.33871 2.524C8.63404 3.00333 8.37771 3.51633 7.81571 3.54833C7.48571 3.567 7.05571 3.58033 6.50004 3.58033C5.94437 3.58033 5.51404 3.567 5.18371 3.54833Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5 10.9139C6.94203 10.9139 7.36595 11.0895 7.67851 11.4021C7.99107 11.7146 8.16667 12.1385 8.16667 12.5806C8.16667 13.0226 7.99107 13.4465 7.67851 13.7591C7.36595 14.0716 6.94203 14.2472 6.5 14.2472C6.05797 14.2472 5.63405 14.0716 5.32149 13.7591C5.00893 13.4465 4.83333 13.0226 4.83333 12.5806C4.83333 12.1385 5.00893 11.7146 5.32149 11.4021C5.63405 11.0895 6.05797 10.9139 6.5 10.9139ZM6.5 10.9139V3.58058M3.16667 6.24724C3.16667 6.60086 3.02619 6.94 2.77614 7.19005C2.52609 7.4401 2.18696 7.58058 1.83333 7.58058C1.47971 7.58058 1.14057 7.4401 0.890524 7.19005C0.640476 6.94 0.5 6.60086 0.5 6.24724C0.5 5.89362 0.640476 5.55448 0.890524 5.30443C1.14057 5.05439 1.47971 4.91391 1.83333 4.91391C2.18696 4.91391 2.52609 5.05439 2.77614 5.30443C3.02619 5.55448 3.16667 5.89362 3.16667 6.24724ZM12.4907 4.35558C12.4753 3.92891 12.152 3.60524 11.725 3.58991C11.539 3.58348 11.3528 3.58037 11.1667 3.58058C10.9518 3.5808 10.7657 3.58391 10.6083 3.58991C10.1817 3.60524 9.858 3.92858 9.84267 4.35558C9.83624 4.54162 9.83313 4.72776 9.83333 4.91391C9.83356 5.1288 9.83667 5.31491 9.84267 5.47224C9.858 5.89891 10.1813 6.22258 10.6083 6.23791C10.7659 6.24391 10.952 6.24702 11.1667 6.24724C11.3816 6.24702 11.5677 6.24391 11.725 6.23791C12.1517 6.22258 12.4753 5.89924 12.4907 5.47224C12.4967 5.31491 12.4998 5.1288 12.5 4.91391C12.4998 4.69902 12.4967 4.51291 12.4907 4.35558Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                2621
+                            </div>
+                            <div class="servers-item__stat">+1</div>
+                        </div>
+                    </div>
+                    <div class="servers-item">
+                        <div class="servers-item__title">Сервер «Лучший»</div>
+                        <div class="servers-item__stats">
+                            <div class="servers-item__stat">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.44 0.8125C9.76343 1.00704 10.031 1.28194 10.2168 1.6105C10.4025 1.93905 10.5001 2.31008 10.5 2.6875C10.5001 3.06492 10.4025 3.43595 10.2168 3.7645C10.031 4.09306 9.76343 4.36796 9.44 4.5625M13 11.75V11.375C13 9.975 13 9.275 12.7275 8.74C12.4878 8.26962 12.1054 7.88718 11.635 7.6475M5.1875 4.875C5.47477 4.875 5.75922 4.81842 6.02462 4.70849C6.29002 4.59855 6.53117 4.43742 6.7343 4.2343C6.93742 4.03117 7.09855 3.79002 7.20849 3.52462C7.31842 3.25922 7.375 2.97477 7.375 2.6875C7.375 2.40023 7.31842 2.11578 7.20849 1.85038C7.09855 1.58498 6.93742 1.34383 6.7343 1.1407C6.53117 0.937576 6.29002 0.776446 6.02462 0.666513C5.75922 0.556581 5.47477 0.5 5.1875 0.5C4.60734 0.5 4.05094 0.730468 3.6407 1.1407C3.23047 1.55094 3 2.10734 3 2.6875C3 3.26766 3.23047 3.82406 3.6407 4.2343C4.05094 4.64453 4.60734 4.875 5.1875 4.875ZM0.5 11.375V11.75H9.875V11.375C9.875 9.975 9.875 9.275 9.6025 8.74C9.36282 8.26962 8.98038 7.88718 8.51 7.6475C7.975 7.375 7.275 7.375 5.875 7.375H4.5C3.1 7.375 2.4 7.375 1.865 7.6475C1.39462 7.88718 1.01218 8.26962 0.7725 8.74C0.5 9.275 0.5 9.975 0.5 11.375Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                5/200
+                            </div>
+                            <div class="servers-item__stat">
+                                <img src='./dist/img/flag-ru.png' alt='img'>
+                                <span>185.189.255.122:08658</span>
+                                <button>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.75 13.5H11.75V14.5H3.5V4.25H4.5V3.25H2.5V15.5H12.75V13.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                        <path d="M5.5 0.5V12.5H15.5V4.79291L11.2071 0.5H5.5ZM14.5 11.5H6.5V1.5H9.75V6.25H14.5V11.5ZM14.5 5.25H10.75V1.5H10.7929L14.5 5.20709V5.25Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7.5L2.96154 14.2846L2 15V0L12 7.5ZM10.1731 7.5L2.96154 2.07692V12.9231L10.1731 7.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.2668 3.0419C13.207 2.97336 13.1336 2.91796 13.0513 2.8792C12.969 2.84043 12.8796 2.81914 12.7886 2.81667C11.3763 2.77974 9.58926 1.26959 8.40772 0.676973C7.67787 0.31205 7.19603 0.0714348 6.83418 0.00805014C6.76073 -0.00288588 6.68604 -0.00267842 6.61264 0.00866553C6.2508 0.0720501 5.76895 0.312666 5.03972 0.677589C3.85818 1.26959 2.0711 2.77974 0.658797 2.81667C0.567824 2.81943 0.478389 2.84084 0.396033 2.87958C0.313677 2.91833 0.240156 2.97357 0.180027 3.0419C0.0555688 3.183 -0.0087095 3.36722 0.000950409 3.55513C0.304335 9.72313 2.51664 13.5404 6.39849 15.7588C6.49941 15.816 6.61141 15.8456 6.7228 15.8456C6.83418 15.8456 6.94618 15.816 7.04772 15.7588C10.9296 13.5404 13.1413 9.72313 13.4453 3.55513C13.4558 3.36721 13.3916 3.18276 13.2668 3.0419ZM10.18 5.46774L6.90434 10.3016C6.7868 10.4751 6.60218 10.5902 6.41941 10.5902C6.23664 10.5902 6.03234 10.4899 5.90372 10.3613L3.5948 8.05174C3.51941 7.97608 3.47709 7.87362 3.47709 7.76682C3.47709 7.66001 3.51941 7.55756 3.5948 7.4819L4.16526 6.9102C4.24123 6.83541 4.34357 6.7935 4.45018 6.7935C4.55679 6.7935 4.65913 6.83541 4.7351 6.9102L6.23664 8.41174L8.84526 4.56128C8.90561 4.47317 8.99838 4.41252 9.1033 4.39257C9.20823 4.37262 9.31678 4.395 9.40526 4.45482L10.073 4.90774C10.1612 4.968 10.2219 5.06073 10.242 5.16566C10.2621 5.27058 10.2398 5.37919 10.18 5.46774Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                VAC
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.25 12L3.75 10.4097L0.7815 11.5683C0.5895 11.6405 0.41125 11.6196 0.24675 11.5055C0.08225 11.3914 0 11.2308 0 11.0239V1.76221C0 1.62691 0.0325001 1.50347 0.0975001 1.3919C0.1625 1.28032 0.257 1.20283 0.381 1.15941L3.75 0L8.25 1.59031L11.2185 0.431654C11.4105 0.35946 11.5887 0.373091 11.7533 0.472548C11.9177 0.572006 12 0.720434 12 0.917834V10.2961C12 10.441 11.9602 10.5667 11.8807 10.6732C11.8017 10.7803 11.6953 10.8555 11.5613 10.8989L8.25 12ZM7.875 11.0761V2.21583L4.125 0.894358V9.75464L7.875 11.0761ZM8.625 11.0761L11.25 10.203V1.22908L8.625 2.21658V11.0761ZM0.75 10.7709L3.375 9.75464V0.894358L0.75 1.79705V10.7709Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                Procedural Map
+                            </div>
+                            <div class="servers-item__stat">PvE</div>
+                            <div class="servers-item__stat">
+                                <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1667 6.24707V6.75707C11.1667 7.07802 11.0509 7.38821 10.8407 7.63068C10.6304 7.87316 10.3397 8.03166 10.022 8.07707L7.64467 8.41707C7.32695 8.46248 7.03627 8.62098 6.826 8.86346C6.61573 9.10593 6.49998 9.41612 6.5 9.73707V10.9137" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.83337 7.58033V7.757C1.83335 8.07795 1.9491 8.38814 2.15937 8.63061C2.36964 8.87309 2.66032 9.03159 2.97804 9.077L5.35537 9.417C5.67309 9.46241 5.96377 9.62091 6.17404 9.86339C6.38431 10.1059 6.50006 10.4161 6.50004 10.737V10.9137M5.18371 3.54833C4.62204 3.51633 4.36571 3.00333 4.66104 2.52433C4.84257 2.23117 5.0313 1.94253 5.22704 1.65867C5.48537 1.28267 5.70437 1.005 5.88404 0.8C6.23537 0.4 6.76404 0.4 7.11571 0.8C7.29537 1.00467 7.51437 1.28267 7.77237 1.65867C7.96823 1.94242 8.15706 2.23095 8.33871 2.524C8.63404 3.00333 8.37771 3.51633 7.81571 3.54833C7.48571 3.567 7.05571 3.58033 6.50004 3.58033C5.94437 3.58033 5.51404 3.567 5.18371 3.54833Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5 10.9139C6.94203 10.9139 7.36595 11.0895 7.67851 11.4021C7.99107 11.7146 8.16667 12.1385 8.16667 12.5806C8.16667 13.0226 7.99107 13.4465 7.67851 13.7591C7.36595 14.0716 6.94203 14.2472 6.5 14.2472C6.05797 14.2472 5.63405 14.0716 5.32149 13.7591C5.00893 13.4465 4.83333 13.0226 4.83333 12.5806C4.83333 12.1385 5.00893 11.7146 5.32149 11.4021C5.63405 11.0895 6.05797 10.9139 6.5 10.9139ZM6.5 10.9139V3.58058M3.16667 6.24724C3.16667 6.60086 3.02619 6.94 2.77614 7.19005C2.52609 7.4401 2.18696 7.58058 1.83333 7.58058C1.47971 7.58058 1.14057 7.4401 0.890524 7.19005C0.640476 6.94 0.5 6.60086 0.5 6.24724C0.5 5.89362 0.640476 5.55448 0.890524 5.30443C1.14057 5.05439 1.47971 4.91391 1.83333 4.91391C2.18696 4.91391 2.52609 5.05439 2.77614 5.30443C3.02619 5.55448 3.16667 5.89362 3.16667 6.24724ZM12.4907 4.35558C12.4753 3.92891 12.152 3.60524 11.725 3.58991C11.539 3.58348 11.3528 3.58037 11.1667 3.58058C10.9518 3.5808 10.7657 3.58391 10.6083 3.58991C10.1817 3.60524 9.858 3.92858 9.84267 4.35558C9.83624 4.54162 9.83313 4.72776 9.83333 4.91391C9.83356 5.1288 9.83667 5.31491 9.84267 5.47224C9.858 5.89891 10.1813 6.22258 10.6083 6.23791C10.7659 6.24391 10.952 6.24702 11.1667 6.24724C11.3816 6.24702 11.5677 6.24391 11.725 6.23791C12.1517 6.22258 12.4753 5.89924 12.4907 5.47224C12.4967 5.31491 12.4998 5.1288 12.5 4.91391C12.4998 4.69902 12.4967 4.51291 12.4907 4.35558Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                2621
+                            </div>
+                            <div class="servers-item__stat">+1</div>
+                        </div>
+                    </div>
+                    <div class="servers-item">
+                        <div class="servers-item__title">Сервер «Лучший»</div>
+                        <div class="servers-item__stats">
+                            <div class="servers-item__stat">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.44 0.8125C9.76343 1.00704 10.031 1.28194 10.2168 1.6105C10.4025 1.93905 10.5001 2.31008 10.5 2.6875C10.5001 3.06492 10.4025 3.43595 10.2168 3.7645C10.031 4.09306 9.76343 4.36796 9.44 4.5625M13 11.75V11.375C13 9.975 13 9.275 12.7275 8.74C12.4878 8.26962 12.1054 7.88718 11.635 7.6475M5.1875 4.875C5.47477 4.875 5.75922 4.81842 6.02462 4.70849C6.29002 4.59855 6.53117 4.43742 6.7343 4.2343C6.93742 4.03117 7.09855 3.79002 7.20849 3.52462C7.31842 3.25922 7.375 2.97477 7.375 2.6875C7.375 2.40023 7.31842 2.11578 7.20849 1.85038C7.09855 1.58498 6.93742 1.34383 6.7343 1.1407C6.53117 0.937576 6.29002 0.776446 6.02462 0.666513C5.75922 0.556581 5.47477 0.5 5.1875 0.5C4.60734 0.5 4.05094 0.730468 3.6407 1.1407C3.23047 1.55094 3 2.10734 3 2.6875C3 3.26766 3.23047 3.82406 3.6407 4.2343C4.05094 4.64453 4.60734 4.875 5.1875 4.875ZM0.5 11.375V11.75H9.875V11.375C9.875 9.975 9.875 9.275 9.6025 8.74C9.36282 8.26962 8.98038 7.88718 8.51 7.6475C7.975 7.375 7.275 7.375 5.875 7.375H4.5C3.1 7.375 2.4 7.375 1.865 7.6475C1.39462 7.88718 1.01218 8.26962 0.7725 8.74C0.5 9.275 0.5 9.975 0.5 11.375Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                5/200
+                            </div>
+                            <div class="servers-item__stat">
+                                <img src='./dist/img/flag-ru.png' alt='img'>
+                                <span>185.189.255.122:08658</span>
+                                <button>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.75 13.5H11.75V14.5H3.5V4.25H4.5V3.25H2.5V15.5H12.75V13.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                        <path d="M5.5 0.5V12.5H15.5V4.79291L11.2071 0.5H5.5ZM14.5 11.5H6.5V1.5H9.75V6.25H14.5V11.5ZM14.5 5.25H10.75V1.5H10.7929L14.5 5.20709V5.25Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7.5L2.96154 14.2846L2 15V0L12 7.5ZM10.1731 7.5L2.96154 2.07692V12.9231L10.1731 7.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.2668 3.0419C13.207 2.97336 13.1336 2.91796 13.0513 2.8792C12.969 2.84043 12.8796 2.81914 12.7886 2.81667C11.3763 2.77974 9.58926 1.26959 8.40772 0.676973C7.67787 0.31205 7.19603 0.0714348 6.83418 0.00805014C6.76073 -0.00288588 6.68604 -0.00267842 6.61264 0.00866553C6.2508 0.0720501 5.76895 0.312666 5.03972 0.677589C3.85818 1.26959 2.0711 2.77974 0.658797 2.81667C0.567824 2.81943 0.478389 2.84084 0.396033 2.87958C0.313677 2.91833 0.240156 2.97357 0.180027 3.0419C0.0555688 3.183 -0.0087095 3.36722 0.000950409 3.55513C0.304335 9.72313 2.51664 13.5404 6.39849 15.7588C6.49941 15.816 6.61141 15.8456 6.7228 15.8456C6.83418 15.8456 6.94618 15.816 7.04772 15.7588C10.9296 13.5404 13.1413 9.72313 13.4453 3.55513C13.4558 3.36721 13.3916 3.18276 13.2668 3.0419ZM10.18 5.46774L6.90434 10.3016C6.7868 10.4751 6.60218 10.5902 6.41941 10.5902C6.23664 10.5902 6.03234 10.4899 5.90372 10.3613L3.5948 8.05174C3.51941 7.97608 3.47709 7.87362 3.47709 7.76682C3.47709 7.66001 3.51941 7.55756 3.5948 7.4819L4.16526 6.9102C4.24123 6.83541 4.34357 6.7935 4.45018 6.7935C4.55679 6.7935 4.65913 6.83541 4.7351 6.9102L6.23664 8.41174L8.84526 4.56128C8.90561 4.47317 8.99838 4.41252 9.1033 4.39257C9.20823 4.37262 9.31678 4.395 9.40526 4.45482L10.073 4.90774C10.1612 4.968 10.2219 5.06073 10.242 5.16566C10.2621 5.27058 10.2398 5.37919 10.18 5.46774Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                VAC
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.25 12L3.75 10.4097L0.7815 11.5683C0.5895 11.6405 0.41125 11.6196 0.24675 11.5055C0.08225 11.3914 0 11.2308 0 11.0239V1.76221C0 1.62691 0.0325001 1.50347 0.0975001 1.3919C0.1625 1.28032 0.257 1.20283 0.381 1.15941L3.75 0L8.25 1.59031L11.2185 0.431654C11.4105 0.35946 11.5887 0.373091 11.7533 0.472548C11.9177 0.572006 12 0.720434 12 0.917834V10.2961C12 10.441 11.9602 10.5667 11.8807 10.6732C11.8017 10.7803 11.6953 10.8555 11.5613 10.8989L8.25 12ZM7.875 11.0761V2.21583L4.125 0.894358V9.75464L7.875 11.0761ZM8.625 11.0761L11.25 10.203V1.22908L8.625 2.21658V11.0761ZM0.75 10.7709L3.375 9.75464V0.894358L0.75 1.79705V10.7709Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                Procedural Map
+                            </div>
+                            <div class="servers-item__stat">PvE</div>
+                            <div class="servers-item__stat">
+                                <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1667 6.24707V6.75707C11.1667 7.07802 11.0509 7.38821 10.8407 7.63068C10.6304 7.87316 10.3397 8.03166 10.022 8.07707L7.64467 8.41707C7.32695 8.46248 7.03627 8.62098 6.826 8.86346C6.61573 9.10593 6.49998 9.41612 6.5 9.73707V10.9137" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.83337 7.58033V7.757C1.83335 8.07795 1.9491 8.38814 2.15937 8.63061C2.36964 8.87309 2.66032 9.03159 2.97804 9.077L5.35537 9.417C5.67309 9.46241 5.96377 9.62091 6.17404 9.86339C6.38431 10.1059 6.50006 10.4161 6.50004 10.737V10.9137M5.18371 3.54833C4.62204 3.51633 4.36571 3.00333 4.66104 2.52433C4.84257 2.23117 5.0313 1.94253 5.22704 1.65867C5.48537 1.28267 5.70437 1.005 5.88404 0.8C6.23537 0.4 6.76404 0.4 7.11571 0.8C7.29537 1.00467 7.51437 1.28267 7.77237 1.65867C7.96823 1.94242 8.15706 2.23095 8.33871 2.524C8.63404 3.00333 8.37771 3.51633 7.81571 3.54833C7.48571 3.567 7.05571 3.58033 6.50004 3.58033C5.94437 3.58033 5.51404 3.567 5.18371 3.54833Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5 10.9139C6.94203 10.9139 7.36595 11.0895 7.67851 11.4021C7.99107 11.7146 8.16667 12.1385 8.16667 12.5806C8.16667 13.0226 7.99107 13.4465 7.67851 13.7591C7.36595 14.0716 6.94203 14.2472 6.5 14.2472C6.05797 14.2472 5.63405 14.0716 5.32149 13.7591C5.00893 13.4465 4.83333 13.0226 4.83333 12.5806C4.83333 12.1385 5.00893 11.7146 5.32149 11.4021C5.63405 11.0895 6.05797 10.9139 6.5 10.9139ZM6.5 10.9139V3.58058M3.16667 6.24724C3.16667 6.60086 3.02619 6.94 2.77614 7.19005C2.52609 7.4401 2.18696 7.58058 1.83333 7.58058C1.47971 7.58058 1.14057 7.4401 0.890524 7.19005C0.640476 6.94 0.5 6.60086 0.5 6.24724C0.5 5.89362 0.640476 5.55448 0.890524 5.30443C1.14057 5.05439 1.47971 4.91391 1.83333 4.91391C2.18696 4.91391 2.52609 5.05439 2.77614 5.30443C3.02619 5.55448 3.16667 5.89362 3.16667 6.24724ZM12.4907 4.35558C12.4753 3.92891 12.152 3.60524 11.725 3.58991C11.539 3.58348 11.3528 3.58037 11.1667 3.58058C10.9518 3.5808 10.7657 3.58391 10.6083 3.58991C10.1817 3.60524 9.858 3.92858 9.84267 4.35558C9.83624 4.54162 9.83313 4.72776 9.83333 4.91391C9.83356 5.1288 9.83667 5.31491 9.84267 5.47224C9.858 5.89891 10.1813 6.22258 10.6083 6.23791C10.7659 6.24391 10.952 6.24702 11.1667 6.24724C11.3816 6.24702 11.5677 6.24391 11.725 6.23791C12.1517 6.22258 12.4753 5.89924 12.4907 5.47224C12.4967 5.31491 12.4998 5.1288 12.5 4.91391C12.4998 4.69902 12.4967 4.51291 12.4907 4.35558Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                2621
+                            </div>
+                            <div class="servers-item__stat">+1</div>
+                        </div>
+                    </div>
+                    <div class="servers-item">
+                        <div class="servers-item__title">Сервер «Лучший»</div>
+                        <div class="servers-item__stats">
+                            <div class="servers-item__stat">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.44 0.8125C9.76343 1.00704 10.031 1.28194 10.2168 1.6105C10.4025 1.93905 10.5001 2.31008 10.5 2.6875C10.5001 3.06492 10.4025 3.43595 10.2168 3.7645C10.031 4.09306 9.76343 4.36796 9.44 4.5625M13 11.75V11.375C13 9.975 13 9.275 12.7275 8.74C12.4878 8.26962 12.1054 7.88718 11.635 7.6475M5.1875 4.875C5.47477 4.875 5.75922 4.81842 6.02462 4.70849C6.29002 4.59855 6.53117 4.43742 6.7343 4.2343C6.93742 4.03117 7.09855 3.79002 7.20849 3.52462C7.31842 3.25922 7.375 2.97477 7.375 2.6875C7.375 2.40023 7.31842 2.11578 7.20849 1.85038C7.09855 1.58498 6.93742 1.34383 6.7343 1.1407C6.53117 0.937576 6.29002 0.776446 6.02462 0.666513C5.75922 0.556581 5.47477 0.5 5.1875 0.5C4.60734 0.5 4.05094 0.730468 3.6407 1.1407C3.23047 1.55094 3 2.10734 3 2.6875C3 3.26766 3.23047 3.82406 3.6407 4.2343C4.05094 4.64453 4.60734 4.875 5.1875 4.875ZM0.5 11.375V11.75H9.875V11.375C9.875 9.975 9.875 9.275 9.6025 8.74C9.36282 8.26962 8.98038 7.88718 8.51 7.6475C7.975 7.375 7.275 7.375 5.875 7.375H4.5C3.1 7.375 2.4 7.375 1.865 7.6475C1.39462 7.88718 1.01218 8.26962 0.7725 8.74C0.5 9.275 0.5 9.975 0.5 11.375Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                5/200
+                            </div>
+                            <div class="servers-item__stat">
+                                <img src='./dist/img/flag-ru.png' alt='img'>
+                                <span>185.189.255.122:08658</span>
+                                <button>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.75 13.5H11.75V14.5H3.5V4.25H4.5V3.25H2.5V15.5H12.75V13.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                        <path d="M5.5 0.5V12.5H15.5V4.79291L11.2071 0.5H5.5ZM14.5 11.5H6.5V1.5H9.75V6.25H14.5V11.5ZM14.5 5.25H10.75V1.5H10.7929L14.5 5.20709V5.25Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7.5L2.96154 14.2846L2 15V0L12 7.5ZM10.1731 7.5L2.96154 2.07692V12.9231L10.1731 7.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.2668 3.0419C13.207 2.97336 13.1336 2.91796 13.0513 2.8792C12.969 2.84043 12.8796 2.81914 12.7886 2.81667C11.3763 2.77974 9.58926 1.26959 8.40772 0.676973C7.67787 0.31205 7.19603 0.0714348 6.83418 0.00805014C6.76073 -0.00288588 6.68604 -0.00267842 6.61264 0.00866553C6.2508 0.0720501 5.76895 0.312666 5.03972 0.677589C3.85818 1.26959 2.0711 2.77974 0.658797 2.81667C0.567824 2.81943 0.478389 2.84084 0.396033 2.87958C0.313677 2.91833 0.240156 2.97357 0.180027 3.0419C0.0555688 3.183 -0.0087095 3.36722 0.000950409 3.55513C0.304335 9.72313 2.51664 13.5404 6.39849 15.7588C6.49941 15.816 6.61141 15.8456 6.7228 15.8456C6.83418 15.8456 6.94618 15.816 7.04772 15.7588C10.9296 13.5404 13.1413 9.72313 13.4453 3.55513C13.4558 3.36721 13.3916 3.18276 13.2668 3.0419ZM10.18 5.46774L6.90434 10.3016C6.7868 10.4751 6.60218 10.5902 6.41941 10.5902C6.23664 10.5902 6.03234 10.4899 5.90372 10.3613L3.5948 8.05174C3.51941 7.97608 3.47709 7.87362 3.47709 7.76682C3.47709 7.66001 3.51941 7.55756 3.5948 7.4819L4.16526 6.9102C4.24123 6.83541 4.34357 6.7935 4.45018 6.7935C4.55679 6.7935 4.65913 6.83541 4.7351 6.9102L6.23664 8.41174L8.84526 4.56128C8.90561 4.47317 8.99838 4.41252 9.1033 4.39257C9.20823 4.37262 9.31678 4.395 9.40526 4.45482L10.073 4.90774C10.1612 4.968 10.2219 5.06073 10.242 5.16566C10.2621 5.27058 10.2398 5.37919 10.18 5.46774Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                VAC
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.25 12L3.75 10.4097L0.7815 11.5683C0.5895 11.6405 0.41125 11.6196 0.24675 11.5055C0.08225 11.3914 0 11.2308 0 11.0239V1.76221C0 1.62691 0.0325001 1.50347 0.0975001 1.3919C0.1625 1.28032 0.257 1.20283 0.381 1.15941L3.75 0L8.25 1.59031L11.2185 0.431654C11.4105 0.35946 11.5887 0.373091 11.7533 0.472548C11.9177 0.572006 12 0.720434 12 0.917834V10.2961C12 10.441 11.9602 10.5667 11.8807 10.6732C11.8017 10.7803 11.6953 10.8555 11.5613 10.8989L8.25 12ZM7.875 11.0761V2.21583L4.125 0.894358V9.75464L7.875 11.0761ZM8.625 11.0761L11.25 10.203V1.22908L8.625 2.21658V11.0761ZM0.75 10.7709L3.375 9.75464V0.894358L0.75 1.79705V10.7709Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                Procedural Map
+                            </div>
+                            <div class="servers-item__stat">PvE</div>
+                            <div class="servers-item__stat">
+                                <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1667 6.24707V6.75707C11.1667 7.07802 11.0509 7.38821 10.8407 7.63068C10.6304 7.87316 10.3397 8.03166 10.022 8.07707L7.64467 8.41707C7.32695 8.46248 7.03627 8.62098 6.826 8.86346C6.61573 9.10593 6.49998 9.41612 6.5 9.73707V10.9137" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.83337 7.58033V7.757C1.83335 8.07795 1.9491 8.38814 2.15937 8.63061C2.36964 8.87309 2.66032 9.03159 2.97804 9.077L5.35537 9.417C5.67309 9.46241 5.96377 9.62091 6.17404 9.86339C6.38431 10.1059 6.50006 10.4161 6.50004 10.737V10.9137M5.18371 3.54833C4.62204 3.51633 4.36571 3.00333 4.66104 2.52433C4.84257 2.23117 5.0313 1.94253 5.22704 1.65867C5.48537 1.28267 5.70437 1.005 5.88404 0.8C6.23537 0.4 6.76404 0.4 7.11571 0.8C7.29537 1.00467 7.51437 1.28267 7.77237 1.65867C7.96823 1.94242 8.15706 2.23095 8.33871 2.524C8.63404 3.00333 8.37771 3.51633 7.81571 3.54833C7.48571 3.567 7.05571 3.58033 6.50004 3.58033C5.94437 3.58033 5.51404 3.567 5.18371 3.54833Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5 10.9139C6.94203 10.9139 7.36595 11.0895 7.67851 11.4021C7.99107 11.7146 8.16667 12.1385 8.16667 12.5806C8.16667 13.0226 7.99107 13.4465 7.67851 13.7591C7.36595 14.0716 6.94203 14.2472 6.5 14.2472C6.05797 14.2472 5.63405 14.0716 5.32149 13.7591C5.00893 13.4465 4.83333 13.0226 4.83333 12.5806C4.83333 12.1385 5.00893 11.7146 5.32149 11.4021C5.63405 11.0895 6.05797 10.9139 6.5 10.9139ZM6.5 10.9139V3.58058M3.16667 6.24724C3.16667 6.60086 3.02619 6.94 2.77614 7.19005C2.52609 7.4401 2.18696 7.58058 1.83333 7.58058C1.47971 7.58058 1.14057 7.4401 0.890524 7.19005C0.640476 6.94 0.5 6.60086 0.5 6.24724C0.5 5.89362 0.640476 5.55448 0.890524 5.30443C1.14057 5.05439 1.47971 4.91391 1.83333 4.91391C2.18696 4.91391 2.52609 5.05439 2.77614 5.30443C3.02619 5.55448 3.16667 5.89362 3.16667 6.24724ZM12.4907 4.35558C12.4753 3.92891 12.152 3.60524 11.725 3.58991C11.539 3.58348 11.3528 3.58037 11.1667 3.58058C10.9518 3.5808 10.7657 3.58391 10.6083 3.58991C10.1817 3.60524 9.858 3.92858 9.84267 4.35558C9.83624 4.54162 9.83313 4.72776 9.83333 4.91391C9.83356 5.1288 9.83667 5.31491 9.84267 5.47224C9.858 5.89891 10.1813 6.22258 10.6083 6.23791C10.7659 6.24391 10.952 6.24702 11.1667 6.24724C11.3816 6.24702 11.5677 6.24391 11.725 6.23791C12.1517 6.22258 12.4753 5.89924 12.4907 5.47224C12.4967 5.31491 12.4998 5.1288 12.5 4.91391C12.4998 4.69902 12.4967 4.51291 12.4907 4.35558Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                2621
+                            </div>
+                            <div class="servers-item__stat">+1</div>
+                        </div>
+                    </div>
+                    <div class="servers-item">
+                        <div class="servers-item__title">Сервер «Лучший»</div>
+                        <div class="servers-item__stats">
+                            <div class="servers-item__stat">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.44 0.8125C9.76343 1.00704 10.031 1.28194 10.2168 1.6105C10.4025 1.93905 10.5001 2.31008 10.5 2.6875C10.5001 3.06492 10.4025 3.43595 10.2168 3.7645C10.031 4.09306 9.76343 4.36796 9.44 4.5625M13 11.75V11.375C13 9.975 13 9.275 12.7275 8.74C12.4878 8.26962 12.1054 7.88718 11.635 7.6475M5.1875 4.875C5.47477 4.875 5.75922 4.81842 6.02462 4.70849C6.29002 4.59855 6.53117 4.43742 6.7343 4.2343C6.93742 4.03117 7.09855 3.79002 7.20849 3.52462C7.31842 3.25922 7.375 2.97477 7.375 2.6875C7.375 2.40023 7.31842 2.11578 7.20849 1.85038C7.09855 1.58498 6.93742 1.34383 6.7343 1.1407C6.53117 0.937576 6.29002 0.776446 6.02462 0.666513C5.75922 0.556581 5.47477 0.5 5.1875 0.5C4.60734 0.5 4.05094 0.730468 3.6407 1.1407C3.23047 1.55094 3 2.10734 3 2.6875C3 3.26766 3.23047 3.82406 3.6407 4.2343C4.05094 4.64453 4.60734 4.875 5.1875 4.875ZM0.5 11.375V11.75H9.875V11.375C9.875 9.975 9.875 9.275 9.6025 8.74C9.36282 8.26962 8.98038 7.88718 8.51 7.6475C7.975 7.375 7.275 7.375 5.875 7.375H4.5C3.1 7.375 2.4 7.375 1.865 7.6475C1.39462 7.88718 1.01218 8.26962 0.7725 8.74C0.5 9.275 0.5 9.975 0.5 11.375Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                5/200
+                            </div>
+                            <div class="servers-item__stat">
+                                <img src='./dist/img/flag-ru.png' alt='img'>
+                                <span>185.189.255.122:08658</span>
+                                <button>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.75 13.5H11.75V14.5H3.5V4.25H4.5V3.25H2.5V15.5H12.75V13.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                        <path d="M5.5 0.5V12.5H15.5V4.79291L11.2071 0.5H5.5ZM14.5 11.5H6.5V1.5H9.75V6.25H14.5V11.5ZM14.5 5.25H10.75V1.5H10.7929L14.5 5.20709V5.25Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7.5L2.96154 14.2846L2 15V0L12 7.5ZM10.1731 7.5L2.96154 2.07692V12.9231L10.1731 7.5Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.2668 3.0419C13.207 2.97336 13.1336 2.91796 13.0513 2.8792C12.969 2.84043 12.8796 2.81914 12.7886 2.81667C11.3763 2.77974 9.58926 1.26959 8.40772 0.676973C7.67787 0.31205 7.19603 0.0714348 6.83418 0.00805014C6.76073 -0.00288588 6.68604 -0.00267842 6.61264 0.00866553C6.2508 0.0720501 5.76895 0.312666 5.03972 0.677589C3.85818 1.26959 2.0711 2.77974 0.658797 2.81667C0.567824 2.81943 0.478389 2.84084 0.396033 2.87958C0.313677 2.91833 0.240156 2.97357 0.180027 3.0419C0.0555688 3.183 -0.0087095 3.36722 0.000950409 3.55513C0.304335 9.72313 2.51664 13.5404 6.39849 15.7588C6.49941 15.816 6.61141 15.8456 6.7228 15.8456C6.83418 15.8456 6.94618 15.816 7.04772 15.7588C10.9296 13.5404 13.1413 9.72313 13.4453 3.55513C13.4558 3.36721 13.3916 3.18276 13.2668 3.0419ZM10.18 5.46774L6.90434 10.3016C6.7868 10.4751 6.60218 10.5902 6.41941 10.5902C6.23664 10.5902 6.03234 10.4899 5.90372 10.3613L3.5948 8.05174C3.51941 7.97608 3.47709 7.87362 3.47709 7.76682C3.47709 7.66001 3.51941 7.55756 3.5948 7.4819L4.16526 6.9102C4.24123 6.83541 4.34357 6.7935 4.45018 6.7935C4.55679 6.7935 4.65913 6.83541 4.7351 6.9102L6.23664 8.41174L8.84526 4.56128C8.90561 4.47317 8.99838 4.41252 9.1033 4.39257C9.20823 4.37262 9.31678 4.395 9.40526 4.45482L10.073 4.90774C10.1612 4.968 10.2219 5.06073 10.242 5.16566C10.2621 5.27058 10.2398 5.37919 10.18 5.46774Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                VAC
+                            </div>
+                            <div class="servers-item__stat">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.25 12L3.75 10.4097L0.7815 11.5683C0.5895 11.6405 0.41125 11.6196 0.24675 11.5055C0.08225 11.3914 0 11.2308 0 11.0239V1.76221C0 1.62691 0.0325001 1.50347 0.0975001 1.3919C0.1625 1.28032 0.257 1.20283 0.381 1.15941L3.75 0L8.25 1.59031L11.2185 0.431654C11.4105 0.35946 11.5887 0.373091 11.7533 0.472548C11.9177 0.572006 12 0.720434 12 0.917834V10.2961C12 10.441 11.9602 10.5667 11.8807 10.6732C11.8017 10.7803 11.6953 10.8555 11.5613 10.8989L8.25 12ZM7.875 11.0761V2.21583L4.125 0.894358V9.75464L7.875 11.0761ZM8.625 11.0761L11.25 10.203V1.22908L8.625 2.21658V11.0761ZM0.75 10.7709L3.375 9.75464V0.894358L0.75 1.79705V10.7709Z" fill="#E6E6E6" fill-opacity="0.4" />
+                                </svg>
+                                Procedural Map
+                            </div>
+                            <div class="servers-item__stat">PvE</div>
+                            <div class="servers-item__stat">
+                                <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1667 6.24707V6.75707C11.1667 7.07802 11.0509 7.38821 10.8407 7.63068C10.6304 7.87316 10.3397 8.03166 10.022 8.07707L7.64467 8.41707C7.32695 8.46248 7.03627 8.62098 6.826 8.86346C6.61573 9.10593 6.49998 9.41612 6.5 9.73707V10.9137" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1.83337 7.58033V7.757C1.83335 8.07795 1.9491 8.38814 2.15937 8.63061C2.36964 8.87309 2.66032 9.03159 2.97804 9.077L5.35537 9.417C5.67309 9.46241 5.96377 9.62091 6.17404 9.86339C6.38431 10.1059 6.50006 10.4161 6.50004 10.737V10.9137M5.18371 3.54833C4.62204 3.51633 4.36571 3.00333 4.66104 2.52433C4.84257 2.23117 5.0313 1.94253 5.22704 1.65867C5.48537 1.28267 5.70437 1.005 5.88404 0.8C6.23537 0.4 6.76404 0.4 7.11571 0.8C7.29537 1.00467 7.51437 1.28267 7.77237 1.65867C7.96823 1.94242 8.15706 2.23095 8.33871 2.524C8.63404 3.00333 8.37771 3.51633 7.81571 3.54833C7.48571 3.567 7.05571 3.58033 6.50004 3.58033C5.94437 3.58033 5.51404 3.567 5.18371 3.54833Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5 10.9139C6.94203 10.9139 7.36595 11.0895 7.67851 11.4021C7.99107 11.7146 8.16667 12.1385 8.16667 12.5806C8.16667 13.0226 7.99107 13.4465 7.67851 13.7591C7.36595 14.0716 6.94203 14.2472 6.5 14.2472C6.05797 14.2472 5.63405 14.0716 5.32149 13.7591C5.00893 13.4465 4.83333 13.0226 4.83333 12.5806C4.83333 12.1385 5.00893 11.7146 5.32149 11.4021C5.63405 11.0895 6.05797 10.9139 6.5 10.9139ZM6.5 10.9139V3.58058M3.16667 6.24724C3.16667 6.60086 3.02619 6.94 2.77614 7.19005C2.52609 7.4401 2.18696 7.58058 1.83333 7.58058C1.47971 7.58058 1.14057 7.4401 0.890524 7.19005C0.640476 6.94 0.5 6.60086 0.5 6.24724C0.5 5.89362 0.640476 5.55448 0.890524 5.30443C1.14057 5.05439 1.47971 4.91391 1.83333 4.91391C2.18696 4.91391 2.52609 5.05439 2.77614 5.30443C3.02619 5.55448 3.16667 5.89362 3.16667 6.24724ZM12.4907 4.35558C12.4753 3.92891 12.152 3.60524 11.725 3.58991C11.539 3.58348 11.3528 3.58037 11.1667 3.58058C10.9518 3.5808 10.7657 3.58391 10.6083 3.58991C10.1817 3.60524 9.858 3.92858 9.84267 4.35558C9.83624 4.54162 9.83313 4.72776 9.83333 4.91391C9.83356 5.1288 9.83667 5.31491 9.84267 5.47224C9.858 5.89891 10.1813 6.22258 10.6083 6.23791C10.7659 6.24391 10.952 6.24702 11.1667 6.24724C11.3816 6.24702 11.5677 6.24391 11.725 6.23791C12.1517 6.22258 12.4753 5.89924 12.4907 5.47224C12.4967 5.31491 12.4998 5.1288 12.5 4.91391C12.4998 4.69902 12.4967 4.51291 12.4907 4.35558Z" stroke="#E6E6E6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                2621
+                            </div>
+                            <div class="servers-item__stat">+1</div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- end servers -->
+
+            <section class="articles">
+                <h2 class="section__title">Статьи о раст</h2>
+                <div class="articles-carousel swiper">
+                    <div class="swiper-wrapper">
+                        <div class="articles-item swiper-slide">
+                            <div class="articles-item__img"><a href="#"><img src='./dist/img/content/articles-image1.jpg' alt='img'></a></div>
+                            <div class="articles-item__content">
+                                <div class="articles-item__title"><a href="#">Как поменять язык в Раст: полная</a></div>
+                                <div class="articles-item__bottom">
+                                    <div class="articles-item__info">
+                                        <div class="articles-item__info-item">15.06.2025</div>
+                                        <div class="articles-item__info-item">Обучение</div>
+                                        <div class="articles-item__info-item">Рейд</div>
+                                    </div>
+                                    <div class="articles-item__desc">На результат сражения может повлиять даже малейшая задержка. Шанс на победу во многом зависит от реакции и точности. Но не всегда они зависят от самого игрока. Если пинг…</div>
+                                    <a href="#" class="articles-item__more btn btn_small">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="articles-item swiper-slide">
+                            <div class="articles-item__img"><a href="#"><img src='./dist/img/content/articles-image1.jpg' alt='img'></a></div>
+                            <div class="articles-item__content">
+                                <div class="articles-item__title"><a href="#">Как добавить в команду в Раст: подробный гайд</a></div>
+                                <div class="articles-item__bottom">
+                                    <div class="articles-item__info">
+                                        <div class="articles-item__info-item">15.06.2025</div>
+                                        <div class="articles-item__info-item">Обучение</div>
+                                        <div class="articles-item__info-item">Рейд</div>
+                                    </div>
+                                    <div class="articles-item__desc">Команды в Раст — важная часть игрового процесса. Они облегчают совместную игру с друзьями, позволяют проще достигать цели. Объединившись в тиму, вы будете видеть всех…</div>
+                                    <a href="#" class="articles-item__more btn btn_small">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="articles-item swiper-slide">
+                            <div class="articles-item__img"><a href="#"><img src='./dist/img/content/articles-image1.jpg' alt='img'></a></div>
+                            <div class="articles-item__content">
+                                <div class="articles-item__title"><a href="#">Как поменять язык в Раст: полная инструкция</a></div>
+                                <div class="articles-item__bottom">
+                                    <div class="articles-item__info">
+                                        <div class="articles-item__info-item">15.06.2025</div>
+                                        <div class="articles-item__info-item">Обучение</div>
+                                        <div class="articles-item__info-item">Рейд</div>
+                                    </div>
+                                    <div class="articles-item__desc">На результат сражения может повлиять даже малейшая задержка. Шанс на победу во многом зависит от реакции и точности. Но не всегда они зависят от самого игрока. Если пинг…</div>
+                                    <a href="#" class="articles-item__more btn btn_small">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="articles-item swiper-slide">
+                            <div class="articles-item__img"><a href="#"><img src='./dist/img/content/articles-image1.jpg' alt='img'></a></div>
+                            <div class="articles-item__content">
+                                <div class="articles-item__title"><a href="#">Как поменять язык в Раст: полная инструкция</a></div>
+                                <div class="articles-item__bottom">
+                                    <div class="articles-item__info">
+                                        <div class="articles-item__info-item">15.06.2025</div>
+                                        <div class="articles-item__info-item">Обучение</div>
+                                        <div class="articles-item__info-item">Рейд</div>
+                                    </div>
+                                    <div class="articles-item__desc">На результат сражения может повлиять даже малейшая задержка. Шанс на победу во многом зависит от реакции и точности. Но не всегда они зависят от самого игрока. Если пинг…</div>
+                                    <a href="#" class="articles-item__more btn btn_small">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- end articles -->
+
+            <section class="faq">
+                <h2 class="section__title">Часто задаваемые вопросы</h2>
+                <div class="faq-tabs">
+                    <div class="faq-tabs__list">
+                        <div class="faq-tabs__btn btn active">Общие вопросы</div>
+                        <div class="faq-tabs__btn btn">Рейд</div>
+                        <div class="faq-tabs__btn btn">Калькулятор</div>
+                        <div class="faq-tabs__btn btn">Мир</div>
+                        <div class="faq-tabs__btn btn">Предметы</div>
+                        <div class="faq-tabs__btn btn">Другое</div>
+                    </div>
+                    <div class="faq-tabs__body">
+                        <div class="faq-tabs__section active">
+                            <div class="faq-accordion">
+                                <div class="faq-accordion-item active">
+                                    <div class="faq-accordion-item__title">Как начать играть в Rust?</div>
+                                    <div class="faq-accordion-item__content">
+                                        <div class="faq-accordion-item__caption">Как начать играть в Rust?</div>
+                                        <div class="faq-accordion-item__text">
+                                            <p>В Rust есть несколько режимов игры, которые определяют геймплей и взаимодействие с другими игроками. Основные:</p>
+                                            <ul>
+                                                <li>Выживание (Survival) – классический PvP-режим с рейдами и строительством.</li>
+                                                <li>Творческий (Creative) – режим для тестирования и строительства без ограничений.</li>
+                                                <li>Softcore – упрощённый режим с возможностью частичного сохранения лута после смерти.</li>
+                                                <li>Hardcore – сложный режим с ограниченным количеством спавнов и без карты.</li>
+                                                <li>PvE (на некоторых серверах) – режим без PvP, ориентированный на выживание и строительство.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-accordion-item">
+                                    <div class="faq-accordion-item__title">Какие есть режимы игры?</div>
+                                    <div class="faq-accordion-item__content">2</div>
+                                </div>
+                                <div class="faq-accordion-item">
+                                    <div class="faq-accordion-item__title">Что делать, если меня постоянно убивают?</div>
+                                    <div class="faq-accordion-item__content">3</div>
+                                </div>
+                                <div class="faq-accordion-item">
+                                    <div class="faq-accordion-item__title">Как работают сейвы и прогресс на серверах?</div>
+                                    <div class="faq-accordion-item__content">4</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-tabs__section">2</div>
+                        <div class="faq-tabs__section">3</div>
+                        <div class="faq-tabs__section">4</div>
+                        <div class="faq-tabs__section">5</div>
+                        <div class="faq-tabs__section">6</div>
+                    </div>
+                </div>
+            </section><!-- end faq -->
+        </div><!-- end center-wrapper -->
+    </main><!-- end main -->
+
+    <footer class="footer">
+        <div class='center-wrapper'>
+            <div class="footer__inner">
+                <div class="footer__leftside">
+                    <a href="#" class="footer-logo">RUST ASSIST</a>
+                    <div class="footer-slogan">Надёжный<br> источник гайдов,<br> калькуляторов<br> и новостей по Rust</div>
+                    <div class="footer-app">
+                        <div class="footer-app__icon"></div>
+                        <div class="footer-app__content">
+                            <div class="footer-app__title">RUST ASSIST</div>
+                            <div class="footer-app__text">Установить приложение сейчас</div>
+                        </div>
+                        <div class="footer-app__arrow">
+                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.69118 8.00364C8.69205 8.18612 8.61935 8.36125 8.48952 8.48947L1.15618 15.8228C0.885301 16.0752 0.463176 16.0678 0.201365 15.806C-0.0604464 15.5441 -0.0678943 15.122 0.184518 14.8511L7.03202 8.00364L0.184518 1.15614C-0.0678943 0.885256 -0.0604464 0.46313 0.201365 0.201319C0.463176 -0.0604919 0.885301 -0.0679384 1.15618 0.184473L8.48952 7.51781C8.61935 7.64603 8.69205 7.82116 8.69118 8.00364Z" fill="#454545" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__rightside">
+                    <div class="footer__col">
+                        <div class="footer__section">
+                            <h3 class="footer__caption">Предметы</h3>
+                            <div class="footer__block">
+                                <ul>
+                                    <li><a href="#">Боеприпасы</a></li>
+                                    <li><a href="#">Электричество</a></li>
+                                    <li><a href="#">Ресурсы</a></li>
+                                    <li><a href="#">Ловушки</a></li>
+                                    <li><a href="#">Оружие</a></li>
+                                    <li><a href="#">Конструкции</a></li>
+                                    <li><a href="#">Развлечение</a></li>
+                                    <li><a href="#">Еда</a></li>
+                                    <li><a href="#">Одежда</a></li>
+                                    <li><a href="#">Медикаменты</a></li>
+                                    <li><a href="#">Компоненты</a></li>
+                                    <li><a href="#">Инструменты</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <div class="footer__section">
+                            <h3 class="footer__caption">Мир</h3>
+                            <div class="footer__block">
+                                <ul>
+                                    <li><a href="#">Контейнеры</a></li>
+                                    <li><a href="#">Собираемое</a></li>
+                                    <li><a href="#">Деревья</a></li>
+                                    <li><a href="#">Руды</a></li>
+                                    <li><a href="#">Животные</a></li>
+                                    <li><a href="#">Другое</a></li>
+                                    <li><a href="#">Строительные блоки</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__section">
+                            <h3 class="footer__caption">Утилиты</h3>
+                            <div class="footer__block">
+                                <ul>
+                                    <li><a href="#">Калькулятор рейда</a></li>
+                                    <li><a href="#">Калькулятор экскаватора</a></li>
+                                    <li><a href="#">Калькулятор генов</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <div class="footer__section">
+                            <h3 class="footer__caption">Информация</h3>
+                            <div class="footer__block">
+                                <ul>
+                                    <li><a href="#">О нас</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                    <li><a href="#">Поддержка</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__section">
+                            <h3 class="footer__caption">Блог</h3>
+                            <div class="footer__block">
+                                <ul>
+                                    <li><a href="#">Обучающие</a></li>
+                                    <li><a href="#">Электричество</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-social">
+                            <a href="#" class="footer-social__btn"></a>
+                            <a href="#" class="footer-social__btn"></a>
+                            <a href="#" class="footer-social__btn"></a>
+                            <a href="#" class="footer-social__btn"></a>
+                        </div>
+                        <div class="footer-lang">
+                            <a href="#" class="footer-lang__btn active">Ru</a> 
+                            <a href="#" class="footer-lang__btn"> | </a> 
+                            <a href="#" class="footer-lang__btn">En</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <a href="mailto:help@rustassist.com" class="footer-mail">help@rustassist.com</a>
+            <div class="footer-copy">© 2025 Rust Assist • Обзор продукта Facepunch Studio. Все права на оригинальные изображения принадлежат правообладателю.</div>
+            <a href="#" class="footer-policy">Политика по обработке персональных данных</a>
+        </div>
+    </footer><!-- end footer -->
+</div><!-- end wrapper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+	<script src="dist/scripts/main.js"></script>
+</body>
+</html>
