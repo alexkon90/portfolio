@@ -27,10 +27,19 @@
 //}
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Articles slider
+    // Articles carousel
     const articles_carousel = new Swiper('.articles-carousel', {
         loop: true,
-        slidesPerView: 3,
         spaceBetween: 20,
+        slidesPerView: 'auto', 
+        centeredSlides: false, 
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1280: {
+                slidesPerView: 3,
+            }
+        }
     });
 });
