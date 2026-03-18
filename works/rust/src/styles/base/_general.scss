@@ -20,6 +20,9 @@ body {
     max-width: 1330px;
     margin: 0 auto;
     padding: 0 15px;
+    @media (max-width: 1399px) { 
+        padding: 0 70px;
+    }
 }
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 20px;
@@ -28,6 +31,9 @@ h1, h2, h3, h4, h5, h6 {
 h1, .title_1{
     font-size: 52px;
     line-height: 1.1;
+    @media (max-width: 1399px) { 
+        font-size: 47px;
+    }
 }
 h2, .title_2{
     font-size: 36px;
