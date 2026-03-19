@@ -26,7 +26,51 @@
 
 //}
 
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Mega menu
+    const megaMenus = document.querySelectorAll('.mega-menu');
+
+    megaMenus.forEach(menu => {
+        const categories = menu.querySelectorAll('.mega-menu__category');
+        const sections = menu.querySelectorAll('.mega-menu__section');
+
+        categories.forEach(cat => {
+            cat.addEventListener('mouseenter', () => {
+                const id = cat.dataset.tab;
+
+                categories.forEach(c => c.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+
+                cat.classList.add('active');
+                
+                const targetSection = menu.querySelector(`.mega-menu__section[data-tab="${id}"]`);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            });
+        });
+    });
+
+
+    document.querySelectorAll('.mega-menu__col').forEach(col => {
+        const list = col.querySelector('.mega-menu__list');
+        const btn = col.querySelector('.mega-menu__expand');
+        const items = list.querySelectorAll('li');
+
+        if (items.length > 8) {
+            btn.classList.add('visible');
+        }
+
+        btn.addEventListener('click', () => {
+            const isOpen = list.classList.toggle('open');
+            btn.textContent = isOpen ? 'Скрыть' : 'Ещё';
+            btn.classList.toggle('is-active', isOpen);
+        });
+    });
+
+
+
     // Articles carousel
     const articles_carousel = new Swiper('.articles-carousel', {
         loop: true,
