@@ -735,10 +735,16 @@ select {
   color: #181818;
 }
 .catalog-menu__section {
-  display: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 .catalog-menu__section.active {
-  display: block;
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 .catalog-menu__block {
   position: relative;
