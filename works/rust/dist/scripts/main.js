@@ -164,26 +164,204 @@ initSwiper2();
 window.addEventListener('resize', initSwiper2);
 
 // Catalog carousel
-const swipers = document.querySelectorAll('.catalog-menu__carousel');
+//const swipers = document.querySelectorAll('.catalog-menu__carousel');
 
-swipers.forEach((el) => {
-    let swiper = null;
+//swipers.forEach((el) => {
+//    let swiper = null;
 
-    const init = () => {
-        if (window.innerWidth < 768 && !swiper) {
-            swiper = new Swiper(el, {
-                slidesPerView: 'auto',
-                spaceBetween: 10,
-                pagination: {
-                    el: '.swiper-pagination',
-                },
+//    const init = () => {
+//        if (window.innerWidth < 768 && !swiper) {
+//            swiper = new Swiper(el, {
+//                slidesPerView: 'auto',
+//                spaceBetween: 10,
+//                pagination: {
+//                    el: '.swiper-pagination',
+//                },
+//            });
+//        } else if (window.innerWidth >= 768 && swiper) {
+//            swiper.destroy(true, true);
+//            swiper = null;
+//        }
+//    };
+
+//    init();
+//    window.addEventListener('resize', init);
+//});
+
+function initTabsWithSwipers() {
+    const tabBlocks = document.querySelectorAll('.catalog-menu__wrapper');
+
+    tabBlocks.forEach(block => {
+        const buttons = block.querySelectorAll('.catalog-menu__tab');
+        const panes = block.querySelectorAll('.catalog-menu__section');
+
+        // --- init swiper внутри конкретного контейнера
+        function initSwipersIn(container) {
+            const sliders = container.querySelectorAll('.catalog-menu__carousel');
+
+            sliders.forEach(el => {
+                if (el.swiperInstance) return;
+
+                if (window.innerWidth < 768) {
+                    el.swiperInstance = new Swiper(el, {
+                        slidesPerView: 'auto',
+                        spaceBetween: 10,
+                        pagination: {
+                            el: el.querySelector('.swiper-pagination'),
+                        },
+                    });
+                }
             });
-        } else if (window.innerWidth >= 768 && swiper) {
-            swiper.destroy(true, true);
-            swiper = null;
         }
-    };
 
-    init();
-    window.addEventListener('resize', init);
-});
+        // --- destroy swiper внутри контейнера
+        function destroySwipersIn(container) {
+            const sliders = container.querySelectorAll('.catalog-menu__carousel');
+
+            sliders.forEach(el => {
+                if (el.swiperInstance) {
+                    el.swiperInstance.destroy(true, true);
+                    el.swiperInstance = null;
+                }
+            });
+        }
+
+        // --- клики по табам
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.dataset.tab;
+
+                // кнопки
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // контент + свайперы
+                panes.forEach(pane => {
+                    const isActive = pane.dataset.tab === id;
+
+                    pane.classList.toggle('active', isActive);
+
+                    if (isActive) {
+                        initSwipersIn(pane);
+                    } else {
+                        destroySwipersIn(pane);
+                    }
+                });
+            });
+        });
+
+        // --- init при загрузке (активный таб)
+        const activePane = block.querySelector('.catalog-menu__section.active');
+        if (activePane) {
+            initSwipersIn(activePane);
+        }
+
+        // --- resize
+        window.addEventListener('resize', () => {
+            panes.forEach(pane => {
+                if (pane.classList.contains('active')) {
+                    destroySwipersIn(pane);
+                    initSwipersIn(pane);
+                } else {
+                    destroySwipersIn(pane);
+                }
+            });
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initTabsWithSwipers);
+
+
+//// Tabs
+//function initTabs2() {
+//    const tabBlocks = document.querySelectorAll('.catalog-menu__wrapper');
+
+//    tabBlocks.forEach(block => {
+//        const buttons = block.querySelectorAll('.catalog-menu__tab');
+//        const panes = block.querySelectorAll('.catalog-menu__section');
+
+//        buttons.forEach(btn => {
+//            btn.addEventListener('click', () => {
+//                const id = btn.dataset.tab;
+
+//                // кнопки
+//                buttons.forEach(b => b.classList.remove('active'));
+//                btn.classList.add('active');
+
+//                // контент
+//                panes.forEach(pane => {
+//                    pane.classList.toggle('active', pane.dataset.tab === id);
+//                });
+//            });
+//        });
+//    });
+//}
+
+//document.addEventListener('DOMContentLoaded', initTabs2);
+
+
+
+
+
+
+
+// Tabs
+function initTabs() {
+    const tabBlocks = document.querySelectorAll('.tabs');
+
+    tabBlocks.forEach(block => {
+        const buttons = block.querySelectorAll('.tabs__btn');
+        const panes = block.querySelectorAll('.tabs__section');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.dataset.tab;
+
+                // кнопки
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // контент
+                panes.forEach(pane => {
+                    pane.classList.toggle('active', pane.dataset.tab === id);
+                });
+            });
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initTabs);
+
+
+
+// Tabs 2
+function initTabsAdvanced() {
+    const blocks = document.querySelectorAll('.faq-accordion');
+
+    blocks.forEach(block => {
+        const items = block.querySelectorAll('.faq-accordion-item');
+
+        items.forEach((item, index) => {
+            const head = item.querySelector('.faq-accordion-item__title');
+
+            head.addEventListener('click', () => {
+                const isMobile = window.innerWidth < 768;
+
+                if (isMobile) {
+                    // accordion
+                    items.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+                } else {
+                    // tabs
+                    items.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+                }
+            });
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initTabsAdvanced);
+
+
