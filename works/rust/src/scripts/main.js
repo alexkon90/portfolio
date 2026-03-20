@@ -100,8 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     catalogBtn.addEventListener('click', () => {
         catalogMenu.classList.add('open');
+        document.body.classList.add('lock');
     });
     catalogClose.addEventListener('click', () => {
+        document.body.classList.remove('lock');
         catalogMenu.classList.remove('open');
     });
 
@@ -188,89 +190,220 @@ window.addEventListener('resize', initSwiper2);
 //    window.addEventListener('resize', init);
 //});
 
+//function initTabsWithSwipers() {
+//    const tabBlocks = document.querySelectorAll('.catalog-menu__wrapper');
+
+//    tabBlocks.forEach(block => {
+//        const buttons = block.querySelectorAll('.catalog-menu__tab');
+//        const panes = block.querySelectorAll('.catalog-menu__section');
+
+//        // --- init swiper внутри конкретного контейнера
+//        function initSwipersIn(container) {
+//            const sliders = container.querySelectorAll('.catalog-menu__carousel');
+
+//            sliders.forEach(el => {
+//                if (el.swiperInstance) return;
+
+//                if (window.innerWidth < 768) {
+//                    el.swiperInstance = new Swiper(el, {
+//                        slidesPerView: 'auto',
+//                        spaceBetween: 10,
+//                        pagination: {
+//                            el: el.querySelector('.swiper-pagination'),
+//                        },
+//                    });
+//                }
+//            });
+//        }
+
+//        // --- destroy swiper внутри контейнера
+//        function destroySwipersIn(container) {
+//            const sliders = container.querySelectorAll('.catalog-menu__carousel');
+
+//            sliders.forEach(el => {
+//                if (el.swiperInstance) {
+//                    el.swiperInstance.destroy(true, true);
+//                    el.swiperInstance = null;
+//                }
+//            });
+//        }
+
+//        // --- клики по табам
+//        buttons.forEach(btn => {
+//            btn.addEventListener('click', () => {
+//                const id = btn.dataset.tab;
+
+//                // кнопки
+//                buttons.forEach(b => b.classList.remove('active'));
+//                btn.classList.add('active');
+
+//                // контент + свайперы
+//                panes.forEach(pane => {
+//                    const isActive = pane.dataset.tab === id;
+
+//                    pane.classList.toggle('active', isActive);
+
+//                    if (isActive) {
+//                        initSwipersIn(pane);
+//                    } else {
+//                        destroySwipersIn(pane);
+//                    }
+//                });
+//            });
+//        });
+
+//        // --- init при загрузке (активный таб)
+//        const activePane = block.querySelector('.catalog-menu__section.active');
+//        if (activePane) {
+//            initSwipersIn(activePane);
+//        }
+
+//        // --- resize
+//        window.addEventListener('resize', () => {
+//            panes.forEach(pane => {
+//                if (pane.classList.contains('active')) {
+//                    destroySwipersIn(pane);
+//                    initSwipersIn(pane);
+//                } else {
+//                    destroySwipersIn(pane);
+//                }
+//            });
+//        });
+//    });
+//}
+
+//document.addEventListener('DOMContentLoaded', initTabsWithSwipers);
+
 function initTabsWithSwipers() {
-    const tabBlocks = document.querySelectorAll('.catalog-menu__wrapper');
+  const tabBlocks = document.querySelectorAll('.catalog-menu__wrapper');
+  const isMobile = window.matchMedia('(max-width: 767px)');
 
-    tabBlocks.forEach(block => {
-        const buttons = block.querySelectorAll('.catalog-menu__tab');
-        const panes = block.querySelectorAll('.catalog-menu__section');
+  function debounce(fn, delay = 200) {
+    let t;
+    return () => {
+      clearTimeout(t);
+      t = setTimeout(fn, delay);
+    };
+  }
 
-        // --- init swiper внутри конкретного контейнера
-        function initSwipersIn(container) {
-            const sliders = container.querySelectorAll('.catalog-menu__carousel');
+  tabBlocks.forEach(block => {
+    const buttons = block.querySelectorAll('.catalog-menu__tab');
+    const panes = block.querySelectorAll('.catalog-menu__section');
 
-            sliders.forEach(el => {
-                if (el.swiperInstance) return;
+    // --- init swiper внутри контейнера
+    function initSwipersIn(container) {
+      if (!isMobile.matches) return;
 
-                if (window.innerWidth < 768) {
-                    el.swiperInstance = new Swiper(el, {
-                        slidesPerView: 'auto',
-                        spaceBetween: 10,
-                        pagination: {
-                            el: el.querySelector('.swiper-pagination'),
-                        },
-                    });
-                }
-            });
-        }
+      const sliders = container.querySelectorAll('.catalog-menu__carousel');
 
-        // --- destroy swiper внутри контейнера
-        function destroySwipersIn(container) {
-            const sliders = container.querySelectorAll('.catalog-menu__carousel');
+      sliders.forEach(el => {
+        if (el.swiperInstance) return;
 
-            sliders.forEach(el => {
-                if (el.swiperInstance) {
-                    el.swiperInstance.destroy(true, true);
-                    el.swiperInstance = null;
-                }
-            });
-        }
+        el.swiperInstance = new Swiper(el, {
+          slidesPerView: 'auto',
+          spaceBetween: 10,
 
-        // --- клики по табам
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const id = btn.dataset.tab;
+          nested: true,
+          touchMoveStopPropagation: true,
 
-                // кнопки
-                buttons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                // контент + свайперы
-                panes.forEach(pane => {
-                    const isActive = pane.dataset.tab === id;
-
-                    pane.classList.toggle('active', isActive);
-
-                    if (isActive) {
-                        initSwipersIn(pane);
-                    } else {
-                        destroySwipersIn(pane);
-                    }
-                });
-            });
+          pagination: {
+            el: el.querySelector('.swiper-pagination'),
+          },
         });
+      });
+    }
 
-        // --- init при загрузке (активный таб)
-        const activePane = block.querySelector('.catalog-menu__section.active');
-        if (activePane) {
-            initSwipersIn(activePane);
+    // --- destroy swiper внутри контейнера
+    function destroySwipersIn(container) {
+      const sliders = container.querySelectorAll('.catalog-menu__carousel');
+
+      sliders.forEach(el => {
+        if (el.swiperInstance) {
+          el.swiperInstance.destroy(true, true);
+          el.swiperInstance = null;
         }
+      });
+    }
 
-        // --- resize
-        window.addEventListener('resize', () => {
-            panes.forEach(pane => {
-                if (pane.classList.contains('active')) {
-                    destroySwipersIn(pane);
-                    initSwipersIn(pane);
-                } else {
-                    destroySwipersIn(pane);
-                }
+    // --- обновление swiper после показа
+    function updateSwipersIn(container) {
+      const sliders = container.querySelectorAll('.catalog-menu__carousel');
+
+      sliders.forEach(el => {
+        el.swiperInstance?.update();
+      });
+    }
+
+    // --- переключение табов
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.tab;
+
+        // кнопки
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // контент
+        panes.forEach(pane => {
+          const isActive = pane.dataset.tab === id;
+
+          pane.classList.toggle('active', isActive);
+
+          if (isActive) {
+            initSwipersIn(pane);
+
+            requestAnimationFrame(() => {
+              updateSwipersIn(pane);
             });
+
+          } else {
+            destroySwipersIn(pane);
+          }
         });
+      });
     });
+
+    // --- init при загрузке
+    const activePane = block.querySelector('.catalog-menu__section.active');
+    if (activePane) {
+      initSwipersIn(activePane);
+
+      requestAnimationFrame(() => {
+        updateSwipersIn(activePane);
+      });
+    }
+
+    // --- resize (с debounce)
+    window.addEventListener('resize', debounce(() => {
+      panes.forEach(pane => {
+        if (pane.classList.contains('active')) {
+          destroySwipersIn(pane);
+          initSwipersIn(pane);
+
+          requestAnimationFrame(() => {
+            updateSwipersIn(pane);
+          });
+
+        } else {
+          destroySwipersIn(pane);
+        }
+      });
+    }));
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initTabsWithSwipers);
+
+
+
+
+
+
+
+
+
+
+
 
 
 //// Tabs

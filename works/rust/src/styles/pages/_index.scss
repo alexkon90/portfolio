@@ -277,22 +277,43 @@
         }
     }
 }
+body{
+    &.lock{
+        overflow: hidden;
+    }
+}
 .catalog-menu{
     position: fixed;
     top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
-    height: 100%;
-    padding-top: 70px !important;
-    padding: 30px 70px;
+    height: 100vh;
     background: #181818;
-    overflow-y: auto;
-    transition: all 0.2s ease;
-    right: -100%;
-    &.open{
-        right: 0;
+    transform: translateX(100%);
+    transition: transform 0.2s ease;
+    overscroll-behavior: contain;
+    &__inner{
+        overflow-y: auto;
+        flex-grow: 1;
+        padding: 30px 20px;
+        min-height: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+    .swiper {
+        max-width: 100%;
+    }
+    &.open {
+          transform: translateX(0);
+    }
+    &__top{
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: flex-end;
     }
     &__close{
-        position: absolute;
         top: 36px;
         right: 70px;
     }
@@ -356,6 +377,10 @@
         letter-spacing: -0.03em;
         color: #737373;
     }
+    &__carousel{
+        overflow: hidden;
+        max-width: 100%;
+    }
     &__carousel-body{
         gap: 10px;
     }
@@ -364,14 +389,18 @@
         min-width: 0;
     }
     @media (max-width: 959px) {
-        padding: 30px 40px;
+        &__inner{
+            padding: 30px 40px;
+        }
         &__close {
             top: 34px;
             right: 40px;
         }
     }
     @media (max-width: 767px) {
-        padding: 30px 20px;
+        &__inner{
+            padding: 30px 20px;
+        }
         &__close {
             right: 20px;
         }
