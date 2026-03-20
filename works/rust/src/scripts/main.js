@@ -69,7 +69,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Search
+    const searchBtn = document.querySelector('.js_search-btn');
+    const searchClose = document.querySelector('.header-search__close');
+    const searchBlock = document.querySelector('.header-search');
 
+    searchBtn.addEventListener('click', () => {
+        searchBlock.classList.add('open');
+    });
+    searchClose.addEventListener('click', () => {
+        searchBlock.classList.remove('open');
+    });
+
+    document.querySelectorAll('.header-search__input').forEach(input => {
+        input.addEventListener('input', () => {
+            const parent = document.querySelector('.header-search__suggest');
+
+            if (input.value.trim() !== '') {
+                parent.classList.add('active');
+            } else {
+                parent.classList.remove('active');
+            }
+        });
+    });
+
+    // Menu catalog
+    const catalogBtn = document.querySelector('.js_catalog-btn');
+    const catalogClose = document.querySelector('.catalog-menu__close');
+    const catalogMenu = document.querySelector('.catalog-menu');
+
+    catalogBtn.addEventListener('click', () => {
+        catalogMenu.classList.add('open');
+    });
+    catalogClose.addEventListener('click', () => {
+        catalogMenu.classList.remove('open');
+    });
 
     // Articles carousel
     const articles_carousel = new Swiper('.articles-carousel', {
@@ -128,3 +162,28 @@ function initSwiper2() {
 
 initSwiper2();
 window.addEventListener('resize', initSwiper2);
+
+// Catalog carousel
+const swipers = document.querySelectorAll('.catalog-menu__carousel');
+
+swipers.forEach((el) => {
+    let swiper = null;
+
+    const init = () => {
+        if (window.innerWidth < 768 && !swiper) {
+            swiper = new Swiper(el, {
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+        } else if (window.innerWidth >= 768 && swiper) {
+            swiper.destroy(true, true);
+            swiper = null;
+        }
+    };
+
+    init();
+    window.addEventListener('resize', init);
+});
