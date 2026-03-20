@@ -530,6 +530,8 @@ select {
   color: rgba(230, 230, 230, 0.4);
   cursor: pointer;
   line-height: 21px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .mega-menu__category:last-child {
   margin-bottom: 0;
