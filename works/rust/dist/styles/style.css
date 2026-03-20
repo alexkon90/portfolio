@@ -530,8 +530,6 @@ select {
   color: rgba(230, 230, 230, 0.4);
   cursor: pointer;
   line-height: 21px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 .mega-menu__category:last-child {
   margin-bottom: 0;
@@ -575,20 +573,10 @@ select {
   }
 }
 .mega-menu__section {
-  opacity: 0;
-  height: 0;
-  visibility: hidden;
-  overflow: hidden;
-  pointer-events: none;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  display: none;
 }
 .mega-menu__section.active {
-  opacity: 1;
-  height: auto;
-  visibility: visible;
-  overflow: visible;
-  pointer-events: auto;
+  display: block;
 }
 .mega-menu__row {
   display: -webkit-box;
