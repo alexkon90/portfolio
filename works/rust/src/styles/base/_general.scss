@@ -9,6 +9,14 @@ body {
     -webkit-font-smoothing: antialiased;
     background: #181818;
     color: #e6e6e6;
+    &.lock{
+        overflow: hidden;
+    }
+    @media (max-width: 767px) {
+        background-image: url(../img/bg-promo-mobile.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+    }
 }
 .wrapper {
     width: 100%;

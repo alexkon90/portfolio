@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-	<link rel="stylesheet" href="dist/styles/style.css">
+	<link rel="stylesheet" href="./dist/styles/style.css">
 	<title>Rust Assist</title>
 </head>
 <body>
@@ -29,19 +29,19 @@
                                 <div class='center-wrapper'>
                                     <div class="mega-menu__inner">
                                         <div class="mega-menu__sidebar">
-                                            <div class="mega-menu__category" data-tab="1">Боеприпасы</div>
-                                            <div class="mega-menu__category" data-tab="2">Конструкции</div>
-                                            <div class="mega-menu__category active" data-tab="3">Одежда</div>
-                                            <div class="mega-menu__category" data-tab="4">Компоненты</div>
-                                            <div class="mega-menu__category" data-tab="5">Электричество</div>
-                                            <div class="mega-menu__category" data-tab="6">Оружие</div>
-                                            <div class="mega-menu__category" data-tab="7">Ресурсы</div>
-                                            <div class="mega-menu__category" data-tab="8">Еда</div>
-                                            <div class="mega-menu__category" data-tab="9">Инструменты</div>
-                                            <div class="mega-menu__category" data-tab="10">Ловушки</div>
-                                            <div class="mega-menu__category" data-tab="11">Медикаменты</div>
-                                            <div class="mega-menu__category" data-tab="12">Развлечение</div>
-                                            <div class="mega-menu__category" data-tab="13">Разное</div>
+                                            <div class="mega-menu__category" data-tab="1"><a href="#">Боеприпасы</a></div>
+                                            <div class="mega-menu__category" data-tab="2"><a href="#">Конструкции</a></div>
+                                            <div class="mega-menu__category active" data-tab="3"><a href="#">Одежда</a></div>
+                                            <div class="mega-menu__category" data-tab="4"><a href="#">Компоненты</a></div>
+                                            <div class="mega-menu__category" data-tab="5"><a href="#">Электричество</a></div>
+                                            <div class="mega-menu__category" data-tab="6"><a href="#">Оружие</a></div>
+                                            <div class="mega-menu__category" data-tab="7"><a href="#">Ресурсы</a></div>
+                                            <div class="mega-menu__category" data-tab="8"><a href="#">Еда</a></div>
+                                            <div class="mega-menu__category" data-tab="9"><a href="#">Инструменты</a></div>
+                                            <div class="mega-menu__category" data-tab="10"><a href="#">Ловушки</a></div>
+                                            <div class="mega-menu__category" data-tab="11"><a href="#">Медикаменты</a></div>
+                                            <div class="mega-menu__category" data-tab="12"><a href="#">Развлечение</a></div>
+                                            <div class="mega-menu__category" data-tab="13"><a href="#">Разное</a></div>
                                         </div>
                                         <div class="mega-menu__content">
                                             <div class="mega-menu__section" data-tab="1">
@@ -370,11 +370,11 @@
                                 <div class='center-wrapper'>
                                     <div class="mega-menu__inner">
                                         <div class="mega-menu__sidebar">
-                                            <div class="mega-menu__category" data-tab="1">Боеприпасы</div>
-                                            <div class="mega-menu__category active" data-tab="2">Конструкции</div>
-                                            <div class="mega-menu__category" data-tab="3">Одежда</div>
-                                            <div class="mega-menu__category" data-tab="4">Компоненты</div>
-                                            <div class="mega-menu__category" data-tab="5">Электричество</div>
+                                            <div class="mega-menu__category" data-tab="1"><a href="#">Боеприпасы</a></div>
+                                            <div class="mega-menu__category active" data-tab="2"><a href="#">Конструкции</a></div>
+                                            <div class="mega-menu__category" data-tab="3"><a href="#">Одежда</a></div>
+                                            <div class="mega-menu__category" data-tab="4"><a href="#">Компоненты</a></div>
+                                            <div class="mega-menu__category" data-tab="5"><a href="#">Электричество</a></div>
                                         </div>
                                         <div class="mega-menu__content">
                                             <div class="mega-menu__section" data-tab="1">
@@ -677,8 +677,8 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="menu_desktop"><a href="#">Утилиты</a></li>
-                        <li class="menu_desktop"><a href="#">О нас</a></li>
+                        <li class="menuitem_nomobile"><a href="#">Утилиты</a></li>
+                        <li class="menuitem_nomobile"><a href="#">О нас</a></li>
                     </ul>
                 </nav>
                 <div class="catalog-menu">
@@ -1504,78 +1504,84 @@
                         <form action="#">
                             <input type="text" class="header-search__input" placeholder="Поиск">
                             <div class="header-search__suggest">
-                                <div class="header-search__block">
-                                    <a href="#" class="header-search__more">
-                                        Ещё
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.99506 3.74574C7.9964 3.64702 7.95778 3.55194 7.88796 3.48213C7.81814 3.41231 7.72307 3.37369 7.62434 3.37503C7.4196 3.37503 7.25363 3.541 7.25363 3.74574V7.73463L2.64194 3.118C2.54953 3.01882 2.41034 2.97799 2.27899 3.01154C2.14765 3.04508 2.04508 3.14765 2.01154 3.27899C1.97799 3.41034 2.01882 3.54953 2.118 3.64194L6.73463 8.25857H2.74574C2.541 8.25857 2.37503 8.42455 2.37503 8.62929C2.37503 8.83403 2.541 9 2.74574 9H7.62929C7.83403 9 8 8.83403 8 8.62929L7.99506 3.74574Z" fill="#737373" />
-                                        </svg>
-                                    </a>
-                                    <div class="header-search__caption">Оружие</div>
-                                    <div class="header-search__list">
-                                        <div class="hs-item">
-                                            <a href="#" class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></a>
-                                            <div class="hs-item__content">
-                                                <div class="hs-item__category">Оружие</div>
-                                                <div class="hs-item__title"><a href="#">Пример оружия</a></div>
-                                            </div>
+                                <div class="header-search__suggest-body">
+                                    <div class="header-search__noresults">
+                                        <div class="noresults__title">Нет результатов</div>
+                                        <div class="noresults__desc">Попробуйте что-то другое</div>
+                                    </div>
+                                    <div class="header-search__block">
+                                        <a href="#" class="header-search__more">
+                                            Ещё
+                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.99506 3.74574C7.9964 3.64702 7.95778 3.55194 7.88796 3.48213C7.81814 3.41231 7.72307 3.37369 7.62434 3.37503C7.4196 3.37503 7.25363 3.541 7.25363 3.74574V7.73463L2.64194 3.118C2.54953 3.01882 2.41034 2.97799 2.27899 3.01154C2.14765 3.04508 2.04508 3.14765 2.01154 3.27899C1.97799 3.41034 2.01882 3.54953 2.118 3.64194L6.73463 8.25857H2.74574C2.541 8.25857 2.37503 8.42455 2.37503 8.62929C2.37503 8.83403 2.541 9 2.74574 9H7.62929C7.83403 9 8 8.83403 8 8.62929L7.99506 3.74574Z" fill="#737373" />
+                                            </svg>
+                                        </a>
+                                        <div class="header-search__caption">Оружие</div>
+                                        <div class="header-search__list">
+                                            <a href="#" class="hs-item">
+                                                <div class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></div>
+                                                <div class="hs-item__content">
+                                                    <div class="hs-item__category">Оружие</div>
+                                                    <div class="hs-item__title">Другой пример оружия</div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="header-search__block">
-                                    <a href="#" class="header-search__more">
-                                        Ещё
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.99506 3.74574C7.9964 3.64702 7.95778 3.55194 7.88796 3.48213C7.81814 3.41231 7.72307 3.37369 7.62434 3.37503C7.4196 3.37503 7.25363 3.541 7.25363 3.74574V7.73463L2.64194 3.118C2.54953 3.01882 2.41034 2.97799 2.27899 3.01154C2.14765 3.04508 2.04508 3.14765 2.01154 3.27899C1.97799 3.41034 2.01882 3.54953 2.118 3.64194L6.73463 8.25857H2.74574C2.541 8.25857 2.37503 8.42455 2.37503 8.62929C2.37503 8.83403 2.541 9 2.74574 9H7.62929C7.83403 9 8 8.83403 8 8.62929L7.99506 3.74574Z" fill="#737373" />
-                                        </svg>
-                                    </a>
-                                    <div class="header-search__caption">Скины</div>
-                                    <div class="header-search__list">
-                                        <div class="hs-item">
-                                            <a href="#" class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image2.png" alt="img"></a>
-                                            <div class="hs-item__content">
-                                                <div class="hs-item__category">Скин один</div>
-                                                <div class="hs-item__title"><a href="#">Скин пример</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="hs-item">
-                                            <a href="#" class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image3.png" alt="img"></a>
-                                            <div class="hs-item__content">
-                                                <div class="hs-item__category">Скин еще какой-то</div>
-                                                <div class="hs-item__title"><a href="#">Пример скина наименование</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="hs-item">
-                                            <a href="#" class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></a>
-                                            <div class="hs-item__content">
-                                                <div class="hs-item__category">Скин один</div>
-                                                <div class="hs-item__title"><a href="#">Скин пример</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="hs-item">
-                                            <a href="#" class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></a>
-                                            <div class="hs-item__content">
-                                                <div class="hs-item__category">Оружие</div>
-                                                <div class="hs-item__title"><a href="#">Пример оружия</a></div>
-                                            </div>
+                                    <div class="header-search__block">
+                                        <a href="#" class="header-search__more">
+                                            Ещё
+                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.99506 3.74574C7.9964 3.64702 7.95778 3.55194 7.88796 3.48213C7.81814 3.41231 7.72307 3.37369 7.62434 3.37503C7.4196 3.37503 7.25363 3.541 7.25363 3.74574V7.73463L2.64194 3.118C2.54953 3.01882 2.41034 2.97799 2.27899 3.01154C2.14765 3.04508 2.04508 3.14765 2.01154 3.27899C1.97799 3.41034 2.01882 3.54953 2.118 3.64194L6.73463 8.25857H2.74574C2.541 8.25857 2.37503 8.42455 2.37503 8.62929C2.37503 8.83403 2.541 9 2.74574 9H7.62929C7.83403 9 8 8.83403 8 8.62929L7.99506 3.74574Z" fill="#737373" />
+                                            </svg>
+                                        </a>
+                                        <div class="header-search__caption">Скины</div>
+                                        <div class="header-search__list">
+                                            <a href="#" class="hs-item">
+                                                <div class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></div>
+                                                <div class="hs-item__content">
+                                                    <div class="hs-item__category">Оружие</div>
+                                                    <div class="hs-item__title">Пример оружия</div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="hs-item">
+                                                <div class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></div>
+                                                <div class="hs-item__content">
+                                                    <div class="hs-item__category">Оружие</div>
+                                                    <div class="hs-item__title">Пример оружия</div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="hs-item">
+                                                <div class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></div>
+                                                <div class="hs-item__content">
+                                                    <div class="hs-item__category">Оружие</div>
+                                                    <div class="hs-item__title">Пример оружия</div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="hs-item">
+                                                <div class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></div>
+                                                <div class="hs-item__content">
+                                                    <div class="hs-item__category">Оружие</div>
+                                                    <div class="hs-item__title">Пример оружия</div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="header-search__block">
-                                    <a href="#" class="header-search__more">
-                                        Ещё
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.99506 3.74574C7.9964 3.64702 7.95778 3.55194 7.88796 3.48213C7.81814 3.41231 7.72307 3.37369 7.62434 3.37503C7.4196 3.37503 7.25363 3.541 7.25363 3.74574V7.73463L2.64194 3.118C2.54953 3.01882 2.41034 2.97799 2.27899 3.01154C2.14765 3.04508 2.04508 3.14765 2.01154 3.27899C1.97799 3.41034 2.01882 3.54953 2.118 3.64194L6.73463 8.25857H2.74574C2.541 8.25857 2.37503 8.42455 2.37503 8.62929C2.37503 8.83403 2.541 9 2.74574 9H7.62929C7.83403 9 8 8.83403 8 8.62929L7.99506 3.74574Z" fill="#737373" />
-                                        </svg>
-                                    </a>
-                                    <div class="header-search__caption">Разное</div>
-                                    <div class="header-search__list">
-                                        <div class="hs-item">
-                                            <a href="#" class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></a>
-                                            <div class="hs-item__content">
-                                                <div class="hs-item__category">Оружие</div>
-                                                <div class="hs-item__title"><a href="#">Пример оружия</a></div>
-                                            </div>
+                                    <div class="header-search__block">
+                                        <a href="#" class="header-search__more">
+                                            Ещё
+                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.99506 3.74574C7.9964 3.64702 7.95778 3.55194 7.88796 3.48213C7.81814 3.41231 7.72307 3.37369 7.62434 3.37503C7.4196 3.37503 7.25363 3.541 7.25363 3.74574V7.73463L2.64194 3.118C2.54953 3.01882 2.41034 2.97799 2.27899 3.01154C2.14765 3.04508 2.04508 3.14765 2.01154 3.27899C1.97799 3.41034 2.01882 3.54953 2.118 3.64194L6.73463 8.25857H2.74574C2.541 8.25857 2.37503 8.42455 2.37503 8.62929C2.37503 8.83403 2.541 9 2.74574 9H7.62929C7.83403 9 8 8.83403 8 8.62929L7.99506 3.74574Z" fill="#737373" />
+                                            </svg>
+                                        </a>
+                                        <div class="header-search__caption">Разное</div>
+                                        <div class="header-search__list">
+                                            <a href="#" class="hs-item">
+                                                <div class="hs-item__img"><img src="./dist/img/content/catalog/catalog-image1.png" alt="img"></div>
+                                                <div class="hs-item__content">
+                                                    <div class="hs-item__category">Оружие</div>
+                                                    <div class="hs-item__title">Пример оружия</div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -2780,6 +2786,6 @@
 </div><!-- end wrapper -->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-	<script src="dist/scripts/main.js"></script>
+	<script src="./dist/scripts/main.js"></script>
 </body>
 </html>
