@@ -136,8 +136,6 @@ function initSearch() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', initSearch);
-
 // Articles carousel
 function initArticlesCarousel() {
     new Swiper('.articles-carousel', {
@@ -175,8 +173,9 @@ let catalogCarousel;
 function initCatalogCarousel() {
     if (window.innerWidth <= 767 && !catalogCarousel) {
         catalogCarousel = new Swiper('.catalog-carousel', {
-            slidesPerView: 'auto',
             loop: true,
+            spaceBetween: 0,
+            slidesPerView: 'auto',
         });
     } else if (window.innerWidth > 767 && catalogCarousel) {
         catalogCarousel.destroy(true, true);
