@@ -136,7 +136,6 @@ function initSearch() {
     });
 }
 
-// --- Инициализация ---
 document.addEventListener('DOMContentLoaded', initSearch);
 
 // Articles carousel
@@ -170,7 +169,6 @@ function initPromoCarousel() {
     }
 }
 
-
 // Catalog carousel
 let catalogCarousel;
 
@@ -179,14 +177,12 @@ function initCatalogCarousel() {
         catalogCarousel = new Swiper('.catalog-carousel', {
             slidesPerView: 'auto',
             loop: true,
-            spaceBetween: 10,
         });
     } else if (window.innerWidth > 767 && catalogCarousel) {
         catalogCarousel.destroy(true, true);
         catalogCarousel = null;
     }
 }
-
 
 // Tabs with swipers 
 function initTabsWithSwipers() {
@@ -290,7 +286,6 @@ function initTabsWithSwipers() {
     });
 }
 
-
 // Simple tabs
 function initTabs() {
     document.querySelectorAll('.tabs').forEach(block => {
@@ -311,7 +306,6 @@ function initTabs() {
         });
     });
 }
-
 
 // FAQ
 function initTabsFAQ() {
