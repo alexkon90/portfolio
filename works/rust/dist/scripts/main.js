@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTabsWithSwipers();
     initTabs();
     initTabsFAQ();
+    initFooterAccordion();
 
     window.addEventListener('resize', () => {
         initPromoCarousel();
@@ -73,10 +74,12 @@ function initSearch() {
 
     searchBtn?.addEventListener('click', () => {
         searchBlock.classList.add('open');
+        document.body.classList.add('lock');
         input?.focus();
     });
 
     searchClose?.addEventListener('click', () => {
+        document.body.classList.remove('lock');
         searchBlock.classList.remove('open');
         searchBlock.classList.remove('focused');
         suggest.classList.remove('active');
@@ -308,16 +311,66 @@ function initTabs() {
 
 // FAQ
 function initTabsFAQ() {
-    document.querySelectorAll('.faq-accordion').forEach(block => {
-        const items = block.querySelectorAll('.faq-accordion-item');
+    const blocks = document.querySelectorAll('.faq-accordion');
 
-        items.forEach(item => {
-            const head = item.querySelector('.faq-accordion-item__title');
+    blocks.forEach(block => {
+        block.addEventListener('click', (e) => {
+            const title = e.target.closest('.faq-accordion-item__title');
+            if (!title) return;
 
-            head.addEventListener('click', () => {
-                items.forEach(i => i.classList.remove('active'));
+            e.preventDefault();
+
+            const item = title.closest('.faq-accordion-item');
+            const items = block.querySelectorAll('.faq-accordion-item');
+
+            const isActive = item.classList.contains('active');
+
+            items.forEach(i => i.classList.remove('active'));
+
+            if (!isActive) {
                 item.classList.add('active');
-            });
+            }
         });
     });
 }
+
+// Footer menu
+function initFooterAccordion() {
+    const sections = document.querySelectorAll('.footer__section');
+
+    function isMobile() {
+        return window.innerWidth <= 767;
+    }
+
+    sections.forEach(section => {
+        const caption = section.querySelector('.footer__caption');
+        const block = section.querySelector('.footer__block');
+
+        if (!caption || !block) return;
+
+        caption.addEventListener('click', (e) => {
+            if (!isMobile()) return;
+            e.preventDefault();
+
+            const isActive = section.classList.contains('active');
+            sections.forEach(s => {
+                s.classList.remove('active');
+                s.querySelector('.footer__block').style.maxHeight = null;
+            });
+
+            if (!isActive) {
+                section.classList.add('active');
+                block.style.maxHeight = block.scrollHeight + 'px';
+            }
+        });
+    });
+}
+
+window.addEventListener('resize', () => {
+    document.querySelectorAll('.footer__block').forEach(block => {
+        block.style.maxHeight = null;
+    });
+    document.querySelectorAll('.footer__section').forEach(section => {
+        section.classList.remove('active');
+    });
+});

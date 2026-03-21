@@ -1863,6 +1863,9 @@
             }
         }
     }
+    &__content-body{
+        padding: 20px;
+    }
     &__content{
         display: none;
         position: absolute;
@@ -1872,7 +1875,6 @@
         width: calc(50% - 10px);
         background: #222;
         border-radius: 4px;
-        padding: 20px;
         overflow: hidden;
         overflow-y: auto;
         &::-webkit-scrollbar {
@@ -1910,17 +1912,26 @@
         line-height: 1.2;
     }
     @media (max-width: 1279px) {
+        overflow: hidden;
         &__title{
             width: 100%;
         }
         &__content{
+            display: block;
             position: static;
             width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            will-change: max-height;
+            //transition: all .2s ease;
             ul{
                 padding-left: 0;
             }
         }
         &.active{
+            .faq-accordion-item__content{
+                max-height: 1000px;
+            }
             .faq-accordion-item__icon{
                 svg{
                     &:first-child {
@@ -1954,7 +1965,7 @@
                 background-size: cover;
             }
         }
-        &__content{
+        &__content-body{
             padding: 15px;
         }
         &__icon{
@@ -2050,6 +2061,16 @@
         }
     }
     @media (max-width: 767px) {
+        &__block {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease;
+        }
+        &__section.active{
+            .footer__caption:after{
+                transform: rotate(-180deg);
+            }
+        }
         &__inner{
             padding-bottom: 30px;
         }
@@ -2095,9 +2116,6 @@
                 height: 19px;
                 background-image: url(../img/icon-arrow-down2.svg);
             }
-        }
-        &__block{
-            display: none;
         }
         &__bottom{
             padding-top: 0;
