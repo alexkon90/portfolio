@@ -2328,9 +2328,9 @@ img {
 @media (max-width: 599px) {
   .catalog-carousel-item {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(50% - 15px);
-            flex: 0 0 calc(50% - 15px);
-    width: calc(50% - 15px);
+        -ms-flex: 0 0 calc(50% - 17px);
+            flex: 0 0 calc(50% - 17px);
+    width: calc(50% - 17px);
   }
 }
 @media (max-width: 479px) {
