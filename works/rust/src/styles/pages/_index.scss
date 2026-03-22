@@ -1609,6 +1609,9 @@
         &__img{
             padding: 15px 0;
             height: 110px;
+            img{
+                width: 100%;
+            }
         }
     }
     @media (max-width: 599px) {

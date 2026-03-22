@@ -2327,6 +2327,9 @@ img {
     padding: 15px 0;
     height: 110px;
   }
+  .catalog-carousel-item__img img {
+    width: 100%;
+  }
 }
 @media (max-width: 599px) {
   .catalog-carousel-item {
