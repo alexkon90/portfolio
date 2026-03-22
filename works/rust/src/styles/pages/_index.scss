@@ -1539,12 +1539,11 @@
         background-image: url(../img/img-dots.svg);
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        padding: 15px 0;
+        padding: 15px;
         height: 110px;
         z-index: 2;
         img{
-            max-height: 100%;
-            max-width: 100%;
+            height: 100%;
         }
     }
     &__type{
@@ -1619,7 +1618,7 @@
         padding: 10px;
         &__img{
             height: 90px;
-            padding: 10px 0;
+            padding: 10px;
         }
     }
 }
