@@ -171,21 +171,31 @@ function initArticlesCarousel() {
 }
 
 // Catalog carousel
-let catalogCarousel;
 
 function initCatalogCarousel() {
-    if (window.innerWidth <= 767 && !catalogCarousel) {
-        catalogCarousel = new Swiper('.catalog-carousel', {
-            loop: true,
-            spaceBetween: 10,
-            //slidesPerView: 'auto',
-            slidesPerView: 2.12,
-        });
-    } else if (window.innerWidth > 767 && catalogCarousel) {
-        catalogCarousel.destroy(true, true);
-        catalogCarousel = null;
-    }
+    new Swiper('.catalog-carousel', {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 2.12,
+        //slidesPerView: 'auto',
+    });
 }
+
+//let catalogCarousel;
+
+//function initCatalogCarousel() {
+//    if (window.innerWidth <= 767 && !catalogCarousel) {
+//        catalogCarousel = new Swiper('.catalog-carousel', {
+//            loop: true,
+//            spaceBetween: 10,
+//            slidesPerView: 2.12,
+//            //slidesPerView: 'auto',
+//        });
+//    } else if (window.innerWidth > 767 && catalogCarousel) {
+//        catalogCarousel.destroy(true, true);
+//        catalogCarousel = null;
+//    }
+//}
 
 // Tabs with swipers 
 function initTabsWithSwipers() {

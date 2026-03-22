@@ -1494,9 +1494,9 @@
 .catalog-carousel{
     @media (min-width: 768px) {
         &__list{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            //display: flex;
+            //flex-wrap: wrap;
+            //gap: 20px;
         }
     }
     @media (max-width: 767px) {
@@ -1593,10 +1593,7 @@
     }
     @media (max-width: 767px) {
         //flex: 0 0 198px;
-        width: auto;
         padding: 20px;
-        margin-right: 0;
-        flex-shrink: 0;
         &__title{
             font-size: 14px;
             font-weight: 600;

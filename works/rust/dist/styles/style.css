@@ -2178,16 +2178,6 @@ img {
   }
 }
 
-@media (min-width: 768px) {
-  .catalog-carousel__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 20px;
-  }
-}
 @media (max-width: 767px) {
   .catalog-carousel {
     margin-right: -30px;
@@ -2294,11 +2284,7 @@ img {
 }
 @media (max-width: 767px) {
   .catalog-carousel-item {
-    width: auto;
     padding: 20px;
-    margin-right: 0;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
   }
   .catalog-carousel-item__title {
     font-size: 14px;
