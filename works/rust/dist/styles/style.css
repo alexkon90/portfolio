@@ -2208,8 +2208,12 @@ img {
   background-color: #222;
   border-radius: 4px;
   padding: 15px 20px 20px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+  .catalog-carousel-item {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
 }
 .catalog-carousel-item:hover {
   background-color: #333;

@@ -1513,7 +1513,9 @@
     background-color: #222;
     border-radius: 4px;
     padding: 15px 20px 20px;
-    transition: all 0.3s ease;
+    @media (min-width: 768px) {
+        transition: all 0.3s ease;
+    }
     &:hover{
         background-color: #333;
         .catalog-carousel-item__img{
