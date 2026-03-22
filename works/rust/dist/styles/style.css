@@ -2329,6 +2329,7 @@ img {
   }
   .catalog-carousel-item__img img {
     width: 100%;
+    width: 100%;
   }
 }
 @media (max-width: 599px) {
