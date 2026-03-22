@@ -177,7 +177,7 @@ function initCatalogCarousel() {
     if (window.innerWidth <= 767 && !catalogCarousel) {
         catalogCarousel = new Swiper('.catalog-carousel', {
             loop: true,
-            spaceBetween: 0,
+            spaceBetween: 10,
             slidesPerView: 'auto',
         });
     } else if (window.innerWidth > 767 && catalogCarousel) {

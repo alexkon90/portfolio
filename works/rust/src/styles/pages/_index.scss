@@ -1596,6 +1596,8 @@
         width: 198px;
         padding: 20px;
         margin-right: 10px;
+        margin-right: 0;
+        flex-shrink: 0;
         &__title{
             font-size: 14px;
             font-weight: 600;
