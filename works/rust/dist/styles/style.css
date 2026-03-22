@@ -2333,20 +2333,13 @@ img {
        object-fit: contain;
   }
 }
-@media (max-width: 599px) {
-  .catalog-carousel-item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(50% - 17px);
-            flex: 0 0 calc(50% - 17px);
-    width: calc(50% - 17px);
-  }
-}
 @media (max-width: 479px) {
   .catalog-carousel-item {
     padding: 10px;
   }
   .catalog-carousel-item__img {
     height: 90px;
+    width: 140px;
     padding: 10px;
   }
 }
