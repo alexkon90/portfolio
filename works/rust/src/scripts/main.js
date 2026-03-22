@@ -139,19 +139,6 @@ function initSearch() {
     });
 }
 
-// Articles carousel
-function initArticlesCarousel() {
-    new Swiper('.articles-carousel', {
-        loop: true,
-        spaceBetween: 10,
-        slidesPerView: 'auto',
-        breakpoints: {
-            768: { slidesPerView: 2, spaceBetween: 20 },
-            1280: { slidesPerView: 3 }
-        }
-    });
-}
-
 // Promo carousel
 let promoCarousel;
 
@@ -170,6 +157,19 @@ function initPromoCarousel() {
     }
 }
 
+// Articles carousel
+function initArticlesCarousel() {
+    new Swiper('.articles-carousel', {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 'auto',
+        breakpoints: {
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1280: { slidesPerView: 3 }
+        }
+    });
+}
+
 // Catalog carousel
 let catalogCarousel;
 
@@ -178,7 +178,8 @@ function initCatalogCarousel() {
         catalogCarousel = new Swiper('.catalog-carousel', {
             loop: true,
             spaceBetween: 10,
-            slidesPerView: 'auto',
+            //slidesPerView: 'auto',
+            slidesPerView: 2.12,
         });
     } else if (window.innerWidth > 767 && catalogCarousel) {
         catalogCarousel.destroy(true, true);
