@@ -178,7 +178,8 @@ function initCatalogCarousel() {
         catalogCarousel = new Swiper('.catalog-carousel', {
             loop: true,
             spaceBetween: 10,
-            slidesPerView: 'auto',
+            //slidesPerView: 'auto',
+            slidesPerView: 2.12,
         });
     } else if (window.innerWidth > 767 && catalogCarousel) {
         catalogCarousel.destroy(true, true);

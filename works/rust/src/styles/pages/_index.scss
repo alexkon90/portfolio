@@ -1592,8 +1592,10 @@
         }
     }
     @media (max-width: 767px) {
-        flex: 0 0 calc(33.333% - 17px);
-        width: calc(33.333% - 17px);
+        //flex: 0 0 calc(33.333% - 17px);
+        //width: calc(33.333% - 17px);
+        width: auto;
+        flex: 0 0 auto;
         padding: 20px;
         margin-right: 0;
         flex-shrink: 0;
@@ -1610,8 +1612,8 @@
         }
     }
     @media (max-width: 599px) {
-        flex: 0 0 calc(50% - 17px);
-        width: calc(50% - 17px);
+        //flex: 0 0 calc(50% - 17px);
+        //width: calc(50% - 17px);
     }
     @media (max-width: 479px) {
         padding: 10px;
