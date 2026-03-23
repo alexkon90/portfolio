@@ -2208,7 +2208,8 @@ img {
       -ms-flex: 0 0 calc((100% - 100px) / 6);
           flex: 0 0 calc((100% - 100px) / 6);
   min-width: 0;
-  background-color: #222;
+  background: #222 url(../img/img-dots.svg) left 50% top 20% no-repeat;
+  background-size: 146px 110px;
   border-radius: 4px;
 }
 @media (min-width: 768px) {
@@ -2218,10 +2219,7 @@ img {
   }
 }
 .catalog-carousel-item:hover {
-  background-color: #333;
-}
-.catalog-carousel-item:hover .catalog-carousel-item__img {
-  background-image: url(../img/img-dots-hover.svg);
+  background: #333 url(../img/img-dots-hover.svg) left 50% top 20% no-repeat;
 }
 .catalog-carousel-item__body {
   padding: 15px 20px 20px;
@@ -2246,8 +2244,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: url(../img/img-dots.svg) center no-repeat;
-  background-size: 146px 110px;
   height: 110px;
   z-index: 2;
 }
