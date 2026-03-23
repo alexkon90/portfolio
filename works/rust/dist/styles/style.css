@@ -2402,9 +2402,9 @@ img {
 .catalog-item__icon img {
   position: relative;
   display: inline-block;
-  z-index: 2;
   max-height: 100%;
   max-width: 100%;
+  z-index: 2;
 }
 .catalog-item__title {
   letter-spacing: -0.02em;
@@ -2451,22 +2451,27 @@ img {
 
 .test-item {
   background: gray;
+  padding: 15px;
 }
 .test-item__img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 120px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80px;
+  margin-bottom: 20px;
 }
 .test-item__img img {
-  max-width: 100%;
+  position: relative;
+  display: inline-block;
   max-height: 100%;
+  max-width: 100%;
+  z-index: 2;
 }
 
 /*-------------------------servers-------------------------*/
