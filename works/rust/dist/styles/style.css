@@ -2202,6 +2202,10 @@ img {
   }
 }
 
+.catalog-carousel_2 .catalog-carousel-item {
+  background-image: none;
+}
+
 .catalog-carousel-item {
   position: relative;
   -webkit-box-flex: 0;
