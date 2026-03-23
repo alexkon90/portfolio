@@ -1514,27 +1514,12 @@
     min-width: 0;
     background-color: #222;
     border-radius: 4px;
-        &:after{
-        content: '';
-        display: block;
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 146px;
-        height: 110px;
-        background-image: url(../img/img-dots.svg);
-        background-size: cover;
-        transition: all 0.3s ease;
-        pointer-events: none;
-        z-index: -1;
-    }
     @media (min-width: 768px) {
         transition: all 0.3s ease;
     }
     &:hover{
         background-color: #333;
-        &:after{
+        .catalog-carousel-item__img{
             background-image: url(../img/img-dots-hover.svg);
         }
     }
@@ -1555,12 +1540,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        //background-image: url(../img/img-dots.svg);
-        //background-repeat: no-repeat;
-        //background-position: 50% 50%;
+        background: url(../img/img-dots.svg) center no-repeat;
+        background-size: 146px 110px;
         height: 110px;
         z-index: 2;
-
         a{
             display: flex;
             align-items: center;
