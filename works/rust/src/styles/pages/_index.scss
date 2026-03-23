@@ -299,8 +299,9 @@
     }
     &__top{
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         margin-bottom: 20px;
-        justify-content: flex-end;
     }
     &__close{
         top: 36px;
@@ -1603,7 +1604,7 @@
         padding: 20px;
         margin-right: 0;
         &:hover{
-            background-color: #222;
+            background-color: #222 !important;
         }
         &__title{
             font-size: 14px;
