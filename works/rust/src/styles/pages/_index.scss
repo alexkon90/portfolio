@@ -1700,44 +1700,30 @@
 }
 
 
-
-
-.test{
-    margin-right: -20px;
-    .swiper-slide{
-        @media (max-width: 767px) {
-            flex: 0 0 calc(50% - 17px);
-            width: calc(50% - 17px);
-        }
+.catalog-mobilerow{
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    &::-webkit-scrollbar {
+        width: 3px;              
+        height: 3px;         
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);       
+    }
+    &::-webkit-scrollbar-button {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    @supports (scrollbar-width: thin) and (not selector(::-webkit-scrollbar)) {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
     }
 }
-.test-item{
-    background: gray;
-    padding: 15px;
-    //&__img{
-    //    display: flex;
-    //    justify-content: center;
-    //    align-items: center;
-    //    height: 120px;
-    //    img{
-    //        max-width: 100%;
-    //        max-height: 100%;
-    //    }
-    //}
 
-    &__img{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 110px;
-        z-index: 2;
-        img{
-            max-width: 100%;
-            max-height: 100%;
-        }
-    }
-}
 /*-------------------------servers-------------------------*/
 .servers{
     &__row{

@@ -2438,39 +2438,32 @@ img {
   }
 }
 
-.test {
-  margin-right: -20px;
-}
-@media (max-width: 767px) {
-  .test .swiper-slide {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(50% - 17px);
-            flex: 0 0 calc(50% - 17px);
-    width: calc(50% - 17px);
-  }
-}
-
-.test-item {
-  background: gray;
-  padding: 15px;
-}
-.test-item__img {
-  position: relative;
+.catalog-mobilerow {
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 110px;
-  z-index: 2;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
 }
-.test-item__img img {
-  max-width: 100%;
-  max-height: 100%;
+.catalog-mobilerow::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+.catalog-mobilerow::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+.catalog-mobilerow::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+@supports (scrollbar-width: thin) and (not selector(::-webkit-scrollbar)) {
+  .catalog-mobilerow {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+  }
 }
 
 /*-------------------------servers-------------------------*/
