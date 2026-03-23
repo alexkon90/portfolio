@@ -2446,7 +2446,6 @@ img {
         -ms-flex: 0 0 calc(50% - 17px);
             flex: 0 0 calc(50% - 17px);
     width: calc(50% - 17px);
-    margin-right: 0;
   }
 }
 

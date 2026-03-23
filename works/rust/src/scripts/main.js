@@ -172,16 +172,19 @@ function initArticlesCarousel() {
 }
 
 // test carousel
+let testCarousel;
+
 function initTestCarousel() {
-    new Swiper('.test', {
-        loop: true,
-        spaceBetween: 10,
-        slidesPerView: 'auto',
-        breakpoints: {
-            768: { slidesPerView: 2, spaceBetween: 20 },
-            1280: { slidesPerView: 3 }
-        }
-    });
+    if (window.innerWidth <= 767 && !testCarousel) {
+        testCarousel = new Swiper('.test', {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 'auto',
+        });
+    } else if (window.innerWidth > 767 && testCarousel) {
+        testCarousel.destroy(true, true);
+        testCarousel = null;
+    }
 }
 
 // Catalog carousel
