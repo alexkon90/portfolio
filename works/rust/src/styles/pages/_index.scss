@@ -1728,13 +1728,9 @@
     //}
 
     &__img{
-        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url(../img/img-dots.svg);
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
         height: 110px;
         z-index: 2;
     }

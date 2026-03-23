@@ -2454,7 +2454,6 @@ img {
   padding: 15px;
 }
 .test-item__img {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2464,9 +2463,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(../img/img-dots.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
   height: 110px;
   z-index: 2;
 }
