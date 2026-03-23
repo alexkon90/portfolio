@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initArticlesCarousel();
     initPromoCarousel();
     initCatalogCarousel();
+    initTestCarousel();
     initTabsWithSwipers();
     initTabs();
     initTabsFAQ();
@@ -160,6 +161,19 @@ function initPromoCarousel() {
 // Articles carousel
 function initArticlesCarousel() {
     new Swiper('.articles-carousel', {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 'auto',
+        breakpoints: {
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1280: { slidesPerView: 3 }
+        }
+    });
+}
+
+// test carousel
+function initTestCarousel() {
+    new Swiper('.test', {
         loop: true,
         spaceBetween: 10,
         slidesPerView: 'auto',

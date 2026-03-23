@@ -2181,6 +2181,9 @@ img {
   }
 }
 
+.catalog-carousel {
+  display: none;
+}
 @media (min-width: 768px) {
   .catalog-carousel__list {
     display: -webkit-box;
@@ -2432,6 +2435,39 @@ img {
   .catalog-item__title {
     font-size: 14px;
   }
+}
+
+.test {
+  margin-right: -20px;
+}
+@media (max-width: 767px) {
+  .test .swiper-slide {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 17px);
+            flex: 0 0 calc(50% - 17px);
+    width: calc(50% - 17px);
+    margin-right: 0;
+  }
+}
+
+.test-item {
+  background: gray;
+}
+.test-item__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 120px;
+}
+.test-item__img img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /*-------------------------servers-------------------------*/

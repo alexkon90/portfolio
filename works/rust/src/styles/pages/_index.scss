@@ -1493,6 +1493,7 @@
     }
 }
 .catalog-carousel{
+    display: none;
     @media (min-width: 768px) {
         &__list{
             display: flex;
@@ -1696,6 +1697,29 @@
         padding: 18px 20px;
         &__title{
             font-size: 14px;
+        }
+    }
+}
+.test{
+    margin-right: -20px;
+    .swiper-slide{
+        @media (max-width: 767px) {
+            flex: 0 0 calc(50% - 17px);
+            width: calc(50% - 17px);
+            margin-right: 0;
+        }
+    }
+}
+.test-item{
+    background: gray;
+    &__img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+        img{
+            max-width: 100%;
+            max-height: 100%;
         }
     }
 }
