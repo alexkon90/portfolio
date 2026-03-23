@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initArticlesCarousel();
     initPromoCarousel();
     initCatalogCarousel();
-    initTestCarousel();
     initTabsWithSwipers();
     initTabs();
     initTabsFAQ();
@@ -171,22 +170,6 @@ function initArticlesCarousel() {
     });
 }
 
-// test carousel
-let testCarousel;
-
-function initTestCarousel() {
-    if (window.innerWidth <= 767 && !testCarousel) {
-        testCarousel = new Swiper('.test', {
-            loop: true,
-            spaceBetween: 10,
-            slidesPerView: 'auto',
-        });
-    } else if (window.innerWidth > 767 && testCarousel) {
-        testCarousel.destroy(true, true);
-        testCarousel = null;
-    }
-}
-
 // Catalog carousel
 let catalogCarousel;
 
@@ -195,6 +178,7 @@ function initCatalogCarousel() {
         catalogCarousel = new Swiper('.catalog-carousel', {
             loop: true,
             spaceBetween: 10,
+            freeMode: true,
             slidesPerView: 'auto',
         });
     } else if (window.innerWidth > 767 && catalogCarousel) {
