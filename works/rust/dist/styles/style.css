@@ -2220,9 +2220,6 @@ img {
 .catalog-carousel-item:hover {
   background-color: #333;
 }
-.catalog-carousel-item:hover .catalog-carousel-item__img {
-  background-image: url(../img/img-dots-hover.svg);
-}
 .catalog-carousel-item__body {
   padding: 15px 20px 20px;
 }
@@ -2246,9 +2243,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(../img/img-dots.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
   height: 110px;
   z-index: 2;
 }

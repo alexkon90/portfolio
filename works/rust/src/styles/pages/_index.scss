@@ -1507,6 +1507,7 @@
         margin-right: -20px;
     }
 }
+
 .catalog-carousel-item{
     position: relative;
     flex: 0 0 calc((100% - 100px) / 6);
@@ -1519,7 +1520,7 @@
     &:hover{
         background-color: #333;
         .catalog-carousel-item__img{
-            background-image: url(../img/img-dots-hover.svg);
+            //background-image: url(../img/img-dots-hover.svg);
         }
     }
     &__body{
@@ -1539,9 +1540,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url(../img/img-dots.svg);
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
+        //background-image: url(../img/img-dots.svg);
+        //background-repeat: no-repeat;
+        //background-position: 50% 50%;
         height: 110px;
         z-index: 2;
         a{
