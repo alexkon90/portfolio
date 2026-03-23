@@ -1623,6 +1623,9 @@
                 width: 100%;
             }
             img{
+                position: absolute;
+                top: 0;
+                left: 0;
                 max-width: none;
                 max-height: none;
                 //width: 100%;
@@ -1633,17 +1636,20 @@
     @media (max-width: 599px) {
         flex: 0 0 calc(50% - 17px);
         width: calc(50% - 17px);
-        flex: none;
-        width: auto;
     }
     @media (max-width: 479px) {
-        &__body{
-            width: 250px;
-        }
         &__img{
             height: 80px;
         }
     }
+}
+.hidden{
+    position: static !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    z-index: -1;
 }
 .catalog-item{
     position: relative;
