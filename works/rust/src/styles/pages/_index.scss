@@ -1514,12 +1514,27 @@
     min-width: 0;
     background-color: #222;
     border-radius: 4px;
+        &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 146px;
+        height: 110px;
+        background-image: url(../img/img-dots.svg);
+        background-size: cover;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        z-index: -1;
+    }
     @media (min-width: 768px) {
         transition: all 0.3s ease;
     }
     &:hover{
         background-color: #333;
-        .catalog-carousel-item__img:after{
+        &:after{
             background-image: url(../img/img-dots-hover.svg);
         }
     }
@@ -1545,21 +1560,7 @@
         //background-position: 50% 50%;
         height: 110px;
         z-index: 2;
-        &:after{
-            content: '';
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 146px;
-            height: 110px;
-            background-image: url(../img/img-dots.svg);
-            background-size: cover;
-            transition: all 0.3s ease;
-            pointer-events: none;
-            z-index: -1;
-        }
+
         a{
             display: flex;
             align-items: center;
