@@ -1519,8 +1519,8 @@
     }
     &:hover{
         background-color: #333;
-        .catalog-carousel-item__img{
-            //background-image: url(../img/img-dots-hover.svg);
+        .catalog-carousel-item__img:after{
+            background-image: url(../img/img-dots-hover.svg);
         }
     }
     &__body{
@@ -1545,6 +1545,21 @@
         //background-position: 50% 50%;
         height: 110px;
         z-index: 2;
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 146px;
+            height: 110px;
+            background-image: url(../img/img-dots.svg);
+            background-size: cover;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: -1;
+        }
         a{
             display: flex;
             align-items: center;

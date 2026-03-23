@@ -2220,6 +2220,9 @@ img {
 .catalog-carousel-item:hover {
   background-color: #333;
 }
+.catalog-carousel-item:hover .catalog-carousel-item__img:after {
+  background-image: url(../img/img-dots-hover.svg);
+}
 .catalog-carousel-item__body {
   padding: 15px 20px 20px;
 }
@@ -2245,6 +2248,24 @@ img {
           align-items: center;
   height: 110px;
   z-index: 2;
+}
+.catalog-carousel-item__img:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 146px;
+  height: 110px;
+  background-image: url(../img/img-dots.svg);
+  background-size: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
 }
 .catalog-carousel-item__img a {
   display: -webkit-box;
