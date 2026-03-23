@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSearch();
     initArticlesCarousel();
     initPromoCarousel();
-    initCatalogCarousel();
     initTabsWithSwipers();
     initTabs();
     initTabsFAQ();
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', () => {
         initPromoCarousel();
-        initCatalogCarousel();
     });
 });
 
@@ -168,23 +166,6 @@ function initArticlesCarousel() {
             1280: { slidesPerView: 3 }
         }
     });
-}
-
-// Catalog carousel
-let catalogCarousel;
-
-function initCatalogCarousel() {
-    if (window.innerWidth <= 767 && !catalogCarousel) {
-        catalogCarousel = new Swiper('.catalog-carousel', {
-            loop: true,
-            spaceBetween: 10,
-            freeMode: true,
-            slidesPerView: 'auto',
-        });
-    } else if (window.innerWidth > 767 && catalogCarousel) {
-        catalogCarousel.destroy(true, true);
-        catalogCarousel = null;
-    }
 }
 
 // Tabs with swipers 

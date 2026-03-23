@@ -1401,6 +1401,25 @@
         &__section_nomobile{
             display: none;
         }
+        &__row_2{
+            flex-wrap: nowrap;
+            margin-right: -30px;
+            padding-right: 30px;
+            gap: 10px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;    
+            -ms-overflow-style: none;  
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: 479px) {
+        &__row_2{
+            padding-right: 20px;
+            margin-right: -20px;
+        }
     }
 }
 .catalog-categories{
@@ -1492,39 +1511,22 @@
         }
     }
 }
-.catalog-carousel{
-    @media (min-width: 768px) {
-        &__list{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-    }
-    @media (max-width: 767px) {
-        margin-right: -30px;
-    }
-    @media (max-width: 479px) {
-        margin-right: -20px;
-    }
-}
-.catalog-carousel_2{
-    .catalog-carousel-item{
-        background-image: none !important;
-    }
-}
 .catalog-carousel-item{
     position: relative;
     flex: 0 0 calc((100% - 100px) / 6);
     min-width: 0;
-    background: #222 url(../img/img-dots.png) left 50% top 18% no-repeat;
+    background-color: #222;
+    background-image: url(../img/img-dots.png);
     background-size: 146px 110px;
+    background-position: 50% 15px;
+    background-repeat: no-repeat;
     border-radius: 4px;
     @media (min-width: 768px) {
         transition: all 0.3s ease;
     }
     &:hover{
-        background: #333 url(../img/img-dots-hover.png) left 50% top 18% no-repeat;
-        background-size: 146px 110px;
+        background-color: #333;
+        background-image: url(../img/img-dots-hover.png);
     }
     &__body{
         padding: 15px 20px 20px;
@@ -1585,8 +1587,9 @@
         flex: 0 0 calc((100% - 60px) / 4);
     }
     @media (max-width: 959px) {
+        background-position: 50% 0;
         &__body{
-            padding: 10px;
+            padding: 10px 15px;
         }
         &__title{
             font-size: 13px;
@@ -1604,14 +1607,11 @@
         }
     }
     @media (max-width: 767px) {
-        flex: 0 0 calc(33.333% - 17px);
-        width: calc(33.333% - 17px);
-        margin-right: 0;
-        &:hover{
-            background-color: #222 !important;
-        }
+        background-position: 50% 10px;
+        flex: 0 0 calc(33.333% - 7px);
+        width: calc(33.333% - 7px);
         &__body{
-            padding: 20px;
+            padding: 10px 20px 20px;
         }
         &__title{
             font-size: 14px;
@@ -1621,6 +1621,8 @@
             font-size: 11px;
         }
         &__img{
+            height: 110px;
+            margin-bottom: 0;
             a{
                 width: 100%;
             }
@@ -1631,12 +1633,13 @@
         }
     }
     @media (max-width: 599px) {
-        flex: 0 0 calc(50% - 17px);
-        width: calc(50% - 17px);
+        flex: 0 0 calc(50% - 5px);
+        width: calc(50% - 5px);
     }
     @media (max-width: 479px) {
-        &__img{
-            height: 80px;
+        background-position: 50% 5px;
+        &__body{
+            padding-top: 5px;
         }
     }
 }
@@ -1698,32 +1701,6 @@
         }
     }
 }
-
-
-.catalog-mobilerow{
-    margin-top: 30px;
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    padding-bottom: 5px;
-    &::-webkit-scrollbar {
-        width: 3px;              
-        height: 3px;         
-    }
-    &::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.1);       
-    }
-    &::-webkit-scrollbar-button {
-        display: none;
-        width: 0;
-        height: 0;
-    }
-    @supports (scrollbar-width: thin) and (not selector(::-webkit-scrollbar)) {
-        scrollbar-width: thin;
-        scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
-    }
-}
-
 /*-------------------------servers-------------------------*/
 .servers{
     &__row{

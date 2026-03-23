@@ -118,7 +118,7 @@ body.lock {
     padding: 0 40px;
   }
 }
-@media (max-width: 797px) {
+@media (max-width: 767px) {
   .center-wrapper {
     padding: 0 30px;
   }
@@ -2060,6 +2060,26 @@ img {
   .catalog__section_nomobile {
     display: none;
   }
+  .catalog__row_2 {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    margin-right: -30px;
+    padding-right: 30px;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .catalog__row_2::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 479px) {
+  .catalog__row_2 {
+    padding-right: 20px;
+    margin-right: -20px;
+  }
 }
 
 .catalog-categories {
@@ -2181,39 +2201,17 @@ img {
   }
 }
 
-@media (min-width: 768px) {
-  .catalog-carousel__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 20px;
-  }
-}
-@media (max-width: 767px) {
-  .catalog-carousel {
-    margin-right: -30px;
-  }
-}
-@media (max-width: 479px) {
-  .catalog-carousel {
-    margin-right: -20px;
-  }
-}
-
-.catalog-carousel_2 .catalog-carousel-item {
-  background-image: none !important;
-}
-
 .catalog-carousel-item {
   position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc((100% - 100px) / 6);
           flex: 0 0 calc((100% - 100px) / 6);
   min-width: 0;
-  background: #222 url(../img/img-dots.png) left 50% top 18% no-repeat;
+  background-color: #222;
+  background-image: url(../img/img-dots.png);
   background-size: 146px 110px;
+  background-position: 50% 15px;
+  background-repeat: no-repeat;
   border-radius: 4px;
 }
 @media (min-width: 768px) {
@@ -2223,8 +2221,8 @@ img {
   }
 }
 .catalog-carousel-item:hover {
-  background: #333 url(../img/img-dots-hover.png) left 50% top 18% no-repeat;
-  background-size: 146px 110px;
+  background-color: #333;
+  background-image: url(../img/img-dots-hover.png);
 }
 .catalog-carousel-item__body {
   padding: 15px 20px 20px;
@@ -2301,8 +2299,11 @@ img {
   }
 }
 @media (max-width: 959px) {
+  .catalog-carousel-item {
+    background-position: 50% 0;
+  }
   .catalog-carousel-item__body {
-    padding: 10px;
+    padding: 10px 15px;
   }
   .catalog-carousel-item__title {
     font-size: 13px;
@@ -2321,17 +2322,14 @@ img {
 }
 @media (max-width: 767px) {
   .catalog-carousel-item {
+    background-position: 50% 10px;
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(33.333% - 17px);
-            flex: 0 0 calc(33.333% - 17px);
-    width: calc(33.333% - 17px);
-    margin-right: 0;
-  }
-  .catalog-carousel-item:hover {
-    background-color: #222 !important;
+        -ms-flex: 0 0 calc(33.333% - 7px);
+            flex: 0 0 calc(33.333% - 7px);
+    width: calc(33.333% - 7px);
   }
   .catalog-carousel-item__body {
-    padding: 20px;
+    padding: 10px 20px 20px;
   }
   .catalog-carousel-item__title {
     font-size: 14px;
@@ -2339,6 +2337,10 @@ img {
   }
   .catalog-carousel-item__type {
     font-size: 11px;
+  }
+  .catalog-carousel-item__img {
+    height: 110px;
+    margin-bottom: 0;
   }
   .catalog-carousel-item__img a {
     width: 100%;
@@ -2351,14 +2353,17 @@ img {
 @media (max-width: 599px) {
   .catalog-carousel-item {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(50% - 17px);
-            flex: 0 0 calc(50% - 17px);
-    width: calc(50% - 17px);
+        -ms-flex: 0 0 calc(50% - 5px);
+            flex: 0 0 calc(50% - 5px);
+    width: calc(50% - 5px);
   }
 }
 @media (max-width: 479px) {
-  .catalog-carousel-item__img {
-    height: 80px;
+  .catalog-carousel-item {
+    background-position: 50% 5px;
+  }
+  .catalog-carousel-item__body {
+    padding-top: 5px;
   }
 }
 
@@ -2435,34 +2440,6 @@ img {
   }
   .catalog-item__title {
     font-size: 14px;
-  }
-}
-
-.catalog-mobilerow {
-  margin-top: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 5px;
-}
-.catalog-mobilerow::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-}
-.catalog-mobilerow::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-}
-.catalog-mobilerow::-webkit-scrollbar-button {
-  display: none;
-  width: 0;
-  height: 0;
-}
-@supports (scrollbar-width: thin) and (not selector(::-webkit-scrollbar)) {
-  .catalog-mobilerow {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
   }
 }
 
