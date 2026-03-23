@@ -1728,18 +1728,15 @@
     //}
 
     &__img{
+        position: relative;
         display: flex;
-        align-items: center;
         justify-content: center;
-        height: 80px;
-        margin-bottom: 20px;
-        img{
-            position: relative;
-            display: inline-block;
-            max-height: 100%;
-            max-width: 100%;            
-            z-index: 2;
-        }
+        align-items: center;
+        background-image: url(../img/img-dots.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        height: 110px;
+        z-index: 2;
     }
 }
 /*-------------------------servers-------------------------*/
