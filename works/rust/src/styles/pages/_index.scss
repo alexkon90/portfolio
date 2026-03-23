@@ -1512,15 +1512,15 @@
     position: relative;
     flex: 0 0 calc((100% - 100px) / 6);
     min-width: 0;
-    background: #222 url(../img/img-dots.svg) left 50% top 30% no-repeat;
-    background-size: contain;
+    background: #222 url(../img/img-dots.png) left 50% top 18% no-repeat;
+    background-size: 146px 110px;
     border-radius: 4px;
     @media (min-width: 768px) {
         transition: all 0.3s ease;
     }
     &:hover{
-        background: #333 url(../img/img-dots-hover.svg) left 50% top 30% no-repeat;
-        background-size: contain;
+        background: #333 url(../img/img-dots-hover.png) left 50% top 18% no-repeat;
+        background-size: 146px 110px;
     }
     &__body{
         padding: 15px 20px 20px;
