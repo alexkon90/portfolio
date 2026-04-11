@@ -6106,6 +6106,9 @@ a.paginator__btn.current{
     letter-spacing: -0.02em;
     color: #d4d6e3;
 }
+.theme-light .poster__title2{
+    color: var(--color-blackish-blue);
+}
 .poster__text ul{
     padding-bottom: 10px;
 }
@@ -6132,6 +6135,18 @@ a.paginator__btn.current{
     .poster__media-img{
         height: 430px;
     }
+    .poster__media-bottom .swiper-nav-block{
+        width: 100%;
+        padding: 0 0 10px;
+    }
+    .poster__media-bottom{
+        flex-direction: column;
+        flex-direction: column-reverse;
+        padding-top: 5px;
+    }
+    .poster__media-buttons{
+        display: none;
+    }
 }
 @media (max-width: 767.98px) {
     .poster__media-img{
@@ -6142,14 +6157,6 @@ a.paginator__btn.current{
     }
     .poster-quote__text{
         font-size: 16px;
-    }
-    .poster__media-bottom .swiper-nav-block{
-        width: 100%;
-        padding: 5px 0 0;
-    }
-    .poster__media-bottom{
-        flex-direction: column;
-        padding-top: 15px;
     }
 }
 @media (max-width: 768px) {
@@ -6173,7 +6180,5 @@ a.paginator__btn.current{
         height: 202px;
     }
 }
-
-
 
 
