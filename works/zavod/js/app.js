@@ -990,6 +990,44 @@ if (document.querySelector('.reviews__swiper')) {
    });
 }
 
+if (document.querySelector('.poster__media-swiper')) {
+    const posterSlides = document.querySelectorAll('.poster__media-swiper');
+
+    posterSlides.forEach(sliderContainer => {
+        const parent = sliderContainer.closest('.poster__media') || sliderContainer;
+        const nextBtn = parent.querySelector('.poster-media__swiper-button-next');
+        const prevBtn = parent.querySelector('.poster-media__swiper-button-prev');
+        const paginationEl = parent.querySelector('.poster-media__pagination');
+
+        const swiper = new Swiper(sliderContainer, {
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true,
+            },
+            speed: 300,
+            slidesPerView: 1,
+            navigation: {
+                nextEl: nextBtn, 
+                prevEl: prevBtn, 
+            },
+            pagination: {
+                el: paginationEl,
+                type: 'bullets',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    pagination: {
+                        type: 'fraction',
+                    },
+                }
+            },
+            observer: true,
+            observeParents: true,
+        });
+    });
+}
+
 
 if (document.querySelector('.services-section__swiper')) {
    const swiper = new Swiper('.services-section__swiper', {
