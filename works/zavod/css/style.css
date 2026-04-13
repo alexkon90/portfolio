@@ -3371,7 +3371,7 @@ a.dark-card__text {
 .custom-swiper__prev, .custom-swiper__next {
   position: absolute;
   top: 15px;
-  z-index: 2;
+  z-index: 20;
 }
 @media (min-width: 992px) {
   .custom-swiper__prev, .custom-swiper__next {
@@ -7291,4 +7291,53 @@ a.paginator__btn.current{
     .radio-steps-item {
         padding: 18px;
     }
+}
+.theme-light .radio-features-item{
+    background-color: var(--color-blackish-blue);
+}
+.theme-light .radio-device{
+    background: none;
+}
+.theme-light .radio-device-item{
+    background-color: var(--color-blackish-blue);
+}
+.theme-light .radio__title{
+    color: var(--color-blackish-blue);
+}
+.theme-light .radio__desc{
+    color: var(--color-pigeon-blue);
+}
+.theme-light .radio-steps-item:first-child:before, 
+.theme-light .radio-steps-item:last-child:before{
+    background-color: var(--gray-bg);
+}
+.theme-light .radio-status-item{
+    background-color: var(--color-blackish-blue);
+}
+.theme-light .radio-steps-result{
+    background: #D5DCE6;
+}
+.theme-light .radio-road-item{
+    background-color: var(--color-blackish-blue);
+}
+.theme-light .radio_years:after{
+    display: none;
+}
+.theme-light .custom-swiper__content-row{
+    background: rgba(213, 220, 230, 0.5);
+}
+.theme-light .radio-materials__body{
+    background-color: var(--color-blackish-blue);
+}
+.theme-light .radio__title{
+    color: var(--color-blackish-blue);
+}
+.theme-light .footer_nmt .footer__body{
+    background-color: var(--gray-bg);
+}
+.theme-light .dark-section.mark-light{
+    background-color: var(--color-blackish-blue);
+}
+.theme-light .documents-certificates__item-text{
+    color: #fff;
 }
