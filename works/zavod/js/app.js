@@ -1016,7 +1016,7 @@ if (document.querySelector('.poster__media-swiper')) {
                 clickable: true,
             },
             breakpoints: {
-                768: {
+                1024: {
                     pagination: {
                         type: 'fraction',
                     },
@@ -1027,7 +1027,31 @@ if (document.querySelector('.poster__media-swiper')) {
         });
     });
 }
+if (document.querySelector('.poster__media-video')) {
+    document.addEventListener('click', function (e) {
+        const btn = e.target.closest('.poster__media-poster');
+        
+        if (!btn) return;
 
+        const card = btn.closest('.poster__media-video');
+        const videoSrc = card.dataset.video;
+
+        if (!videoSrc) return;
+
+        const iframe = document.createElement('iframe');
+
+        iframe.src = videoSrc + '?autoplay=1&rel=0';
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'autoplay; encrypted-media');
+        iframe.setAttribute('allowfullscreen', '');
+
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+
+        card.innerHTML = '';
+        card.appendChild(iframe);
+    });
+}
 
 if (document.querySelector('.services-section__swiper')) {
    const swiper = new Swiper('.services-section__swiper', {
