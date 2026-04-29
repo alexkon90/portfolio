@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu
+    const nav = document.querySelector('.header__body');
+    const btnOpen = document.querySelector('.js-menu-switcher');
+    const btnClose = document.querySelector('.js-menu-close');
+    const body = document.body;
+
+    document.addEventListener('click', (event) => {
+        if (event.target.closest('.js-menu-switcher')) {
+            nav.classList.add('open');
+            body.classList.add('lock');
+        }
+
+        if (event.target.closest('.js-menu-close')) {
+            nav.classList.remove('open');
+            body.classList.remove('lock');
+        }
+    });
+
     // Mainarticles carousel
     const mainarticles_carousel = new Swiper('.mainarticles-carousel', {
         //loop: true,
@@ -12,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
             640: {
                 slidesPerView: 2.3,
             },
-            1024: {
+            1280: {
                 slidesPerView: 3.3,
             },
-            1450: {
+            1800: {
                 slidesPerView: 4.3,
             }
         }
@@ -31,8 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: '.mainabout-gallery__prev',
         },
         breakpoints: {
-            1024: {
+            768: {
                 slidesPerView: 2.1,
+            },
+            1024: {
+                slidesPerView: 3.1,
             },
             1450: {
                 slidesPerView: 2.1,
@@ -50,10 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: '.mainstages-carousel__prev',
         },
         breakpoints: {
-            1024: {
+            768: {
                 slidesPerView: 2.1,
             },
-            1450: {
+            1024: {
+                slidesPerView: 3.1,
+            },
+            1440: {
                 slidesPerView: 4,
             }
         }
@@ -69,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: '.maincases-carousel__prev',
         },
         breakpoints: {
-            1024: {
-                slidesPerView: 2.1,
+            768: {
+                slidesPerView: 2,
             },
             1450: {
                 slidesPerView: 3,
@@ -88,10 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: '.other-products-carousel__prev',
         },
         breakpoints: {
-            1024: {
+            768: {
+                slidesPerView: 2,
+            },
+            1280: {
                 slidesPerView: 3,
             },
-            1450: {
+            1800: {
                 slidesPerView: 4,
             }
         }

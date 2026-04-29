@@ -9,56 +9,66 @@
 	<link rel="stylesheet" href="dist/styles/style.css">
 	<title>НПО Холодмаш</title>
 </head>
-<body>
+<body class="indexpage">
 <div class="wrapper">
     <div class="main">
         <section class="mainscreen">
             <header class="header">
-                <div class="header__top">
-                    <nav class="header-menu">
-                        <ul class="header-menu__list">
-                            <li class="header-menu__item">
-                                <a href="#" class="header-menu__link">О компании</a>
-                            </li>
-                            <li class="header-menu__item">
-                                <a href="#" class="header-menu__link">Готовые проекты</a>
-                            </li>
-                            <li class="header-menu__item">
-                                <a href="#" class="header-menu__link">О компании</a>
-                            </li>
-                            <li class="header-menu__item">
-                                <a href="#" class="header-menu__link">Расчет спирального конвейера</a>
-                            </li>
-                            <li class="header-menu__item">
-                                <a href="#" class="header-menu__link">Блог</a>
-                            </li>
-                            <li class="header-menu__item">
-                                <a href="#" class="header-menu__link">Оплата</a>
-                            </li>
-                            <li class="header-menu__item">
-                                <a href="#" class="header-menu__link">Контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="header-contacts">
-                        <div class="header-contacts__timetable">Пн-Пт с 8:00 - 20:00 (МСК)</div>
-                        <a href="tel:88002000600" class="header-contacts__phone">8 (800) 2000-600</a>
-                        <a href="mailto:sale@test.ru" class="header-contacts__mail">sale@test.ru</a>
-                    </div>
+                <div class="header-mobile">
+                    <div class="header-mobile__logo"><img src='./dist/img/logo.svg' alt='img'></div>
+                    <div class="header-mobile__switcher js-menu-switcher"><img src='./dist/img/icon-menu-switcher.svg' alt='img'></div>
                 </div>
-                <div class="header__bottom">
-                    <a href="#" class="header-logo"><img src='./dist/img/logo.svg' alt='img'></a>
-                    <div class="header-search">
-                        <form action="#">
-                            <input type="text" class="header-search__input" placeholder="Например: заморозка пельменей">
-                        </form>
+                <div class="header__body">
+                    <div class="header__mobiletop">
+                        <div class="header__mobiletop-logo"><img src='./dist/img/logo-dark2.svg' alt='img'></div>
+                        <div class="header__mobiletop-close js-menu-close"><img src='./dist/img/icon-close.svg' alt='img'></div>
                     </div>
-                    <a href="#" class="header-economy btn">
-                        <span>Как сэкономить на оборудовании до 90%?</span>
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 24L24 8M24 8H12M24 8V20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
+                    <div class="header__top">
+                        <nav class="header-menu">
+                            <ul class="header-menu__list">
+                                <li class="header-menu__item">
+                                    <a href="#" class="header-menu__link">О компании</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a href="#" class="header-menu__link">Готовые проекты</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a href="#" class="header-menu__link">О компании</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a href="#" class="header-menu__link">Расчет спирального конвейера</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a href="#" class="header-menu__link">Блог</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a href="#" class="header-menu__link">Оплата</a>
+                                </li>
+                                <li class="header-menu__item">
+                                    <a href="#" class="header-menu__link">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="header-contacts">
+                            <div class="header-contacts__timetable">Пн-Пт с 8:00 - 20:00 (МСК)</div>
+                            <a href="tel:88002000600" class="header-contacts__phone">8 (800) 2000-600</a>
+                            <a href="mailto:sale@test.ru" class="header-contacts__mail">sale@test.ru</a>
+                        </div>
+                    </div>
+                    <div class="header__bottom">
+                        <a href="#" class="header-logo"><img src='./dist/img/logo-dark2.svg' alt='img'></a>
+                        <div class="header-search">
+                            <form action="#">
+                                <input type="text" class="header-search__input" placeholder="Например: заморозка пельменей">
+                            </form>
+                        </div>
+                        <a href="#" class="header-economy btn">
+                            <span>Как сэкономить на оборудовании до 90%?</span>
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 24L24 8M24 8H12M24 8V20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </header><!-- end header -->
 
@@ -311,7 +321,7 @@
             </div>
         </section><!-- end benefits -->
 
-        <section class="mainarticles">
+        <section class="mainarticles section_2">
             <h2 class="mainarticles__title">Полезная информация</h2>
             <div class="mainarticles-carousel__nav swiper-nav">
                 <div class="mainarticles-carousel__prev swiper-arrow-prev">
@@ -328,27 +338,27 @@
             <div class="mainarticles-carousel swiper">
                 <div class="swiper-wrapper">
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
@@ -356,7 +366,7 @@
             </div>
         </section><!-- end mainarticles -->
 
-        <section class="maincalc">
+        <section class="maincalc section_2">
             <h2 class="maincalc__title title_white">Рассчитаем стоимость решения<br> по вашему Техническому заданию</h2>
             <a href="#" class="maincalc__btn btn btn_big btn_white">
                 <span>Оставить заявку на расчет стоимости</span>
@@ -366,7 +376,7 @@
             </a>
         </section><!-- end maincalc -->
 
-        <section class="mainabout">
+        <section class="mainabout section">
             <div class="mainabout__body">
                 <div class="mainabout__leftside">
                     <h2 class="mainabout__title ttile_1">ООО НПО<br> «Холодмаш»</h2>
@@ -435,22 +445,21 @@
             </div>
         </section><!-- end mainabout -->
 
-        <section class="mainstages">
+        <section class="mainstages section">
             <h2 class="mainstages__title">Этапы работ</h2>
-            <div class="mainstages-carousel swiper">
-                <div class="mainstages-carousel__nav swiper-nav">
-                    <div class="mainstages-carousel__prev swiper-arrow-prev">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M26.6668 16H5.3335M5.3335 16L13.3335 8M5.3335 16L13.3335 24" stroke="#2F3A6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <div class="mainstages-carousel__next swiper-arrow-next">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.3335 16H26.6668M26.6668 16L18.6668 8M26.6668 16L18.6668 24" stroke="#2F3A6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
+            <div class="mainstages-carousel__nav swiper-nav">
+                <div class="mainstages-carousel__prev swiper-arrow-prev">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.6668 16H5.3335M5.3335 16L13.3335 8M5.3335 16L13.3335 24" stroke="#2F3A6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                 </div>
-                
+                <div class="mainstages-carousel__next swiper-arrow-next">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.3335 16H26.6668M26.6668 16L18.6668 8M26.6668 16L18.6668 24" stroke="#2F3A6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="mainstages-carousel swiper">                
                 <div class="swiper-wrapper">
                     <div class="mainstages-item swiper-slide">
                         <div class="mainstages-item__icon"><img src='./dist/img/icons/icon-mainstages-1.svg' alt='img'></div>
@@ -500,7 +509,7 @@
             </div>
         </section><!-- end mainstages -->
 
-        <section class="maincases">
+        <section class="maincases section">
             <div class="maincases__body">
                 <h2 class="maincases__title section_title">Свежие отгрузки</h2>
                 <div class="maincases-carousel__nav swiper-nav">

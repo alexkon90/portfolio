@@ -13,55 +13,65 @@
 <div class="wrapper">
     <div class="main">
         <header class="header">
-            <div class="header__top">
-                <nav class="header-menu">
-                    <ul class="header-menu__list">
-                        <li class="header-menu__item">
-                            <a href="#" class="header-menu__link">О компании</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="#" class="header-menu__link">Готовые проекты</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="#" class="header-menu__link">О компании</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="#" class="header-menu__link">Расчет спирального конвейера</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="#" class="header-menu__link">Блог</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="#" class="header-menu__link">Оплата</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="#" class="header-menu__link">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header-contacts">
-                    <div class="header-contacts__timetable">Пн-Пт с 8:00 - 20:00 (МСК)</div>
-                    <a href="tel:88002000600" class="header-contacts__phone">8 (800) 2000-600</a>
-                    <a href="mailto:sale@test.ru" class="header-contacts__mail">sale@test.ru</a>
-                </div>
+            <div class="header-mobile">
+                <div class="header-mobile__logo"><img src='./dist/img/logo-dark2.svg' alt='img'></div>
+                <div class="header-mobile__switcher js-menu-switcher"><img src='./dist/img/icon-menu-switcher.svg' alt='img'></div>
             </div>
-            <div class="header__bottom">
-                <a href="#" class="header-logo"><img src='./dist/img/logo.svg' alt='img'></a>
-                <div class="header-search">
-                    <form action="#">
-                        <input type="text" class="header-search__input" placeholder="Например: заморозка пельменей">
-                    </form>
+            <div class="header__body">
+                <div class="header__mobiletop">
+                    <div class="header__mobiletop-logo"><img src='./dist/img/logo-dark2.svg' alt='img'></div>
+                    <div class="header__mobiletop-close js-menu-close"><img src='./dist/img/icon-close.svg' alt='img'></div>
                 </div>
-                <a href="#" class="header-economy btn">
-                    <span>Как сэкономить на оборудовании до 90%?</span>
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 24L24 8M24 8H12M24 8V20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
+                <div class="header__top">
+                    <nav class="header-menu">
+                        <ul class="header-menu__list">
+                            <li class="header-menu__item">
+                                <a href="#" class="header-menu__link">О компании</a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="#" class="header-menu__link">Готовые проекты</a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="#" class="header-menu__link">О компании</a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="#" class="header-menu__link">Расчет спирального конвейера</a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="#" class="header-menu__link">Блог</a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="#" class="header-menu__link">Оплата</a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="#" class="header-menu__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header-contacts">
+                        <div class="header-contacts__timetable">Пн-Пт с 8:00 - 20:00 (МСК)</div>
+                        <a href="tel:88002000600" class="header-contacts__phone">8 (800) 2000-600</a>
+                        <a href="mailto:sale@test.ru" class="header-contacts__mail">sale@test.ru</a>
+                    </div>
+                </div>
+                <div class="header__bottom">
+                    <a href="#" class="header-logo"><img src='./dist/img/logo-dark2.svg' alt='img'></a>
+                    <div class="header-search">
+                        <form action="#">
+                            <input type="text" class="header-search__input" placeholder="Например: заморозка пельменей">
+                        </form>
+                    </div>
+                    <a href="#" class="header-economy btn">
+                        <span>Как сэкономить на оборудовании до 90%?</span>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 24L24 8M24 8H12M24 8V20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </header><!-- end header -->
 
-        <section class="service-promo">
+        <section class="service-promo section">
             <ul class="breadcrumbs">
                 <li class="breadcrumbs__item">
                     <a href="#" class="breadcrumbs__link">Главная</a>
@@ -85,7 +95,7 @@
             </div>
         </section><!-- end service-promo -->
 
-        <section class="service-products">
+        <section class="service-products section_2">
             <div class="service-products__top">
                 <h2 class="service-products__title">Что мы замараживаем?</h2>
                 <div class="service-products__desc">Спиральный конвейер идеально подходит для заморозки широкого спектра кулинарии как в индивидуальной упаковке (лотки, ламистеры, пленка), так и открытым способом:</div>
@@ -151,7 +161,7 @@
             </div>
         </section><!-- end service-products -->
 
-        <section class="maincalc">
+        <section class="maincalc section_2">
             <h2 class="maincalc__title title_white">Рассчитаем стоимость решения<br> по вашему Техническому заданию</h2>
             <a href="#" class="maincalc__btn btn btn_big btn_white">
                 <span>Оставить заявку на расчет стоимости</span>
@@ -161,7 +171,7 @@
             </a>
         </section><!-- end maincalc -->
 
-        <section class="service-principle">
+        <section class="service-principle section">
             <div class="service-principle__row">
                 <div class="service-principle__col">
                     <h2 class="service-principle__title">Принцип работы</h2>
@@ -182,7 +192,7 @@
             </div>
         </section><!-- end service-principle -->
 
-        <section class="service-features">
+        <section class="service-features section">
             <h2 class="service-features__title section_title">Преимущества наших спиральных систем</h2>
             <div class="service-features__row">
                 <div class="service-features-item">
@@ -208,60 +218,62 @@
             </div>
         </section><!-- end service-features -->
         
-        <section class="service-stats">
-            <div class="service-stats__col">
-                <h2 class="service-stats__title">Технические<br> характеристики системы</h2>
-            </div>
-            <div class="service-stats__col">
-                <div class="service-stats__table">
-                    <div class="service-stats-item">
-                        <div class="service-stats-item__caption">Производительность</div>
-                        <div class="service-stats-item__value">от 300 кг/час</div>
-                        <div class="service-stats-item__desc">(для хинкалей весом 80-90г)</div>
-                    </div>
-                    <div class="service-stats-item">
-                        <div class="service-stats-item__caption">Холодопроизводительность</div>
-                        <div class="service-stats-item__value">35-50 мин</div>
-                        <div class="service-stats-item__desc">вход +20°C / выход -18°C</div>
-                    </div>
-                    <div class="service-stats-item">
-                        <div class="service-stats-item__caption">Хладагент</div>
-                        <div class="service-stats-item__value">Фреон / Аммиак / CO2</div>
-                    </div>
-                    <div class="service-stats-item">
-                        <div class="service-stats-item__caption">Температура в камере</div>
-                        <div class="service-stats-item__value">-35°C...-40°C</div>
-                    </div>
-                    <div class="service-stats-item">
-                        <div class="service-stats-item__caption">Размеры (ДхШхВ)</div>
-                        <div class="service-stats-item__value">2x2x2 мм</div>
-                    </div>
-                    <div class="service-stats-item">
-                        <div class="service-stats-item__caption">Потребляемая мощность</div>
-                        <div class="service-stats-item__value">50–130 кВт</div>
-                    </div>
-                    <div class="service-stats-item">
-                        <div class="service-stats-item__caption">Ширина ленты</div>
-                        <div class="service-stats-item__value">40мм</div>
-                    </div>
-                    <div class="service-stats-item">
-                        <div class="service-stats-item__caption">Корпус</div>
-                        <div class="service-stats-item__value">Сэндвич-панели ППУ<br> 120мм (AISI 304)</div>
-                    </div>
-                    <div class="service-stats-item service-stats-item_big">
-                        <div class="service-stats-item__caption">Лента</div>
-                        <div class="service-stats-item__value">Модульная пластиковая<br> (не прилипает тесто) или сетка нерж.</div>
+        <section class="service-stats section">
+            <div class="service-stats__row">
+                <div class="service-stats__col">
+                    <h2 class="service-stats__title">Технические<br> характеристики системы</h2>
+                </div>
+                <div class="service-stats__col">
+                    <div class="service-stats__table">
+                        <div class="service-stats-item">
+                            <div class="service-stats-item__caption">Производительность</div>
+                            <div class="service-stats-item__value">от 300 кг/час</div>
+                            <div class="service-stats-item__desc">(для хинкалей весом 80-90г)</div>
+                        </div>
+                        <div class="service-stats-item">
+                            <div class="service-stats-item__caption">Холодопроизводительность</div>
+                            <div class="service-stats-item__value">35-50 мин</div>
+                            <div class="service-stats-item__desc">вход +20°C / выход -18°C</div>
+                        </div>
+                        <div class="service-stats-item">
+                            <div class="service-stats-item__caption">Хладагент</div>
+                            <div class="service-stats-item__value">Фреон / Аммиак / CO2</div>
+                        </div>
+                        <div class="service-stats-item">
+                            <div class="service-stats-item__caption">Температура в камере</div>
+                            <div class="service-stats-item__value">-35°C...-40°C</div>
+                        </div>
+                        <div class="service-stats-item">
+                            <div class="service-stats-item__caption">Размеры (ДхШхВ)</div>
+                            <div class="service-stats-item__value">2x2x2 мм</div>
+                        </div>
+                        <div class="service-stats-item">
+                            <div class="service-stats-item__caption">Потребляемая мощность</div>
+                            <div class="service-stats-item__value">50–130 кВт</div>
+                        </div>
+                        <div class="service-stats-item">
+                            <div class="service-stats-item__caption">Ширина ленты</div>
+                            <div class="service-stats-item__value">40мм</div>
+                        </div>
+                        <div class="service-stats-item">
+                            <div class="service-stats-item__caption">Корпус</div>
+                            <div class="service-stats-item__value">Сэндвич-панели ППУ<br> 120мм (AISI 304)</div>
+                        </div>
+                        <div class="service-stats-item service-stats-item_big">
+                            <div class="service-stats-item__caption">Лента</div>
+                            <div class="service-stats-item__value">Модульная пластиковая<br> (не прилипает тесто) или сетка нерж.</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section><!-- end service-stats -->
 
-        <section class="service-scheme">
+        <section class="service-scheme section">
             <h2 class="service-scheme__title">Типовая схема спирального конвейера шоковой заморозки хинкалей</h2>
             <div class="service-scheme__img"><img src='./dist/img/content/scheme-image.jpg' alt='img'></div>
         </section><!-- end service-scheme -->
 
-        <section class="feedback">
+        <section class="feedback section">
             <div class="feedback__body">
                 <div class="feedback__col">
                     <div class="faq">
@@ -307,7 +319,7 @@
             </div>
         </section><!-- end feedback -->
 
-        <section class="mainarticles">
+        <section class="mainarticles section_2">
             <h2 class="mainarticles__title">Полезная информация</h2>
             <div class="mainarticles-carousel__nav swiper-nav">
                 <div class="mainarticles-carousel__prev swiper-arrow-prev">
@@ -324,27 +336,27 @@
             <div class="mainarticles-carousel swiper">
                 <div class="swiper-wrapper">
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
                     <div class="mainarticles-item swiper-slide">
-                        <div class="mainarticles-item__img"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
+                        <div class="mainarticles-item__img img-cover"><a href="#"><img src='./dist/img/content/mainarticles-image1.png' alt='img'></a></div>
                         <div class="mainarticles-item__title"><a href="#">Что такое фризер?</a></div>
                         <a href="#" class="mainarticles-item__btn">Читать</a>
                     </div>
