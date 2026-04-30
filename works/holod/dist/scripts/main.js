@@ -128,5 +128,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     initMobileSlider();
 
+    // Equipment carousel
+    let mobileSlider_2 = null;
+
+    function initMobileSlider_2() {
+        const slider = document.querySelector('.equipment-carousel');
+
+        if (!slider) return;
+
+        if (window.innerWidth <= 767) {
+            if (!mobileSlider_2) {
+                mobileSlider_2 = new Swiper(slider, {
+                    slidesPerView: 1.1,
+                    spaceBetween: 16,
+                    navigation: {
+                        nextEl: '.equipment-carousel__next',
+                        prevEl: '.equipment-carousel__prev',
+                    },
+                });
+            }
+        } else {
+            if (mobileSlider_2) {
+                mobileSlider_2.destroy(true, true);
+                mobileSlider_2 = null;
+            }
+        }
+    }
+    initMobileSlider_2();
+
     window.addEventListener('resize', initMobileSlider);
+    window.addEventListener('resize', initMobileSlider_2);
 });

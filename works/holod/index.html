@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="header__bottom">
-                        <a href="#" class="header-logo"><img src='./dist/img/logo-dark2.svg' alt='img'></a>
+                        <a href="#" class="header-logo"><img src='./dist/img/logo.svg' alt='img'></a>
                         <div class="header-search">
                             <form action="#">
                                 <input type="text" class="header-search__input" placeholder="Например: заморозка пельменей">
@@ -248,35 +248,53 @@
 
         <section class="equipment">
             <h2 class="equipment__title">Оборудование для процессов:</h2>
+            <div class="equipment-carousel__nav swiper-nav">
+                <div class="equipment-carousel__prev swiper-arrow-prev">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.6668 16H5.3335M5.3335 16L13.3335 8M5.3335 16L13.3335 24" stroke="#2F3A6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="equipment-carousel__next swiper-arrow-next">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.3335 16H26.6668M26.6668 16L18.6668 8M26.6668 16L18.6668 24" stroke="#2F3A6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
             <div class="equipment__body">
-                <div class="equipment__col">
+                <div class="equipment__col equipment__col_1">
                     <a href="#" class="equipment-main">
                         <div class="equipment-main__title">Шоковая заморозка</div>
                         <div class="equipment-main__img"><img src='./dist/img/content/equipment-main.jpg' alt='img'></div>
                     </a>
                 </div>
                 <div class="equipment__col">
-                    <div class="equipment__grid">
-                        <a href="#" class="equipment-item equipment-item_1">
-                            <div class="equipment-item__title">Подморозка</div>
-                            <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image1.png' alt='img'></div>
-                        </a>
-                        <a href="#" class="equipment-item">
-                            <div class="equipment-item__title">Охлаждение</div>
-                            <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image2.jpg' alt='img'></div>
-                        </a>
-                        <a href="#" class="equipment-item equipment-item_3">
-                            <div class="equipment-item__title">Транспортировка</div>
-                            <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image3.png' alt='img'></div>
-                        </a>
-                        <a href="#" class="equipment-item equipment-item_4">
-                            <div class="equipment-item__title">Дефростация</div>
-                            <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image4.jpg' alt='img'></div>
-                        </a>
-                        <a href="#" class="equipment-item equipment-item_5">
-                            <div class="equipment-item__title">Расстойка</div>
-                            <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image5.png' alt='img'></div>
-                        </a>
+                    <div class="equipment-carousel swiper">
+                        <div class="equipment__grid swiper-wrapper">
+                            <a href="#" class="equipment-main swiper-slide">
+                                <div class="equipment-main__title">Шоковая заморозка</div>
+                                <div class="equipment-main__img"><img src='./dist/img/content/equipment-main.jpg' alt='img'></div>
+                            </a>
+                            <a href="#" class="equipment-item equipment-item_1 swiper-slide">
+                                <div class="equipment-item__title">Подморозка</div>
+                                <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image1.png' alt='img'></div>
+                            </a>
+                            <a href="#" class="equipment-item swiper-slide">
+                                <div class="equipment-item__title">Охлаждение</div>
+                                <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image2.jpg' alt='img'></div>
+                            </a>
+                            <a href="#" class="equipment-item equipment-item_3 swiper-slide">
+                                <div class="equipment-item__title">Транспортировка</div>
+                                <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image3.png' alt='img'></div>
+                            </a>
+                            <a href="#" class="equipment-item equipment-item_4 swiper-slide">
+                                <div class="equipment-item__title">Дефростация</div>
+                                <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image4.jpg' alt='img'></div>
+                            </a>
+                            <a href="#" class="equipment-item equipment-item_5 swiper-slide">
+                                <div class="equipment-item__title">Расстойка</div>
+                                <div class="equipment-item__img"><img src='./dist/img/content/equipment-item-image5.png' alt='img'></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
