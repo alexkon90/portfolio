@@ -16,9 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Accordeon
-
     document.querySelectorAll('.maincategories').forEach((accordion) => {
-
         const firstItem = accordion.querySelector('.maincategories-item');
 
         if (!firstItem) return;
@@ -31,12 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (content && inner) {
             content.style.height = inner.offsetHeight + 'px';
         }
-
     });
 
-
     document.addEventListener('click', (event) => {
-
         const caption = event.target.closest('.maincategories-item__caption');
 
         if (!caption) return;
@@ -68,14 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (content && inner) {
             content.style.height = inner.offsetHeight + 'px';
         }
-
     });
-
-
-
-
-
-
 
     // Sliders
     function initSlider(selector, options) {
