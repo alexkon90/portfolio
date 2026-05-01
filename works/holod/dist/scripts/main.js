@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Accordeon
+    // Maincategories Accordeon
     document.querySelectorAll('.maincategories').forEach((accordion) => {
         const firstItem = accordion.querySelector('.maincategories-item');
 
@@ -151,61 +151,89 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Service variants
-    let mobileSlider = null;
+    // Mobile only Swipers
+    const mobileSwipers = [];
 
-    function initMobileSlider() {
-        const slider = document.querySelector('.service-variants__body');
-
-        if (!slider) return;
-
-        if (window.innerWidth <= 767) {
-            if (!mobileSlider) {
-                mobileSlider = new Swiper(slider, {
-                    slidesPerView: 1,
-                    navigation: {
-                        nextEl: '.service-variants__next',
-                        prevEl: '.service-variants__prev',
-                    },
-                });
-            }
-        } else {
-            if (mobileSlider) {
-                mobileSlider.destroy(true, true);
-                mobileSlider = null;
-            }
-        }
-    }
-    initMobileSlider();
-
-    // Equipment carousel
-    let mobileSlider_2 = null;
-
-    function initMobileSlider_2() {
-        const slider = document.querySelector('.equipment-carousel');
+    function initMobileSwiper(selector, options, index) {
+        const slider = document.querySelector(selector);
 
         if (!slider) return;
 
         if (window.innerWidth <= 767) {
-            if (!mobileSlider_2) {
-                mobileSlider_2 = new Swiper(slider, {
-                    slidesPerView: 1.1,
-                    spaceBetween: 16,
-                    navigation: {
-                        nextEl: '.equipment-carousel__next',
-                        prevEl: '.equipment-carousel__prev',
-                    },
-                });
+            if (!mobileSwipers[index]) {
+                mobileSwipers[index] = new Swiper(slider, options);
             }
         } else {
-            if (mobileSlider_2) {
-                mobileSlider_2.destroy(true, true);
-                mobileSlider_2 = null;
+            if (mobileSwipers[index]) {
+                mobileSwipers[index].destroy(true, true);
+                mobileSwipers[index] = null;
             }
         }
     }
-    initMobileSlider_2();
 
-    window.addEventListener('resize', initMobileSlider);
-    window.addEventListener('resize', initMobileSlider_2);
+    function updateMobileSwipers() {
+        initMobileSwiper('.service-variants__body', {
+            slidesPerView: 1,
+            navigation: {
+                nextEl: '.service-variants__next',
+                prevEl: '.service-variants__prev',
+            },
+        }, 0);
+
+        initMobileSwiper('.equipment-carousel', {
+            slidesPerView: 1.1,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: '.equipment-carousel__next',
+                prevEl: '.equipment-carousel__prev',
+            },
+        }, 1);
+    }
+
+    updateMobileSwipers();
+
+    window.addEventListener('resize', updateMobileSwipers);
+
+    // Accordeon
+    function initAccordion(selector, allowMultiple = false){
+        const items = document.querySelectorAll(selector);
+
+        items.forEach(item => {
+            const button = item.querySelector('.accordeon_caption');
+            const content = item.querySelector('.accordeon_content');
+
+            if(item.classList.contains('open')){
+                content.style.height = content.scrollHeight + 'px';
+            }
+            button.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                if(!allowMultiple){
+                    items.forEach(el => {
+                        if(el !== item && el.classList.contains('open')){
+                            const c = el.querySelector('.accordeon_content');
+                            c.style.height = c.scrollHeight + 'px';
+                            requestAnimationFrame(()=>{
+                                c.style.height = '0px';
+                            });
+                            el.classList.remove('open');
+                        }
+                    });
+                }
+                if(isOpen){
+                    content.style.height = content.scrollHeight + 'px';
+                    requestAnimationFrame(()=>{
+                        content.style.height = '0px';
+                    });
+                    item.classList.remove('open');
+                }else{
+                    item.classList.add('open');
+                    content.style.height = '0px';
+                    requestAnimationFrame(()=>{
+                        content.style.height = content.scrollHeight + 'px';
+                    });
+                }
+            });
+        });
+    }
+    initAccordion('.accordeon_item', false); // Если надо несколько открытых - ставим true
 });

@@ -3344,6 +3344,14 @@ img {
   border: 1px solid #e4e8f6;
   border-radius: 12px;
 }
+.faq-list__item.open .faq-list__item-caption:after {
+  -webkit-transform: translateY(-50%) rotate(-180deg);
+      -ms-transform: translateY(-50%) rotate(-180deg);
+          transform: translateY(-50%) rotate(-180deg);
+}
+.faq-list__item.open .faq-list__item-content {
+  height: auto;
+}
 .faq-list__item-caption {
   position: relative;
   display: -webkit-box;
@@ -3370,9 +3378,18 @@ img {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .faq-list__item-content {
-  display: none;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+}
+.faq-list__item-content-inner {
+  padding: 0 24px 24px;
+  line-height: 1.2;
 }
 
 .feedback-form {
