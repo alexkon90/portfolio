@@ -254,6 +254,10 @@ img {
   background: #2f3a6f;
   color: #fff;
 }
+.btn_blue:hover path {
+  fill: #fff;
+  stroke: #fff;
+}
 .btn_blue path {
   fill: #2f3a6f;
   stroke: #2f3a6f;
@@ -267,6 +271,10 @@ img {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 32px;
           flex: 0 0 32px;
+}
+.btn path {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .input,
@@ -428,6 +436,9 @@ img {
   min-height: 56px;
   background: #4c5476;
   color: #f2f5ff;
+}
+.header-economy:hover {
+  background: #252E57;
 }
 .header-economy span {
   margin-right: 20px;
@@ -1178,6 +1189,11 @@ img {
   background: #e4e8f6;
   border-radius: 16px;
   overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.equipment-item:hover {
+  opacity: 0.8;
 }
 .equipment-item_1 .equipment-item__img {
   -webkit-box-pack: start;
@@ -2110,6 +2126,9 @@ img {
 .footer-info a {
   color: rgba(47, 58, 111, 0.5);
 }
+.footer-info a:hover {
+  color: var(--color-accent);
+}
 .footer-info__item {
   margin-right: 16px;
 }
@@ -2241,6 +2260,9 @@ img {
 }
 .breadcrumbs li a {
   color: #252e57;
+}
+.breadcrumbs li a:hover {
+  color: var(--color-accent);
 }
 
 .service-promo {
@@ -2851,6 +2873,14 @@ img {
       -ms-flex: 0 0 calc((100% - 8px) / 2);
           flex: 0 0 calc((100% - 8px) / 2);
   min-width: 0;
+}
+.service-product__action.btn_border:hover {
+  background: #2f3a6f;
+  color: #fff;
+}
+.service-product__action.btn_border:hover path {
+  fill: #fff;
+  stroke: #fff;
 }
 .service-product .btn_full {
   -webkit-box-flex: 0;
