@@ -15,6 +15,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Header search suggest
+    const search = document.querySelector('.header-search__body');
+    const input = search.querySelector('.header-search__input');
+    const clearBtn = search.querySelector('.header-search__clear');
+    const suggest = document.querySelector('.search-suggest');
+
+    input.addEventListener('input', () => {
+        const hasValue = input.value.trim().length > 0;
+
+        clearBtn.classList.toggle('active', hasValue);
+        suggest.classList.toggle('active', hasValue);
+    });
+
+    clearBtn.addEventListener('click', () => {
+        input.value = '';
+        input.focus();
+
+        clearBtn.classList.remove('active');
+        suggest.classList.remove('active');
+    });
+
+    document.addEventListener('click', (e) => {
+        const isInsideSearch = e.target.closest('.header-search__body');
+        const isInsideSuggest = e.target.closest('.search-suggest');
+
+        if (!isInsideSearch && !isInsideSuggest) {
+            input.value = '';
+            clearBtn.classList.remove('active');
+            suggest.classList.remove('active');
+        }
+    });
+
     // Maincategories Accordeon
     document.querySelectorAll('.maincategories').forEach((accordion) => {
         const firstItem = accordion.querySelector('.maincategories-item');
