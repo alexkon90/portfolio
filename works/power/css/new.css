@@ -1855,6 +1855,9 @@ body.home {
 .programm-promo__title span {
   color: #4D5C92;
 }
+.programm-promo__title_mob {
+  display: none;
+}
 .programm-promo__body {
   display: -webkit-box;
   display: -ms-flexbox;
