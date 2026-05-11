@@ -1,5 +1,11 @@
 @charset "UTF-8";
 /*-------------------------common styles-------------------------*/
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
 .file {
   color: #595D72;
   background: #F4F6FB;
@@ -566,6 +572,217 @@ body.home {
     text-align: left;
   }
 }
+@media (max-width: 767px) {
+  h1, h2 {
+    margin-bottom: 32px;
+  }
+  .advice {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .advice span {
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  .include .in {
+    padding: 16px;
+  }
+  .contact,
+  .c3 .contact {
+    padding: 16px;
+  }
+  #ac2 .accordion-item {
+    margin-bottom: 10px;
+  }
+  .accordion-header .accordion-button {
+    font-size: 16px;
+  }
+  .accordion-button {
+    padding: 8px 0;
+  }
+  .intro .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .back-p,
+  .back-m {
+    background-image: none !important;
+  }
+  .intro__body {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .intro__img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .intro__content {
+    padding: 16px;
+    background: #F4F6FB;
+  }
+  .intro .in {
+    padding: 16px 0;
+    padding-right: var(--bs-gutter-x, 1.24rem);
+    padding-left: var(--bs-gutter-x, 1.24rem);
+  }
+  .intro h1 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.33;
+    color: #1A1B21;
+  }
+  .stat {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .stat .st1 {
+    margin-bottom: 16px;
+    padding: 0 !important;
+    border: 0;
+  }
+  .stat .nums {
+    font-size: 24px;
+    color: #1A1B21;
+  }
+  .stat span {
+    color: #595D72;
+  }
+  .intro ul li {
+    color: #595D72;
+  }
+  .intro .t-btn {
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .intro ul {
+    padding-top: 0;
+  }
+  .btn2 {
+    color: #4D5C92;
+    border: 1px solid #4D5C92;
+  }
+  .btn2:hover {
+    background: #4D5C92;
+    color: #fff;
+  }
+  .btn2:hover path {
+    fill: #fff;
+  }
+  .contact .i2 {
+    padding-bottom: 16px;
+  }
+  .contact .i img {
+    width: 48px;
+    height: 48px;
+  }
+  .contact .i {
+    padding-left: 64px;
+  }
+  .contact .name div {
+    margin-top: 2px;
+  }
+  .descr {
+    font-size: 12px;
+  }
+  .c4 .item .in {
+    padding: 16px;
+  }
+  .reviews .person .name div {
+    font-size: 12px;
+  }
+  .rate img {
+    width: 16px;
+  }
+  .rate {
+    top: 22px;
+    right: 16px;
+  }
+  .descr {
+    margin-top: 0;
+  }
+  .team .person img {
+    width: 64px;
+    height: 64px;
+  }
+  .team .person {
+    padding-left: 80px;
+    padding-top: 10px;
+  }
+  .team .person .name {
+    font-size: 16px;
+  }
+  .team .person .name div {
+    font-size: 11px;
+  }
+  .reviews .in,
+  .team .in {
+    min-height: auto;
+    padding-bottom: 32px !important;
+  }
+  h3, h4, h5, h6 {
+    font-size: 24px;
+  }
+  .include h3 {
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+  .c4 p {
+    font-size: 12px;
+  }
+  .advice {
+    padding: 16px;
+  }
+  .advice div {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .grid-serv {
+    gap: 16px;
+  }
+  .grid-serv span {
+    font-size: 14px;
+  }
+  .accordion-body p {
+    font-size: 12px;
+  }
+  #ac2 .accordion-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #ac2 {
+    padding-top: 0;
+  }
+  .footer {
+    padding: 32px 0;
+  }
+}
+@media (max-width: 479px) {
+  .t-btn {
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+  }
+}
+.owl-theme .owl-dots {
+  display: none !important;
+}
+
 /*-------------------------report-------------------------*/
 .report-list {
   padding-bottom: 4px;
