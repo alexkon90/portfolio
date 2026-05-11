@@ -88,15 +88,21 @@ function parallax(){
 		nav:false,
 		navText: ["Предыдущий", "Следующий"],
 		responsive:{
-			0:{
-				items:1.2
-			},
-			600:{
-				items:3
-			},
-			1000:{
-				items:3
-			}
+            0: {
+                items: 1.2
+            },
+            550: {
+                items: 1.4
+            },
+            768: {
+                items: 1.8
+            },
+            992: {
+                items: 2.3
+            },
+            1280: {
+                items: 3
+            }
 		}
 	})
 	
@@ -106,15 +112,21 @@ function parallax(){
 		nav:false,
 		navText: ["Предыдущий", "Следующий"],
 		responsive:{
-			0:{
-				items:1.2
-			},
-			600:{
-				items:3
-			},
-			1000:{
-				items:3
-			}
+            0: {
+                items: 1.2
+            },
+            550: {
+                items: 1.4
+            },
+            768: {
+                items: 1.8
+            },
+            992: {
+                items: 2.3
+            },
+            1280: {
+                items: 3
+            }
 		}
 	})
 	
@@ -124,15 +136,21 @@ function parallax(){
 		nav:false,
 		navText: ["Предыдущий", "Следующий"],
 		responsive:{
-			0:{
-				items:1.2
-			},
-			600:{
-				items:3
-			},
-			1000:{
-				items:3
-			}
+            0: {
+                items: 1.2
+            },
+            550: {
+                items: 1.4
+            },
+            768: {
+                items: 1.8
+            },
+            992: {
+                items: 2.3
+            },
+            1280: {
+                items: 3
+            }
 		}
 	})
 	
@@ -293,6 +311,46 @@ jQuery(document).ready(function ($){
 		$input.val(val);
 	});
 
+    // FAQ
+    $(function () {
+        let el = $('.faq-accordeon-item__title');
+        el.click(function() {
+            let checkedElement = $(this).next(),
+                visibleElement = $('.faq-accordeon-item__content:visible');
+                
+            visibleElement.stop().animate({'height':'toggle'}, 300).parent().removeClass('active');     
+            if((checkedElement.is('.faq-accordeon-item__content')) && (!checkedElement.is(':visible'))) {
+                checkedElement.stop().animate({'height':'toggle'}, 300).parent().addClass('active');
+                return false;
+            }   
+            if((checkedElement.is('.faq-accordeon-item__content')) && (checkedElement.is(':visible'))) {
+                return false;
+            }
+        });
+    });
+
+    // 
+    //var $owl = $('.house-carousel');
+
+    //function manageSlider() {
+    //    if ($(window).width() < 992) {
+    //    if (!$owl.hasClass('owl-loaded')) {
+    //        $owl.owlCarousel({
+    //            items: 2,
+    //            dots: true,
+    //            loop: true,
+    //            margin: 10
+    //        });
+    //    }
+    //    } else {
+    //    if ($owl.hasClass('owl-loaded')) {
+    //        $owl.trigger('destroy.owl.carousel');
+    //        $owl.removeClass('owl-loaded');
+    //    }
+    //    }
+    //}
+    //manageSlider();
+    //$(window).resize(manageSlider);
 
 });
 
