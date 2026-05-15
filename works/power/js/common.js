@@ -326,4 +326,27 @@ jQuery(document).ready(function ($) {
 
         return false;
     });
+
+    // Animate
+    wow = new WOW({
+        boxClass:     'wow',     
+        animateClass: 'animated',
+        offset:       30,         
+        mobile:       false,      
+        live:         true       
+    })
+    wow.init();
+
+    // Counter
+    $('.js-counter').each(function () {
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).data('target')
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
 });
