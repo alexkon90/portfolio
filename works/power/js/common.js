@@ -328,14 +328,16 @@ jQuery(document).ready(function ($) {
     });
 
     // Animate
-    wow = new WOW({
-        boxClass:     'wow',     
-        animateClass: 'animated',
-        offset:       30,         
-        mobile:       false,      
-        live:         true       
-    })
-    wow.init();
+    if (document.querySelector('.wow')) {
+        const wow = new WOW({
+            boxClass:     'wow',      
+            animateClass: 'animated',
+            offset:       30,          
+            mobile:       false,       
+            live:         true        
+        });
+        wow.init();
+    }
 
     // Counter
     $('.js-counter').each(function () {

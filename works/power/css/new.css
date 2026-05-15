@@ -3132,8 +3132,15 @@ textarea {
 .partners_mob{
     display: none;
 }
-.about-stats-item__num_percent{
+.about-stats-item__num{
     position: relative;
+}
+.about-stats-item__num_exp:after{
+    content: '+';
+    display: inline-block;
+    position: absolute;
+    right: 50%;
+    margin-right: -65px;
 }
 .about-stats-item__num_percent:after{
     content: '%';
@@ -3142,6 +3149,12 @@ textarea {
     right: 50%;
     top: -1px;
     margin-right: -85px;
+}
+.gi img{
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
 }
 @media (max-width: 1279px) {
     .about-stats-item__num_percent:after{
