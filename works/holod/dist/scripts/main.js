@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         breakpoints: {
             768: { slidesPerView: 2.1 },
             1024: { slidesPerView: 3.1 },
-            1450: { slidesPerView: 2.1 }
+            1400: { slidesPerView: 2.1 }
         }
     });
 
