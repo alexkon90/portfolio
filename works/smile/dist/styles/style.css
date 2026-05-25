@@ -149,9 +149,9 @@ body {
 
 .center-wrapper {
   position: relative;
-  max-width: 1370px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 30px;
 }
 .center-wrapper_big {
   max-width: 1920px;
@@ -464,6 +464,9 @@ select {
   width: 100%;
   z-index: 10;
 }
+.header .center-wrapper {
+  padding: 0;
+}
 .header__main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -480,6 +483,7 @@ select {
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
   min-width: 0;
+  padding-left: 30px;
 }
 .header__leftside-inner {
   display: -webkit-box;
@@ -590,6 +594,9 @@ select {
 /*-------------------------promo-------------------------*/
 .promo {
   margin-bottom: 60px;
+}
+.promo .center-wrapper {
+  padding: 0;
 }
 .promo__body {
   display: -webkit-box;
@@ -824,6 +831,48 @@ select {
     border-radius: 20px;
   }
 }
+@media (max-width: 1429px) {
+  .promo__content-inner {
+    width: 100%;
+    padding-left: 30px;
+  }
+  .promo-articles-item__body {
+    width: 100%;
+    padding: 22px 30px;
+  }
+  .header__rightside {
+    padding: 0 30px;
+  }
+  .promo-slider__img {
+    height: 670px;
+  }
+  .promo__content {
+    padding-top: 130px;
+  }
+  .promo__title {
+    font-size: 52px;
+  }
+  .promo__slogan {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1279px) {
+  .promo-slider__img {
+    height: 570px;
+  }
+  .promo-articles-item__title {
+    font-size: 16px;
+  }
+  .header {
+    padding: 30px 0;
+  }
+  .promo__content {
+    padding-top: 120px;
+  }
+  .promo-articles-item__body {
+    padding: 15px 30px;
+  }
+}
 /*-------------------------special-------------------------*/
 .special {
   padding-bottom: 80px;
@@ -839,7 +888,7 @@ select {
 }
 .special__title {
   position: absolute;
-  left: 370px;
+  left: 380px;
   top: 0;
   font-weight: 500;
   font-size: 27px;
@@ -1056,6 +1105,15 @@ select {
   padding: 0 24px;
 }
 
+@media (max-width: 1279px) {
+  .special__body {
+    gap: 20px;
+  }
+  .special__title {
+    left: 360px;
+    font-size: 22px;
+  }
+}
 /*-------------------------appointment-------------------------*/
 .appointment {
   margin-bottom: 100px;
@@ -1189,6 +1247,15 @@ select {
   font-weight: normal;
 }
 
+@media (max-width: 1279px) {
+  .mainabout__body {
+    padding: 0;
+  }
+  .section__subtitle,
+  .section__top {
+    padding: 0;
+  }
+}
 /*-------------------------mainservices-------------------------*/
 .mainservices {
   margin-bottom: 100px;
@@ -1208,6 +1275,7 @@ select {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 430px;
           flex: 0 0 430px;
+  width: 430px;
   min-width: 0;
 }
 .mainservices__row {
@@ -1377,6 +1445,42 @@ select {
   color: rgba(255, 255, 255, 0.75);
 }
 
+@media (max-width: 1429px) {
+  .mainservices__rightside {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 380px;
+            flex: 0 0 380px;
+    width: 380px;
+  }
+  .mainservices-list {
+    padding: 30px 20px 30px 20px;
+  }
+  .mainservices-list li {
+    margin-bottom: 24px;
+  }
+  .mainservices-list li a {
+    font-size: 18px;
+  }
+  .mainservices-quality,
+  .mainservices-img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 300px;
+            flex: 0 0 300px;
+    width: 300px;
+  }
+}
+@media (max-width: 1279px) {
+  .mainservices__body {
+    display: block;
+  }
+  .mainservices__rightside {
+    width: 100%;
+    padding-top: 24px;
+  }
+  .mainservices-list__body {
+    max-height: 200px;
+  }
+}
 /*-------------------------equipment-------------------------*/
 .equipment {
   margin-bottom: 30px;
@@ -1500,6 +1604,25 @@ select {
   color: #826f61;
 }
 
+@media (max-width: 1429px) {
+  .equipment__title {
+    font-size: 52px;
+  }
+}
+@media (max-width: 1279px) {
+  .equipment__body {
+    padding: 45px 0 24px 36px;
+  }
+  .equipment__title {
+    margin-bottom: 50px;
+  }
+  .equipment-carousel__nav {
+    left: 16px;
+  }
+  .equipment-carousel {
+    margin-left: 200px;
+  }
+}
 /*-------------------------individual-------------------------*/
 .individual {
   margin-bottom: 100px;
@@ -1568,6 +1691,29 @@ select {
   padding: 0 15px;
 }
 
+@media (max-width: 1429px) {
+  .individual__title {
+    font-size: 52px;
+  }
+}
+@media (max-width: 1279px) {
+  .individual__body {
+    padding: 45px 28px 48px 36px;
+  }
+  .individual__body:after {
+    left: 90px;
+    -webkit-transform: rotate(-39deg);
+        -ms-transform: rotate(-39deg);
+            transform: rotate(-39deg);
+  }
+  .individual__title {
+    position: static;
+  }
+  .individual__text {
+    max-width: 440px;
+    margin-bottom: 50px;
+  }
+}
 /*-------------------------doctors-------------------------*/
 .doctors {
   margin-bottom: 100px;
@@ -1638,6 +1784,9 @@ select {
   position: absolute;
   top: -87px;
   right: 30px;
+}
+.doctors-carousel__slide {
+  width: 340px;
 }
 
 .carousel__arrow {
@@ -1811,6 +1960,14 @@ select {
   text-align: center;
 }
 
+@media (max-width: 1279px) {
+  .doctors__body {
+    padding: 0;
+  }
+  .doctors-carousel__nav {
+    right: 0;
+  }
+}
 /*-------------------------comfort-------------------------*/
 .comfort {
   margin-bottom: 100px;
@@ -1945,6 +2102,14 @@ select {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 1279px) {
+  .interior-slider {
+    margin: 0 -30px;
+  }
+  .interior-item__desc {
+    font-size: 14px;
+  }
+}
 /*-------------------------contacts-------------------------*/
 .contacts {
   margin-bottom: 185px;
@@ -1967,6 +2132,7 @@ select {
           flex-grow: 1;
   padding-left: 30px;
   padding-bottom: 45px;
+  padding-right: 20px;
 }
 .contacts__title {
   margin-bottom: 60px;
@@ -2075,6 +2241,19 @@ select {
   fill: #2f4c20;
 }
 
+@media (max-width: 1429px) {
+  .contacts-stats__item {
+    font-size: 17px;
+  }
+}
+@media (max-width: 1279px) {
+  .contacts-map {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - 460px);
+            flex: 0 0 calc(100% - 460px);
+    width: calc(100% - 460px);
+  }
+}
 /*-------------------------footer-------------------------*/
 .footer {
   padding: 45px 0 35px 0;
@@ -2160,6 +2339,9 @@ select {
   z-index: -1;
 }
 
+.footer-menu {
+  padding-right: 20px;
+}
 .footer-menu li {
   margin-bottom: 8px;
 }

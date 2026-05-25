@@ -30,12 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     initSlider('.doctors-carousel', {
-        slidesPerView: 3.4,
-        spaceBetween: 60,
+        slidesPerView: "auto",
+        spaceBetween: 20,
         navigation: {
             prevEl: '.doctors-carousel__prev',
             nextEl: '.doctors-carousel__next',
         },
+        breakpoints: {
+            768: { spaceBetween: 30 },
+            1280: { spaceBetween: 60 },
+        }
     });
 
     initSlider('.equipment-carousel', {
@@ -45,5 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: '.equipment-carousel__prev',
             nextEl: '.equipment-carousel__next',
         },
+        breakpoints: {
+            480: { slidesPerView: 1 },
+            768: { slidesPerView: 2.5 },
+            1280: { slidesPerView: 3 },
+            1400: { slidesPerView: 4 }
+        }
     });
 });
