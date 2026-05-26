@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         pagination: {
             el: ".promo-slider__pagination",
         },
-        autoplay: { 
-            delay: 3000, 
-        }
+        //autoplay: { 
+        //    delay: 3000, 
+        //}
     });
 
     initSlider('.interior-slider', {
