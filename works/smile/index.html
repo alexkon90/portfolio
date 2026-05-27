@@ -6,29 +6,109 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="dist/styles/flatpickr.min.css">
 	<link rel="stylesheet" href="dist/styles/style.css">
 	<title>Улыбочная</title>
 </head>
 <body class="homepage">
 <div class="wrapper">
+    <div class="modalmain">
+        <div class="modalmain__close">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 0.5L13.3106 13.3106" stroke="black" stroke-linecap="round" />
+                <path d="M0.5 13.4417L13.3106 0.631064" stroke="black" stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="modalmain__body">
+            <div class="modalmain__logo"><img src='./dist/img/logo-mobile.svg' alt='img'></div>
+            <ul class="modalmain-menu">
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">Главная</a>
+                </li>
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">О клинике</a>
+                </li>
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">Врачи</a>
+                </li>
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">Услуги</a>
+                </li>
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">Цены</a>
+                </li>
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">Акции</a>
+                </li>
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">Отзывы</a>
+                </li>
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">Наши работы</a>
+                </li>
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">Пациентам</a>
+                </li>
+                <li>
+                    <span style="background-image: url(./dist/img/content/menu-link-bg1.png);"></span>
+                    <a href="#">Контакты</a>
+                </li>
+            </ul>
+            <div class="modalmain-social">
+                <a href="#" class="modalmain-social__btn">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.07858 0.0156116C5.4478 0.153149 2.95395 1.5452 1.47258 3.69995C0.35222 5.32957 -0.116673 7.15923 0.0244098 9.34733C0.111549 10.6352 0.256782 11.4646 0.713226 13.2234C1.04104 14.4904 1.14062 15.0072 1.19457 15.7241C1.24021 16.3784 1.27756 16.5493 1.41864 16.716C1.91658 17.312 3.68427 16.9202 4.66355 16.0033L4.92081 15.7574L5.18223 15.945C6.07852 16.5826 6.84203 16.8536 7.96655 16.9369C12.0745 17.2328 15.7303 14.6196 16.751 10.656C16.9295 9.9725 17 9.35984 17 8.54294C17 7.44264 16.8838 6.70077 16.5643 5.72968C15.751 3.28317 13.8464 1.32014 11.4646 0.47407C10.394 0.094799 9.32758 -0.0510731 8.07858 0.0156116ZM9.29023 4.27928C11.0828 4.62521 12.4812 6.0631 12.7675 7.85526C12.8381 8.30121 12.8007 9.11393 12.6887 9.53488C12.6389 9.71827 12.4978 10.0725 12.3775 10.3268C11.9542 11.1937 11.2903 11.8564 10.423 12.2898C9.12425 12.9358 7.74247 12.8941 6.52667 12.1731L6.2445 12.0064L6.09097 12.1523C5.71752 12.5107 5.26522 12.8066 5.09509 12.8066C4.90837 12.8066 4.6594 12.3065 4.48927 11.5854C4.17391 10.2642 4.17391 8.55128 4.49342 7.43848C4.6428 6.91333 5.03285 6.13812 5.35651 5.73384C5.94574 4.98781 6.78809 4.471 7.70513 4.28345C8.07028 4.20843 8.91263 4.20843 9.29023 4.27928Z" fill="white" />
+                    </svg>
+                </a>
+                <a href="#" class="modalmain-social__btn">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2391 0.116302C15.4481 0.0133228 15.6769 -0.0221941 15.9016 0.0134478C16.1263 0.0490897 16.3388 0.154588 16.5169 0.318961C16.6949 0.483335 16.8321 0.700574 16.9141 0.948069C16.9961 1.19556 17.02 1.46427 16.9832 1.72621L15.0648 15.347C14.8788 16.6609 13.6473 17.4143 12.6179 16.7599C11.7568 16.2124 10.478 15.3688 9.32764 14.4886C8.75248 14.048 6.99063 12.6371 7.20716 11.6332C7.39324 10.7747 10.3536 7.54899 12.0453 5.63116C12.7092 4.8777 12.4064 4.44304 11.6224 5.13611C9.67527 6.85691 6.54911 9.47374 5.51551 10.2104C4.60372 10.8599 4.12836 10.9708 3.55997 10.8599C2.52299 10.6579 1.56129 10.345 0.77637 9.96384C-0.284291 9.44899 -0.232696 7.74206 0.775524 7.24503L15.2391 0.116302Z" fill="#2F4C20" />
+                    </svg>
+                </a>
+                <a href="#" class="modalmain-social__btn">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5226 2.47354C13.7393 1.68653 12.8064 1.06251 11.7783 0.637852C10.7501 0.21319 9.64736 -0.00362368 8.53417 4.58107e-05C3.86985 4.58107e-05 0.0683418 3.78254 0.0683418 8.42352C0.0683418 9.91102 0.461307 11.356 1.19598 12.631L0 17L4.48492 15.827C5.72362 16.4985 7.11608 16.8555 8.53417 16.8555C13.1985 16.8555 17 13.073 17 8.43202C17 6.17953 16.1201 4.06304 14.5226 2.47354ZM8.53417 15.4275C7.26985 15.4275 6.03116 15.0875 4.94623 14.45L4.68995 14.297L2.02462 14.994L2.73367 12.41L2.56281 12.1465C1.86022 11.0305 1.48722 9.7404 1.48643 8.42352C1.48643 4.56453 4.64724 1.41954 8.52563 1.41954C10.405 1.41954 12.1734 2.15054 13.4975 3.47654C14.1532 4.12582 14.6729 4.89819 15.0263 5.74886C15.3797 6.59953 15.5599 7.51155 15.5563 8.43202C15.5734 12.291 12.4126 15.4275 8.53417 15.4275ZM12.3955 10.1915C12.1819 10.0895 11.1397 9.57952 10.9518 9.50302C10.7553 9.43502 10.6186 9.40102 10.4734 9.60502C10.3281 9.81752 9.92663 10.2935 9.80703 10.4295C9.68744 10.574 9.55929 10.591 9.34573 10.4805C9.13216 10.3785 8.44874 10.149 7.64573 9.43502C7.01357 8.87402 6.59497 8.18552 6.46683 7.97302C6.34724 7.76053 6.44975 7.65003 6.5608 7.53953C6.65477 7.44603 6.77437 7.29303 6.87688 7.17403C6.9794 7.05503 7.02211 6.96153 7.09045 6.82553C7.15879 6.68103 7.12462 6.56203 7.07337 6.46003C7.02211 6.35803 6.59497 5.32103 6.42412 4.89603C6.25327 4.48803 6.07387 4.53903 5.94573 4.53053H5.53568C5.39045 4.53053 5.16834 4.58153 4.97186 4.79403C4.78392 5.00653 4.23719 5.51653 4.23719 6.55353C4.23719 7.59053 4.99749 8.59352 5.1 8.72952C5.20251 8.87402 6.59497 10.999 8.71357 11.9085C9.21759 12.1295 9.61055 12.257 9.91809 12.3505C10.4221 12.512 10.8834 12.4865 11.2508 12.4355C11.6608 12.376 12.5065 11.9255 12.6774 11.4325C12.8568 10.9395 12.8568 10.523 12.797 10.4295C12.7372 10.336 12.609 10.2935 12.3955 10.1915Z" fill="#2F4C20" />
+                    </svg>
+                </a>
+                <a href="#" class="modalmain-social__btn">
+                    <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.7 14C1.2325 14 0.832433 13.8288 0.4998 13.4864C0.167167 13.144 0.000566667 12.7318 0 12.25V1.75C0 1.26875 0.1666 0.856916 0.4998 0.5145C0.833 0.172083 1.23307 0.000583333 1.7 0H15.3C15.7675 0 16.1678 0.1715 16.501 0.5145C16.8342 0.8575 17.0006 1.26933 17 1.75V12.25C17 12.7312 16.8337 13.1434 16.501 13.4864C16.1684 13.8294 15.7681 14.0006 15.3 14H1.7ZM15.3 3.5L8.94625 7.59062C8.87542 7.63437 8.80118 7.66733 8.72355 7.6895C8.64592 7.71167 8.5714 7.72246 8.5 7.72187C8.4286 7.72129 8.35437 7.7105 8.2773 7.6895C8.20023 7.6685 8.12572 7.63554 8.05375 7.59062L1.7 3.5V12.25H15.3V3.5ZM8.5 6.125L15.3 1.75H1.7L8.5 6.125ZM1.7 3.71875V2.42812V2.45V2.4395V3.71875Z" fill="#2F4C20" />
+                    </svg>
+                </a>
+            </div>
+            <div class="modalmain-contacts">
+                <div class="modalmain-contacts__caption">Контакты</div>
+                <a href="tel:+74957777777" class="modalmain-contacts__phone">+7 (495) 777-77-77</a>
+                <a href="mailto:mail@mail.ru" class="modalmain-contacts__mail">mail@mail.ru</a>
+            </div>
+        </div>
+    </div><!-- end modalmain -->
+
     <header class="header">
-        <div class='center-wrapper center-wrapper_big'>
+        <div class='center-wrapper'>
             <div class="header__main">
                 <div class="header__leftside">
-                    <div class="header__leftside-inner">
-                        <a href="#" class="header-logo">
-                            <img src='./dist/img/logo.svg' alt='img'>
-                            <img src='./dist/img/logo-mobile.svg' alt='img'>
-                        </a>
-                        <div class="header-menu">
-                            <div class="header-menu__switcher">
-                                <svg width="38" height="17" viewBox="0 0 38 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.5293 0.898331H20.2665" stroke="#3F1C18" stroke-linecap="round" />
-                                    <path d="M2.5293 8.49995H35.4698" stroke="#3F1C18" stroke-linecap="round" />
-                                    <path d="M2.5293 16.1016H35.4698" stroke="#3F1C18" stroke-linecap="round" />
-                                </svg>
-                                <span>Меню</span>
-                            </div>
+                    <a href="#" class="header-logo">
+                        <img src='./dist/img/logo.svg' alt='img'>
+                        <img src='./dist/img/logo-mobile.svg' alt='img'>
+                    </a>
+                    <div class="header-menu">
+                        <div class="header-menu__switcher">
+                            <svg width="38" height="17" viewBox="0 0 38 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.5293 0.898331H20.2665" stroke="#3F1C18" stroke-linecap="round" />
+                                <path d="M2.5293 8.49995H35.4698" stroke="#3F1C18" stroke-linecap="round" />
+                                <path d="M2.5293 16.1016H35.4698" stroke="#3F1C18" stroke-linecap="round" />
+                            </svg>
+                            <span>Меню</span>
                         </div>
                     </div>
                 </div>
@@ -70,28 +150,27 @@
                     <a href="#" class="header-callback btn">Записаться на прием</a>
                 </div>
             </div>
-        </div><!-- end center-wrapper center-wrapper_big -->
+        </div><!-- end center-wrapper -->
     </header><!-- end header -->
 
     <section class="promo">
-        <div class='center-wrapper center-wrapper_big'>
+        <div class='center-wrapper'>
             <div class="promo__body">
                 <div class="promo__media">
                     <div class="promo-slider swiper">
                         <div class="swiper-wrapper">
                             <div class="promo-slider__slide swiper-slide">                                
-                                <div class="promo-slider__img"><img src='./dist/img/content/promo-slide1.jpg' alt='img'></div>
+                                <div class="promo-slider__img">
+                                    <picture>
+                                        <source media="(min-width: 1024px)" srcset="./dist/img/content/promo-slide1.jpg 1x">
+                                        <source media="(max-width: 1023px)" srcset="./dist/img/content/promo-slide1-tablet.jpg 1x">
+
+                                        <img src='./dist/img/content/promo-slide1.jpg' alt='img'>
+                                    </picture> 
+                                </div>
                                 <div class="promo-slider__desc">Стоматологическая клиника “Улыбочная”, г. Москва</div>
                             </div>
                             <div class="promo-slider__slide swiper-slide">                                
-                                <div class="promo-slider__img"><img src='./dist/img/content/promo-slide2.jpg' alt='img'></div>
-                                <div class="promo-slider__desc">Стоматологическая “Улыбочная”, г. Питер</div>
-                            </div>
-                            <div class="promo-slider__slide swiper-slide">                                
-                                <div class="promo-slider__img"><img src='./dist/img/content/promo-slide1.jpg' alt='img'></div>
-                                <div class="promo-slider__desc">Стоматологическая клиника “Улыбочная”, г. Казань</div>
-                            </div>
-                             <div class="promo-slider__slide swiper-slide">                                
                                 <div class="promo-slider__img"><img src='./dist/img/content/promo-slide2.jpg' alt='img'></div>
                                 <div class="promo-slider__desc">Стоматологическая “Улыбочная”, г. Питер</div>
                             </div>
@@ -130,7 +209,7 @@
                     </div>
                 </div>
             </div>
-        </div><!-- end center-wrapper center-wrapper_big -->
+        </div><!-- end center-wrapper -->
     </section><!-- end promo -->
 
     <section class="special">
@@ -189,12 +268,24 @@
             <div class="appointment__body">
                 <div class="appointment__content">
                     <div class="appointment-service">
-                        <div class="appointment-service__select">Что беспокоит</div>
-                        <input type="text" class="appointment-service__input" value="Зуб болит">
+                        <div class="appointment-service__caption">Что беспокоит</div>
+                        <select class="appointment-service__select">
+                            <option value="1">Зуб болит</option>
+                            <option value="1">Название ключевика</option>
+                            <option value="1">Название ключевика</option>
+                            <option value="1">Название ключевика</option>
+                            <option value="1">Название ключевика</option>
+                            <option value="1">Название ключевика</option>
+                            <option value="1">Название ключевика</option>
+                            <option value="1">Название ключевика</option>
+                            <option value="1">Название ключевика</option>
+                            <option value="1">Название ключевика</option>
+                            <option value="1">Название ключевика</option>
+                        </select>
                     </div>
                     <div class="appointment-date">
                         <div class="appointment-date__title">Выбрать дату</div>
-                        <input class="appointment-date__input" type="text" value="20. 04. 2026">
+                        <input class="appointment-date__input" type="text" value="30.05.2026" id="datepicker">
                     </div>
                     <a href="#" class="appointment__btn btn btn_color">Записаться на прием</a>
                 </div>
@@ -228,6 +319,10 @@
             <div class="mainservices__body">
                 <div class="mainservices__leftside">
                     <div class="mainservices__row">
+                        <div class="mainservices-quality mainservices-quality_mobile">
+                            <div class="mainservices-quality__icon"><img src='./dist/img/mainservices-quality-icon.svg' alt='img'></div>
+                            <div class="mainservices-quality__desc">Качество, которому<br> улыбаются пациенты</div>
+                        </div>
                         <div class="mainservices-item">
                             <div class="mainservices-item__top">
                                 <div class="mainservices-item__label">Миссия и ценности</div>
@@ -279,6 +374,9 @@
                             <li><a href="#">sssssssssss</a></li>
                             <li><a href="#">sssssssssss</a></li>
                         </ul>
+                        <div class="mainservices-list__all">
+                            <a href="#" class="btn">Посмотреть все услуги</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -406,8 +504,14 @@
                                 <div class="doctors-item__top">
                                     <div class="doctors-item__photo"><img src='./dist/img/content/doctors-photo1.png' alt='img'></div>
                                     <div class="doctors-item__lang">
-                                        <img src='./dist/img/icon-flag-de.svg' alt='img'>
-                                        <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                        <div class="doctors-item__tip doctors-item__tip_move">
+                                            <img src='./dist/img/icon-flag-de.svg' alt='img'>
+                                            <span>Обучение за рубежом</span>
+                                        </div>
+                                        <div class="doctors-item__tip">
+                                            <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                            <span>Обучение в России</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="doctors-item__content">
@@ -428,8 +532,10 @@
                                 <div class="doctors-item__top">
                                     <div class="doctors-item__photo"><img src='./dist/img/content/doctors-photo1.png' alt='img'></div>
                                     <div class="doctors-item__lang">
-                                        <img src='./dist/img/icon-flag-de.svg' alt='img'>
-                                        <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                        <div class="doctors-item__tip">
+                                            <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                            <span>Обучение в России</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="doctors-item__content">
@@ -450,8 +556,14 @@
                                 <div class="doctors-item__top">
                                     <div class="doctors-item__photo"><img src='./dist/img/content/doctors-photo1.png' alt='img'></div>
                                     <div class="doctors-item__lang">
-                                        <img src='./dist/img/icon-flag-de.svg' alt='img'>
-                                        <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                        <div class="doctors-item__tip doctors-item__tip_move">
+                                            <img src='./dist/img/icon-flag-de.svg' alt='img'>
+                                            <span>Обучение за рубежом</span>
+                                        </div>
+                                        <div class="doctors-item__tip">
+                                            <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                            <span>Обучение в России</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="doctors-item__content">
@@ -472,8 +584,14 @@
                                 <div class="doctors-item__top">
                                     <div class="doctors-item__photo"><img src='./dist/img/content/doctors-photo1.png' alt='img'></div>
                                     <div class="doctors-item__lang">
-                                        <img src='./dist/img/icon-flag-de.svg' alt='img'>
-                                        <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                        <div class="doctors-item__tip doctors-item__tip_move">
+                                            <img src='./dist/img/icon-flag-de.svg' alt='img'>
+                                            <span>Обучение за рубежом</span>
+                                        </div>
+                                        <div class="doctors-item__tip">
+                                            <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                            <span>Обучение в России</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="doctors-item__content">
@@ -494,8 +612,14 @@
                                 <div class="doctors-item__top">
                                     <div class="doctors-item__photo"><img src='./dist/img/content/doctors-photo1.png' alt='img'></div>
                                     <div class="doctors-item__lang">
-                                        <img src='./dist/img/icon-flag-de.svg' alt='img'>
-                                        <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                        <div class="doctors-item__tip doctors-item__tip_move">
+                                            <img src='./dist/img/icon-flag-de.svg' alt='img'>
+                                            <span>Обучение за рубежом</span>
+                                        </div>
+                                        <div class="doctors-item__tip">
+                                            <img src='./dist/img/icon-flag-ru.svg' alt='img'>
+                                            <span>Обучение в России</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="doctors-item__content">
@@ -528,6 +652,9 @@
                     <div class="comfort__desc custom_scroll">
                         <p>«Улыбочная» — инвестиция в вашу уверенность на десятилетия вперед. Сюда текст, который я поменяю попозже.</p>
                         <p>Текст какой-то текст текст текст. Текст какой-то текст текст текст. Текст какой-то текст текст текст.</p>
+                        <p>Текст какой-то текст текст текст.</p> 
+                        <p>Текст какой-то текст текст текст.</p> 
+                        <p>Текст какой-то текст текст текст.</p> 
                         <p>Текст какой-то текст текст текст.</p> 
                         <p>Текст какой-то текст текст текст.</p> 
                     </div>
@@ -722,9 +849,40 @@
             <div class="footer-warning">ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ. <span>ПРОКОНСУЛЬТИРУЙТЕСЬ СО СПЕЦИАЛИСТОМ.</span></div>
         </div><!-- end center-wrapper -->
     </footer><!-- end footer -->
+
+    <div class="modalsocial">
+        <a href="#" class="modalsocial__btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.22331 6.54002C4.90151 7.80436 4.51922 9.81898 5.64507 11.2606C6.4616 12.3061 7.40987 13.2575 8.45345 14.0965C10.0532 15.3828 12.3263 15.0071 13.7778 13.5556C13.843 13.4903 13.9125 13.4336 13.9847 13.3862C14.5184 13.0354 15.1887 13.4573 15.8064 13.6198C16.7705 13.8733 17.798 14 18.8889 14C19.5556 14 20 14.4444 20 15.1111V18.8889C20 19.5556 19.5556 20 18.8889 20C8.44445 20 0 11.5556 0 1.11111C0 0.444444 0.444444 0 1.11111 0H5C5.66667 0 6.11111 0.444444 6.11111 1.11111C6.11111 2.44444 6.33333 3.77778 6.77778 5.11111C6.84693 5.31857 6.83001 5.56906 6.75379 5.80902C6.66129 6.10027 6.44414 6.32879 6.22331 6.54002Z" fill="white" />
+            </svg>
+        </a>
+        <a href="#" class="modalsocial__btn">
+            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 0H2C0.895 0 0.00999999 1.00688 0.00999999 2.25L0 15.75C0 16.9931 0.895 18 2 18H18C19.105 18 20 16.9931 20 15.75V2.25C20 1.00688 19.105 0 18 0ZM18 4.5L10 10.125L2 4.5V2.25L10 7.875L18 2.25V4.5Z" fill="white" />
+            </svg>
+        </a>
+        <a href="#" class="modalsocial__btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.50421 0.0183659C6.40918 0.180174 3.47524 1.81788 1.73245 4.35289C0.414376 6.27008 -0.137262 8.42263 0.0287174 10.9969C0.131234 12.512 0.302096 13.4877 0.83909 15.5569C1.22475 17.0475 1.34191 17.6555 1.40537 18.4989C1.45907 19.2687 1.50301 19.4698 1.66899 19.6659C2.2548 20.3671 4.33443 19.9062 5.48653 18.8274L5.78919 18.5381L6.09675 18.7588C7.15121 19.509 8.04945 19.8277 9.37241 19.9258C14.2053 20.2739 18.5062 17.1995 19.7071 12.5365C19.917 11.7324 20 11.0116 20 10.0505C20 8.75605 19.8633 7.88326 19.4874 6.74079C18.5306 3.86255 16.2899 1.5531 13.4877 0.557728C12.2282 0.111528 10.9736 -0.0600872 9.50421 0.0183659ZM10.9297 5.03444C13.0386 5.44142 14.6838 7.13306 15.0206 9.24148C15.1036 9.76613 15.0597 10.7223 14.9278 11.2175C14.8693 11.4333 14.7033 11.85 14.5617 12.1491C14.0638 13.169 13.2827 13.9486 12.2624 14.4586C10.7344 15.2186 9.10879 15.1696 7.67844 14.3213L7.34648 14.1252L7.16585 14.2968C6.72649 14.7185 6.19438 15.0666 5.99423 15.0666C5.77455 15.0666 5.48164 14.4782 5.28149 13.6299C4.91048 12.0756 4.91048 10.0603 5.28637 8.75115C5.46212 8.13333 5.921 7.22132 6.30178 6.7457C6.99499 5.86801 7.98599 5.26 9.06486 5.03935C9.49445 4.95109 10.4854 4.95109 10.9297 5.03444Z" fill="white" />
+            </svg>
+        </a>
+        <a href="#" class="modalsocial__btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.50421 0.0183659C6.40918 0.180174 3.47524 1.81788 1.73245 4.35289C0.414376 6.27008 -0.137262 8.42263 0.0287174 10.9969C0.131234 12.512 0.302096 13.4877 0.83909 15.5569C1.22475 17.0475 1.34191 17.6555 1.40537 18.4989C1.45907 19.2687 1.50301 19.4698 1.66899 19.6659C2.2548 20.3671 4.33443 19.9062 5.48653 18.8274L5.78919 18.5381L6.09675 18.7588C7.15121 19.509 8.04945 19.8277 9.37241 19.9258C14.2053 20.2739 18.5062 17.1995 19.7071 12.5365C19.917 11.7324 20 11.0116 20 10.0505C20 8.75605 19.8633 7.88326 19.4874 6.74079C18.5306 3.86255 16.2899 1.5531 13.4877 0.557728C12.2282 0.111528 10.9736 -0.0600872 9.50421 0.0183659ZM10.9297 5.03444C13.0386 5.44142 14.6838 7.13306 15.0206 9.24148C15.1036 9.76613 15.0597 10.7223 14.9278 11.2175C14.8693 11.4333 14.7033 11.85 14.5617 12.1491C14.0638 13.169 13.2827 13.9486 12.2624 14.4586C10.7344 15.2186 9.10879 15.1696 7.67844 14.3213L7.34648 14.1252L7.16585 14.2968C6.72649 14.7185 6.19438 15.0666 5.99423 15.0666C5.77455 15.0666 5.48164 14.4782 5.28149 13.6299C4.91048 12.0756 4.91048 10.0603 5.28637 8.75115C5.46212 8.13333 5.921 7.22132 6.30178 6.7457C6.99499 5.86801 7.98599 5.26 9.06486 5.03935C9.49445 4.95109 10.4854 4.95109 10.9297 5.03444Z" fill="white" />
+            </svg>
+        </a>
+        <a href="#" class="modalsocial__btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.0854 2.91005C16.1639 1.98415 15.0664 1.25002 13.8568 0.750414C12.6472 0.250812 11.3498 -0.00426316 10.0402 5.3895e-05C4.55276 5.3895e-05 0.0804022 4.45004 0.0804022 9.91003C0.0804022 11.66 0.542714 13.36 1.40704 14.86L0 20L5.27638 18.62C6.73367 19.41 8.37186 19.83 10.0402 19.83C15.5276 19.83 20 15.38 20 9.92003C20 7.27004 18.9648 4.78004 17.0854 2.91005ZM10.0402 18.15C8.55276 18.15 7.09548 17.75 5.8191 17L5.51759 16.82L2.38191 17.64L3.21608 14.6L3.01508 14.29C2.18849 12.9771 1.74967 11.4593 1.74874 9.91003C1.74874 5.37004 5.46734 1.67005 10.0302 1.67005C12.2412 1.67005 14.3216 2.53005 15.8794 4.09004C16.6509 4.8539 17.2622 5.76258 17.678 6.76336C18.0938 7.76415 18.3057 8.83712 18.3015 9.92003C18.3216 14.46 14.603 18.15 10.0402 18.15ZM14.5829 11.99C14.3317 11.87 13.1055 11.27 12.8844 11.18C12.6533 11.1 12.4925 11.06 12.3216 11.3C12.1508 11.55 11.6784 12.11 11.5377 12.27C11.397 12.44 11.2462 12.46 10.995 12.33C10.7437 12.21 9.9397 11.94 8.99497 11.1C8.25126 10.44 7.75879 9.63003 7.60804 9.38003C7.46734 9.13003 7.58794 9.00003 7.71859 8.87003C7.82914 8.76003 7.96985 8.58003 8.09045 8.44003C8.21105 8.30003 8.26131 8.19003 8.34171 8.03003C8.42211 7.86003 8.38191 7.72003 8.32161 7.60003C8.26131 7.48003 7.75879 6.26004 7.55779 5.76004C7.35678 5.28004 7.14573 5.34004 6.99497 5.33004H6.51256C6.34171 5.33004 6.0804 5.39004 5.84925 5.64004C5.62814 5.89004 4.98492 6.49004 4.98492 7.71003C4.98492 8.93003 5.8794 10.11 6 10.27C6.1206 10.44 7.75879 12.94 10.2513 14.01C10.8442 14.27 11.3065 14.42 11.6683 14.53C12.2613 14.72 12.804 14.69 13.2362 14.63C13.7186 14.56 14.7136 14.03 14.9146 13.45C15.1256 12.87 15.1256 12.38 15.0553 12.27C14.9849 12.16 14.8342 12.11 14.5829 11.99Z" fill="white" />
+            </svg>
+        </a>
+    </div><!-- end modalsocial -->
 </div><!-- end wrapper -->
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-	<script src="dist/scripts/main.js"></script>
+	<script src="/dist/scripts/flatpickr.js"></script>
+	<script src="/dist/scripts/flatpickr-ru.js"></script>
+	<script src="/dist/scripts/simplebar.min.js"></script>
+	<script src="/dist/scripts/main.js"></script>
 </body>
 </html>
