@@ -3619,6 +3619,9 @@ img {
   .equipment-scene {
     padding-bottom: 70px;
   }
+  .equipment-scene-2 {
+    padding-left: 50px;
+  }
   .equipment__desc {
     top: 34%;
   }
@@ -3665,7 +3668,7 @@ img {
 }
 @media (max-width: 767px) {
   .equipment__body {
-    padding: 40px 0 32px 24px;
+    padding: 40px 0 32px 0;
   }
   .equipment__title {
     padding-right: 15px;
@@ -3710,6 +3713,23 @@ img {
   }
   .equipment {
     margin-bottom: 20px;
+  }
+  .equipment-scene-1 {
+    padding-left: 0;
+    padding-bottom: 140px;
+  }
+  .equipment .carousel__nav {
+    bottom: 140px;
+  }
+  .equipment__title {
+    left: 0;
+  }
+  .equipment__desc {
+    right: 15px;
+    margin-right: 0;
+  }
+  .equipment-scene-2 {
+    padding-left: 15px;
   }
 }
 @media (max-width: 359px) {
@@ -3838,9 +3858,6 @@ img {
     max-width: 440px;
     margin-bottom: 50px;
   }
-  .equipment-scene-2 {
-    padding-left: 50px;
-  }
   .individual__title {
     margin-right: 35px;
   }
@@ -3908,6 +3925,25 @@ img {
     display: -ms-flexbox;
     display: flex;
     width: 210px;
+  }
+  .individual__text {
+    padding-right: 15px;
+  }
+  .individual__text_1 {
+    top: 36%;
+    left: 15px;
+  }
+  .individual__text_2 {
+    left: 15px;
+    right: auto;
+    bottom: 16%;
+  }
+  .individual__btn {
+    left: 50%;
+    margin-left: -105px;
+  }
+  .individual__title {
+    margin-right: 15px;
   }
 }
 /*-------------------------doctors-------------------------*/
