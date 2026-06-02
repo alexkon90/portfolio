@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Doctors carousel
     initSlider('.doctors-carousel', {
         slidesPerView: "auto",
         spaceBetween: 20,
@@ -32,33 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             1280: { spaceBetween: 60 },
         }
     });
-    const outsideItems = document.querySelectorAll('.equipment__section');
-
-    initSlider('.equipment-carousel', {
-        loop: true,
-        slidesPerView: "auto",
-        spaceBetween: 8,
-        speed: 500,
-        initialSlide: 0,
-        //centeredSlides: true,
-        //centeredSlidesBounds: true,
-        //slideToClickedSlide: true,
-        navigation: {
-            prevEl: '.equipment-carousel__prev',
-            nextEl: '.equipment-carousel__next',
-        },
-        breakpoints: {
-            480: { spaceBetween: 20, }
-        },
-        on: {
-            slideChange(swiper) {
-                outsideItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                outsideItems[swiper.realIndex].classList.add('active');
-            }
-        }
-    })
 
     // interior-slider
     const imageSwiper = new Swiper('.interior-slider', {
@@ -81,6 +55,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     imageSwiper.controller.control = textSwiper;
     textSwiper.controller.control = imageSwiper;
+
+    // Phone mask
+    const phoneInputs = document.querySelectorAll('.js_phone_mask');
+
+    phoneInputs.forEach(input => {
+        const mask = IMask(input, {
+            mask: '+{7} (000) 000-00-00',
+            lazy: true,
+            placeholderChar: '_'
+        });
+        input.addEventListener('focus', () => {
+            mask.updateOptions({
+                lazy: false
+            });
+
+            if (!input.value) {
+                mask.value = '+7 (';
+            }
+        });
+        input.addEventListener('blur', () => {
+
+            if (mask.unmaskedValue === '7') {
+                mask.value = '';
+            }
+
+            mask.updateOptions({
+                lazy: true
+            });
+        });
+    });
     
     // Header
     const header = document.querySelector('.header');
@@ -108,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const hasHover = window.matchMedia('(hover: hover)').matches;
 
     if (hasHover) {
-
         let openTimeout;
         let closeTimeout;
 
@@ -136,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     else {
-
         switcher.addEventListener('click', (e) => {
             e.stopPropagation();
             modal.classList.toggle('open');
@@ -298,42 +300,111 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animation
     gsap.registerPlugin(ScrollTrigger);
 
+    const outsideItems = document.querySelectorAll('.equipment__section');
+
+    // 1. Анимация фона при скролле
+    gsap.to('.equipment__bg', {
+        width: '100vw',
+        height: '100vh',
+        borderRadius: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.equipment',
+            start: 'top 80%',
+            end: 'top top',
+            scrub: 1,
+        }
+    });
+
+    // 2. Закрепление (Pin) секции
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.equipment',
             start: 'top top',
-            end: '+=7000',
-            scrub: true,
+            end: '+=6000',
+            scrub: 1,
             pin: true,
         }
     });
-    tl.to('.equipment__bg', {
-        scale: 1,
-        duration: 1,
-        ease: 'power2.out',
+
+    // 3. ОБНОВЛЕННАЯ ФУНКЦИЯ АНИМАЦИИ (Заголовок + Описание)
+    function playTitle(el) {
+        // Находим спаны и в заголовке, и в описании текущего слайда
+        const titleSpans = el.querySelectorAll('.equipment__title span');
+        const descSpans = el.querySelectorAll('.equipment__desc span');
+        
+        // Объединяем их в один массив, чтобы анимация шла последовательно: сначала заголовок, потом описание
+        const allSpans = [...titleSpans, ...descSpans];
+        
+        // Убиваем прошлые анимации на этих элементах, чтобы избежать конфликтов при быстром переключении
+        gsap.killTweensOf(allSpans);
+
+        // Сбрасываем позиции и анимируем появление
+        gsap.fromTo(allSpans, 
+            {
+                opacity: 0,
+                y: -80 
+            },
+            {
+                opacity: 1,
+                y: 0,
+                stagger: 0.08,
+                duration: 0.8,
+                ease: 'power3.out',
+                overwrite: 'auto'
+            }
+        );
+    }
+
+    // 4. Отдельный ScrollTrigger для ПЕРВОГО появления контента при скролле
+    ScrollTrigger.create({
+        trigger: '.equipment',
+        start: 'top 20%', 
+        onEnter: () => {
+            const activeSection = document.querySelector('.equipment__section.active');
+            if (activeSection) {
+                playTitle(activeSection);
+            }
+        },
+        once: true 
     });
-    tl.fromTo('.equipment__title',
-        {
-            y: -200,
-            opacity: 0,
+
+    // Переменная для отслеживания готовности слайдера
+    let isSliderReady = false;
+
+    // 5. Инициализация слайдера Swiper
+    initSlider('.equipment-carousel', {
+        loop: true,
+        slidesPerView: "auto",
+        spaceBetween: 8,
+        speed: 800,
+        initialSlide: 0,
+        navigation: {
+            prevEl: '.equipment-carousel__prev',
+            nextEl: '.equipment-carousel__next',
         },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-        }
-    );
-    tl.fromTo('.equipment__desc',
-        {
-            x: 300,
-            opacity: 0,
+        breakpoints: {
+            480: { spaceBetween: 20, }
         },
-        {
-            x: 0,
-            opacity: 1,
-            duration: 1,
+        on: {
+            init() {
+                isSliderReady = true; 
+            },
+            slideChange(swiper) {
+                if (!isSliderReady) return;
+
+                outsideItems.forEach(i => i.classList.remove('active'));
+
+                const el = outsideItems[swiper.realIndex];
+                if (el) {
+                    el.classList.add('active');
+                    playTitle(el); // Запустит анимацию и для h2, и для desc
+                }
+            }
         }
-    );
+    });
+
+
     tl.fromTo('.equipment-carousel',
         {
             y: 200,
@@ -345,6 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 1,
         }
     );
+
     tl.fromTo('.equipment-carousel__nav',
         {
             opacity: 0,
@@ -356,62 +428,76 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 0.5,
         }
     );
+
     tl.to({}, {
-        duration: 2
+        duration: 1,
     });
+
     tl.to('.equipment-scene-1', {
         autoAlpha: 0,
         y: -150,
-        duration: 1.5,
+        duration: 0.5,
+
     });
+
     tl.to('.equipment-scene-2', {
         autoAlpha: 1,
         duration: 1,
     });
-    tl.fromTo('.individual__title',
-        {
-            y: -200,
+
+    tl.fromTo('.individual__title span', {
             opacity: 0,
+            y: -80 
         },
         {
+            opacity: 1,
             y: 0,
-            opacity: 1,
-            duration: 1,
-        }
-    );
-    tl.fromTo('.individual__text_1',
+            stagger: 0.1,
+            duration: 0.8,
+            ease: 'power3.out',
+            overwrite: 'auto'
+    });
+
+    tl.fromTo('.individual__text_1 span',
         {
-            x: -300,
             opacity: 0,
+            y: -80 
         },
         {
-            x: 0,
             opacity: 1,
-            duration: 1,
-        }
-    );
-    tl.fromTo('.individual__text_2',
-        {
-            y: 200,
-            opacity: 0,
-        },
-        {
             y: 0,
-            opacity: 1,
-            duration: 1,
+            stagger: 0.08, 
+            duration: 0.8,
+            ease: 'power3.out',
+            overwrite: 'auto'
         }
     );
+
+    tl.fromTo('.individual__text_2 span',
+        {
+            opacity: 0,
+            y: -80 
+        },
+        {
+            opacity: 1,
+            y: 0,
+            stagger: 0.08, 
+            duration: 0.8,
+            ease: 'power3.out',
+            overwrite: 'auto'
+        }
+    );
+
     tl.fromTo('.individual__btn',
         {
             opacity: 0,
             y: 50,
-            visibility: 'hidden'
         },
+
         {
             opacity: 1,
             y: 0,
-            duration: 0.5,
-            visibility: 'visible'
+            duration: 0.3,
         }
     );
 });
