@@ -11,18 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Promo carousel
     initSlider('.promo-slider', {
         slidesPerView: 1,
+        loop: true,
         effect: "fade",
         pagination: {
             el: ".promo-slider__pagination",
+            clickable: true,
         },
         autoplay: { 
-            delay: 5000, 
+            delay: 3000, 
         }
     });
 
     // Doctors carousel
     initSlider('.doctors-carousel', {
-        slidesPerView: "auto",
+        //slidesPerView: "auto",
+        slidesPerView: 3.9,
         spaceBetween: 20,
         navigation: {
             prevEl: '.doctors-carousel__prev',
@@ -180,10 +183,38 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
+    // Custom select
+    const select = document.querySelector('#select');
+    if (select) {
+        new TomSelect(select, {
+            controlInput: null,
+            searchField: false,
+        });
+    }
+
     // Custom scrollbar
     document.querySelectorAll('.custom_scroll').forEach(el => {
         new SimpleBar(el);
     })
+
+    // Up
+    const upButton = document.querySelector('.contacts-up');
+    if (upButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                upButton.classList.add('active');
+            } else {
+                upButton.classList.remove('active');
+            }
+        });
+
+        upButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Cookies
     document.querySelectorAll('[data-close]').forEach(button => {
@@ -297,207 +328,332 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animation
-    gsap.registerPlugin(ScrollTrigger);
 
-    const outsideItems = document.querySelectorAll('.equipment__section');
 
-    // 1. Анимация фона при скролле
-    gsap.to('.equipment__bg', {
-        width: '100vw',
-        height: '100vh',
-        borderRadius: 0,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: '.equipment',
-            start: 'top 80%',
-            end: 'top top',
-            scrub: 1,
-        }
-    });
 
-    // 2. Закрепление (Pin) секции
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.equipment',
-            start: 'top top',
-            end: '+=6000',
-            scrub: 1,
-            pin: true,
-        }
-    });
 
-    // 3. ОБНОВЛЕННАЯ ФУНКЦИЯ АНИМАЦИИ (Заголовок + Описание)
-    function playTitle(el) {
-        // Находим спаны и в заголовке, и в описании текущего слайда
-        const titleSpans = el.querySelectorAll('.equipment__title span');
-        const descSpans = el.querySelectorAll('.equipment__desc span');
-        
-        // Объединяем их в один массив, чтобы анимация шла последовательно: сначала заголовок, потом описание
-        const allSpans = [...titleSpans, ...descSpans];
-        
-        // Убиваем прошлые анимации на этих элементах, чтобы избежать конфликтов при быстром переключении
-        gsap.killTweensOf(allSpans);
 
-        // Сбрасываем позиции и анимируем появление
-        gsap.fromTo(allSpans, 
-            {
-                opacity: 0,
-                y: -80 
-            },
-            {
-                opacity: 1,
-                y: 0,
-                stagger: 0.08,
-                duration: 0.8,
-                ease: 'power3.out',
-                overwrite: 'auto'
-            }
-        );
-    }
 
-    // 4. Отдельный ScrollTrigger для ПЕРВОГО появления контента при скролле
-    ScrollTrigger.create({
-        trigger: '.equipment',
-        start: 'top 20%', 
-        onEnter: () => {
-            const activeSection = document.querySelector('.equipment__section.active');
-            if (activeSection) {
-                playTitle(activeSection);
-            }
-        },
-        once: true 
-    });
 
-    // Переменная для отслеживания готовности слайдера
-    let isSliderReady = false;
+
 
     // 5. Инициализация слайдера Swiper
-    initSlider('.equipment-carousel', {
+    const equipmentSwiper = initSlider('.equipment-carousel', {
         loop: true,
         slidesPerView: "auto",
         spaceBetween: 8,
         speed: 800,
         initialSlide: 0,
+        autoplay: { 
+            delay: 2000, 
+            disableOnInteraction: true,
+        },
         navigation: {
             prevEl: '.equipment-carousel__prev',
             nextEl: '.equipment-carousel__next',
         },
         breakpoints: {
-            480: { spaceBetween: 20, }
-        },
-        on: {
-            init() {
-                isSliderReady = true; 
-            },
-            slideChange(swiper) {
-                if (!isSliderReady) return;
-
-                outsideItems.forEach(i => i.classList.remove('active'));
-
-                const el = outsideItems[swiper.realIndex];
-                if (el) {
-                    el.classList.add('active');
-                    playTitle(el); // Запустит анимацию и для h2, и для desc
-                }
+            480: { 
+                spaceBetween: 20,
             }
         }
     });
 
 
-    tl.fromTo('.equipment-carousel',
-        {
-            y: 200,
-            opacity: 0,
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-        }
-    );
 
-    tl.fromTo('.equipment-carousel__nav',
-        {
-            opacity: 0,
-            y: 50,
-        },
-        {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-        }
-    );
 
-    tl.to({}, {
-        duration: 1,
+
+
+    // Animation
+    gsap.registerPlugin(ScrollTrigger);
+
+    // СОЗДАЕМ ОДИН ОБЩИЙ ТАЙМЛАЙН. Прыгать больше нечему.
+    const masterTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.equipment-main',
+            start: 'top top',       // Фиксируем секцию сразу, как только она дошла до верха экрана
+            end: '+=2000',          // Длина всего процесса прокрутки (сделай больше, если нужно медленнее)
+            scrub: 1,               // Плавный зажим за колесиком
+            pin: true,              // Жестко держим экран
+            anticipatePin: 1        // Сглаживает инициализацию фиксации
+        }
     });
 
-    tl.to('.equipment-scene-1', {
-        autoAlpha: 0,
-        y: -150,
+    // ШАГ 1: Из под нижнего края экрана выезжает ФОН и первый ТЕКСТ (Эффект шторки)
+    masterTl.to(['.equipment-main__bg', '.equipment-block-1'], {
+        y: '0%',
+        opacity: 1,
         duration: 0.5,
-
+        ease: 'none'
     });
 
-    tl.to('.equipment-scene-2', {
+    // ШАГ 2: Убираем скругление углов у шторки, когда она полностью встала на весь экран
+    masterTl.to('.equipment-main__bg', {
+        duration: 0.3,
+        ease: 'none'
+    });
+
+    masterTl.fromTo('.equipment__title_1 span', {
+        opacity: 0,
+        y: 80 
+    },
+    {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        ease: 'power3.out',
+        overwrite: 'auto'
+    });
+
+    // ШАГ 3: Растворяем ПЕРВЫЙ текст (он уплывает чуть вверх). Фон при этом замер и стоит!
+    masterTl.to('.equipment-block-1', {
+        opacity: 0,
+        y: '-50px',
+        duration: 0.8,
+        ease: 'power1.inOut'
+    });
+
+    // ШАГ 4: Короткая пауза на чистом фоне для красоты
+    masterTl.to({}, { duration: 0.3 });
+
+    // ШАГ 5: Плавно проявляем ВТОРOЙ текст (он изящно приподнимается со своих 40px в 0)
+    masterTl.to('.equipment-block-2', {
         autoAlpha: 1,
-        duration: 1,
+        y: '0%',
+        duration: 1.2,
+        ease: 'power2.out',
+        onStart: () => {
+            equipmentSwiper.update();
+            equipmentSwiper.loopFix();
+        }
     });
 
-    tl.fromTo('.individual__title span', {
-            opacity: 0,
-            y: -80 
-        },
-        {
-            opacity: 1,
-            y: 0,
-            stagger: 0.1,
-            duration: 0.8,
-            ease: 'power3.out',
-            overwrite: 'auto'
+    masterTl.fromTo('.equipment__title_2 span', {
+        opacity: 0,
+        y: 80 
+    },
+    {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        ease: 'power3.out',
+        overwrite: 'auto'
     });
 
-    tl.fromTo('.individual__text_1 span',
-        {
-            opacity: 0,
-            y: -80 
-        },
-        {
-            opacity: 1,
-            y: 0,
-            stagger: 0.08, 
-            duration: 0.8,
-            ease: 'power3.out',
-            overwrite: 'auto'
-        }
-    );
+    // ШАГ 6: Финальная пауза, чтобы успеть почитать второй блок, перед тем как скролл отпустит сайт вниз
+    masterTl.to({}, { duration: 0.8 });
 
-    tl.fromTo('.individual__text_2 span',
-        {
-            opacity: 0,
-            y: -80 
-        },
-        {
-            opacity: 1,
-            y: 0,
-            stagger: 0.08, 
-            duration: 0.8,
-            ease: 'power3.out',
-            overwrite: 'auto'
-        }
-    );
 
-    tl.fromTo('.individual__btn',
-        {
-            opacity: 0,
-            y: 50,
-        },
 
-        {
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
-        }
-    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //gsap.registerPlugin(ScrollTrigger);
+
+    //const outsideItems = document.querySelectorAll('.equipment__section');
+
+    //// 1. Анимация фона при скролле
+    ////gsap.to('.equipment__bg', {
+    ////    width: '100vw',
+    ////    height: '100vh',
+    ////    borderRadius: 0,
+    ////    ease: 'power2.out',
+    ////    scrollTrigger: {
+    ////        trigger: '.equipment',
+    ////        start: 'top 80%',
+    ////        end: 'top top',
+    ////        scrub: 1,
+    ////    }
+    ////});
+
+    //gsap.fromTo('.equipment__bg', 
+    //    {
+    //        top: '100%',
+    //        height: '0vh',
+    //    },
+    //    {
+    //        top: '0%',
+    //        height: '100vh',
+    //        ease: 'none', // Для scrub-анимаций лучше использовать 'none', чтобы движение идеально следовало за пальцем/колесом
+
+    //        scrollTrigger: {
+    //            trigger: '.equipment',
+    //            start: 'top 100%', // Анимация начнется, как только верх секции покажется внизу экрана
+    //            end: 'top top',     // Закончится, когда верх секции дойдет до верха экрана
+    //            scrub: true,        // Плавная привязка к скроллу
+    //        }
+    //    }
+    //);
+
+    //// 2. Закрепление (Pin) секции
+    //const tl = gsap.timeline({
+    //    scrollTrigger: {
+    //        trigger: '.equipment',
+    //        start: 'top top',
+    //        end: '+=6000',
+    //        scrub: 1,
+    //        pin: true,
+    //    }
+    //});
+
+    //// 3. ОБНОВЛЕННАЯ ФУНКЦИЯ АНИМАЦИИ (Заголовок + Описание)
+    //function playTitle(el) {
+    //    // Находим спаны и в заголовке, и в описании текущего слайда
+    //    const titleSpans = el.querySelectorAll('.equipment__title span');
+    //    const descSpans = el.querySelectorAll('.equipment__desc span');
+        
+    //    // Объединяем их в один массив, чтобы анимация шла последовательно: сначала заголовок, потом описание
+    //    const allSpans = [...titleSpans, ...descSpans];
+        
+    //    // Убиваем прошлые анимации на этих элементах, чтобы избежать конфликтов при быстром переключении
+    //    gsap.killTweensOf(allSpans);
+
+    //    // Сбрасываем позиции и анимируем появление
+    //    gsap.fromTo(allSpans, 
+    //        {
+    //            opacity: 0,
+    //            y: -80 
+    //        },
+    //        {
+    //            opacity: 1,
+    //            y: 0,
+    //            stagger: 0.08,
+    //            duration: 0.8,
+    //            ease: 'power3.out',
+    //            overwrite: 'auto'
+    //        }
+    //    );
+    //}
+
+    //// 4. Отдельный ScrollTrigger для ПЕРВОГО появления контента при скролле
+    //ScrollTrigger.create({
+    //    trigger: '.equipment',
+    //    start: 'top 20%', 
+    //    onEnter: () => {
+    //        const activeSection = document.querySelector('.equipment__section.active');
+    //        if (activeSection) {
+    //            playTitle(activeSection);
+    //        }
+    //    },
+    //    once: true 
+    //});
+
+    //// Переменная для отслеживания готовности слайдера
+    //let isSliderReady = false;
+
+
+
+    //tl.fromTo('.equipment-carousel',
+    //    {
+    //        y: 200,
+    //        opacity: 0,
+    //    },
+    //    {
+    //        y: 0,
+    //        opacity: 1,
+    //        duration: 1,
+    //    }
+    //);
+    //tl.fromTo('.equipment-carousel__nav',
+    //    {
+    //        opacity: 0,
+    //        y: 50,
+    //    },
+    //    {
+    //        opacity: 1,
+    //        y: 0,
+    //        duration: 0.5,
+    //    }
+    //);
+    //tl.to({}, {
+    //    duration: 1,
+    //});
+    //tl.to('.equipment-scene-1', {
+    //    autoAlpha: 0,
+    //    y: -150,
+    //    duration: 0.5,
+
+    //});
+    //tl.to('.equipment-scene-2', {
+    //    autoAlpha: 1,
+    //    duration: 1,
+    //});
+    //tl.fromTo('.individual__title span', {
+    //        opacity: 0,
+    //        y: -80 
+    //    },
+    //    {
+    //        opacity: 1,
+    //        y: 0,
+    //        stagger: 0.1,
+    //        duration: 0.8,
+    //        ease: 'power3.out',
+    //        overwrite: 'auto'
+    //});
+    //tl.fromTo('.individual__text_1 span',
+    //    {
+    //        opacity: 0,
+    //        y: -80 
+    //    },
+    //    {
+    //        opacity: 1,
+    //        y: 0,
+    //        stagger: 0.08, 
+    //        duration: 0.8,
+    //        ease: 'power3.out',
+    //        overwrite: 'auto'
+    //    }
+    //);
+    //tl.fromTo('.individual__text_2 span',
+    //    {
+    //        opacity: 0,
+    //        y: -80 
+    //    },
+    //    {
+    //        opacity: 1,
+    //        y: 0,
+    //        stagger: 0.08, 
+    //        duration: 0.8,
+    //        ease: 'power3.out',
+    //        overwrite: 'auto'
+    //    }
+    //);
+    //tl.fromTo('.individual__btn',
+    //    {
+    //        opacity: 0,
+    //        y: 50,
+    //    },
+
+    //    {
+    //        opacity: 1,
+    //        y: 0,
+    //        duration: 0.3,
+    //    }
+    //);
 });
