@@ -1,0 +1,53 @@
+.text-block ul:not(.flickity-page-dots) ul {
+    padding-left: 40px;
+}
+
+.text-block ul:not(.flickity-page-dots) ul li {
+    position: relative;
+    padding-left: 23px;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.text-block ul:not(.flickity-page-dots) ul li span {
+    font-size: 17px !important;
+}
+
+.text-block ul:not(.flickity-page-dots) ul li:before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #3F5265;
+    position: absolute;
+    left: 0;
+    top: 9px;
+}
+
+
+
+@media (max-width: 1023px) {
+    p {
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+        letter-spacing: 0;
+    }
+}
+
+
+@media (max-width: 568px) {
+    
+    .text-block ul li {
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+
+    .text-block ul:not(.flickity-page-dots) ul li {
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+    
+    .text-block ul:not(.flickity-page-dots) ul li span {
+        font-size: 17px !important;
+    }
+}
