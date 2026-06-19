@@ -1,0 +1,27 @@
+import PhotoSwipeLightbox from '/local/templates/main/js/photoswipe-lightbox.esm.min.js';
+import PhotoSwipe from '/local/templates/main/js/photoswipe.esm.min.js';
+document.querySelectorAll('.photoswipe').forEach(container => {
+    const img = container.querySelector('img');
+    if (!img) return;
+    const link = document.createElement('a');
+    link.href = img.src;
+    link.setAttribute('data-pswp-width', img.naturalWidth || 1920);
+    link.setAttribute('data-pswp-height', img.naturalHeight || 1080);
+    link.target = '_blank';
+    img.parentNode.insertBefore(link, img);
+    link.appendChild(img);
+    container.classList.add('pswp-gallery');
+    img.addEventListener('load', () => {
+        link.setAttribute('data-pswp-width', img.naturalWidth);
+        link.setAttribute('data-pswp-height', img.naturalHeight);
+    });
+});
+const lightbox = new PhotoSwipeLightbox({
+    gallery: '.pswp-gallery',
+    children: 'a',
+    pswpModule: PhotoSwipe,
+    zoom: true,
+    bgOpacity: 0.9,
+});
+lightbox.init();
+console.log('lightbox.init');

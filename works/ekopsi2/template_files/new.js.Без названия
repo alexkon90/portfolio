@@ -1,0 +1,138 @@
+var tabsLinks = document.querySelectorAll('.tabs__link');
+var panes = document.querySelectorAll('.clients-cases .tabs__pane');
+
+tabsLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        panes.forEach(function(pane) {
+            pane.classList.remove('tabs__pane--active');
+        });
+        
+        var targetPane = document.querySelector(this.hash);
+        if (targetPane) {
+            targetPane.classList.add('tabs__pane--active');
+        }
+        
+        tabsLinks.forEach(function(link) {
+            link.classList.remove('tabs__link--active');
+        });
+        
+        this.classList.add('tabs__link--active');
+        
+        return false;
+    });
+});
+
+// var paneTextElements = document.querySelectorAll('.clients-cases__pane-text');
+// paneTextElements.forEach(function(el) {
+//     if (el.scrollHeight > el.clientHeight) {
+//         var sibling = el.nextElementSibling;
+//         if (sibling && sibling.classList.contains('clients-cases__pane-more')) {
+//             sibling.classList.add('show');
+//         }
+//     }
+// });
+
+var moreButtons = document.querySelectorAll('.clients-cases__pane-more');
+moreButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        var siblingText = this.previousElementSibling.innerHTML;
+        var popupContent = document.querySelector('#clients-cases-more-text .popup__content');
+        popupContent.innerHTML = siblingText;
+    });
+});
+
+// if ( $('.more-blocks').length ) {
+//     $('.more-blocks').each(function() {
+//         var blocks = $(this).children('.more-blocks__blocks'),
+//             showBlockCount = blocks.attr('data-show-blocks');
+//         blocks.children().each(function(index, el) {
+//             if (index <= showBlockCount - 1 ) {
+//                 setTimeout(function() {
+//                     el.addClass('block-show');
+//                 }, 400);
+//             }
+//         });
+//         $(this).children('.more-blocks__btn').click(function() {
+//            blocks.children().each(function(index, el) {
+//                 if (index > showBlockCount - 1 ) {
+//                     setTimeout(function() {
+//                         el.addClass('block-show');
+//                     }, 400);
+//                 }
+//             });
+//             $(this).hide();
+//         });
+//     });
+// }
+
+// Получаем все элементы с классом 'more-blocks'
+const moreBlocks = document.querySelectorAll('.more-blocks');
+
+// Перебираем каждый элемент с классом 'more-blocks'
+moreBlocks.forEach(function(moreBlock) {
+    // Получаем дочерние элементы с классом 'more-blocks__blocks'
+    const blocks = moreBlock.querySelector('.more-blocks__blocks');
+    
+    // Получаем количество блоков для отображения из атрибута 'data-show-blocks'
+    const showBlockCount = parseInt(blocks.getAttribute('data-show-blocks'));
+
+    // Находим элемент кнопки '.more-blocks__btn'
+        const btn = moreBlock.querySelector('.more-blocks__btn');
+
+    if (blocks && btn) {
+        // Получаем дочерние элементы блоков
+        const children = Array.from(blocks.children);
+        
+        // Показываем блоки с задержкой
+        children.forEach(function(el, index) {
+            if (index <= showBlockCount - 1) {
+                setTimeout(function() {
+                    el.classList.add('block-show');
+                }, 400 * (index + 1));
+            }
+        });
+        
+        // Обработчик клика на кнопке
+        btn.addEventListener('click', function() {
+            // Показываем скрытые блоки с задержкой после клика на кнопку
+            children.forEach(function(el, index) {
+                if (index > showBlockCount - 1) {
+                    setTimeout(function() {
+                        el.classList.add('block-show');
+                    }, 400 * (index - showBlockCount));
+                }
+            });
+            // Скрываем кнопку после показа скрытых блоков
+            btn.style.display = 'none';
+        });
+    } else if (blocks) {
+        // Получаем дочерние элементы блоков
+        const children = Array.from(blocks.children);
+        if (children) {
+            children.forEach(function(el, index) {
+                el.classList.add('block-show');
+            });
+        }
+    }
+});
+
+// Проверяем наличие элементов с классом 'secret' и ширину окна браузера больше 1023px
+if (document.querySelectorAll('.secret').length > 0 && window.innerWidth > 1023) {
+    // Получаем заголовки внутри элементов с классом 'secret__tile'
+    var sTitles = document.querySelectorAll('.secret__tile h3');
+    var titleH = 0;
+
+    // Проходимся по каждому заголовку и находим максимальную высоту
+    sTitles.forEach(function(el) {
+        if (el.offsetHeight >= titleH) {
+            titleH = el.offsetHeight;
+        }
+    });
+
+    // Устанавливаем максимальную высоту для всех заголовков
+    sTitles.forEach(function(el) {
+        el.style.height = titleH + 'px';
+    });
+}
