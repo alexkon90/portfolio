@@ -298,7 +298,24 @@
     }
 }
 @media (max-width: 767px) {
-
+    .solutions__top{
+        padding-right: 0;
+    }
+    .solutions-carousel__nav{
+        top: -45px;
+    }
+    .solutions-carousel__arrow{
+        width: 40px;
+        height: 40px;
+        padding: 12px;
+    }
+    .solutions__title{
+        margin-bottom: 50px;
+    }
+    .solutions-item{
+        padding: 20px;
+    }
+    .solutions-item__desc br{
+        display: none;
+    }
 }
-
-
