@@ -24,16 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Doctors carousel
     initSlider('.doctors-carousel', {
-        //slidesPerView: "auto",
-        slidesPerView: 3.9,
-        spaceBetween: 20,
+        slidesPerView: "auto",
+        spaceBetween: 16,
         navigation: {
             prevEl: '.doctors-carousel__prev',
             nextEl: '.doctors-carousel__next',
         },
         breakpoints: {
-            768: { spaceBetween: 30 },
-            1280: { spaceBetween: 60 },
+            768: { spaceBetween: 24 },
+            1280: { spaceBetween: 50 },
         }
     });
 
@@ -59,6 +58,45 @@ document.addEventListener('DOMContentLoaded', () => {
     imageSwiper.controller.control = textSwiper;
     textSwiper.controller.control = imageSwiper;
 
+    // Doctors filters
+    const filter = document.querySelector('.maindoctors-filter');
+
+    if (filter) {
+        const current = filter.querySelector('.maindoctors-filter__current');
+        const items = filter.querySelectorAll('.maindoctors-filter__item');
+
+        const activeItem = filter.querySelector('.maindoctors-filter__item.active');
+
+        if (activeItem) {
+            current.textContent = activeItem.textContent;
+        }
+
+        current.addEventListener('click', () => {
+            filter.classList.toggle('opened');
+        });
+
+        items.forEach(item => {
+            item.addEventListener('click', (e) => {
+
+                e.preventDefault();
+
+                items.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+
+                current.textContent = item.textContent;
+
+                filter.classList.remove('opened');
+            });
+
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!filter.contains(e.target)) {
+                filter.classList.remove('opened');
+            }
+        });
+    }
+
     // Phone mask
     const phoneInputs = document.querySelectorAll('.js_phone_mask');
 
@@ -78,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         input.addEventListener('blur', () => {
-
             if (mask.unmaskedValue === '7') {
                 mask.value = '';
             }
@@ -91,77 +128,79 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Header
     const header = document.querySelector('.header');
-    if (!header) return;
 
-    const toggleHeaderClass = () => {
-        if (window.scrollY > 30) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    };
+    if (header) {
+        const toggleHeaderClass = () => {
+            if (window.scrollY > 30) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
 
-    toggleHeaderClass();
-    window.addEventListener('scroll', toggleHeaderClass);
-    
+        toggleHeaderClass();
+        window.addEventListener('scroll', toggleHeaderClass);
+    }
 
     // Menu
     const modal = document.querySelector('.modalmain');
     const switcher = document.querySelector('.header-menu__switcher');
     const closeBtn = document.querySelector('.modalmain__close');
 
-    if (!modal || !switcher) return;
+    if (modal) {
+        if (!modal || !switcher) return;
 
-    const hasHover = window.matchMedia('(hover: hover)').matches;
+        const hasHover = window.matchMedia('(hover: hover)').matches;
 
-    if (hasHover) {
-        let openTimeout;
-        let closeTimeout;
+        if (hasHover) {
+            let openTimeout;
+            let closeTimeout;
 
-        const openMenu = () => {
-            clearTimeout(closeTimeout);
+            const openMenu = () => {
+                clearTimeout(closeTimeout);
 
-            openTimeout = setTimeout(() => {
-                modal.classList.add('open');
-            }, 150);
-        };
+                openTimeout = setTimeout(() => {
+                    modal.classList.add('open');
+                }, 150);
+            };
 
-        const closeMenu = () => {
-            clearTimeout(openTimeout);
+            const closeMenu = () => {
+                clearTimeout(openTimeout);
 
-            closeTimeout = setTimeout(() => {
+                closeTimeout = setTimeout(() => {
+                    modal.classList.remove('open');
+                }, 150);
+            };
+
+            switcher.addEventListener('mouseenter', openMenu);
+            modal.addEventListener('mouseenter', openMenu);
+
+            switcher.addEventListener('mouseleave', closeMenu);
+            modal.addEventListener('mouseleave', closeMenu);
+        }
+
+        else {
+            switcher.addEventListener('click', (e) => {
+                e.stopPropagation();
+                modal.classList.toggle('open');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (
+                    modal.classList.contains('open') &&
+                    !modal.contains(e.target) &&
+                    !switcher.contains(e.target)
+                ) {
+                    modal.classList.remove('open');
+                }
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
                 modal.classList.remove('open');
-            }, 150);
-        };
-
-        switcher.addEventListener('mouseenter', openMenu);
-        modal.addEventListener('mouseenter', openMenu);
-
-        switcher.addEventListener('mouseleave', closeMenu);
-        modal.addEventListener('mouseleave', closeMenu);
-    }
-
-    else {
-        switcher.addEventListener('click', (e) => {
-            e.stopPropagation();
-            modal.classList.toggle('open');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (
-                modal.classList.contains('open') &&
-                !modal.contains(e.target) &&
-                !switcher.contains(e.target)
-            ) {
-                modal.classList.remove('open');
-            }
-        });
-    }
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('open');
-        });
+            });
+        }
     }
 
     // Datepicker
@@ -170,6 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let calendar = flatpickr("#datepicker", {
         dateFormat: "d.m.Y",
         minDate: "today",
+        locale: {
+            rangeSeparator: " - "
+        },
         //maxDate: dt.setDate(dt.getDate() + 3),
         // dateFormat: "d.m.Y H:i",
         //noCalendar: true,
@@ -178,24 +220,60 @@ document.addEventListener('DOMContentLoaded', () => {
         // minDate: new Date(),
         // maxDate: new Date().fp_incr(7),
         // mode: "range",
-        locale: {
-            rangeSeparator: " - "
-        },
     });
-
-    // Custom select
-    const select = document.querySelector('#select');
-    if (select) {
-        new TomSelect(select, {
-            controlInput: null,
-            searchField: false,
-        });
-    }
 
     // Custom scrollbar
     document.querySelectorAll('.custom_scroll').forEach(el => {
         new SimpleBar(el);
-    })
+    });
+
+    // Select date
+    const selectContainer = document.querySelector('#mySelect');
+
+    if (selectContainer) {
+        const toggleBtn = selectContainer.querySelector('.custom-select__toggle');
+        const dropdown = selectContainer.querySelector('.custom-select__dropdown');
+        const options = selectContainer.querySelectorAll('.custom-select__option');
+        const hiddenInput = selectContainer.querySelector('.custom-select__input');
+
+        // 1. Открытие / Закрытие по клику на кнопку
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            selectContainer.classList.toggle('is-open');
+            
+            // Перестраховка: если селект открывается, пинаем SimpleBar пересчитать высоту контента.
+            // Берем инстанс плагина, который SimpleBar автоматически вешает на сам DOM-элемент
+            const simpleBarInstance = SimpleBar.instances.get(dropdown);
+            if (simpleBarInstance) {
+                simpleBarInstance.recalculate();
+            }
+        });
+
+        // 2. Выбор опции
+        options.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                const value = option.dataset.value;
+                const text = option.innerText;
+
+                toggleBtn.innerText = text;
+                hiddenInput.value = value;
+
+                options.forEach(opt => opt.classList.remove('is-selected'));
+                option.classList.add('is-selected');
+
+                selectContainer.classList.remove('is-open');
+            });
+        });
+
+        // 3. Закрытие селекта при клике в любое другое место экрана
+        document.addEventListener('click', (e) => {
+            if (!selectContainer.contains(e.target)) {
+                selectContainer.classList.remove('is-open');
+            }
+        });
+    }
 
     // Up
     const upButton = document.querySelector('.contacts-up');
@@ -328,21 +406,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-
-
-
-
-
-
-
-
-    // 5. Инициализация слайдера Swiper
+    // Animation
     const equipmentSwiper = initSlider('.equipment-carousel', {
         loop: true,
         slidesPerView: "auto",
         spaceBetween: 8,
-        speed: 800,
+        speed: 500,
         initialSlide: 0,
         autoplay: { 
             delay: 2000, 
@@ -359,301 +428,99 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
-
-
-
-
-    // Animation
+    // Регистрируем плагин ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // СОЗДАЕМ ОДИН ОБЩИЙ ТАЙМЛАЙН. Прыгать больше нечему.
-    const masterTl = gsap.timeline({
+    // 1. НАЧАЛЬНЫЕ СОСТОЯНИЯ (gsap.set)
+    // Фон и первый блок изначально спрятаны внизу страницы (yPercent: 100)
+    gsap.set('.equipment-main__bg', {
+        yPercent: 100
+    });
+    gsap.set('.equipment-block-1', {
+        yPercent: 100,
+        autoAlpha: 0
+    });
+
+    // Второй блок ждет своего часа еще чуть ниже
+    gsap.set('.equipment-block-2', {
+        y: 40,
+        autoAlpha: 0
+    });
+
+    // Буквы заголовков скрыты
+    gsap.set('.equipment-main__title_1 span', {
+        opacity: 0,
+        y: 80
+    });
+    gsap.set('.equipment-main__title_2 span', {
+        opacity: 0,
+        y: 80
+    });
+
+    // 2. ТРИГГЕР ПОЯВЛЕНИЯ (Эффект наезда снизу)
+    // Эта анимация срабатывает, пока секция только ПОДНИМАЕТСЯ к экрану пользователя
+    gsap.to(['.equipment-main__bg', '.equipment-block-1'], {
+        yPercent: 0,
+        autoAlpha: 1,
+        ease: 'none',
         scrollTrigger: {
             trigger: '.equipment-main',
-            start: 'top top',       // Фиксируем секцию сразу, как только она дошла до верха экрана
-            end: '+=2000',          // Длина всего процесса прокрутки (сделай больше, если нужно медленнее)
-            scrub: 1,               // Плавный зажим за колесиком
-            pin: true,              // Жестко держим экран
-            anticipatePin: 1        // Сглаживает инициализацию фиксации
+            //start: 'top bottom', // Начинаем, когда верх секции показался внизу экрана
+            start: 'top bottom+=10000',
+            end: 'top top',       // Заканчиваем ровно тогда, когда секция заняла весь экран
+            scrub: true
         }
     });
 
-    // ШАГ 1: Из под нижнего края экрана выезжает ФОН и первый ТЕКСТ (Эффект шторки)
-    masterTl.to(['.equipment-main__bg', '.equipment-block-1'], {
-        y: '0%',
-        opacity: 1,
-        duration: 0.5,
-        ease: 'none'
+    // 3. ОСНОВНОЙ ТАЙМЛАЙН С ФИКСАЦИЕЙ (Pin)
+    // Срабатывает ТОЛЬКО тогда, когда секция уже встала на весь экран (top top)
+    const masterTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.equipment-main',
+            start: 'top top',
+            end: '+=1000',
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1
+        }
     });
 
-    // ШАГ 2: Убираем скругление углов у шторки, когда она полностью встала на весь экран
-    masterTl.to('.equipment-main__bg', {
-        duration: 0.3,
-        ease: 'none'
-    });
-
-    masterTl.fromTo('.equipment__title_1 span', {
-        opacity: 0,
-        y: 80 
-    },
-    {
+    // Шаг 1: Секция зафиксировалась, плавно проявляем первый заголовок
+    masterTl.to('.equipment-main__title_1 span', {
         opacity: 1,
         y: 0,
-        duration: 2,
-        ease: 'power3.out',
-        overwrite: 'auto'
+        duration: 1.2,
+        ease: 'power3.out'
     });
 
-    // ШАГ 3: Растворяем ПЕРВЫЙ текст (он уплывает чуть вверх). Фон при этом замер и стоит!
+    // Шаг 2: Уводим первый блок вверх, освобождая место второму
     masterTl.to('.equipment-block-1', {
-        opacity: 0,
-        y: '-50px',
+        autoAlpha: 0,
+        y: -40,
         duration: 0.8,
         ease: 'power1.inOut'
     });
 
-    // ШАГ 4: Короткая пауза на чистом фоне для красоты
+    // Пауза между блоками
     masterTl.to({}, { duration: 0.3 });
 
-    // ШАГ 5: Плавно проявляем ВТОРOЙ текст (он изящно приподнимается со своих 40px в 0)
+    // Шаг 3: Проявляем и поднимаем второй блок
     masterTl.to('.equipment-block-2', {
+        y: 0,
         autoAlpha: 1,
-        y: '0%',
-        duration: 1.2,
+        duration: 1,
         ease: 'power2.out',
-        onStart: () => {
-            equipmentSwiper.update();
-            equipmentSwiper.loopFix();
-        }
     });
 
-    masterTl.fromTo('.equipment__title_2 span', {
-        opacity: 0,
-        y: 80 
-    },
-    {
+    // Шаг 4: Анимируем заголовок второго блока
+    masterTl.to('.equipment-main__title_2 span', {
         opacity: 1,
         y: 0,
-        duration: 2,
-        ease: 'power3.out',
-        overwrite: 'auto'
-    });
+        duration: 1.2,
+        ease: 'power3.out'
+    }, "-=0.6");
 
-    // ШАГ 6: Финальная пауза, чтобы успеть почитать второй блок, перед тем как скролл отпустит сайт вниз
+    // Финальная пауза перед тем, как страница поскроллится дальше
     masterTl.to({}, { duration: 0.8 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //gsap.registerPlugin(ScrollTrigger);
-
-    //const outsideItems = document.querySelectorAll('.equipment__section');
-
-    //// 1. Анимация фона при скролле
-    ////gsap.to('.equipment__bg', {
-    ////    width: '100vw',
-    ////    height: '100vh',
-    ////    borderRadius: 0,
-    ////    ease: 'power2.out',
-    ////    scrollTrigger: {
-    ////        trigger: '.equipment',
-    ////        start: 'top 80%',
-    ////        end: 'top top',
-    ////        scrub: 1,
-    ////    }
-    ////});
-
-    //gsap.fromTo('.equipment__bg', 
-    //    {
-    //        top: '100%',
-    //        height: '0vh',
-    //    },
-    //    {
-    //        top: '0%',
-    //        height: '100vh',
-    //        ease: 'none', // Для scrub-анимаций лучше использовать 'none', чтобы движение идеально следовало за пальцем/колесом
-
-    //        scrollTrigger: {
-    //            trigger: '.equipment',
-    //            start: 'top 100%', // Анимация начнется, как только верх секции покажется внизу экрана
-    //            end: 'top top',     // Закончится, когда верх секции дойдет до верха экрана
-    //            scrub: true,        // Плавная привязка к скроллу
-    //        }
-    //    }
-    //);
-
-    //// 2. Закрепление (Pin) секции
-    //const tl = gsap.timeline({
-    //    scrollTrigger: {
-    //        trigger: '.equipment',
-    //        start: 'top top',
-    //        end: '+=6000',
-    //        scrub: 1,
-    //        pin: true,
-    //    }
-    //});
-
-    //// 3. ОБНОВЛЕННАЯ ФУНКЦИЯ АНИМАЦИИ (Заголовок + Описание)
-    //function playTitle(el) {
-    //    // Находим спаны и в заголовке, и в описании текущего слайда
-    //    const titleSpans = el.querySelectorAll('.equipment__title span');
-    //    const descSpans = el.querySelectorAll('.equipment__desc span');
-        
-    //    // Объединяем их в один массив, чтобы анимация шла последовательно: сначала заголовок, потом описание
-    //    const allSpans = [...titleSpans, ...descSpans];
-        
-    //    // Убиваем прошлые анимации на этих элементах, чтобы избежать конфликтов при быстром переключении
-    //    gsap.killTweensOf(allSpans);
-
-    //    // Сбрасываем позиции и анимируем появление
-    //    gsap.fromTo(allSpans, 
-    //        {
-    //            opacity: 0,
-    //            y: -80 
-    //        },
-    //        {
-    //            opacity: 1,
-    //            y: 0,
-    //            stagger: 0.08,
-    //            duration: 0.8,
-    //            ease: 'power3.out',
-    //            overwrite: 'auto'
-    //        }
-    //    );
-    //}
-
-    //// 4. Отдельный ScrollTrigger для ПЕРВОГО появления контента при скролле
-    //ScrollTrigger.create({
-    //    trigger: '.equipment',
-    //    start: 'top 20%', 
-    //    onEnter: () => {
-    //        const activeSection = document.querySelector('.equipment__section.active');
-    //        if (activeSection) {
-    //            playTitle(activeSection);
-    //        }
-    //    },
-    //    once: true 
-    //});
-
-    //// Переменная для отслеживания готовности слайдера
-    //let isSliderReady = false;
-
-
-
-    //tl.fromTo('.equipment-carousel',
-    //    {
-    //        y: 200,
-    //        opacity: 0,
-    //    },
-    //    {
-    //        y: 0,
-    //        opacity: 1,
-    //        duration: 1,
-    //    }
-    //);
-    //tl.fromTo('.equipment-carousel__nav',
-    //    {
-    //        opacity: 0,
-    //        y: 50,
-    //    },
-    //    {
-    //        opacity: 1,
-    //        y: 0,
-    //        duration: 0.5,
-    //    }
-    //);
-    //tl.to({}, {
-    //    duration: 1,
-    //});
-    //tl.to('.equipment-scene-1', {
-    //    autoAlpha: 0,
-    //    y: -150,
-    //    duration: 0.5,
-
-    //});
-    //tl.to('.equipment-scene-2', {
-    //    autoAlpha: 1,
-    //    duration: 1,
-    //});
-    //tl.fromTo('.individual__title span', {
-    //        opacity: 0,
-    //        y: -80 
-    //    },
-    //    {
-    //        opacity: 1,
-    //        y: 0,
-    //        stagger: 0.1,
-    //        duration: 0.8,
-    //        ease: 'power3.out',
-    //        overwrite: 'auto'
-    //});
-    //tl.fromTo('.individual__text_1 span',
-    //    {
-    //        opacity: 0,
-    //        y: -80 
-    //    },
-    //    {
-    //        opacity: 1,
-    //        y: 0,
-    //        stagger: 0.08, 
-    //        duration: 0.8,
-    //        ease: 'power3.out',
-    //        overwrite: 'auto'
-    //    }
-    //);
-    //tl.fromTo('.individual__text_2 span',
-    //    {
-    //        opacity: 0,
-    //        y: -80 
-    //    },
-    //    {
-    //        opacity: 1,
-    //        y: 0,
-    //        stagger: 0.08, 
-    //        duration: 0.8,
-    //        ease: 'power3.out',
-    //        overwrite: 'auto'
-    //    }
-    //);
-    //tl.fromTo('.individual__btn',
-    //    {
-    //        opacity: 0,
-    //        y: 50,
-    //    },
-
-    //    {
-    //        opacity: 1,
-    //        y: 0,
-    //        duration: 0.3,
-    //    }
-    //);
-});
+ });
