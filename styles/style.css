@@ -471,7 +471,7 @@ h3, .h3{
 /*-----------------------------PORTFOLIO-------------------------------*/
 .main-section{
     min-height: 100%;
-    padding: 70px 0;
+    padding: 30px 0;
     background-image: url(../images/backgorund.jpg);
 }
 .portfolio{
@@ -489,12 +489,12 @@ h3, .h3{
 .portfolio__row{
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px;
+    gap: 25px;
 }
 .portfolio__col{
-    flex: 0 0 33%;
     max-width: 33%;
-    padding: 0 15px 30px;
+    flex: 0 0 calc((100% - 50px) / 3);
+    min-width: 0;
 }
 .portfolio-block{
     position: relative;
@@ -790,7 +790,7 @@ h3, .h3{
         max-width: 720px;
     }
     .portfolio__col{
-        flex: 0 0 50%;
+        flex: 0 0 calc((100% - 25px) / 2);
         max-width: 50%;
     }
     .portfolio-block__title{
@@ -812,10 +812,8 @@ h3, .h3{
     }
 }
 @media only screen and (max-width: 579px) {
-    .portfolio__row{
-        display: block;
-    }
     .portfolio__col{
         max-width: 100%;
+        flex: 0 0 100%;
     }
 }
