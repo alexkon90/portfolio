@@ -449,10 +449,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Буквы заголовков скрыты
-    gsap.set('.equipment-main__title_1 span', {
-        opacity: 0,
-        y: 80
-    });
+    //gsap.set('.equipment-main__title_1 span', {
+    //    opacity: 0,
+    //    y: 80
+    //});
     gsap.set('.equipment-main__title_2 span', {
         opacity: 0,
         y: 80
