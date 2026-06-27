@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let calendar = flatpickr("#datepicker", {
         dateFormat: "d.m.Y",
         minDate: "today",
+        disableMobile: true,
         locale: {
             rangeSeparator: " - "
         },

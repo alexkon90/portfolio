@@ -2883,9 +2883,7 @@ img {
   color: #b7b7b7;
 }
 @media (max-width: 1279px) {
-  .footer__inner {
-    display: block;
-  }
+
   .footer__leftside {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
@@ -2894,7 +2892,8 @@ img {
   }
 }
 @media (max-width: 959px) {
-  .footer__inner {
+    .footer__inner {
+      display: block;
     padding-bottom: 50px;
   }
   .footer__leftside {
