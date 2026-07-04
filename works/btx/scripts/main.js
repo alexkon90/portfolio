@@ -221,6 +221,23 @@ $(document).ready(function(){
 		});
 	}
 
+    // Certificates
+    const certificatesSwiper = new Swiper('.certificates-carousel', {
+        loop: false,
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        speed: 500,
+        navigation: {
+            prevEl: '.certificates-carousel__prev',
+            nextEl: '.certificates-carousel__next',
+        },
+        breakpoints: {
+            768: { 
+                spaceBetween: 24,
+            }
+        }
+    });
+
 	// Fancybox
 	if($('.fancybox').length > 0){
 		$(".fancybox").fancybox({
