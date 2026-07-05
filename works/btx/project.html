@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+	<meta charset="UTF-8">
+	<title>Проект</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="stylesheet" href="./styles/new.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="tg">
+            <div class="tg__body">
+                <div class="tg__text">
+                    <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.3749 7.31846C6.74359 4.91938 10.3236 3.33777 12.1148 2.57361C17.2292 0.391776 18.2919 0.0127698 18.9846 0.00012133C19.1369 -0.00249777 19.4776 0.0362266 19.6982 0.219862C19.8845 0.37492 19.9358 0.584381 19.9603 0.731393C19.9848 0.878405 20.0154 1.2133 19.9911 1.47498C19.714 4.46174 18.5147 11.7098 17.9046 15.055C17.6465 16.4705 17.1382 16.9451 16.6461 16.9916C15.5766 17.0925 14.7645 16.2667 13.7287 15.5702C12.1078 14.4805 11.1921 13.8021 9.61879 12.7387C7.80053 11.5097 8.97923 10.8343 10.0154 9.73042C10.2866 9.44153 14.9987 5.04555 15.0899 4.64677C15.1013 4.59689 15.1119 4.41098 15.0042 4.31282C14.8965 4.21465 14.7376 4.24822 14.6229 4.27492C14.4604 4.31276 11.871 6.06814 6.85486 9.54107C6.11988 10.0587 5.45416 10.3109 4.8577 10.2977C4.20015 10.2831 2.93528 9.91638 1.99498 9.60288C0.84166 9.21836 -0.0749729 9.01506 0.00484519 8.36203C0.0464194 8.0219 0.503103 7.67404 1.3749 7.31846Z" fill="#28A8EA"></path>
+                    </svg>
+                    Baitex в Telegram, разбираем кейсы, делимся опытом, подписывайтесь!
+                </div>
+                <a href="#" class="tg__btn btn">Подписаться</a>
+            </div>
+            <div class="tg__close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.5 13.5L13.5 4.5M4.5 4.5L13.5 13.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+        </div>
+        <div class='center-wrapper center-wrapper_wide'>
+            <div class="header__body">
+                <div class="header-logo">
+                    <a href="#" class="header-logo__img">
+                        <img src="img/logo.png" srcset="img/logo.png 1x, img/logo2х.png 2x">
+                    </a>
+                </div>
+                <nav class="header-menu">
+                    <div class="bg-menu"></div>
+                    <div class="header-menu__body">
+                        <div class="header-menu__close"><img src='img/Icon-menu-close.svg' alt='img'></div>      
+                        <ul class="header-menu__list">
+                            <li><a href="#">Компания</a></li>
+                            <li class="has-submenu">
+                                <span>
+                                    Услуги
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.75 0.75L5.75 5.75L10.75 0.75" stroke="#232323" stroke-width="1.5" stroke-linecap="round" />
+                                    </svg>
+                                </span>
+                                <div class="header-menu__dropdown">
+                                    <ul class="header-menu__submenu">
+                                        <li><a href="#">Создание сайтов</a></li>
+                                        <li><a href="#">Интернет-магазины</a></li>
+                                        <li><a href="#">Поддержка и доработка</a></li>
+                                        <li><a href="#">Внедрение Битрикс24</a></li>
+                                        <li><a href="#">Продвижение сайтов</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">Портфолио</a></li>
+                            <li class="current"><a href="#">Отзывы</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                        <div class="mobile-contacts">
+                            <a href="#" class="mobile-contacts__callback btn js-btn-callback">Оставить заявку</a>
+                            <a href="tel:+74954143525" class="mobile-contacts__phone">+7 (495) 414-35-25</a>
+                            <a href="mailto:mail@baitex.ru" class="mobile-contacts__mail">mail@baitex.ru</a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="header-contacts">
+                    <div class="header-phone">
+                        <a href="tel:+74954143525" class="header-phone__number">+7 (495) 414-35-25</a>
+                        <a href="#" class="header-phone__callback">mail@baitex.ru</a>
+                    </div>
+                    <div class="header-social">
+                        <a href="#" class="header-social__btn"><img src='./img/social-telegram2.svg' alt='img'></a>
+                        <a href="#" class="header-social__btn"><img src='./img/social-max.svg' alt='img'></a>
+                        <a href="tel:+74954143525" class="header-social__btn header-social__btn_mobile"><img src='./img/social-phone.svg' alt='img'></a>
+                    </div>
+                    <div class="header-menu__toggle">
+                        <img src='img/icon-menu.svg' alt='img'>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end center-wrapper center-wrapper_wide -->
+    </header><!-- end header -->
+
+    <section class="breadcrumbs">
+        <div class='center-wrapper'>
+            <ul class="breadcrumbs__list">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Портфолио</a></li>
+                <li>Внедрение CRM Битрикс24 для сети магазинов «Duck Tex»</li>
+            </ul>
+        </div><!-- end center-wrapper -->
+    </section><!-- end breadcrumbs -->
+
+    <section class="main">
+        <div class='center-wrapper'>
+            <div class="project">
+                <h1 class="main__title">Внедрение CRM Битрикс24 для сети магазинов «Duck Tex»</h1>
+                <div class="project__body">
+                    <div class="project__content">
+                        <div class="project-img"><img src='./img/content/projects/project-image.png' alt='img'></div>
+                        <div class="project-stat">
+                            <div class="project-stat__item">
+                                <div class="project-stat__caption">В 2 раза</div>
+                                <div class="project-stat__desc">Поднялся CTR страниц в поиске</div>
+                            </div>
+                            <div class="project-stat__item">
+                                <div class="project-stat__caption">В 4 раза</div>
+                                <div class="project-stat__desc">Увеличилось число азказов</div>
+                            </div>
+                            <div class="project-stat__item">
+                                <div class="project-stat__caption">С 6 500 до 13 000</div>
+                                <div class="project-stat__desc">Визитов вырос поисковой трафик</div>
+                            </div>
+                        </div>
+                        <div class="project-section">
+                            <h2>Проблемы до обращения к нам</h2>
+                            <p>По мере расширения бизнеса и увеличения оборота организация столкнулась с проблемой потери части заказов. Клиенты звонили или писали, но их информация терялась в мессенджерах, таблицах и записных книжках. При этом руководитель не видел реальную картину продаж и не мог контролировать процесс. Сегментировать клиентов и делать целевые рассылки также было сложно. Для наведения порядка в продажах и повышения эффективности было принято решение внедрить Битрикс24.</p>
+                        </div>
+                        <div class="project-section">
+                            <h2>Задачи</h2>
+                            <p>Проведя анализ сложившейся ситуации был сформулирован список задач для решения проблем клиента.</p>
+                            <div class="project-steps">
+                                <div class="project-steps__item">
+                                    <div class="project-steps__num">01</div>
+                                    <div class="project-steps__desc">Разработать поиск по каталогу, артикулу и подбором запасных частей</div>
+                                </div>
+                                <div class="project-steps__item">
+                                    <div class="project-steps__num">02</div>
+                                    <div class="project-steps__desc">Сделать удобную мобильную версию</div>
+                                </div>
+                                <div class="project-steps__item">
+                                    <div class="project-steps__num">03</div>
+                                    <div class="project-steps__desc">Увеличить скорость загрузки сайта и показатели PageSpeed Insights</div>
+                                </div>
+                                <div class="project-steps__item">
+                                    <div class="project-steps__num">04</div>
+                                    <div class="project-steps__desc">Настроить интеграцию с 1С: Предприятие и Битрикс24</div>
+                                </div>
+                                <div class="project-steps__item">
+                                    <div class="project-steps__num">05</div>
+                                    <div class="project-steps__desc">Перенести контент и заполнить изображениями</div>
+                                </div>
+                                <div class="project-steps__item">
+                                    <div class="project-steps__num">06</div>
+                                    <div class="project-steps__desc">Продвинуть сайт в поисковых системах</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-section">
+                            <h2>План работ</h2>
+                            <p>Проведя анализ сложившейся ситуации был составлен список задач для решения проблем заказчика.</p>
+                            <ul>
+                                <li>Выбрать подходящее решение Битрикс24;</li>
+                                <li>Настроить интеграции с сайтом, электронной почтой, мессенджерами и соцсетями;</li>
+                                <li>Подключить IP-телефонию и настроить сценарии распределения звонков;</li>
+                                <li>Подключить интеграцию с 1С: Предприятие для обмена номенклатурой;</li>
+                                <li>Настроить воронки лидов и сделок, карточки покупателей и компаний;</li>
+                                <li>Настроить ролевые модели и права доступа для сотрудников;</li>
+                                <li>Настроить отчеты по продажам и аналитику по рекламным каналам.</li>
+                            </ul>
+                        </div>
+                        <div class="project-section">
+                            <h2>Выбор тарифа и базовые настройки</h2>
+                            <p>Поскольку у клиента уже был разработан интернет-магазин на 1С-Битрикс в редакции Бизнес, приняли решение перейти на редакцию Битрикс24: Интернет-магазин + CRM, так как удобнее, когда заказы сайта и CRM хранятся в единой базе.</p>
+                            <div class="project-section__img"><img src='./img/content/projects/project-image1.jpg' alt='img'></div>
+                        </div>
+                        <div class="project-section">
+                            <h2>Интеграции с сервисами</h2>
+                            <p>Чтобы не терялись заказы, реализовали интеграцию со всеми каналами продаж и коммуникаций для работы в одном окне, а также подключили IP-телефонию.</p>
+                            <p>В случае любого звонка, заполненной формы, письма, сообщения в мессенджер или на Авито в CRM автоматически создается сделка, как следствие вероятность не обработки заказа из-за человеческого фактора сводится к нулю.</p>
+                            <div class="project-section__img"><img src='./img/content/projects/project-image2.jpg' alt='img'></div>
+                        </div>
+                        <div class="project-section">
+                            <h2>Интеграция с 1С: Управление торговлей</h2>
+                            <p>Складскую номенклатуру клиент вел в 1С и поскольку конфигурация не дорабатывалась, мы реализовали интеграцию средствами штатного модуля обмена.</p>
+                            <div class="project-scheme">
+                                <div class="project-scheme__item"><img src='./img/project-scheme-icon1.svg' alt='img'></div>
+                                <div class="project-scheme__arrow"><img src='./img/project-scheme-arrow.svg' alt='img'></div>
+                                <div class="project-scheme__item"><img src='./img/project-scheme-icon2.svg' alt='img'></div>
+                                <div class="project-scheme__arrow"><img src='./img/project-scheme-arrow.svg' alt='img'></div>
+                                <div class="project-scheme__item"><img src='./img/project-scheme-icon3.svg' alt='img'></div>
+                            </div>
+                        </div>
+                        <div class="project-section">
+                            <h2>Настройка воронок продаж</h2>
+                            <p>Все розничные и оптовые продажи идут по сценариям, которые мы отразили в этапах воронок продаж. Теперь менеджер обязан пройти все этапы воронки, собирается полная статистика по продажам, заявки автоматически распределяются между менеджерами, процесс обработки заказов полностью прозрачен.</p>
+                            <div class="project-section__img"><img src='./img/content/projects/project-image3.jpg' alt='img'></div>
+                        </div>
+                        <div class="project-section">
+                            <h2>Настройка карточек сделок и клиентов</h2>
+                            <p>Настроили вид карточек сделок в CRM согласно технического задания. Карточки под каждую воронку продаж оригинальные. Создавать и настраивать поля могут только администраторы портала, сотрудники только видят их и заполняют. При этом каждый отдел видит только доступную ему информацию и не тратит время на лишние данные.</p>
+                            <div class="project-section__img"><img src='./img/content/projects/project-image4.jpg' alt='img'></div>
+                        </div>
+                        <div class="project-section">
+                            <h2>Настройка IP-телефонии</h2>
+                            <p>Подключили телефонию через приложение MANGO OFFICE для Битрикс24. Настроили сценарии распределения входящих звонков между сотрудниками, в зависимости от нагрузки. Записи разговоров сохраняются в карточке клиента. Подключили аналитику звонков, благодаря которой руководитель мониторит пропущенные звонки и среднее время реакции менеджера. Звонки можно принимать как на рабочих компьютерах, так и на личных мобильных телефонах. При этом звонки фиксируются в Битрикс24.</p>
+                            <div class="project-section__img"><img src='./img/content/projects/project-image5.jpg' alt='img'></div>
+                        </div>
+                        <div class="project-section">
+                            <h2>Настройка отчетов по продажам</h2>
+                            <p>Настроили аналитические отчеты по продажам. У руководителя появились инструменты контроля за сотрудниками: план продаж, эффективность менеджеров, анализ телефонных звонков.</p>
+                            <div class="project-section__img"><img src='./img/content/projects/project-image6.jpg' alt='img'></div>
+                        </div>
+                        <div class="project-section">
+                            <h2>Настройка прав доступа</h2>
+                            <p>Настроили ролевые модели и права доступа благодаря чему каждый сотрудник работает только с той информацией, которая ему необходима. Установлены четкие зоны ответственности с разделением обязанностей.</p>
+                            <div class="project-section__img"><img src='./img/content/projects/project-image7.jpg' alt='img'></div>
+                        </div>
+                        <div class="project-section">
+                            <h2>Обучение сотрудников заказчика</h2>
+                            <p>Закончив работы, клиенту были предоставлены инструкции по самостоятельному управлению CRM-системой. Для разных ролей (администраторы, руководители, менеджеры по продажам, бухгалтерия) были разработаны разные инструкции и настроены разные права доступа. После изучения инструкций для сотрудников заказчика было проведено обучение с демонстрацией экрана в онлайн-режиме.</p>
+                        </div>
+                        <div class="project-section">
+                            <h2>Результат</h2>
+                            <ul>
+                                <li>Перевели работу отдела продаж в Битрикс24, все данные в одном месте с быстрым доступом к истории взаимодействий;
+                                <li>Настроили интеграции с Telegram, электронной почтой, IP-телефонией и социальными сетями. Ни одно обращение не теряется, все попадает в CRM;</li>
+                                <li>Настроили интеграцию с 1С: Предприятие для обмена номенклатурой;</li>
+                                <li>Настроили воронки продаж для опта и для розницы, добавили автоматическое распределение заказов между менеджерами;</li>
+                                <li>Настроили ролевые модели и права доступа для сотрудников, установлены четкие зоны ответственности с разделением обязанностей;</li>
+                                <li>Настроили аналитические отчеты по продажам с автоматической отправкой уведомлений руководству;</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project__rightside">
+                        <div class="project-info">
+                            <div class="project-info__block">
+                                <div class="project-info__caption">Сайт</div>
+                                <div class="project-info__text"><a href="#">1svarochnii.ru</a></div>
+                                <div class="project-info__caption">Клиент</div>
+                                <div class="project-info__text">В сети магазинов DUCK TEX представлены ткани, из которых можно шить комфортные, стильные и трендовые изделия на каждый день.</div>
+                            </div>
+                            <div class="project-info__block">
+                                <div class="project-info__caption">Сфера</div>
+                                <div class="project-info__text">Комплектующие и расходные материалы для 3D-принтеров</div>
+                                <div class="project-info__caption">Тип проекта</div>
+                                <div class="project-info__text">SEO и реклама</div>
+                            </div>
+                            <div class="project-info__block">
+                                <div class="project-info__caption">Что сделали в проекте</div>
+                                <div class="project-info__text">Поисковая оптимизация SEO для интернет-магазинов</div>
+                            </div>
+                            <div class="project-info__block">
+                                <div class="project-info-free">
+                                    <div class="project-info-free__title">Бесплатная консультация</div>
+                                    <div class="project-info-free__desc">Запишитесь на бесплатную консультацию</div>
+                                    <a href="#" class="project-info-free__btn btn btn_full">Записаться</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-review">
+                    <h2 class="project-review__title">Отзыв заказчика</h2>
+                    <div class="project-review__body">
+                        <a href="./img/content/review-image1.jpg" data-fancybox="reviews" class="project-review__img fancybox"><img src='./img/content/review-image1.jpg' alt='img'></a>
+                        <div class="project-review__content">
+                            <div class="project-review__name">Тараканов М. Е.</div>
+                            <div class="project-review__post">Директор компании «ТехДеталь»</div>
+                            <div class="project-review__desc">
+                                <p>От лица интернет-магазина ТехДеталь выражаю благодарность нашему партнеру - компанию Baitex за разработку и продвижение сайта techdetail.ru.<br> В ходе сотрудничества работники компании проявили себя как настоящие профессионалы в области разработки сайтов, продвижения в поисковой системе Яндекс и реализации интеграции разной сложности.</p>
+                                <p>Сотрудники Baitex продемонстрировали способность гибко и своевременно реагировать на наши запросы, давать рекомендации и обосновывать их.<br> В результате сотрудничества мы получили продукт, который задумывался изначально, а все поставленные цели были достигнуты.</p>
+                                <p>Сотрудники Baitex продемонстрировали способность гибко и своевременно реагировать на наши запросы, давать рекомендации и обосновывать их.<br> В результате сотрудничества мы получили продукт, который задумывался изначально, а все поставленные цели были достигнуты.</p>
+                                <p>Сотрудники Baitex продемонстрировали способность гибко и своевременно реагировать на наши запросы, давать рекомендации и обосновывать их.<br> В результате сотрудничества мы получили продукт, который задумывался изначально, а все поставленные цели были достигнуты.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end project -->
+
+            <div class="projects section-block">
+                <h2 class="section-block__title">Наши проекты</h2>
+                <div class="projects-carousel">
+                    <div class="projects-carousel__slide">
+                        <div class="projects-item">
+                            <div class="projects-item__img">
+                                <div class="projects-item__labels">
+                                    <div class="projects-item__label label_orange">1C</div>
+                                </div>
+                                <a href="#"><img src='./img/content/projects/projects-image1.jpg' srcset="img/content/projects/projects-image1.jpg 1x, img/content/projects/projects-image1-2x.jpg 2x" alt='img'></a>
+                            </div>
+                            <div class="projects-item__content">
+                                <div class="projects-item__title">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей</div>
+                                <div class="projects-item__text">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей для автомобилей для автомобилей</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects-carousel__slide">
+                        <div class="projects-item">
+                            <div class="projects-item__img">
+                                <div class="projects-item__labels">
+                                    <div class="projects-item__label label_blue">Битрикс24</div>
+                                </div>
+                                <a href="#"><img src='./img/content/projects/projects-image2.jpg' srcset="img/content/projects/projects-image2.jpg 1x, img/content/projects/projects-image2.jpg 2x" alt='img'></a>
+                            </div>
+                            <div class="projects-item__content">
+                                <div class="projects-item__title">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей</div>
+                                <div class="projects-item__text">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей для автомобилей для автомобилей</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects-carousel__slide">
+                        <div class="projects-item">
+                            <div class="projects-item__img">
+                                <div class="projects-item__labels">
+                                    <div class="projects-item__label label_green">Интеграции</div>
+                                    <div class="projects-item__label label_red">1С-Битрикс</div>
+                                </div>
+                                <a href="#"><img src='./img/content/projects/projects-image3.jpg' srcset="img/content/projects/projects-image3.jpg 1x, img/content/projects/projects-image3.jpg 2x" alt='img'></a>
+                            </div>
+                            <div class="projects-item__content">
+                                <div class="projects-item__title">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей</div>
+                                <div class="projects-item__text">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей для автомобилей для автомобилей</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects-carousel__slide">
+                        <div class="projects-item">
+                            <div class="projects-item__img"><a href="#"><img src='./img/content/projects/projects-image2.jpg' srcset="img/content/projects/projects-image2.jpg 1x, img/content/projects/projects-image2.jpg 2x" alt='img'></a></div>
+                            <div class="projects-item__content">
+                                <div class="projects-item__title">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей</div>
+                                <div class="projects-item__text">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей для автомобилей для автомобилей</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end projects -->
+        </div><!-- end center-wrapper -->
+    </section><!-- end main -->
+
+    <section class="section callback callback_bottom">
+        <div class='center-wrapper center-wrapper_big'>
+            <div class="callback__body">
+                <div class="callback__content">
+                    <h2 class="callback__title section__title">Остались вопросы?</h2>
+                    <div class="callback__text">Оставьте заявку, и наши специалисты подберут<br> лучшее решение</div>
+                    <a href="#" class="callback__btn btn js-btn-callback">Консультация эксперта</a>
+                </div>
+            </div>
+        </div><!-- end center-wrapper center-wrapper_big -->
+    </section><!-- end callback callback_bottom -->
+
+    <footer class="footer">
+        <div class='center-wrapper'>
+            <div class="footer__body">
+                <div class="footer__top">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo__img">
+                            <img src="img/logo.png" srcset="img/logo.png 1x, img/logo2х.png 2x">
+                        </a>
+                    </div>
+                    <nav class="footer-menu">
+                        <ul class="footer-menu__list">
+                            <li><a href="#">Компания</a></li>
+                            <li><a href="#">Услуги</a></li>
+                            <li><a href="#">Портфолио</a></li>
+                            <li><a href="#">Отзывы</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__center">
+                    <div class="footer__row">
+                        <div class="footer__col footer__col_adress">
+                            <div class="footer-address">
+                                <div class="footer-address__caption">Москва</div>
+                                <div class="footer-address__text">Рязанский проспект, 97к2</div>
+                            </div>
+                        </div>
+                        <div class="footer__col footer__col_adress">
+                            <div class="footer-address">
+                                <div class="footer-address__caption">Нижний Новгород</div>
+                                <div class="footer-address__text">ул. Московское шоссе, 12</div>
+                            </div>
+                        </div>
+                        <div class="footer__col footer__col_phone">
+                            <a href="tel:+74954143525" class="footer-phone">+7 (495) 414-35-25</a>
+                        </div>
+                        <div class="footer__col footer__col_mail">
+                            <a href="mailto:mail@baitex.ru" class="footer-mail">mail@baitex.ru</a>
+                        </div>
+                        <div class="footer__col footer__col_social">
+                            <div class="footer-social">
+                                <a href="#" class="footer-social__btn"><img src='./img/social-telegram2.svg' alt='img'></a>
+                                <a href="#" class="footer-social__btn"><img src='./img/social-max.svg' alt='img'></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <div class="footer-links">
+                        <a href="#" class="footer-links__item">Политика конфиденциальности</a>
+                        <a href="#" class="footer-links__item">Пользовательское соглашение</a>
+                    </div>
+                    <div class="footer-copyright">&copy; 2011–2024 Baitex</div>
+                </div>
+            </div>
+        </div><!-- end center-wrapper -->
+    </footer><!-- end footer -->
+</div><!-- end wrapper -->
+	
+
+	<div id="modal-callback" class="modal" style="display: none;" tabindex="0">
+	    <div class="modal__close" data-fancybox-close><img src="img/icon-close.svg" width="20" height="20" alt="img"></div>
+	    <div class="modal__body">
+	        <div class="modal__title">Обратный звонок</div>
+	        <form action="#" class="modal-form form">
+	            <div class="modal-form__item">
+	                <input type="text" class="input" placeholder="Имя *">
+	            </div>
+	            <div class="modal-form__item">
+	                <input type="text" class="input phone_mask" placeholder="Телефон *">
+	            </div>
+	            <div class="modal-form__item">
+	                <input type="text" class="input" placeholder="Email *">
+	            </div>
+	            <div class="modal-form__btn">
+	                <button type="button" class="modal-form__btn btn">Отправить</button>
+	            </div>
+	        </form>
+	    </div>
+	</div><!-- end modal-callback -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./scripts/libs/jquery-3.6.0.min.js"></script>
+	<script src="./scripts/libs/jquery.sticky-kit.js"></script>
+	<script src="./scripts/libs/jquery.inputmask.min.js"></script>
+	<script src="./scripts/libs/slick.min.js"></script>
+	<script src="./scripts/libs/jquery.fancybox.min.js"></script>
+	<script src="./scripts/main.js"></script>
+</body>
+</html>

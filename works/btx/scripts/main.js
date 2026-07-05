@@ -249,6 +249,16 @@ $(document).ready(function(){
 			],
 		});
 	}
+
+    // Sticky
+    if($('.project-info').length > 0){
+		let w =  $(window).outerWidth();
+		if(w > 990){
+			$('.project-info').stick_in_parent({
+                offset_top: $('.header').outerHeight() + 20
+            });
+		}
+	}
    
 	// Modal callback
 	$(".js-btn-callback").on("click", function(event){
