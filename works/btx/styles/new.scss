@@ -233,6 +233,31 @@ p{
         }
     }
 }
+.promo{
+    &__main{
+        position: relative;
+        height: 460px;
+        background-image: none;
+        overflow: hidden;
+        z-index: 1;
+    }
+    &__bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__bg_mob{
+        display: none;
+    }
+}
 .reason-item__top{
     margin-bottom: 20px;
 }
@@ -319,6 +344,11 @@ p{
     .promo__rightside{
         padding-right: 0;
     }
+    .promo__bg{
+        img{
+            object-position: 30% 50%;
+        }
+    }
     .promo__img{
         display: block;
         img{
@@ -345,6 +375,9 @@ p{
         margin-right: 0;
         letter-spacing: -0.01em;
     }
+    .promo__main{
+        background: radial-gradient(307.19% 122.26% at 54.48% 56.91%, #016a3e 0%, #040d14 100%);
+    }
     .promo-logos{
         flex-wrap: wrap;
         gap: 18px;
@@ -366,9 +399,6 @@ p{
     }
     .promo__title{
         margin-bottom: 40px;
-        br{
-            display: none;
-        }
     }
     .promo__img{
         img{
@@ -424,6 +454,33 @@ p{
     .tg__text{
         font-size: 14px;
         line-height: 1.4;
+    }
+    .promo__title{
+        br{
+            display: none;
+        }
+    }
+    .promo_2{
+        .promo__bg img{
+            object-position: 70% 50%;
+        }
+        .promo__main{
+            height: 630px;
+        }
+        .promo__leftside{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .promo__text{
+            margin-top: auto;
+        }
+    }
+    .promo__bg_desk{
+        display: none;
+    }
+    .promo__bg_mob{
+        display: block;
     }
     .header-social__btn_mobile{
         display: inline-flex;
@@ -484,6 +541,15 @@ p{
     .reviews-carousel{
         margin-left: -6px;
     }
+    .promo__main{
+        padding: 20px;
+    }
+    .promo__title{
+        font-size: 32px;
+        br{
+            display: none;
+        }
+    }
     .promo-logos__item{
         flex: 0 0 calc((100% - 18px) / 2);
     }
@@ -493,6 +559,11 @@ p{
     .promo__text{
         br{
             display: none;
+        }
+    }
+    .promo_about{
+        .promo__bg img{
+            object-position: 50% 50%;
         }
     }
     .section{
@@ -524,6 +595,9 @@ p{
 @media (max-width: 359px) {
     .tg__text{
         font-size: 11px;
+    }
+    .promo__title {
+        font-size: 28px;
     }
 }
 /*-------------------------common-------------------------*/
@@ -1293,9 +1367,6 @@ p{
     }
 }
 @media (max-width: 991px) {
-    .promo__main{
-            background: radial-gradient(307.19% 122.26% at 54.48% 56.91%, #016a3e 0%, #040d14 100%);
-    }
     .team-item{
         flex: 0 0 calc((100% - 40px) / 3);
     }
@@ -1321,15 +1392,6 @@ p{
     }
 }
 @media (max-width: 575px) {
-    .promo__main{
-        padding: 20px;
-    }
-    .promo__title{
-        font-size: 32px;
-        br{
-            display: none;
-        }
-    }
     .team__row{
         gap: 12px;
     }
