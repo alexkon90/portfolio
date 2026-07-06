@@ -205,6 +205,31 @@ p{
         max-width: 650px;
     }
 }
+.promo_2{
+    .promo__main{
+        position: relative;
+        height: 460px;
+        background-image: none;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .promo__bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .promo__bg_mob{
+        display: none;
+    }
+}
 .promo-tags {
     display: flex;
     gap: 4px;
@@ -233,30 +258,12 @@ p{
         }
     }
 }
-.promo{
-    &__main{
-        position: relative;
-        height: 460px;
-        background-image: none;
-        overflow: hidden;
-        z-index: 1;
-    }
-    &__bg{
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-    &__bg_mob{
-        display: none;
-    }
+.promo-features{
+    padding-top: 10px;
+}
+.promo-features li{
+    color: #fff;
+    font-size: 15px;
 }
 .reason-item__top{
     margin-bottom: 20px;
@@ -314,7 +321,17 @@ p{
 }
 .stages-item{
     padding-right: 16px;
-    padding-bottom: 4px;
+    &__text{
+        font-weight: normal;
+    }
+}
+.stages-item__list{
+    padding-bottom: 0;
+}
+.stages-item__list{
+    li{
+        font-weight: normal;
+    }
 }
 .accordeon-list__content{
     p{
@@ -357,6 +374,9 @@ p{
     }
     .promo__mobile{
         display: none;
+    }
+    .promo__title{
+        font-size: 38px;
     }
 }
 @media (max-width: 991px) {
@@ -475,12 +495,12 @@ p{
         .promo__text{
             margin-top: auto;
         }
-    }
-    .promo__bg_desk{
-        display: none;
-    }
-    .promo__bg_mob{
-        display: block;
+        .promo__bg_desk{
+            display: none;
+        }
+        .promo__bg_mob{
+            display: block;
+        }
     }
     .header-social__btn_mobile{
         display: inline-flex;

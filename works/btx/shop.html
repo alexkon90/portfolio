@@ -101,15 +101,19 @@
         </div><!-- end center-wrapper center-wrapper_wide -->
     </header><!-- end header -->
 
+    <section class="breadcrumbs">
+        <div class='center-wrapper center-wrapper_big'>
+            <ul class="breadcrumbs__list">
+                <li><a href="#">Главная</a></li>
+                <li>О компании</li>
+            </ul>
+        </div><!-- end center-wrapper center-wrapper_big -->
+    </section><!-- end breadcrumbs -->
+
     <section class="promo">
-        <div class='center-wrapper'>
-            <div class="promo__body">
-                <div class="promo__content">
-                    <ul class="promo-breadcrumbs">
-                        <li><a href="#">Главная</a></li>
-                        <li>/</li>
-                        <li>Услуги</li>
-                    </ul>
+        <div class='center-wrapper center-wrapper_big'>
+            <div class="promo__main">
+                <div class="promo__leftside">
                     <h1 class="promo__title">Создание интернет-<br>магазинов под ключ</h1>
                     <div class="promo__mobile">
                         <div class="promo__img">
@@ -121,15 +125,17 @@
                         <li class="promo-features__item">Оптимизируем код для <span>высокой скорости загрузки</span> страниц</li>
                         <li class="promo-features__item">Работаем с акцентом на <span>высокую конверсию и удобство использования</span></li>
                     </ul>
-                    <a href="#" class="promo__callback btn js-btn-callback">Оставить заявку</a>
+                    <a href="#" class="promo__callback btn js-btn-callback">Консультация эксперта</a>
                 </div>
-                <div class="promo__img">
-                    <img src="./img/content/promo-image3.png" srcset="./img/content/promo-image3.png 1x, ./img/content/promo-image3-2x.png 2x">
+                <div class="promo__rightside">
+                    <div class="promo__img">
+                        <img src="./img/content/promo-image3.png" srcset="./img/content/promo-image3.png 1x, ./img/content/promo-image3-2x.png 2x">
+                    </div>
                 </div>
             </div>
-        </div><!-- end center-wrapper -->
-    </section><!-- end promo promo_revision -->
-    
+        </div><!-- end center-wrapper center-wrapper_big -->
+    </section><!-- end promo -->
+
     <section class="section reason">
         <div class='center-wrapper'>
             <h2 class="section__title">Почему стоит работать с нами</h2>
@@ -285,54 +291,58 @@
 
     <section class="projects section">
         <div class='center-wrapper'>
-            <div class="section__title">Примеры наших проектов</div>
+            <div class="section__title">Наши проекты</div>
             <div class="projects-carousel">
                 <div class="projects-carousel__slide">
                     <div class="projects-item">
-                        <div class="projects-item__img"><a href="#"><img src='./img/content/projects/projects-image1.jpg' srcset="img/content/projects/projects-image1.jpg 1x, img/content/projects/projects-image1.jpg 2x" alt='img'></a></div>
-                        <div class="projects-item__title">Разработка и продвижение интернет-магазина запчастей</div>
-                        <a href="#" class="projects-item__link link_arrow">
-                            Смотреть проект
-                            <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-30 5.75H20M20 5.75L14.2308 0.75M20 5.75L14.2308 10.75" stroke="#38AA70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
+                        <div class="projects-item__img">
+                            <div class="projects-item__labels">
+                                <div class="projects-item__label label_orange">1C</div>
+                            </div>
+                            <a href="#"><img src='./img/content/projects/projects-image1.jpg' srcset="img/content/projects/projects-image1.jpg 1x, img/content/projects/projects-image1-2x.jpg 2x" alt='img'></a>
+                        </div>
+                        <div class="projects-item__content">
+                            <div class="projects-item__title">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей</div>
+                            <div class="projects-item__text">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей для автомобилей для автомобилей</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-carousel__slide">
+                    <div class="projects-item">
+                        <div class="projects-item__img">
+                            <div class="projects-item__labels">
+                                <div class="projects-item__label label_blue">Битрикс24</div>
+                            </div>
+                            <a href="#"><img src='./img/content/projects/projects-image2.jpg' srcset="img/content/projects/projects-image2.jpg 1x, img/content/projects/projects-image2.jpg 2x" alt='img'></a>
+                        </div>
+                        <div class="projects-item__content">
+                            <div class="projects-item__title">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей</div>
+                            <div class="projects-item__text">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей для автомобилей для автомобилей</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-carousel__slide">
+                    <div class="projects-item">
+                        <div class="projects-item__img">
+                            <div class="projects-item__labels">
+                                <div class="projects-item__label label_green">Интеграции</div>
+                                <div class="projects-item__label label_red">1С-Битрикс</div>
+                            </div>
+                            <a href="#"><img src='./img/content/projects/projects-image3.jpg' srcset="img/content/projects/projects-image3.jpg 1x, img/content/projects/projects-image3.jpg 2x" alt='img'></a>
+                        </div>
+                        <div class="projects-item__content">
+                            <div class="projects-item__title">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей</div>
+                            <div class="projects-item__text">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей для автомобилей для автомобилей</div>
+                        </div>
                     </div>
                 </div>
                 <div class="projects-carousel__slide">
                     <div class="projects-item">
                         <div class="projects-item__img"><a href="#"><img src='./img/content/projects/projects-image2.jpg' srcset="img/content/projects/projects-image2.jpg 1x, img/content/projects/projects-image2.jpg 2x" alt='img'></a></div>
-                        <div class="projects-item__title">Разработка интернет-магазина сварочного оборудования</div>
-                        <a href="#" class="projects-item__link link_arrow">
-                            Смотреть проект
-                            <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-30 5.75H20M20 5.75L14.2308 0.75M20 5.75L14.2308 10.75" stroke="#38AA70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="projects-carousel__slide">
-                    <div class="projects-item">
-                        <div class="projects-item__img"><a href="#"><img src='./img/content/projects/projects-image3.jpg' srcset="img/content/projects/projects-image3.jpg 1x, img/content/projects/projects-image3.jpg 2x" alt='img'></a></div>
-                        <div class="projects-item__title">Разработка интернет-магазина товаров для красоты</div>
-                        <a href="#" class="projects-item__link link_arrow">
-                            Смотреть проект
-                            <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-30 5.75H20M20 5.75L14.2308 0.75M20 5.75L14.2308 10.75" stroke="#38AA70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="projects-carousel__slide">
-                    <div class="projects-item">
-                        <div class="projects-item__img"><a href="#"><img src='./img/content/projects/projects-image2.jpg' srcset="img/content/projects/projects-image2.jpg 1x, img/content/projects/projects-image2.jpg 2x" alt='img'></a></div>
-                        <div class="projects-item__title">Разработка интернет-магазина сварочного оборудования</div>
-                        <a href="#" class="projects-item__link link_arrow">
-                            Смотреть проект
-                            <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M-30 5.75H20M20 5.75L14.2308 0.75M20 5.75L14.2308 10.75" stroke="#38AA70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
+                        <div class="projects-item__content">
+                            <div class="projects-item__title">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей</div>
+                            <div class="projects-item__text">Доработка интернет-магазина аксессуаров для автомобилей для автомобилей для автомобилей для автомобилей</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -340,15 +350,15 @@
     </section><!-- end projects section -->
 
     <section class="section callback">
-        <div class='center-wrapper'>
+        <div class='center-wrapper center-wrapper_big'>
             <div class="callback__body">
                 <div class="callback__content">
-                    <h2 class="callback__title section__title">Остались вопросы или есть сомнения? Закажите бесплатную консультацию наших специалистов и мы предложим решение</h2>
-                    <a href="#" class="callback__btn btn btn_white js-btn-callback">Оставить заявку</a>
+                    <h2 class="callback__title section__title">Остались вопросы?</h2>
+                    <div class="callback__text">Оставьте заявку, и наши специалисты подберут<br> лучшее решение</div>
+                    <a href="#" class="callback__btn btn js-btn-callback">Консультация эксперта</a>
                 </div>
-                <div class="callback__img"><img src='img/callback-image2.svg' alt='img'></div>
             </div>
-        </div><!-- end center-wrapper -->
+        </div><!-- end center-wrapper center-wrapper_big -->
     </section><!-- end callback -->
 
     <section class="section reviews">
@@ -557,7 +567,7 @@
                             <li><a href="#">Компания</a></li>
                             <li><a href="#">Услуги</a></li>
                             <li><a href="#">Портфолио</a></li>
-                            <li><a href="#">Карьера</a></li>
+                            <li><a href="#">Отзывы</a></li>
                             <li><a href="#">Контакты</a></li>
                         </ul>
                     </nav>
@@ -584,8 +594,8 @@
                         </div>
                         <div class="footer__col footer__col_social">
                             <div class="footer-social">
-                                <a href="#" class="footer-social__btn"><img src='img/social-whatsapp.svg' alt='img'></a>
-                                <a href="#" class="footer-social__btn"><img src='img/social-telegram.svg' alt='img'></a>
+                                <a href="#" class="footer-social__btn"><img src='./img/social-telegram2.svg' alt='img'></a>
+                                <a href="#" class="footer-social__btn"><img src='./img/social-max.svg' alt='img'></a>
                             </div>
                         </div>
                     </div>
