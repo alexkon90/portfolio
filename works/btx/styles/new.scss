@@ -218,6 +218,21 @@ p{
         border-radius: 50px;
     }
 }
+.promo-logos{
+    padding-top: 54px;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    &__item{
+        img{
+            max-width: 100%;
+            max-height: 60px;
+        }
+    }
+}
 .reason-item__top{
     margin-bottom: 20px;
 }
@@ -329,6 +344,16 @@ p{
         font-size: 14px;
         margin-right: 0;
         letter-spacing: -0.01em;
+    }
+    .promo-logos{
+        flex-wrap: wrap;
+        gap: 18px;
+        padding-top: 38px;
+        &__item{
+            flex: 0 0 calc((100% - 36px) / 3);
+            min-width: 0;
+            text-align: center;
+        }
     }
     .promo__leftside{
         padding-right: 0;
@@ -458,6 +483,12 @@ p{
     }
     .reviews-carousel{
         margin-left: -6px;
+    }
+    .promo-logos__item{
+        flex: 0 0 calc((100% - 18px) / 2);
+    }
+    .promo__callback{
+        width: 100%;
     }
     .promo__text{
         br{
@@ -1387,7 +1418,12 @@ p{
 }
 .project-info__block_sticky{
     position: sticky;
-    top: 140px;
+    top: 90px;
+}
+.tg_open{
+    .project-info__block_sticky{
+        top: 140px;
+    }
 }
 .project-info-free{
     text-align: center;
@@ -1617,8 +1653,13 @@ p{
     .project-steps__item{
         flex: 0 0 calc((100% - 16px) / 2);
     }
+    .tg_open{
+        .project-info__block_sticky{
+            top: 130px;
+        }
+    }
     .project-info__block_sticky{
-        top: 130px;
+        top: 80px;
     }
 }
 @media (max-width: 991px) {
