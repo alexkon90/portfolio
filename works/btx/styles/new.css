@@ -234,7 +234,7 @@ p {
       -ms-flex-align: center;
           align-items: center;
   padding: 48px;
-  background-image: url(../img/bg-promo-service.jpg);
+  background-image: url(../img/bg-promo-service.svg);
   background-size: cover;
   border-radius: 20px;
 }
@@ -1805,7 +1805,7 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 32px;
-  background-image: url(../img/project-img-bg.jpg);
+  background-image: url(../img/project-img-bg.svg);
   background-size: cover;
   background-position: 50% 50%;
   padding: 45px;
