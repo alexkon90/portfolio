@@ -206,7 +206,7 @@ p {
 }
 .callback__text {
   margin-bottom: 62px;
-  font-weight: 500;
+  font-weight: normal;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.75;
@@ -371,6 +371,10 @@ p {
   border-radius: 50%;
   min-width: 0;
 }
+.tariffs-item__social:hover {
+  background: #E9EBEF;
+  opacity: 1;
+}
 
 .capabilities-tabs__btn {
   border-radius: 50px;
@@ -425,7 +429,6 @@ p {
 .stages-item__list {
   padding-bottom: 0;
 }
-
 .stages-item__list li {
   font-weight: normal;
 }
@@ -735,7 +738,7 @@ p {
 }
 /*-------------------------common-------------------------*/
 .breadcrumbs {
-  padding-bottom: 20px;
+  padding-bottom: 22px;
 }
 .breadcrumbs__list {
   display: -webkit-box;
@@ -743,6 +746,7 @@ p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-top: 2px;
 }
 .breadcrumbs__list li {
   position: relative;
@@ -750,6 +754,7 @@ p {
   padding: 0 2px;
   font-size: 14px;
   line-height: 1.2;
+  font-weight: normal;
   color: #232323;
 }
 .breadcrumbs__list li:last-child:after {
@@ -1414,6 +1419,7 @@ p {
 .mainservices-item__text {
   margin-bottom: 30px;
   font-weight: 500;
+  font-weight: normal;
   font-size: 15px;
   line-height: 1.46;
   color: #fff;
@@ -2009,6 +2015,7 @@ p {
   margin-bottom: 20px;
   font-size: 15px;
   font-weight: 500;
+  color: #868686;
   line-height: 1.46;
 }
 .project-review__desc p {
