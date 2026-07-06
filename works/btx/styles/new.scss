@@ -1,9 +1,18 @@
 /*====================================NEW====================================*/
 body{
-    padding-top: 128px;
+    padding-top: 100px;
 }
-.indexpage{
+body.gift_open {
+    padding-top: 165px;
+}
+body.tg_open {
     padding-top: 150px;
+}
+body.gift_open.tg_open {
+    padding-top: 225px;
+}
+.wrapper {
+  overflow: clip;
 }
 h2, .title_2{
     margin-bottom: 20px;
@@ -11,6 +20,9 @@ h2, .title_2{
     font-weight: 600;
     line-height: 1.4;
     letter-spacing: -0.01em;
+}
+p{
+    font-weight: normal;
 }
 .btn_full{
     width: 100%;
@@ -88,10 +100,14 @@ h2, .title_2{
     }
 }
 .tg{
+    display: none;
     position: relative;
     margin: -15px 0 15px 0;
     padding: 10px 0;
     background: linear-gradient(90deg, #040d14 0%, #016a3e 100%);
+    &.active{
+        display: block;
+    }
     &__body{
         display: flex;
         justify-content: center;
@@ -103,7 +119,7 @@ h2, .title_2{
         align-items: center;
         margin-right: 24px;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: normal;
         line-height: 1.5;
         color: #fff;
         svg{
@@ -132,12 +148,12 @@ h2, .title_2{
         padding: 0 0 100px;
     }
     &__title{
-        margin-bottom: 32px;
+        margin-bottom: 26px;
         line-height: 1.2;
         font-size: 48px;
     }
     &__text{
-        margin-bottom: 60px;
+        margin-bottom: 62px;
         font-weight: 500;
         font-size: 16px;
         color: rgba(255, 255, 255, 0.8);
@@ -207,6 +223,7 @@ h2, .title_2{
 }
 .reason-item__desc{
     line-height: 1.5;
+    font-weight: normal;
 }
 .tariffs .section__title{
     margin-bottom: 40px;
@@ -230,7 +247,8 @@ h2, .title_2{
     border-radius: 50px;
 }
 .capabilities-block__list li{
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    line-height: 1.5;
 }
 .benefits-item__caption{
     font-size: 18px;
@@ -258,9 +276,27 @@ h2, .title_2{
     padding-right: 16px;
     padding-bottom: 4px;
 }
+.accordeon-list__content{
+    p{
+        line-height: 1.75;
+        font-weight: normal;
+    }
+}
+.accordeon-list__content-body{
+    padding-right: 24px;
+}
 @media (max-width: 1299px) {
-    .indexpage{
+    body {
+        padding-top: 85px;
+    }
+    body.gift_open.tg_open {
+        padding-top: 215px;
+    }
+    body.tg_open{
         padding-top: 140px;
+    }
+    .gift{
+        margin-top: -15px;
     }
     .callback__title{
         font-size: 40px;
@@ -279,8 +315,20 @@ h2, .title_2{
     }
 }
 @media (max-width: 991px) {
-    .indexpage{
-        padding-top: 155px;
+    body.gift_open.tg_open {
+        padding-top: 260px;
+    }
+    body.gift_open {
+        padding-top: 210px;
+    }
+    .tg__body{
+        padding-left: 15px;
+        justify-content: space-between;
+    }
+    .tg__text{
+        font-size: 14px;
+        margin-right: 0;
+        letter-spacing: -0.01em;
     }
     .promo__leftside{
         padding-right: 0;
@@ -339,6 +387,12 @@ h2, .title_2{
     }
 }
 @media (max-width: 767px) {
+    body.gift_open.tg_open {
+        padding-top: 285px;
+    }
+    body.gift_open {
+        padding-top: 225px;
+    }
     .tg__body{
         padding-left: 30px;
     }
@@ -372,8 +426,8 @@ h2, .title_2{
     }
 }
 @media (max-width: 575px) {
-    body{
-        padding-top: 175px;
+    body.tg_open {
+        padding-top: 190px;
     }
     .indexpage{
         padding-top: 192px;
@@ -436,9 +490,14 @@ h2, .title_2{
         max-width: 100%;
     }
 }
+@media (max-width: 359px) {
+    .tg__text{
+        font-size: 11px;
+    }
+}
 /*-------------------------common-------------------------*/
 .breadcrumbs{
-    padding: 32px 0 20px 0;
+    padding-bottom: 20px;
     &__list {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -630,6 +689,7 @@ h2, .title_2{
     &__caption{
         margin-bottom: 8px;
         font-size: 16px;
+        font-weight: normal;
         line-height: 1.5;
         color: #868686;
     }
@@ -737,6 +797,7 @@ h2, .title_2{
     &__agreement{
         flex-grow: 1;
         font-size: 16px;
+        font-weight: normal;
         line-height: 1.4;
         color: #868686;
         a{
@@ -895,6 +956,7 @@ h2, .title_2{
     &__text{
         font-size: 14px;
         line-height: 1.42;
+        font-weight: normal;
         color: #868686;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -904,7 +966,7 @@ h2, .title_2{
 }
 .label_orange{
     background: #FDCB00;
-    color: #232323;
+    color: #fff;
 }
 .label_blue{
     background: linear-gradient(92deg, #029cde 0%, #006fc3 100%);
@@ -1097,10 +1159,12 @@ h2, .title_2{
     &__post{
         margin-bottom: 6px;
         font-size: 14px;
+        font-weight: normal;
         line-height: 1.57;
         color: #868686;
     }
     &__desc{
+        font-weight: normal;
         font-size: 14px;
         line-height: 1.57;
     }
@@ -1161,6 +1225,7 @@ h2, .title_2{
         font-size: 16px;
         font-weight: 400;
         line-height: 1.4;
+        color: #868686;
     }
 }
 .features{
@@ -1171,7 +1236,9 @@ h2, .title_2{
     }
     &__item{
         font-size: 16px;
+        font-weight: normal;
         line-height: 1.75;
+        letter-spacing: -0.01em;
     }
 }
 @media (max-width: 1299px) {
@@ -1267,6 +1334,7 @@ h2, .title_2{
     padding-bottom: 70px;
     &__body{
         display: flex;
+        flex-direction: row-reverse;
         gap: 48px;
     }
     &__content{
@@ -1294,7 +1362,7 @@ h2, .title_2{
     }
     &__caption{
         margin-bottom: 6px;
-        font-weight: 400;
+        font-weight: normal;
         font-size: 15px;
         line-height: 1.6;
         color: #868686;
@@ -1302,6 +1370,7 @@ h2, .title_2{
     &__text{
         margin-bottom: 12px;
         font-size: 15px;
+        font-weight: normal;
         line-height: 1.46;
         &:last-child{
             margin-bottom: 0;
@@ -1316,6 +1385,10 @@ h2, .title_2{
         }
     }
 }
+.project-info__block_sticky{
+    position: sticky;
+    top: 140px;
+}
 .project-info-free{
     text-align: center;
     &__title{
@@ -1328,6 +1401,7 @@ h2, .title_2{
         margin-bottom: 20px;
         font-size: 14px;
         line-height: 1.57;
+        font-weight: normal;
         color: #868686;
     }
     &__btn{
@@ -1372,6 +1446,7 @@ h2, .title_2{
     }
     &__desc{
         font-size: 14px;
+        font-weight: normal;
         line-height: 1.57;
     }
 }
@@ -1398,6 +1473,7 @@ h2, .title_2{
             margin-bottom: 8px;
             padding-left: 18px;
             line-height: 1.75;  
+            font-weight: normal;
             letter-spacing: -0.01em;
             &:before{
                 content: '';
@@ -1443,6 +1519,7 @@ h2, .title_2{
     }
     &__desc{
         line-height: 1.5;
+        font-weight: normal;
     }
 }
 .project-scheme{
@@ -1540,6 +1617,9 @@ h2, .title_2{
     .project-steps__item{
         flex: 0 0 calc((100% - 16px) / 2);
     }
+    .project-info__block_sticky{
+        top: 130px;
+    }
 }
 @media (max-width: 991px) {
     .project__body{
@@ -1554,6 +1634,21 @@ h2, .title_2{
     .project-review__img{
         flex: 0 0 220px;
         height: 320px;
+    }
+    .project-info__block_sticky{
+        display: none;
+    }
+    .project-info{
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #E9EBEF;
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.08);
+        &__block{
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+        }
     }
 }
 @media (max-width: 767px) {

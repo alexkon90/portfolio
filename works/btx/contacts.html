@@ -15,7 +15,7 @@
 <body>
 <div class="wrapper">
     <header class="header">
-        <div class="tg">
+        <div class="tg active">
             <div class="tg__body">
                 <div class="tg__text">
                     <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,8 +62,8 @@
                                 </div>
                             </li>
                             <li><a href="#">Портфолио</a></li>
-                            <li><a href="#">Отзывы</a></li>
-                            <li class="current"><a href="#">Контакты</a></li>
+                            <li class="current"><a href="#">Отзывы</a></li>
+                            <li><a href="#">Контакты</a></li>
                         </ul>
                         <div class="mobile-contacts">
                             <a href="#" class="mobile-contacts__callback btn js-btn-callback">Оставить заявку</a>
@@ -127,11 +127,11 @@
                     <div class="contacts-section__rightside">
                         <div class="contacts-map">
                             <div class="contacts-map__btns">
-                                <div class="contacts-map__btn btn active">Москва</div>
+                                <div class="contacts-map__btn btn">Москва</div>
                                 <div class="contacts-map__btn btn">Нижний Новгород</div>
                             </div>
                             <div class="contacts-map__body">
-                                <div class="contacts-map__section active"><img src='./img/map.jpg' alt='img'></div>
+                                <div class="contacts-map__section"><img src='./img/map.jpg' alt='img'></div>
                                 <div class="contacts-map__section"><img src='./img/map.jpg' alt='img'></div>
                             </div>
                         </div>
@@ -156,12 +156,13 @@
                             <textarea class="contacts-form__area" placeholder="Комментарий"></textarea>
                         </div>
                         <div class="contacts-form__file">
-                            <div class="file-upload">
+                            <label class="file-upload">
+                                <input type="file" class="file-upload__input" hidden multiple>
                                 <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.84792 13.9224L11.4236 7.62795C12.2131 6.87224 12.2131 5.64697 11.4236 4.89126C10.6342 4.13554 9.35413 4.13554 8.56464 4.89126L2.03656 11.14C0.536515 12.5759 0.536516 14.9039 2.03656 16.3398C3.5366 17.7756 5.96864 17.7756 7.46868 16.3398L14.0921 9.99976C16.3026 7.88375 16.3026 4.45302 14.0921 2.33701C11.8815 0.220998 8.29741 0.220998 6.08682 2.33701L0.75 7.44551" stroke="#232323" stroke-width="1.5" stroke-linecap="round" />
                                 </svg>
-                                Прикрепить файл
-                            </div>
+                                <span class="file-upload__text">Прикрепить файл</span>
+                            </label>
                         </div>
                         <div class="contacts-form__bottom">
                             <button class="contacts-form__send btn" type="button">Оставить заявку</button>

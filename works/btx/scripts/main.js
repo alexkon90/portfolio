@@ -250,16 +250,6 @@ $(document).ready(function(){
 		});
 	}
 
-    // Sticky
-    if($('.project-info').length > 0){
-		let w =  $(window).outerWidth();
-		if(w > 990){
-			$('.project-info').stick_in_parent({
-                offset_top: $('.header').outerHeight() + 20
-            });
-		}
-	}
-   
 	// Modal callback
 	$(".js-btn-callback").on("click", function(event){
 	  event.preventDefault();
@@ -271,4 +261,68 @@ $(document).ready(function(){
 	    transitionEffect: "circular",
 	  });
 	});
+
+    // TG
+    $(function() {
+        function toggleTGState() {
+            if ($('.tg.active').length) {
+                $('body').addClass('tg_open');
+            } else {
+                $('body').removeClass('tg_open');
+            }
+        }
+        toggleTGState();
+
+        $(document).on('click', '.tg__close', function() {
+            $('.tg').removeClass('active');
+            $('body').removeClass('tg_open');
+        });
+    });
+
+    // Contacts tabs
+    function initTabs(selector, startIndex = 0) {
+        $(selector).each(function () {
+            const $tabs = $(this);
+
+            $tabs.find('.contacts-map__btn')
+                .removeClass('active')
+                .eq(startIndex)
+                .addClass('active');
+
+            $tabs.find('.contacts-map__section')
+                .removeClass('active')
+                .eq(startIndex)
+                .addClass('active');
+
+            $tabs.find('.contacts-map__btn').on('click', function () {
+                const index = $(this).index();
+                $(this)
+                    .addClass('active')
+                    .siblings()
+                    .removeClass('active');
+
+                $tabs.find('.contacts-map__section')
+                    .removeClass('active')
+                    .eq(index)
+                    .addClass('active');
+            });
+        });
+    }
+    initTabs('.contacts-map', 0); 
+
+    // Upload file
+    $('.file-upload__input').on('change', function () {
+        let text = 'Прикрепить файл';
+
+        if (this.files.length === 1) {
+            text = this.files[0].name;
+        } else if (this.files.length > 1) {
+            text = `Выбрано файлов: ${this.files.length}`;
+        }
+
+        $(this)
+            .closest('.file-upload')
+            .find('.file-upload__text')
+            .text(text);
+    });
 });
