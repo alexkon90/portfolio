@@ -307,9 +307,7 @@ p {
 }
 
 .promo-logos {
-  padding-top: 54px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 54px 12px 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -461,6 +459,9 @@ p {
   .promo__rightside {
     padding-right: 0;
   }
+  .promo-logos {
+    padding-bottom: 20px;
+  }
   .promo__bg img {
     -o-object-position: 30% 50%;
        object-position: 30% 50%;
@@ -476,6 +477,11 @@ p {
   }
   .promo__title {
     font-size: 38px;
+  }
+  .reason__row_3 .reason__col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc((100% - 40px) / 3);
+            flex: 0 0 calc((100% - 40px) / 3);
   }
 }
 @media (max-width: 991px) {
@@ -564,6 +570,9 @@ p {
   .demonstration__img img {
     max-width: 300px;
   }
+  .tariffs__row {
+    gap: 28px;
+  }
 }
 @media (max-width: 767px) {
   body.gift_open.tg_open {
@@ -639,6 +648,9 @@ p {
   .section__title {
     font-size: 22px;
   }
+  .callback__title {
+    font-size: 32px;
+  }
 }
 @media (max-width: 575px) {
   body.tg_open {
@@ -687,10 +699,13 @@ p {
   .promo__title br {
     display: none;
   }
+  .promo-logos {
+    gap: 24px;
+  }
   .promo-logos__item {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% - 18px) / 2);
-            flex: 0 0 calc((100% - 18px) / 2);
+        -ms-flex: 0 0 calc((100% - 24px) / 2);
+            flex: 0 0 calc((100% - 24px) / 2);
   }
   .promo__callback {
     width: 100%;
@@ -821,6 +836,12 @@ p {
   }
   .section-block__title {
     margin-bottom: 24px;
+  }
+  .breadcrumbs {
+    padding-bottom: 10px;
+  }
+  .breadcrumbs__list {
+    padding-top: 10px;
   }
   .breadcrumbs__list li {
     font-size: 13px;
@@ -980,6 +1001,13 @@ p {
 }
 .contacts-info-social__btn {
   margin-right: 12px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40px;
+          flex: 0 0 40px;
+  height: 40px;
+  padding: 11px;
+  border: 1px solid #868686;
+  border-radius: 50%;
 }
 .contacts-info-social__btn:hover {
   opacity: 0.7;
@@ -1482,6 +1510,9 @@ p {
   }
   .mainservices-item__text br {
     display: none;
+  }
+  .projects-carousel__slide {
+    padding-bottom: 2px;
   }
 }
 /*-------------------------about-------------------------*/
