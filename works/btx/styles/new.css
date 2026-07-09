@@ -234,7 +234,7 @@ p {
       -ms-flex-align: center;
           align-items: center;
   padding: 48px;
-  background-image: url(../img/bg-promo-service.svg);
+  background-image: linear-gradient(115deg, rgb(4, 13, 20) 30%, rgb(1, 106, 62) 50.4409%, rgb(4, 13, 20) 100%);
   background-size: cover;
   border-radius: 20px;
 }
@@ -262,7 +262,7 @@ p {
   padding: 0 24px;
 }
 .promo__img img {
-  max-width: 650px;
+  max-width: 565px;
 }
 
 .promo_2 .promo__main {
@@ -294,6 +294,8 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 4px;
   margin-bottom: 16px;
 }
@@ -440,6 +442,10 @@ p {
   padding-right: 24px;
 }
 
+.mainform {
+  margin-bottom: 50px;
+}
+
 @media (max-width: 1299px) {
   body {
     padding-top: 85px;
@@ -483,6 +489,9 @@ p {
         -ms-flex: 0 0 calc((100% - 40px) / 3);
             flex: 0 0 calc((100% - 40px) / 3);
   }
+  .reason-item__caption {
+    font-size: 17px;
+  }
 }
 @media (max-width: 991px) {
   body.gift_open.tg_open {
@@ -503,7 +512,8 @@ p {
     letter-spacing: -0.01em;
   }
   .promo__main {
-    background: radial-gradient(307.19% 122.26% at 54.48% 56.91%, #016a3e 0%, #040d14 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, rgb(4, 13, 20)), color-stop(60.4409%, rgb(1, 106, 62)), to(rgb(4, 13, 20)));
+    background-image: linear-gradient(180deg, rgb(4, 13, 20) 10%, rgb(1, 106, 62) 60.4409%, rgb(4, 13, 20) 100%);
   }
   .promo-logos {
     -ms-flex-wrap: wrap;
@@ -572,6 +582,9 @@ p {
   }
   .tariffs__row {
     gap: 28px;
+  }
+  .reason-item__caption {
+    font-size: 18px;
   }
 }
 @media (max-width: 767px) {
@@ -742,6 +755,9 @@ p {
   .demonstration__img img {
     max-width: 100%;
   }
+  .mainform {
+    margin-bottom: 10px;
+  }
 }
 @media (max-width: 359px) {
   .tg__text {
@@ -761,7 +777,7 @@ p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-top: 2px;
+  padding-top: 12px;
 }
 .breadcrumbs__list li {
   position: relative;
@@ -838,7 +854,7 @@ p {
     margin-bottom: 24px;
   }
   .breadcrumbs {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
   }
   .breadcrumbs__list {
     padding-top: 10px;
